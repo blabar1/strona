@@ -239,7 +239,12 @@ var prevScrollpos = window.pageYOffset;
 
 window.onscroll = function () {
     var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos < currentScrollPos) {
+    if (currentScrollPos === 0) {
+        console.log(currentScrollPos);
+        document.getElementById("c_menu_list_hidding").style.top = "0px";
+
+    } else if (prevScrollpos < currentScrollPos) {
+
         document.getElementById("c_menu_list_hidding").style.top = "0px";
     } else {
         document.getElementById("c_menu_list_hidding").style.top = "-90px";
