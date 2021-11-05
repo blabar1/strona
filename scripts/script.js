@@ -25,9 +25,9 @@ $(function () {
         margin += width;
         if (margin === 0) {
             margin = -3 * width;
-            $slideContainer.animate({"margin-left": -3 * width}, animationSpeed);
+            $slideContainer.animate({ "margin-left": -3 * width }, animationSpeed);
         } else {
-            $slideContainer.animate({'margin-left': '-=' + width}, animationSpeed);
+            $slideContainer.animate({ 'margin-left': '-=' + width }, animationSpeed);
             currentSlide++;
         }
 
@@ -41,9 +41,9 @@ $(function () {
         margin += width;
         if (margin === 0) {
             margin = -3 * width;
-            $slideContainer.animate({"margin-left": -3 * width}, animationSpeed);
+            $slideContainer.animate({ "margin-left": -3 * width }, animationSpeed);
         } else {
-            $slideContainer.animate({'margin-left': '+=' + width}, animationSpeed);
+            $slideContainer.animate({ 'margin-left': '+=' + width }, animationSpeed);
             currentSlide--;
         }
 
@@ -80,8 +80,8 @@ $(function () {
     }
 
     $slideContainer
-            .on('mouseenter', pauseSlider)
-            .on('mouseleave', startSlider);
+        .on('mouseenter', pauseSlider)
+        .on('mouseleave', startSlider);
 
 
 
@@ -237,12 +237,17 @@ $(document).ready(function () {
 
 
 var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos < currentScrollPos) {
-    document.getElementById("c_menu_list_hidding").style.top = "0px";
-  } else {
-    document.getElementById("c_menu_list_hidding").style.top = "-90px";
-  }
-  prevScrollpos = currentScrollPos;
+var currentScrollPos = 1;
+window.onscroll = function () {
+    currentScrollPos = window.pageYOffset;
+    console.log(currentScrollPos);
+    if (currentScrollPos == 0) {
+        document.getElementById("c_menu_list_hidding").style.top = "90px";
+    }
+    if (prevScrollpos > currentScrollPos) {
+        document.getElementById("c_menu_list_hidding").style.top = "0px";
+    } else {
+        document.getElementById("c_menu_list_hidding").style.top = "-90px";
+    }
+    prevScrollpos = currentScrollPos;
 }
