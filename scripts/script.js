@@ -235,16 +235,11 @@ $(document).ready(function () {
     });
 });
 
-
 var prevScrollpos = window.pageYOffset;
-var currentScrollPos = 1;
+
 window.onscroll = function () {
-    currentScrollPos = window.pageYOffset;
-    console.log(currentScrollPos);
-    if (currentScrollPos == 0) {
-        document.getElementById("c_menu_list_hidding").style.top = "90px";
-    }
-    if (prevScrollpos > currentScrollPos) {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos < currentScrollPos) {
         document.getElementById("c_menu_list_hidding").style.top = "0px";
     } else {
         document.getElementById("c_menu_list_hidding").style.top = "-90px";
