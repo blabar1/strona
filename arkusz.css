@@ -1,6 +1,4 @@
 
-<style>
-
 html{
     font-family: 'Quicksand', sans-serif; 
     --primary-color: #cfcfcf;
@@ -97,7 +95,7 @@ li{
 }
 .c-menu-start-submenu__title{
     padding: 18px 0;
-    border-bottom: 1px solid #cfcfcf;
+    border-bottom: 1px solid var(--primary-color);;
 }
 .c-menu-start-submenu-list{
     margin-right: 10px;
@@ -112,19 +110,17 @@ li{
   background-color: #333;
   position: absolute;
   width: 100%;
-  display: block;
   transition: top 0.3s;
 }
 #c_menu_list_hidding {
     float: left;
-    display: block;
     color: #f2f2f2;
     text-align: center;
-    padding: 15px;
     text-decoration: none;
     font-size: 17px;
     position: relative;
     z-index: -1;
+    height:50px;
   }
   
   #c_menu_list_hidding a:hover{
@@ -190,7 +186,14 @@ li{
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
 
 }
+.c-menu__list{
+    width:100%;
+    display: inline-flex
+}
+.c-menu-start_option{
+    margin:auto;
 
+}
 @media only screen and (max-width: 800px){
     .o-hamburger{
         display:block;
@@ -199,11 +202,6 @@ li{
     }
     .c-menu__list{
         display:none;
-        position:fixed;
-        right:0;
-        left:0;
-        top:0;
-        bottom:0;
         background-color:#fff;
         justify-content:center;
         align-items:center;
@@ -1039,7 +1037,10 @@ a{
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.c-menu-hidding{
+    width:100%;
+    margin:0;
+    padding:0;
+}
 
 
-
-</style> 
