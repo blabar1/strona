@@ -125,13 +125,10 @@
 
 <body>
     <!-- slider -->
-
-    <div class="c-banner-slider">
-        <img src="images/arrow-left.png" class="c-banner-slider__arrow--left" alt="Prev">
-        <img src="images/arrow-right.png" class="c-banner-slider__arrow--right" alt="Next">
-        <div class="c-banner-slider__slider">
+    <div class="c-banner-slider"> 
+        <div class="c-banner-slider__slider js-banner-slider">
             <div class="c-banner-slider__item" style="background-image: url('images/slider_item_1.jpg');"></div>
-            <div class="c-banner-slider__item" style="background-image: url('images/slider_item_2.jpg');"></div>
+            <div class="c-banner-slider__item" style="background-image: url('images/slider_item_ 2.jpg');"></div>
             <div class="c-banner-slider__item" style="background-image: url('images/slider_item_3.jpg');"></div>
         </div>
     </div>

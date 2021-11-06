@@ -323,15 +323,15 @@ li{
 }
 .c-banner-slider .c-banner-slider__slider{
     display: block;
-    width: 100vw;
-    height: 500px;
-    padding: 0;
+    width: 80vw;
+    height: 40vh;
+    margin:auto;
 }
 .c-banner-slider {
 
 
     width: 100vw;
-    height:40vh;
+    height:100%;
     overflow: hidden;
 }
 
@@ -348,17 +348,12 @@ li{
     opacity: 0.5;
 }
 .c-banner-slider__arrow--right{
-
-    margin-top:20vh;
-    right: 10px;
-    cursor:pointer;
-    position: absolute;
+    right: 20px;
+    color: var(--primary-color);
 }
 .c-banner-slider__arrow--left{
-    margin-top:20vh;
-    left: 10px;
-    cursor:pointer;
-    position: absolute;
+    left: 20px;
+    color: var(--primary-color);
 }
 .slick-dots{
     bottom: 15px;
@@ -368,7 +363,7 @@ li{
 .slick-dots li button:before{
     font-size: 15px;
 }
-.c-banner-slider__item slick-slide slick-current slick-active{
+.c-banner-slider__item .slick-slide .slick-current .slick-active{
     mix-blend-mode: screen;
 }
 
