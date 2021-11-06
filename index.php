@@ -2,7 +2,7 @@
 <html lang="pl-PL">
 
 <head>
-    <title>Sklep Zoologiczny</title>
+    <title>Sklep Komputerowy</title>
 
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.gstatic.com">
