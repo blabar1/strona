@@ -15,97 +15,143 @@
     <link rel="stylesheet" href="arkusz.css">
     <!-- menu,header-->
     <div class="c-header">
+
         <div class="c-header__wrapper">
-            <a href="index.html"><img class="c-menu c-logo" src="images/ikonka_sklepu.png" alt="ikona_sklepu" /></a>
-            <ul class="c-menu">
-                <div class="c-menu__list">
-                    <li class="c-menu-start">Sklep&nbsp;
-                        <ul class="c-menu-start-list o-wrapper c-menu-start">
-                            <li class="c-menu-start-submenu">
-                                <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
-                            <li class="c-menu-start-submenu">
-                                <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
-                                <div class="c-menu-start-submenu-list"><a href="Strona z produktami.html">przykladowa opcja</a></div>
+            <div class="o-wrapper__menu__hidding">
+                <a href="index.html"><img class="c-menu c-logo" src="images/ikonka sklepu.png" alt="ikona_sklepu" /></a>
+                <ul class="c-menu">
+
+                    <div class="c-menu__list">
+                        <div class="c-menu__list-search">
+                            <li>
+                                <form action="" method="POST"><input type="text" class="c-menu__serach" name ="SZUKAJ" value=""></input></form>
                             </li>
-                        </ul>
-                    </li>
-                    <li><a href="Galeria.html">&nbsp;Galeria</a></li>
-                    <li>&nbsp;<a href='O_nas.html'>O nas</a>&nbsp;</li>
-                    <li class="c-menu-basket"><a href="Koszyk.html">Koszyk</a></li>
-                    <li><a href="Strona do logowania-rejestracji.html">&nbsp; Zaloguj się&nbsp;</a></li>
-                </div>
-                <span class="o-hamburger">
-                    <span class="o-hamburger__bar--first o-hamburger__bar"></span>
-                    <span class="o-hamburger__bar--second o-hamburger__bar"></span>
-                    <span class="o-hamburger__bar--third o-hamburger__bar"></span>
-                </span>
-            </ul>
-            <a href="Koszyk.html"><img class="c-icon-basket" src="images/ikonka_koszyka.png" alt="ikonka_koszyk" /></a>
+                        </div>
+                        <li>&nbsp;<a href='O_nas.html'>O nas</a>&nbsp;</li>
+                        <li><a href="Strona do logowania-rejestracji.html">&nbsp; Zaloguj się&nbsp;</a></li>
+                    </div>
+
+                </ul>
+                <a href="Koszyk.html"><img class="c-icon-basket" src="images/ikonka_koszyka.png" alt="ikonka_koszyk" /></a>
+            </div>
         </div>
         <div class="c-header__wrapper" id="c_menu_list_hidding">
             <ul class="c-menu c-menu-hidding">
-                <div class="c-menu__list ">
-                    <div class="c-menu-start_option">
-                        <li class="c-menu-start ">Sklep&nbsp;
-                            <ul class="c-menu-start-list o-wrapper c-menu-start">
-                                <li class="c-menu-start-submenu">
-                                    <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
-                                <li class="c-menu-start-submenu">
-                                    <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
-                                    <div class="c-menu-start-submenu-list"><a href="Strona z produktami.html">przykladowa opcja</a></div>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="c-menu-start_option">
-                        <li class="c-menu-start ">Sklep&nbsp;
-                            <ul class="c-menu-start-list o-wrapper c-menu-start">
-                                <li class="c-menu-start-submenu">
-                                    <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
-                                <li class="c-menu-start-submenu">
-                                    <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
-                                    <div class="c-menu-start-submenu-list"><a href="Strona z produktami.html">przykladowa opcja</a></div>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="c-menu-start_option">
-                        <li class="c-menu-start ">Sklep&nbsp;
-                            <ul class="c-menu-start-list o-wrapper c-menu-start">
-                                <li class="c-menu-start-submenu">
-                                    <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
-                                <li class="c-menu-start-submenu">
-                                    <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
-                                    <div class="c-menu-start-submenu-list"><a href="Strona z produktami.html">przykladowa opcja</a></div>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="c-menu-start_option">
-                        <li class="c-menu-start ">Sklep&nbsp;
-                            <ul class="c-menu-start-list o-wrapper c-menu-start">
-                                <li class="c-menu-start-submenu">
-                                    <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
-                                <li class="c-menu-start-submenu">
-                                    <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
-                                    <div class="c-menu-start-submenu-list"><a href="Strona z produktami.html">przykladowa opcja</a></div>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="c-menu-start_option">
-                        <li class="c-menu-start ">Sklep&nbsp;
-                            <ul class="c-menu-start-list o-wrapper c-menu-start">
-                                <li class="c-menu-start-submenu">
-                                    <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
-                                <li class="c-menu-start-submenu">
-                                    <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
-                                    <div class="c-menu-start-submenu-list"><a href="Strona z produktami.html">przykladowa opcja</a></div>
-                                </li>
-                            </ul>
-                        </li>
+                <div class="o-wrapper__menu__hidding">
+                    <div class="c-menu__list ">
+
+                        <div class="c-menu-start_option">
+                            <li class="c-menu-start ">Sklep&nbsp;
+                                
+                                <ul class="c-menu-start-list o-wrapper c-menu-start">
+                                    <li class="c-menu-start-submenu">
+                                        <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
+                                    <li class="c-menu-start-submenu">
+                                        <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
+                                        <div class="c-menu-start-submenu-list"><a href="Strona z produktami.html">przykladowa opcja</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </div>
+                        <div class="c-menu-start_option">
+                            <li class="c-menu-start ">Sklep&nbsp;
+                                <ul class="c-menu-start-list o-wrapper c-menu-start">
+                                    <li class="c-menu-start-submenu">
+                                        <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
+                                    <li class="c-menu-start-submenu">
+                                        <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
+                                        <div class="c-menu-start-submenu-list"><a href="Strona z produktami.html">przykladowa opcja</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </div>
+                        <div class="c-menu-start_option">
+                            <li class="c-menu-start ">Sklep&nbsp;
+                                <ul class="c-menu-start-list o-wrapper c-menu-start">
+                                    <li class="c-menu-start-submenu">
+                                        <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
+                                    <li class="c-menu-start-submenu">
+                                        <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
+                                        <div class="c-menu-start-submenu-list"><a href="Strona z produktami.html">przykladowa opcja</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </div>
+                        <div class="c-menu-start_option">
+                            <li class="c-menu-start ">Sklep&nbsp;
+                                <ul class="c-menu-start-list o-wrapper c-menu-start">
+                                    <li class="c-menu-start-submenu">
+                                        <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
+                                    <li class="c-menu-start-submenu">
+                                        <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
+                                        <div class="c-menu-start-submenu-list"><a href="Strona z produktami.html">przykladowa opcja</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </div>
+                        <div class="c-menu-start_option">
+                            <li class="c-menu-start ">Sklep&nbsp;
+                                <ul class="c-menu-start-list o-wrapper c-menu-start">
+                                    <li class="c-menu-start-submenu">
+                                        <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
+                                    <li class="c-menu-start-submenu">
+                                        <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
+                                        <div class="c-menu-start-submenu-list"><a href="Strona z produktami.html">przykladowa opcja</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </div>
+                        <div class="c-menu-start_option">
+                            <li class="c-menu-start ">Sklep&nbsp;
+                                <ul class="c-menu-start-list o-wrapper c-menu-start">
+                                    <li class="c-menu-start-submenu">
+                                        <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
+                                    <li class="c-menu-start-submenu">
+                                        <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
+                                        <div class="c-menu-start-submenu-list"><a href="Strona z produktami.html">przykladowa opcja</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </div>
+                        <div class="c-menu-start_option">
+                            <li class="c-menu-start ">Sklep&nbsp;
+                                <ul class="c-menu-start-list o-wrapper c-menu-start">
+                                    <li class="c-menu-start-submenu">
+                                        <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
+                                    <li class="c-menu-start-submenu">
+                                        <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
+                                        <div class="c-menu-start-submenu-list"><a href="Strona z produktami.html">przykladowa opcja</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </div>
+                        <div class="c-menu-start_option">
+                            <li class="c-menu-start ">Sklep&nbsp;
+                                <ul class="c-menu-start-list o-wrapper c-menu-start">
+                                    <li class="c-menu-start-submenu">
+                                        <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
+                                    <li class="c-menu-start-submenu">
+                                        <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
+                                        <div class="c-menu-start-submenu-list"><a href="Strona z produktami.html">przykladowa opcja</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </div>
+                        <div class="c-menu-start_option">
+                            <li class="c-menu-start ">Sklep&nbsp;
+                                <ul class="c-menu-start-list o-wrapper c-menu-start">
+                                    <li class="c-menu-start-submenu">
+                                        <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
+                                    <li class="c-menu-start-submenu">
+                                        <div class="c-menu-start-submenu__title">przykladowa kategoria</div>
+                                        <div class="c-menu-start-submenu-list"><a href="Strona z produktami.html">przykladowa opcja</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </div>
                     </div>
                 </div>
+
                 <span class="o-hamburger">
                     <span class="o-hamburger__bar--first o-hamburger__bar"></span>
                     <span class="o-hamburger__bar--second o-hamburger__bar"></span>
@@ -113,17 +159,19 @@
                 </span>
             </ul>
         </div>
-
+    </div>
     </div>
 </head>
 
 <body>
     <!-- slider -->
-    <div class="c-banner-slider"> 
-        <div class="c-banner-slider__slider js-banner-slider">
-            <div class="c-banner-slider__item" style="background-image: url('images/slider_item_1.jpg');"></div>
-            <div class="c-banner-slider__item" style="background-image: url('images/slider_item_ 2.jpg');"></div>
-            <div class="c-banner-slider__item" style="background-image: url('images/slider_item_3.jpg');"></div>
+    <div class="o-wrapper">
+        <div class="c-banner-slider">
+            <div class="c-banner-slider__slider js-banner-slider">
+                <div class="c-banner-slider__item" style="background-image: url('images/slider_item_1.jpg');"></div>
+                <div class="c-banner-slider__item" style="background-image: url('images/slider_item_ 2.jpg');"></div>
+                <div class="c-banner-slider__item" style="background-image: url('images/slider_item_3.jpg');"></div>
+            </div>
         </div>
     </div>
     <!-- products cards -->
@@ -214,7 +262,7 @@
 
     </div>
 
-
+<div class="overlay"></div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 
