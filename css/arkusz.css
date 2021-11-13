@@ -7,8 +7,6 @@ html{
 
 body{
     margin: 0;
-    padding-top: 120px;
-    overflow-x:hidden;
 }
 ul{
     list-style-type: none;
@@ -27,20 +25,7 @@ ul{
     margin-left: auto;
     margin-right: auto;
 }
-.o-wrapper__menu{
-    padding-left:32px;
-    padding-right:32px;
-    max-width: 1600px;
-    margin-right: auto;
-}
-.o-wrapper__menu__hidding{
-    padding-left: 32px;  
-    padding-right: 32px; 
-    max-width: 1600px;
-    margin-right: auto; 
-    margin: auto;
-    width: 100%;
-}
+
 .o-sideBySide{
     display:flex;
     margin-top: 100px;         
@@ -62,7 +47,7 @@ ul{
 }
 
 .c-header{
-    position: fixed;
+    position: sticky;
     top: 0; 
     left: 0;
     right: 0;
@@ -73,84 +58,6 @@ position: absolute;
 z-index: 10000;
 width: 100%;
 }
-.c-menu{
-    float:left;
-    list-style-type: none;
-    align-items:center;
-    display:flex;
-    margin-left: 0px;
-
-}
-.c-menu-start{
-    padding: 15px 16px;
-    justify-items:center;
-    padding-right:5px;
-    display:contentS;
-}  
-.c-menu-basket{
-    display:none;
-}
-
-
-.c-menu-start:hover  .c-menu-start-list {
-    display: flex;
-    border-radius:15px
-}
-.c-menu-start-submenu{
-    margin-right: 10px;
-    padding-bottom: 15px;
-    z-index: 10;
-    position: relative;
-
-}
-.c-menu-start-submenu__title{
-    padding: 18px 0;
-    border-bottom: 1px solid var(--primary-color);;
-}
-.c-menu-start-submenu-list{
-    margin-right: 10px;
-    padding-bottom: 15px;
-    padding-top:5px;
-    z-index: 10;
-    position: relative;
-    font-size:15px;
-}
-.c-menu__serach{
-    width:500px;
-    height:40px;
-    border-radius: 20px;
-    border:1px solid #cfcfcf;
-    display: flex;
-}
-.c-menu__serach:click{
-    border:1px solid #cfcfcf; 
-}
-.c-menu__list-search{
-    display: flex;
-}
-
-#c_menu_list_hidding{
-  background-color: #333;
-  position: absolute;
-  width: 100%;
-  transition: top 0.3s;
-}
-#c_menu_list_hidding {
-    float: left;
-    color: #f2f2f2;
-    text-decoration: none;
-    font-size: 17px;
-    position: relative;
-    z-index: -1;
-    height:70px;
-  }
-  
-  .c-menu-start_option:hover{
-    background-color: #202124;
-    color: rgb(104, 104, 104);
-  }
-  
-
 
 .c-header__wrapper{
     display: flex;
@@ -158,6 +65,7 @@ width: 100%;
     align-items: center;
     background: var(--primary-color);
     padding: 10px;
+    height:50px;
 }
 .c-logo{
     max-height: 60px;
@@ -194,18 +102,7 @@ width: 100%;
 .wrap{
     width:100%;
 }
-.c-menu-start-list{
-    width:700px;
-    height:200px;
-    display:none;
-    z-index: 100;
-    position:absolute;
-    padding: 10px;
-    background-color: #ffffff;
-    border: 1px solid var(--primary-color);;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
 
-}
 .overlay{
     width: 100%;
     height:100%;
@@ -336,7 +233,7 @@ width: 100%;
 }
 .c-banner-slider {
 
-    margin-top: 50px;
+    margin-top: 90px;
     height:100%;
     overflow: hidden;
 }
@@ -376,56 +273,6 @@ width: 100%;
 .c-text-options__container{
     display: flex;
 } 
-.c-text-options__menu{
-    width: 30%;
-    padding-right: 10px;
-}
-.c-text-options__text{
-    width: 70%;
-    position: relative;
-}
-@media only screen and (max-width: 800px){
-    .c-text-options__text{
-        width: 100%
-    }
-}
-.c-text-options__text-item{
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0.3s linear;
-}
-@media only screen and (max-width: 800px){
-    .c-text-options__container{
-        width: 100%;
-        display:inline-block;
-    }
-    .c-text-options__text-item{
-        width:100%;
-        display: flex;
-    }
-    .c-text-options__menu{
-        width: 100%;
-    }
-}
-
-
-.c-text-options__text-item.is-open{
-    opacity: 1;
-    position: relative;
-}
-.c-text-options{
-    padding-top: 32px;
-}
-.c-text-options__menu-option{
-    padding:10px;
-    margin-bottom:2px;
-    cursor:pointer;
-}
-.c-text-options__menu-option:hover, .c-text-options__menu-option.is-open{
-    background-color: var(--primary-color);
-}
 .c-products-cards{
     padding: 92px 0;
 }
@@ -520,9 +367,6 @@ width: 100%;
     position:absolute;
     width:194px;
     background-repeat: no-repeat;
-}
-.c-products-cards__slider-item-wrapper-decor{
-
 }
 .c-login{
     display:flex;
@@ -1012,8 +856,8 @@ a{
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.c-menu-hidding{
-    width:100%;
-    margin:0;
-    padding:0;
+@media only screen and (max-width: 1200px){
+.c-banner-slider{
+    margin-top: 0px;
+  }
 }
