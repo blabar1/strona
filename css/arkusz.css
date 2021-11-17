@@ -7,7 +7,29 @@ html{
 
 body{
     margin: 0;
+    
 }
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: none;
+    scrollbar-color: #35363a #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 13px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #35363a;
+    border-radius: 7px;
+    border: 4px solid #ffffff;
+  }
 ul{
     list-style-type: none;
 }

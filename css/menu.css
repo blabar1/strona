@@ -200,7 +200,7 @@
   @media only screen and (min-width: 1200px) {
     .cd-morph-dropdown {
       position: absolute;
-      height: 80px;
+      height: 50px;
       left: 0;
       top: 0;
       width: 100%;
@@ -379,7 +379,7 @@
     }
     .cd-morph-dropdown .gallery .content {
       /* you need to set a width for the .content elements because they have a position absolute */
-      width: 510px;
+      width:510px;
       padding-bottom: .8em;
     }
     .cd-morph-dropdown .gallery .content li {
@@ -491,7 +491,7 @@
     }
   }
   .has-dropdown:hover {
-      background-color: #1A1A1A;
+      background-color: #080808;
       border: black;
   }
   svg{
@@ -632,7 +632,7 @@ line-height: 13px;
 }
 
 #c_menu_list_hidding{
-background-color: #333;
+background-color:#222;
 position: absolute;
 width: 100%;
 transition: top 0.3s;
@@ -690,9 +690,7 @@ transition: top 0.3s;
 
   #c_menu_list_hidding{
     display:block;
-    position: absolute;
-    top:0;
-    height:0px;
+    height:50px;
 
   }
 
@@ -714,9 +712,10 @@ transition: top 0.3s;
   align-items:center;
   border-radius: 0px;
   border-width: 0px;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 
 }
+
+
 /*
 .o-hamburger.is-active{
   z-index:1000;
