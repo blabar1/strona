@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-3.4.1-dist/css/bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" />
@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/footer.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,6 +48,12 @@
                         </li>
                         <li><a href="#">Page 2</a></li>
                         <li><a href="#">Page 3</a></li>
+                        <li><div class="input-group">
+    <input type="search" id="form1" class="search-responsive form-control" placeholder="Szukaj"/>
+  <button type="button" class="btn btn-dark">
+    <i class="fas fa-search"></i>
+  </button>
+</div></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -60,7 +67,14 @@
         <div id="c_menu_list_hidding">
             <div class="o-wrapper__menu__hidding">
                 <div class="c-menu__list ">
-                <div class="cd-morph-dropdown"><a href="#0" class="nav-trigger" id="not active"><span aria-hidden="true"></span></a></div>
+                    
+                <div class="cd-morph-dropdown">
+                    <div class="show">
+                        <a href="#0" class="nav-trigger navbar-toggle" id="not active" style="border: 1px solid #333; border-radius: 4px;">  
+                        <span class="icon-bar" style="background-color:white;"></span>
+                        <span class="icon-bar" style="background-color:white;"></span>
+                        <span class="icon-bar" style="background-color:white;"></span></a></a></div>
+</div>
                     <header class="cd-morph-dropdown">
 
                         <nav class="main-nav">
@@ -177,11 +191,16 @@
                             </ul>
                         </nav>
                         <!-- dropdown-list -->
+                        
                         <div class="o-sideBySide">
                             <div class="morph-dropdown-wrap">
+                                
 
                                 <div class="morph-dropdown-wrapper">
-                                    <div class="cd-morph-dropdown"><a href="#0" class="nav-trigger" id="not active"><span aria-hidden="true"></span></a></div>
+                                <div class="left">
+                                    <a href="#0" class="nav-trigger" id="not active"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a>
+                                    </div>
+                                    
                                     <div class="dropdown-list ">
                                         <ul>
                                             <li id="about" class="dropdown gallery">
@@ -326,36 +345,122 @@
             </div>
         </div>
     </div>
+
+    
     <!-- products cards -->
     <div class="c-products-cards">
+
         <div class="o-wrapper">
-
+        <div class="c-products-cards__title">Polecamy:</div>
             <div class=" c-products-cards__slider js-products-slider">
-                <div class="c-products-cards__slider-item">
-                    <div class="c-products-cards__slider-item-decor"><img src="images/ozdoba_corgi_3.png" alt="zdjecie"></div>
+            <div class="c-products-cards__slider-item">
                     <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_kota.png');"></div>
-                    <div class="c-products-cards__slider-item-content">Lorem ipsum dolor Maecenas sem nibh, dictum at sagittis quis, pharetra eu lectus. Donec sed tellus eu ipsum rutrum vestibulum vitae porttitor eros. Aliquam egestas ligula nec commodo mattis. Sed suscipit, arcu a tincidunt egestas, ipsum purus maximus erat, ut bibendum ligula eros sit amet urna. Vestibulum suscipit libero a nibh laoreet blandit. Ut sed ultricies ligula.</div>
+                    <div class="c-products-cards__slider-item-content">
+                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                    <div class="c-products-cards__slider-item-name">nazwa</div>
+                    <div class="c-products-cards__slider-item-price">CENA</div>
 
+                </div>
+                    </div>
+                    <div class="c-products-cards__slider-item">
+                    <div class="c-products-cards__slider-item-image" style="background-image: url('images/myszka2.');"></div>
+                    <div class="c-products-cards__slider-item-content">
+                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                    <div class="c-products-cards__slider-item-name">nazwa</div>
+                    <div class="c-products-cards__slider-item-price">CENA</div>
 
                 </div>
-                <div class="c-products-cards__slider-item">
-                    <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_psa.png');"></div>
-                    <div class="c-products-cards__slider-item-content">Lorem ipsum dolor Maecenas sem nibh, dictum at sagittis quis, pharetra eu lectus. Donec sed tellus eu ipsum rutrum vestibulum vitae porttitor eros. Aliquam egestas ligula nec commodo mattis. Sed suscipit, arcu a tincidunt egestas, ipsum purus maximus erat, ut bibendum ligula eros sit amet urna. Vestibulum suscipit libero a nibh laoreet blandit. Ut sed ultricies ligula.</div>
+                    </div>
+                    <div class="c-products-cards__slider-item">
+                    <div class="c-products-cards__slider-item-image" style="background-image: url('images/myszka.jpg');"></div>
+                    <div class="c-products-cards__slider-item-content">
+                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                    <div class="c-products-cards__slider-item-name">nazwa</div>
+                    <div class="c-products-cards__slider-item-price">CENA</div>
+
                 </div>
-                <div class="c-products-cards__slider-item">
-                    <div class="c-products-cards__slider-item-decor"><img src="images/ozdoba_kot_1.png" alt="zdjecie"></div>
-                    <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_psa_2.png');"></div>
-                    <div class="c-products-cards__slider-item-content">Lorem ipsum dolor Maecenas sem nibh, dictum at sagittis quis, pharetra eu lectus. Donec sed tellus eu ipsum rutrum vestibulum vitae porttitor eros. Aliquam egestas ligula nec commodo mattis. Sed suscipit, arcu a tincidunt egestas, ipsum purus maximus erat, ut bibendum ligula eros sit amet urna. Vestibulum suscipit libero a nibh laoreet blandit. Ut sed ultricies ligula.</div>
-                </div>
-                <div class="c-products-cards__slider-item">
-                    <div class="c-products-cards__slider-item-decor"><img src="images/ozdoba_corgi_2.png" alt="zdjecie"></div>
+                    </div>
+            <div class="c-products-cards__slider-item">
                     <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_kota.png');"></div>
-                    <div class="c-products-cards__slider-item-content">Lorem ipsum dolor Maecenas sem nibh, dictum at sagittis quis, pharetra eu lectus. Donec sed tellus eu ipsum rutrum vestibulum vitae porttitor eros. Aliquam egestas ligula nec commodo mattis. Sed suscipit, arcu a tincidunt egestas, ipsum purus maximus erat, ut bibendum ligula eros sit amet urna. Vestibulum suscipit libero a nibh laoreet blandit. Ut sed ultricies ligula.</div>
+                    <div class="c-products-cards__slider-item-content">
+                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                    <div class="c-products-cards__slider-item-name">nazwa</div>
+                    <div class="c-products-cards__slider-item-price">CENA</div>
+
                 </div>
+                    </div>
                 <div class="c-products-cards__slider-item">
                     <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_kota.png');"></div>
-                    <div class="c-products-cards__slider-item-content">Lorem ipsum dolor Maecenas sem nibh, dictum at sagittis quis, pharetra eu lectus. Donec sed tellus eu ipsum rutrum vestibulum vitae porttitor eros. Aliquam egestas ligula nec commodo mattis. Sed suscipit, arcu a tincidunt egestas, ipsum purus maximus erat, ut bibendum ligula eros sit amet urna. Vestibulum suscipit libero a nibh laoreet blandit. Ut sed ultricies ligula.</div>
+                    <div class="c-products-cards__slider-item-content">
+                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                    <div class="c-products-cards__slider-item-name">nazwa</div>
+                    <div class="c-products-cards__slider-item-price">CENA</div>
+
                 </div>
+                    </div>
+                    <div class="c-products-cards__slider-item">
+                    <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_kota.png');"></div>
+                    <div class="c-products-cards__slider-item-content">
+                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                    <div class="c-products-cards__slider-item-name">nazwa</div>
+                    <div class="c-products-cards__slider-item-price">CENA</div>
+
+                </div>
+                    </div>
+                    <div class="c-products-cards__slider-item">
+                    <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_kota.png');"></div>
+                    <div class="c-products-cards__slider-item-content">
+                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                    <div class="c-products-cards__slider-item-name">nazwa</div>
+                    <div class="c-products-cards__slider-item-price">CENA</div>
+
+                </div>
+                    </div>
+                    <div class="c-products-cards__slider-item">
+                    <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_kota.png');"></div>
+                    <div class="c-products-cards__slider-item-content">
+                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                    <div class="c-products-cards__slider-item-name">nazwa</div>
+                    <div class="c-products-cards__slider-item-price">CENA</div>
+
+                </div>
+                    </div>
+                    <div class="c-products-cards__slider-item">
+                    <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_kota.png');"></div>
+                    <div class="c-products-cards__slider-item-content">
+                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                    <div class="c-products-cards__slider-item-name">nazwa</div>
+                    <div class="c-products-cards__slider-item-price">CENA</div>
+
+                </div>
+                    </div>
+                    <div class="c-products-cards__slider-item">
+                    <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_kota.png');"></div>
+                    <div class="c-products-cards__slider-item-content">
+                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                    <div class="c-products-cards__slider-item-name">nazwa</div>
+                    <div class="c-products-cards__slider-item-price">CENA</div>
+
+                </div>
+                    </div>
+                    <div class="c-products-cards__slider-item">
+                    <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_kota.png');"></div>
+                    <div class="c-products-cards__slider-item-content">
+                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                    <div class="c-products-cards__slider-item-name">nazwa</div>
+                    <div class="c-products-cards__slider-item-price">CENA</div>
+
+                </div>
+                    </div>
+                    <div class="c-products-cards__slider-item">
+                    <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_kota.png');"></div>
+                    <div class="c-products-cards__slider-item-content">
+                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                    <div class="c-products-cards__slider-item-name">nazwa</div>
+                    <div class="c-products-cards__slider-item-price">CENA</div>
+
+                </div>
+                    </div>
             </div>
         </div>
     </div>
@@ -391,29 +496,132 @@
             </div>
         </div>
     </div>
-    <!-- footer -->
-    <div class="c-footer">
-        <div class="o-separator--bottom o-separator--top c-footer__separator"></div>
-        <div class="c-footer__wrapper o-wrapper">
-            <div class="c-footer__wrapper-category">
-                <div class="c-footer__wrapper-title"><a href='O_nas.html'>O nas</a></div>
-                <div class="c-footer__wrapper-title-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacus eros, gravida eu scelerisque ut, scelerisque eu ex.</div>
-            </div>
-            <div class="c-footer__wrapper-category">
-                <div class="c-footer__wrapper-title">Kontakt</div>
-                <div class="c-footer__wrapper-title-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacus eros, gravida eu scelerisque ut, scelerisque eu ex. </div>
-            </div>
-            <div class="c-footer__wrapper-category">
-                <div class="c-footer__wrapper-title">Formy płatnosci itp</div>
-                <div class="c-footer__wrapper-title-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacus eros, gravida eu scelerisque ut, scelerisque eu ex. </div>
-            </div>
+<!-- Footer -->
 
-
-        </div>
-
-
+<footer class="text-lg-start bg-light text-muted">
+<div class="o-wrapper">
+  <!-- Section: Social media -->
+  <section
+    class="footer-wrapper"
+  >
+    <!-- Left -->
+    <div class="footer-title">
+      <span>Get connected with us on social networks:</span>
     </div>
+    <!-- Left -->
 
+    <!-- Right -->
+    <div class="footer-symbols">
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="footer-body">
+    <div class="text-left text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="footer-responsive">
+        <div class="footer-col col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="footer-sub__title text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>Company name
+          </h6>
+          <p class="footer__link">
+            Here you can use rows and columns to organize your footer content. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="footer-col  col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="footer-sub__title text-uppercase fw-bold mb-4">
+            Products
+          </h6>
+          <p class="footer__link">
+            <a href="#!" class="text-reset">Angular</a>
+          </p>
+          <p class="footer__link">
+            <a href="#!" class="text-reset">React</a>
+          </p>
+          <p class="footer__link">
+            <a href="#!" class="text-reset">Vue</a>
+          </p>
+          <p class="footer__link">
+            <a href="#!" class="text-reset">Laravel</a>
+          </p>
+        </div>
+</div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="footer-responsive">
+        <div class="footer-col col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="footer-sub__title text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p class="footer__link">
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p class="footer__link">
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+          <p class="footer__link">
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p class="footer__link">
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="footer-col  col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="footer-sub__title text-uppercase fw-bold mb-4">
+            Contact
+          </h6>
+          <p class="footer__link"><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+          <p class="footer__link">
+            <i class="fas fa-envelope me-3"></i>
+            info@example.com
+          </p>
+          <p class="footer__link"><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p class="footer__link"><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+</div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+</div>
+</footer>
+<!-- Footer -->
     <div class="overlay"></div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
