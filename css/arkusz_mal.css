@@ -1,0 +1,35 @@
+.c-input {
+    background: none;
+    border: none;
+    width: 100%;
+    color:white;
+}
+.c-input:focus {
+    outline: none;
+}
+.c-form {
+    width: 20vw;
+    margin: auto;
+    color: white;
+}
+.c-fieldset{
+    width: auto;
+    border-radius: 15px;
+    color: white;
+}
+.c-input-submit{
+    border-style:solid;
+    position: relative;
+    left: 75%;
+    width: 25%;
+    background: none;
+    border-color: yellow;
+    border-radius: 15px;
+    color: yellow;
+    font-weight: bold;
+}
+.c-input-submit:hover{
+    background: yellow;
+    color: #202124;
+    border-color: yellow;
+}
