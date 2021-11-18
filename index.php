@@ -345,8 +345,6 @@
             </div>
         </div>
     </div>
-
-    
     <!-- products cards -->
     <div class="c-products-cards">
 
