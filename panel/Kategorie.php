@@ -1,19 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <?php include 'database.php'; ?>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" />
-    <link rel="stylesheet" href="css/dataTables.bootstrap5.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Panel admin</title>
-</head>
+<?php include_once "header.php"; ?>
 
 <body onload="formreset()">
+    <?php include_once "topBar.php"; ?>
     <!-- top navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
@@ -61,13 +49,13 @@
                         </div>
                     </li>
                     <li>
-                        <a href="index.php" class="nav-link px-3 active">
+                        <a href="index.php" class="nav-link px-3">
                             <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Produkty</span>
                         </a>
                     </li>
                     <li>
-                        <a href="Konta.php" class="nav-link px-3 active">
+                        <a href="Konta.php" class="nav-link px-3">
                             <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Konta</span>
                         </a>
@@ -79,43 +67,43 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link px-3 active">
+                        <a href="#" class="nav-link px-3">
                             <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Produkty</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link px-3 active">
+                        <a href="#" class="nav-link px-3">
                             <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Produkty</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link px-3 active">
+                        <a href="#" class="nav-link px-3">
                             <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Produkty</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link px-3 active">
+                        <a href="#" class="nav-link px-3">
                             <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Produkty</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link px-3 active">
+                        <a href="#" class="nav-link px-3">
                             <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Produkty</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link px-3 active">
+                        <a href="#" class="nav-link px-3">
                             <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Produkty</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link px-3 active">
+                        <a href="#" class="nav-link px-3">
                             <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Produkty</span>
                         </a>
@@ -241,19 +229,5 @@
             </div>
         </div>
     </main>
-    <script src="./js/bootstrap.bundle.min.js">
-    </script>
-    <script>
-        function formreset() {
-            document.getElementById("dod").reset();
-        }
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
-    <script src="./js/jquery-3.5.1.js"></script>
-    <script src="./js/jquery.dataTables.min.js"></script>
-    <script src="./js/dataTables.bootstrap5.min.js"></script>
-    <script src="./js/script.js"></script>
 </body>
-
-</html>
+<?php include_once "footer.php"; ?>

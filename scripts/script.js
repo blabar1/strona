@@ -52,19 +52,19 @@ const initSliderItems = () => {
                 swipeToSlide: true,
                 autoPlay: true,
                 responsive: [{
-                        breakpoint: 1000,
-                        settings: {
-                            slidesToShow: 4,
-                            slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 600,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1
-                        }
+                    breakpoint: 1000,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 1
                     }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                }
                 ]
             });
         });
@@ -116,23 +116,23 @@ const initExtendPhotoProduct = (imgs) => {
     document.querySelector('.js-product-extended-container').style.display = "flex";
 
 };
-$(document).ready(function() {
+$(document).ready(function () {
     $('#smallPhotos img').on({
-        mouseover: function() {
+        mouseover: function () {
             $(this).css({
                 'cursor': 'pointer',
                 'border-Color': '#676767'
             });
         },
-        mouseout: function() {
+        mouseout: function () {
             $(this).css({
                 'cursor': 'default',
                 'border-color': '#cfcfcf'
             });
         },
-        click: function() {
+        click: function () {
             var image = $(this).attr('src');
-            $('.mainImage').fadeOut(500, function() {
+            $('.mainImage').fadeOut(500, function () {
                 $(this).attr('src', image);
             }).fadeIn(500);
         }
@@ -140,3 +140,4 @@ $(document).ready(function() {
 });
 
 var prevScrollpos = window.pageYOffset;
+
