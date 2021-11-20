@@ -22,59 +22,62 @@
     <link rel="stylesheet" href="css/arkusz.css">
     <!-- menu,header-->
     <div class="c-header">
-      
-        <nav class="navbar navbar-inverse" style="border-radius:0px; margin-bottom:0px;">
-        <div class="o-wrapper">
 
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">WebSiteName</a>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                        <li class=""><a href="#">Home</a></li>
-                        <li class="dropdown">
-                            <a class="dropdown" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Page 1-1</a></li>
-                                <li><a href="#">Page 1-2</a></li>
-                                <li><a href="#">Page 1-3</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Page 2</a></li>
-                        <li><a href="#">Page 3</a></li>
-                        <li><div class="input-group">
-    <input type="search" id="form1" class="search-responsive form-control" placeholder="Szukaj"/>
-  <button type="button" class="btn btn-dark">
-    <i class="fas fa-search"></i>
-  </button>
-</div></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    </ul>
+        <nav class="navbar navbar-inverse" style="border-radius:0px; margin-bottom:0px;">
+            <div class="o-wrapper">
+
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">WebSiteName</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class=""><a href="#">Home</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Page 1-1</a></li>
+                                    <li><a href="#">Page 1-2</a></li>
+                                    <li><a href="#">Page 1-3</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Page 2</a></li>
+                            <li><a href="#">Page 3</a></li>
+                            <li>
+                                <div class="input-group">
+                                    <input type="search" id="form1" class="search-responsive form-control" placeholder="Szukaj" />
+                                    <button type="button" class="btn btn-dark">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-</div>
         </nav>
         <!-- menu hidding -->
         <div id="c_menu_list_hidding">
             <div class="o-wrapper__menu__hidding">
                 <div class="c-menu__list ">
-                    
-                <div class="cd-morph-dropdown">
-                    <div class="show">
-                        <a href="#0" class="nav-trigger navbar-toggle" id="not active" style="border: 1px solid #333; border-radius: 4px;">  
-                        <span class="icon-bar" style="background-color:white;"></span>
-                        <span class="icon-bar" style="background-color:white;"></span>
-                        <span class="icon-bar" style="background-color:white;"></span></a></a></div>
-</div>
+
+                    <div class="cd-morph-dropdown">
+                        <div class="show">
+                            <a href="#0" class="nav-trigger navbar-toggle" id="not active" style="border: 1px solid #333; border-radius: 4px;">
+                                <span class="icon-bar" style="background-color:white;"></span>
+                                <span class="icon-bar" style="background-color:white;"></span>
+                                <span class="icon-bar" style="background-color:white;"></span></a></a>
+                        </div>
+                    </div>
                     <header class="cd-morph-dropdown">
 
                         <nav class="main-nav">
@@ -191,16 +194,16 @@
                             </ul>
                         </nav>
                         <!-- dropdown-list -->
-                        
+
                         <div class="o-sideBySide">
                             <div class="morph-dropdown-wrap">
-                                
+
 
                                 <div class="morph-dropdown-wrapper">
-                                <div class="left">
-                                    <a href="#0" class="nav-trigger" id="not active"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a>
+                                    <div class="left">
+                                        <a href="#0" class="nav-trigger" id="not active"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a>
                                     </div>
-                                    
+
                                     <div class="dropdown-list ">
                                         <ul>
                                             <li id="about" class="dropdown gallery">
@@ -349,116 +352,116 @@
     <div class="c-products-cards">
 
         <div class="o-wrapper">
-        <div class="c-products-cards__title">Polecamy:</div>
+            <div class="c-products-cards__title">Polecamy:</div>
             <div class=" c-products-cards__slider js-products-slider">
-            <div class="c-products-cards__slider-item">
-                    <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_kota.png');"></div>
-                    <div class="c-products-cards__slider-item-content">
-                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
-                    <div class="c-products-cards__slider-item-name">nazwa</div>
-                    <div class="c-products-cards__slider-item-price">CENA</div>
-
-                </div>
-                    </div>
-                    <div class="c-products-cards__slider-item">
-                    <div class="c-products-cards__slider-item-image" style="background-image: url('images/myszka2.');"></div>
-                    <div class="c-products-cards__slider-item-content">
-                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
-                    <div class="c-products-cards__slider-item-name">nazwa</div>
-                    <div class="c-products-cards__slider-item-price">CENA</div>
-
-                </div>
-                    </div>
-                    <div class="c-products-cards__slider-item">
-                    <div class="c-products-cards__slider-item-image" style="background-image: url('images/myszka.jpg');"></div>
-                    <div class="c-products-cards__slider-item-content">
-                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
-                    <div class="c-products-cards__slider-item-name">nazwa</div>
-                    <div class="c-products-cards__slider-item-price">CENA</div>
-
-                </div>
-                    </div>
-            <div class="c-products-cards__slider-item">
-                    <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_kota.png');"></div>
-                    <div class="c-products-cards__slider-item-content">
-                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
-                    <div class="c-products-cards__slider-item-name">nazwa</div>
-                    <div class="c-products-cards__slider-item-price">CENA</div>
-
-                </div>
-                    </div>
                 <div class="c-products-cards__slider-item">
                     <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_kota.png');"></div>
                     <div class="c-products-cards__slider-item-content">
-                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
-                    <div class="c-products-cards__slider-item-name">nazwa</div>
-                    <div class="c-products-cards__slider-item-price">CENA</div>
+                        <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                        <div class="c-products-cards__slider-item-name">nazwa</div>
+                        <div class="c-products-cards__slider-item-price">CENA</div>
 
-                </div>
                     </div>
-                    <div class="c-products-cards__slider-item">
+                </div>
+                <div class="c-products-cards__slider-item">
+                    <div class="c-products-cards__slider-item-image" style="background-image: url('images/myszka2.');"></div>
+                    <div class="c-products-cards__slider-item-content">
+                        <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                        <div class="c-products-cards__slider-item-name">nazwa</div>
+                        <div class="c-products-cards__slider-item-price">CENA</div>
+
+                    </div>
+                </div>
+                <div class="c-products-cards__slider-item">
+                    <div class="c-products-cards__slider-item-image" style="background-image: url('images/myszka.jpg');"></div>
+                    <div class="c-products-cards__slider-item-content">
+                        <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                        <div class="c-products-cards__slider-item-name">nazwa</div>
+                        <div class="c-products-cards__slider-item-price">CENA</div>
+
+                    </div>
+                </div>
+                <div class="c-products-cards__slider-item">
                     <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_kota.png');"></div>
                     <div class="c-products-cards__slider-item-content">
-                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
-                    <div class="c-products-cards__slider-item-name">nazwa</div>
-                    <div class="c-products-cards__slider-item-price">CENA</div>
+                        <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                        <div class="c-products-cards__slider-item-name">nazwa</div>
+                        <div class="c-products-cards__slider-item-price">CENA</div>
 
-                </div>
                     </div>
-                    <div class="c-products-cards__slider-item">
+                </div>
+                <div class="c-products-cards__slider-item">
                     <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_kota.png');"></div>
                     <div class="c-products-cards__slider-item-content">
-                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
-                    <div class="c-products-cards__slider-item-name">nazwa</div>
-                    <div class="c-products-cards__slider-item-price">CENA</div>
+                        <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                        <div class="c-products-cards__slider-item-name">nazwa</div>
+                        <div class="c-products-cards__slider-item-price">CENA</div>
 
-                </div>
                     </div>
-                    <div class="c-products-cards__slider-item">
+                </div>
+                <div class="c-products-cards__slider-item">
                     <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_kota.png');"></div>
                     <div class="c-products-cards__slider-item-content">
-                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
-                    <div class="c-products-cards__slider-item-name">nazwa</div>
-                    <div class="c-products-cards__slider-item-price">CENA</div>
+                        <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                        <div class="c-products-cards__slider-item-name">nazwa</div>
+                        <div class="c-products-cards__slider-item-price">CENA</div>
 
-                </div>
                     </div>
-                    <div class="c-products-cards__slider-item">
+                </div>
+                <div class="c-products-cards__slider-item">
                     <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_kota.png');"></div>
                     <div class="c-products-cards__slider-item-content">
-                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
-                    <div class="c-products-cards__slider-item-name">nazwa</div>
-                    <div class="c-products-cards__slider-item-price">CENA</div>
+                        <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                        <div class="c-products-cards__slider-item-name">nazwa</div>
+                        <div class="c-products-cards__slider-item-price">CENA</div>
 
-                </div>
                     </div>
-                    <div class="c-products-cards__slider-item">
+                </div>
+                <div class="c-products-cards__slider-item">
                     <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_kota.png');"></div>
                     <div class="c-products-cards__slider-item-content">
-                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
-                    <div class="c-products-cards__slider-item-name">nazwa</div>
-                    <div class="c-products-cards__slider-item-price">CENA</div>
+                        <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                        <div class="c-products-cards__slider-item-name">nazwa</div>
+                        <div class="c-products-cards__slider-item-price">CENA</div>
 
-                </div>
                     </div>
-                    <div class="c-products-cards__slider-item">
+                </div>
+                <div class="c-products-cards__slider-item">
                     <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_kota.png');"></div>
                     <div class="c-products-cards__slider-item-content">
-                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
-                    <div class="c-products-cards__slider-item-name">nazwa</div>
-                    <div class="c-products-cards__slider-item-price">CENA</div>
+                        <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                        <div class="c-products-cards__slider-item-name">nazwa</div>
+                        <div class="c-products-cards__slider-item-price">CENA</div>
 
-                </div>
                     </div>
-                    <div class="c-products-cards__slider-item">
+                </div>
+                <div class="c-products-cards__slider-item">
                     <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_kota.png');"></div>
                     <div class="c-products-cards__slider-item-content">
-                    <div class="c-products-cards__slider-item-category">KATEGORIA</div>
-                    <div class="c-products-cards__slider-item-name">nazwa</div>
-                    <div class="c-products-cards__slider-item-price">CENA</div>
+                        <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                        <div class="c-products-cards__slider-item-name">nazwa</div>
+                        <div class="c-products-cards__slider-item-price">CENA</div>
 
-                </div>
                     </div>
+                </div>
+                <div class="c-products-cards__slider-item">
+                    <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_kota.png');"></div>
+                    <div class="c-products-cards__slider-item-content">
+                        <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                        <div class="c-products-cards__slider-item-name">nazwa</div>
+                        <div class="c-products-cards__slider-item-price">CENA</div>
+
+                    </div>
+                </div>
+                <div class="c-products-cards__slider-item">
+                    <div class="c-products-cards__slider-item-image" style="background-image: url('images/karma_dla_kota.png');"></div>
+                    <div class="c-products-cards__slider-item-content">
+                        <div class="c-products-cards__slider-item-category">KATEGORIA</div>
+                        <div class="c-products-cards__slider-item-name">nazwa</div>
+                        <div class="c-products-cards__slider-item-price">CENA</div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -494,132 +497,130 @@
             </div>
         </div>
     </div>
-<!-- Footer -->
+    <!-- Footer -->
 
-<footer class="text-lg-start bg-light text-muted">
-<div class="o-wrapper">
-  <!-- Section: Social media -->
-  <section
-    class="footer-wrapper"
-  >
-    <!-- Left -->
-    <div class="footer-title">
-      <span>Get connected with us on social networks:</span>
-    </div>
-    <!-- Left -->
+    <footer class="text-lg-start bg-light text-muted">
+        <div class="o-wrapper">
+            <!-- Section: Social media -->
+            <section class="footer-wrapper">
+                <!-- Left -->
+                <div class="footer-title">
+                    <span>Get connected with us on social networks:</span>
+                </div>
+                <!-- Left -->
 
-    <!-- Right -->
-    <div class="footer-symbols">
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-google"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <!-- Right -->
-  </section>
-  <!-- Section: Social media -->
+                <!-- Right -->
+                <div class="footer-symbols">
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <!-- Right -->
+            </section>
+            <!-- Section: Social media -->
 
-  <!-- Section: Links  -->
-  <section class="footer-body">
-    <div class="text-left text-md-start mt-5">
-      <!-- Grid row -->
-      <div class="row mt-3">
-        <!-- Grid column -->
-        <div class="footer-responsive">
-        <div class="footer-col col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <!-- Content -->
-          <h6 class="footer-sub__title text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3"></i>Company name
-          </h6>
-          <p class="footer__link">
-            Here you can use rows and columns to organize your footer content. Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit.
-          </p>
+            <!-- Section: Links  -->
+            <section class="footer-body">
+                <div class="text-left text-md-start mt-5">
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+                        <!-- Grid column -->
+                        <div class="footer-responsive">
+                            <div class="footer-col col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                                <!-- Content -->
+                                <h6 class="footer-sub__title text-uppercase fw-bold mb-4">
+                                    <i class="fas fa-gem me-3"></i>Company name
+                                </h6>
+                                <p class="footer__link">
+                                    Here you can use rows and columns to organize your footer content. Lorem ipsum
+                                    dolor sit amet, consectetur adipisicing elit.
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="footer-col  col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                                <!-- Links -->
+                                <h6 class="footer-sub__title text-uppercase fw-bold mb-4">
+                                    Products
+                                </h6>
+                                <p class="footer__link">
+                                    <a href="#!" class="text-reset">Angular</a>
+                                </p>
+                                <p class="footer__link">
+                                    <a href="#!" class="text-reset">React</a>
+                                </p>
+                                <p class="footer__link">
+                                    <a href="#!" class="text-reset">Vue</a>
+                                </p>
+                                <p class="footer__link">
+                                    <a href="#!" class="text-reset">Laravel</a>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="footer-responsive">
+                            <div class="footer-col col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                                <!-- Links -->
+                                <h6 class="footer-sub__title text-uppercase fw-bold mb-4">
+                                    Useful links
+                                </h6>
+                                <p class="footer__link">
+                                    <a href="#!" class="text-reset">Pricing</a>
+                                </p>
+                                <p class="footer__link">
+                                    <a href="#!" class="text-reset">Settings</a>
+                                </p>
+                                <p class="footer__link">
+                                    <a href="#!" class="text-reset">Orders</a>
+                                </p>
+                                <p class="footer__link">
+                                    <a href="#!" class="text-reset">Help</a>
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="footer-col  col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                                <!-- Links -->
+                                <h6 class="footer-sub__title text-uppercase fw-bold mb-4">
+                                    Contact
+                                </h6>
+                                <p class="footer__link"><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                                <p class="footer__link">
+                                    <i class="fas fa-envelope me-3"></i>
+                                    info@example.com
+                                </p>
+                                <p class="footer__link"><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                                <p class="footer__link"><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                            </div>
+                            <!-- Grid column -->
+                        </div>
+                    </div>
+                    <!-- Grid row -->
+                </div>
+            </section>
+            <!-- Section: Links  -->
         </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="footer-col  col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="footer-sub__title text-uppercase fw-bold mb-4">
-            Products
-          </h6>
-          <p class="footer__link">
-            <a href="#!" class="text-reset">Angular</a>
-          </p>
-          <p class="footer__link">
-            <a href="#!" class="text-reset">React</a>
-          </p>
-          <p class="footer__link">
-            <a href="#!" class="text-reset">Vue</a>
-          </p>
-          <p class="footer__link">
-            <a href="#!" class="text-reset">Laravel</a>
-          </p>
-        </div>
-</div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="footer-responsive">
-        <div class="footer-col col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="footer-sub__title text-uppercase fw-bold mb-4">
-            Useful links
-          </h6>
-          <p class="footer__link">
-            <a href="#!" class="text-reset">Pricing</a>
-          </p>
-          <p class="footer__link">
-            <a href="#!" class="text-reset">Settings</a>
-          </p>
-          <p class="footer__link">
-            <a href="#!" class="text-reset">Orders</a>
-          </p>
-          <p class="footer__link">
-            <a href="#!" class="text-reset">Help</a>
-          </p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="footer-col  col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <!-- Links -->
-          <h6 class="footer-sub__title text-uppercase fw-bold mb-4">
-            Contact
-          </h6>
-          <p class="footer__link"><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-          <p class="footer__link">
-            <i class="fas fa-envelope me-3"></i>
-            info@example.com
-          </p>
-          <p class="footer__link"><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-          <p class="footer__link"><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-        </div>
-        <!-- Grid column -->
-      </div>
-</div>
-      <!-- Grid row -->
-    </div>
-  </section>
-  <!-- Section: Links  -->
-</div>
-</footer>
-<!-- Footer -->
+    </footer>
+    <!-- Footer -->
     <div class="overlay"></div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
