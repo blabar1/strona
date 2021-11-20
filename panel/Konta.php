@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <?php include 'database.php'; ?>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -61,61 +62,61 @@
                     </li>
                     <li>
                         <a href="index.php" class="nav-link px-3 active">
-                            <span class="me-2"><i class="bi bi-layout-split"></i></span>
+                            <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Produkty</span>
                         </a>
                     </li>
                     <li>
-                        <a href="Pracownicy.php" class="nav-link px-3 active">
-                            <span class="me-2"><i class="bi bi-layout-split"></i></span>
-                            <span>Pracownicy</span>
+                        <a href="Konta.php" class="nav-link px-3 active">
+                            <span class="me-2"><i class="bi bi-table"></i></span>
+                            <span>Konta</span>
                         </a>
                     </li>
                     <li>
                         <a href="Kategorie.php" class="nav-link px-3 active">
-                            <span class="me-2"><i class="bi bi-layout-split"></i></span>
+                            <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Kategorie</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="nav-link px-3 active">
-                            <span class="me-2"><i class="bi bi-layout-split"></i></span>
+                            <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Produkty</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="nav-link px-3 active">
-                            <span class="me-2"><i class="bi bi-layout-split"></i></span>
+                            <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Produkty</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="nav-link px-3 active">
-                            <span class="me-2"><i class="bi bi-layout-split"></i></span>
+                            <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Produkty</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="nav-link px-3 active">
-                            <span class="me-2"><i class="bi bi-layout-split"></i></span>
+                            <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Produkty</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="nav-link px-3 active">
-                            <span class="me-2"><i class="bi bi-layout-split"></i></span>
+                            <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Produkty</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="nav-link px-3 active">
-                            <span class="me-2"><i class="bi bi-layout-split"></i></span>
+                            <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Produkty</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="nav-link px-3 active">
-                            <span class="me-2"><i class="bi bi-layout-split"></i></span>
+                            <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Produkty</span>
                         </a>
                     </li>
@@ -181,7 +182,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <h4>Dashboard</h4>
+                    <h4>Konta</h4>
                 </div>
             </div>
             <div class="row">
