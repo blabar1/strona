@@ -1,8 +1,25 @@
-.c-product-tile {
-    
+html {
+    font-family: "Lato", sans-serif;
+    --primary-color: #222;
+    --orange: #EB5E28;
+    --grey:#403D39;
+    --white:#FFFCF2;
+    --brudas:#CCC5B9;
+    word-wrap: break-word;
 }
-
+.c-product-tile {
+    margin-top: 24px;
+    transition: box-shadow 0.1s ease-in-out;
+    border: solid;
+    border-radius: 12px;
+    border-width: 1px;
+    border-color:var(--white);
+}
+.c-product-tile:hover{
+    box-shadow: 2px 2px 45px -9px rgb(34 34 34);
+}
 .c-product-tile__thumbnail {
+    margin-top:18px;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -11,14 +28,74 @@
     width: 100%;
 }
 
-.c-product-tile__category {
-    
+.c-product-tile__content {
+    text-align: center;
+    padding: 0px 0px 20px 0px;
 }
 
+.c-product-tile__category {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+
 .c-product-tile__name {
-    
+    padding-bottom:10px;
+    font-size: 14px;
 }
 
 .c-product-tile__price {
-    
+    padding-bottom:10px;
+    font-size: 18px;
+}
+.c-product-title__button{
+
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    font-weight: normal;
+    text-decoration: none;
+    -webkit-box-align: center;
+    align-items: center;
+    place-content: center;
+    -webkit-box-pack: center;
+    width: 32px;
+    height: 32px;
+    padding: 0px;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border-radius: 512px;
+    border: 1px solid var(--orange);
+    transition: background-color 0.1s ease-in-out;
+}
+
+.c-product-title__button:hover {
+    background-color: var(--orange);
+}
+
+
+.c-product-tile__button-container{
+    justify-content: end;
+    position: relative;
+    display: flex;
+    margin-right: 0;
+    margin-left: auto;
+    margin-right: 15px;
+}
+.c-product-title__button-svg{
+    fill:var(--orange);
+    filter:none;
+    width: 100%;
+    transition: fill 0.1s ease-in-out;
+    height: 100%;
+}
+.c-product-title__button:hover .c-product-title__button-svg {
+    fill:white;
+}
+.c-product-title__button-span{
+    overflow: hidden;
+    height: 20px;
+    width: 20px;
+    padding: 0px;
+    display: inline-block;
 }

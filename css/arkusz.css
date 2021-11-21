@@ -1,52 +1,40 @@
+
+
 html {
     font-family: "Lato", sans-serif;
-    --primary-color: #cfcfcf;
+    --primary-color: #222;
+    --orange: #EB5E28;
+    --grey:#403D39;
+    --white:#FFFCF2;
+    --brudas:#CCC5B9;
     word-wrap: break-word;
+    margin:0;
 }
-
-body {
-    margin: 0;
-}
-
 
 /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #222222 transparent;
+  }
 
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
 
-/* Firefox */
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
 
-* {
-    scrollbar-width: none;
-    scrollbar-color: #35363a #ffffff;
-}
-
-
-/* Chrome, Edge, and Safari */
-
-*::-webkit-scrollbar {
-    width: 13px;
-}
-
-*::-webkit-scrollbar-track {
-    background: #ffffff;
-}
-
-*::-webkit-scrollbar-thumb {
-    background-color: #35363a;
-    border-radius: 7px;
-    border: 4px solid #ffffff;
-}
+  *::-webkit-scrollbar-thumb {
+    background-color: #222222;
+    border-radius: 14px;
+    border: 3px solid #ffffff;
+  }
 
 ul {
     list-style-type: none;
-}
-
-.o-separator--top,
-o-separator--bottom {
-    position: relative;
-    max-width: 100%;
-    background-image: url("images/ozdoba_drewno.png");
-    background-size: cover;
-    height: 40px;
 }
 
 .o-wrapper {
@@ -55,6 +43,12 @@ o-separator--bottom {
     max-width: 1600px;
     margin-left: auto;
     margin-right: auto;
+}
+.o-title{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top:12px;
+
 }
 
 .o-sideBySide {
@@ -72,10 +66,6 @@ o-separator--bottom {
     .o-sideBySide {
         display: block;
     }
-}
-
-.o-separator--bottom {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
 }
 
 .c-header {

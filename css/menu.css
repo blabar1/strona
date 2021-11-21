@@ -1,4 +1,12 @@
-
+html {
+    font-family: "Lato", sans-serif;
+    --primary-color: #222;
+    --orange: #EB5E28;
+    --grey:#403D39;
+    --white:#FFFCF2;
+    --brudas:#CCC5B9;
+    word-wrap: break-word;
+}
 .nav-trigger {
     font-size: 15px;
 }
@@ -96,13 +104,13 @@
 }
 
 .cd-morph-dropdown .gallery .content a em {
-    font-size: 1.8rem;
+    font-size: 18px;
     padding: .4em 0 .2em;
     color: #1A1A1A;
 }
 
 .cd-morph-dropdown .gallery .content a span {
-    font-size: 1.4rem;
+    font-size: 14px;
     color: #a6a6a6;
 }
 
@@ -134,7 +142,7 @@
 .cd-morph-dropdown .btn {
     display: block;
     margin-left: 14px;
-    font-size: 2.2rem;
+    font-size: 18px;
     line-height: 1.6;
 }
 
@@ -147,7 +155,7 @@
     color: #a6a6a6;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 22px;
     margin: 20px 0 10px 14px;
 }
 
@@ -349,8 +357,9 @@
         width: 390px;
     }
     .cd-morph-dropdown .links-list a {
-        font-size: 1.6rem;
+        font-size: 18px;
         margin-left: 0;
+        color:black;
     }
     .cd-morph-dropdown .btn {
         display: block;
@@ -370,7 +379,7 @@
         color: #FFFFFF;
     }
     .cd-morph-dropdown .content h2 {
-        font-size: 1.8rem;
+        font-size: 20px;
         text-transform: none;
         font-weight: normal;
         color: #1A1A1A;

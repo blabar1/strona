@@ -4043,8 +4043,8 @@ fieldset[disabled] .btn-warning.focus {
 
 .btn-dark {
     color: #fff;
-    background-color: #9d9d9d;
-    border-color: #9d9d9d;
+    background-color: #403D39;
+    border-color: #403D39;
 }
 
 .btn-dark:hover {
@@ -5613,7 +5613,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 
 .navbar-inverse .btn-link {
-    color: #9d9d9d;
+    color: #403D39;
 }
 
 .navbar-inverse .btn-link:hover,

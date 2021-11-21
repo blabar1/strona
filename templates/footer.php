@@ -1,6 +1,6 @@
 <!-- Footer -->
 
-<footer class="text-lg-start bg-light text-muted">
+<footer class="text-lg-start bg-light">
     <div class="o-wrapper">
         <!-- Section: Social media -->
         <section class="footer-wrapper">

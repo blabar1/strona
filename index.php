@@ -5,6 +5,8 @@
     'images' => ['images/slider_item_1.jpg', 'images/slider_item_1.jpg', 'images/slider_item_3.jpg']
 )); ?>
 
+<?php include_once "separator.php"; ?>
+
 <?php get_element("elements/element-featured-products.php"); ?>
 
 
