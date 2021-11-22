@@ -1,41 +1,50 @@
-
-
 html {
     font-family: "Lato", sans-serif;
     --primary-color: #222;
     --orange: #EB5E28;
-    --grey:#403D39;
-    --white:#FFFCF2;
-    --brudas:#CCC5B9;
+    --grey: #403D39;
+    --white: #FFFCF2;
+    --brudas: #CCC5B9;
     word-wrap: break-word;
-    margin:0;
+    margin: 0;
 }
-a, a:hover, a:active, a:visited, a:focus {
-    text-decoration:none;
-    color:#222222;
+
+a,
+a:hover,
+a:active,
+a:visited,
+a:focus {
+    text-decoration: none;
+    color: #222222;
 }
+
 
 /* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
+
+
+/* Firefox */
+
+* {
     scrollbar-width: auto;
     scrollbar-color: #222222 transparent;
-  }
+}
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
+
+/* Chrome, Edge, and Safari */
+
+*::-webkit-scrollbar {
     width: 16px;
-  }
+}
 
-  *::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     background: transparent;
-  }
+}
 
-  *::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background-color: #222222;
     border-radius: 14px;
     border: 3px solid #ffffff;
-  }
+}
 
 ul {
     list-style-type: none;
@@ -48,13 +57,13 @@ ul {
     margin-left: auto;
     margin-right: auto;
 }
-.o-title{
+
+.o-title {
     font-size: 30px;
     font-weight: bold;
-    margin-top:12px;
+    margin-top: 12px;
     padding-bottom: 10px;
     border-bottom: solid 1px var(--orange);
-
 }
 
 .o-sideBySide {

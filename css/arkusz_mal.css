@@ -1,45 +1,65 @@
-
 html {
     font-family: "Lato", sans-serif;
     --primary-color: #222;
     --orange: #EB5E28;
-    --grey:#403D39;
-    --white:#FFFCF2;
-    --brudas:#CCC5B9;
+    --grey: #403D39;
+    --white: #FFFCF2;
+    --brudas: #CCC5B9;
     word-wrap: break-word;
+    margin: 0;
 }
+
+body {
+    background-color: var(--white);
+}
+
 .c-input {
     background: none;
     border: none;
     width: 100%;
-    color:white;
+    color: var(--primary-color);
 }
+
 .c-input:focus {
     outline: none;
 }
+
 .c-form {
     width: 20vw;
     margin: auto;
-    color: white;
+    margin-right: 20px;
+    color: var(--primary-color);
+    float: left;
 }
-.c-fieldset{
+
+.c-fieldset {
     width: auto;
+    border-style: solid;
     border-radius: 15px;
-    color: white;
+    border-color: var(--orange);
 }
-.c-input-submit{
-    border-style:solid;
+
+.c-input-submit {
+    border-style: solid;
     position: relative;
     left: 75%;
     width: 25%;
     background: none;
-    border-color: yellow;
+    border-color: var(--orange);
     border-radius: 15px;
-    color: yellow;
+    color: var(--orange);
     font-weight: bold;
 }
-.c-input-submit:hover{
-    background: yellow;
-    color: #202124;
-    border-color: yellow;
+
+.c-input-submit:hover {
+    background: var(--orange);
+    color: var(--white);
+    border-color: var(--orange);
+}
+
+.c-login {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
