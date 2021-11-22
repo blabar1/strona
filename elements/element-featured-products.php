@@ -6,7 +6,7 @@
         <div class="row">
 
             <div class="col-xl-1 col-lg-2 col-sm-4 col-xs-6">
-                <?php get_element("elements/element-product-tile.php", array(
+                <?php get_element("elements/element-product-tile-button.php", array(
                     'thumbnail' => "images/myszka2.jpg",
                     'category'  => "cos tam",
                     'name'  =>  "mycha",
@@ -15,7 +15,7 @@
 
             </div>
             <div class="col-xl-1 col-lg-2 col-sm-4 col-xs-6">
-                <?php get_element("elements/element-product-tile.php", array(
+                <?php get_element("elements/element-product-tile-button.php", array(
                     'thumbnail' => "images/myszka2.jpg",
                     'category'  => "cos tam",
                     'name'  =>  "mycha",
@@ -24,7 +24,7 @@
 
             </div>
             <div class="col-xl-1 col-lg-2 col-sm-4 col-xs-6">
-                <?php get_element("elements/element-product-tile.php", array(
+                <?php get_element("elements/element-product-tile-button.php", array(
                     'thumbnail' => "images/myszka2.jpg",
                     'category'  => "cos tam",
                     'name'  =>  "mycha",
@@ -33,7 +33,7 @@
 
             </div>
             <div class="col-xl-1 col-lg-2 col-sm-4 col-xs-6">
-                <?php get_element("elements/element-product-tile.php", array(
+                <?php get_element("elements/element-product-tile-button.php", array(
                     'thumbnail' => "images/myszka2.jpg",
                     'category'  => "cos tam",
                     'name'  =>  "mycha",
@@ -43,7 +43,7 @@
             </div>
 
             <div class="col-xl-1 col-lg-2 col-sm-4 col-xs-6">
-                <?php get_element("elements/element-product-tile.php", array(
+                <?php get_element("elements/element-product-tile-button.php", array(
                     'thumbnail' => "images/myszka2.jpg",
                     'category'  => "cos tam",
                     'name'  =>  "mycha",
@@ -52,7 +52,7 @@
 
             </div>
             <div class="col-xl-1 col-lg-2 col-sm-4 col-xs-6">
-                <?php get_element("elements/element-product-tile.php", array(
+                <?php get_element("elements/element-product-tile-button.php", array(
                     'thumbnail' => "images/myszka2.jpg",
                     'category'  => "cos tam",
                     'name'  =>  "mycha",
