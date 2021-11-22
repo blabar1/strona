@@ -1,0 +1,57 @@
+html {
+    font-family: "Lato", sans-serif;
+    --primary-color: #222;
+    --orange: #EB5E28;
+    --grey:#403D39;
+    --white:#FFFCF2;
+    --brudas:#CCC5B9;
+    word-wrap: break-word;
+}
+.c-category-tile {
+    margin-top: 24px;
+    transition: box-shadow 0.1s ease-in-out;
+    border: solid;
+    border-radius: 12px;
+    border-width: 1px;
+    border-color:var(--white);
+    transition: all 500ms ease;
+}
+.c-category-tile:hover{
+    box-shadow: 2px 2px 45px -9px rgb(34 34 34);
+}
+.c-category-tile__thumbnail {
+    margin-top:18px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 8px;
+    padding-bottom: 42%;
+    width: 100%;
+}
+
+.c-category-tile__content {
+    text-align: center;
+    padding: 0px 0px 20px 0px;
+    padding-top: 24px;
+}
+
+.c-category-tile__name {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+.c-category-tile__after-hover{
+    display: block;
+    width:100%;
+    height:100%;
+    transition: all 500ms ease;
+    opacity:0;
+    background-color: var(--orange);
+    position: absolute;
+}
+.c-category-tile__pre-hover:hover .c-category-tile__after-hover{
+    opacity:1;
+}
+.c-category-tile__pre-hover:hover .c-category-tile{
+    background-color: var(--orange);
+}

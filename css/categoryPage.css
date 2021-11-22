@@ -1,0 +1,43 @@
+html {
+    font-family: "Lato", sans-serif;
+    --primary-color: #222;
+    --orange: #EB5E28;
+    --grey:#403D39;
+    --white:#FFFCF2;
+    --brudas:#CCC5B9;
+    word-wrap: break-word;
+    margin:0;
+}
+.c-category{
+    margin-top:24px;
+
+}
+.c-category-list-element{
+    font-size: 18px;
+    line-height: 1.1;
+    padding: 6px;
+    text-decoration: none;
+    -moz-transition: 150ms all ease-in-out;
+    -o-transition: 150ms all ease-in-out;
+    -webkit-transition: 150ms all ease-in-out;
+    transition: 15ms all ease-in-out;
+    -webkit-font-smoothing: subpixel-antialiased;
+    backface-visibility: hidden;
+    outline: none !important;
+    color: var(--primary-color);
+    position: relative;
+}
+.c-category-list-element:hover {
+    color:var(--orange);
+    top:-4px
+}
+
+@media only screen  and (max-width:992px){
+    .c-category-list-text__container{
+        display:none;
+    }
+    
+}
+.c-category-list-text{
+display: flex;
+}

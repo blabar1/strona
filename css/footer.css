@@ -25,8 +25,8 @@ html {
     }
     
     footer {
-        padding-top:34px;
-        margin-top: 50px;
+        padding-top: 24px;
+        margin-top: 84px;
         background-color: var(--orange);
         color: var(--primary-color);
     }
@@ -58,4 +58,7 @@ html {
         .footer-col {
             width: 50%;
         }
+    }
+    a:hover{
+        color:var(--brudas);
     }
