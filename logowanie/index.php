@@ -12,7 +12,7 @@
 <body>
     <div class="c-login">
         <!-- login form-->
-        <div class="c-form col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+        <div class="c-form">
             <h1>Logowanie</h1>
             <form>
                 <fieldset class="c-fieldset">
