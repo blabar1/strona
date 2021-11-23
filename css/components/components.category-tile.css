@@ -15,6 +15,7 @@ html {
     border-width: 1px;
     border-color:var(--white);
     transition: all 500ms ease;
+
 }
 .c-category-tile:hover{
     box-shadow: 2px 2px 45px -9px rgb(34 34 34);
@@ -39,4 +40,49 @@ html {
     font-size: 14px;
     font-weight: bold;
     text-align: center;
+}
+
+.c-category-tile__past-hover{
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    padding: 8px 0px 16px;
+    background: rgb(255, 255, 255);
+    flex-direction: column;
+    opacity:0;
+    z-index: 3;
+    transition: opacity 300ms ease-in-out;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+.c-category-tile:hover .c-category-tile__past-hover{
+    opacity:1;
+}
+
+.c-category-tile__past-hover-list{
+    font-size: 13px;
+    line-height: 1.1;
+    padding: 6px;
+    text-decoration: none;
+    -moz-transition: 150ms all ease-in-out;
+    -o-transition: 150ms all ease-in-out;
+    -webkit-transition: 150ms all ease-in-out;
+    transition: 15ms all ease-in-out;
+    -webkit-font-smoothing: subpixel-antialiased;
+    backface-visibility: hidden;
+    outline: none !important;
+    color: var(--primary-color);
+    position: relative;
+    
+    
+}
+.c-category-tile__past-hover-list:hover {
+    color:var(--orange);
+    top:-4px;
+    border-bottom: solid 2px var(--orange);
+    transition: border-width 50ms linear;
+}
+.c-category-tile__past-list{
+    height:100%;
 }
