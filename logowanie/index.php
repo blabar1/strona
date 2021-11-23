@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/arkusz_mal.css">
+
 </head>
 
 <body>
@@ -13,7 +14,11 @@
         <button class="c-buttons">Logowanie</button>
         <button class="c-buttons">Nowe konto</button>
         <!-- login form-->
+<<<<<<< HEAD
         <div class="c-form c-login">
+=======
+        <div class="c-form col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+>>>>>>> 90746cceb8f95a1b116b6c9f26ac0065eb2eb36a
             <h1>Logowanie</h1>
             <form>
                 <fieldset class="c-fieldset">
