@@ -3,6 +3,7 @@
         <div class="o-title">
             Polecamy:
         </div>
+        <?php include_once "separator.php"; ?>
         <div class="row">
 
             <div class="col-xl-1 col-lg-2 col-sm-4 col-xs-6">

@@ -1,2 +1,2 @@
 <!--separator-->
-<div class="o-wrapper"><span class="o-separator"></span></div>
+<span class="o-separator"></span>
