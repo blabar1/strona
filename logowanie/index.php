@@ -9,9 +9,11 @@
 </head>
 
 <body>
-    <div class="c-login">
+    <div class="c-forms">
+        <button class="c-buttons">Logowanie</button>
+        <button class="c-buttons">Nowe konto</button>
         <!-- login form-->
-        <div class="c-form">
+        <div class="c-form c-login">
             <h1>Logowanie</h1>
             <form>
                 <fieldset class="c-fieldset">
@@ -28,8 +30,8 @@
             </form>
         </div>
 
-        <!-- rejstracja form-->
-        <div class="c-form">
+        <!-- register form-->
+        <div class="c-form c-register">
             <h1>Nie masz konta?</h1>
             <form>
                 <fieldset class="c-fieldset">
@@ -45,6 +47,10 @@
                 <input class="c-input-submit" type="submit" id="zaloguj" name="zaloguj" value="Zaloguj">
             </form>
         </div>
+        <div>
+            <span>Witamy ponownie!</span>
+        </div>
+
     </div>
 </body>
 

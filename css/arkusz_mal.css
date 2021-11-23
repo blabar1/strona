@@ -9,10 +9,6 @@ html {
     margin: 0;
 }
 
-body {
-    background-color: var(--white);
-}
-
 .c-input {
     background: none;
     border: none;
@@ -57,9 +53,29 @@ body {
     border-color: var(--orange);
 }
 
-.c-login {
+.c-forms {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    background-color: var(--white);
+}
+
+.c-login{
+    display: block;
+}
+
+.c-register{
+    visibility: hidden;
+}
+
+.c-buttons{
+    width: 50%;
+    float: left;
+    background: none;
+    border:none;
+    border-bottom: solid 1px var(--orange);
+    color: var(--orange);
+    font-weight: bold;
+    font-size: 15px;
 }
