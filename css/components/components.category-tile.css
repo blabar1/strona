@@ -49,7 +49,7 @@ html {
     background-color: var(--orange);
     position: absolute;
 }
-.c-category-tile__pre-hover:hover .c-category-tile__after-hover{
+.c-category-tile:hover .c-category-tile__after-hover{
     opacity:1;
 }
 .c-category-tile__pre-hover:hover .c-category-tile{

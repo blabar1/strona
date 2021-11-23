@@ -6,12 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/arkusz_mal.css">
+
 </head>
 
 <body>
     <div class="c-login">
         <!-- login form-->
-        <div class="c-form">
+        <div class="c-form col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
             <h1>Logowanie</h1>
             <form>
                 <fieldset class="c-fieldset">
