@@ -48,7 +48,14 @@ CREATE TABLE `produkty` (
   `cena` decimal(10,2) NOT NULL,
   `ilosc` int NOT NULL,
   `opis` TEXT NOT NULL,
+  `miniaturka` varchar(45) NOT NULL,
   `kategoria` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `galeria_zdjec` (
+  `id_zdjecia` int NOT NULL,
+  `plik` varchar(45) NOT NULL,
+  `id_produktu` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -72,6 +79,7 @@ ALTER TABLE koszyk_produkty ADD FOREIGN KEY (koszyk_id_kosz) REFERENCES koszyk(i
 ALTER TABLE koszyk_produkty ADD FOREIGN KEY (id_produktu) REFERENCES produkty(id_produktu);
 ALTER TABLE kategoria ADD FOREIGN KEY (nadkategoria) REFERENCES kategoria(id_kategoria);
 ALTER TABLE produkty ADD FOREIGN KEY (kategoria) REFERENCES kategoria(id_kategoria);
+ALTER TABLE galeria_zdjec ADD FOREIGN KEY (id_produktu) REFERENCES produkty(id_produktu);
 ALTER TABLE zamowienia ADD FOREIGN KEY (id_klienta) REFERENCES dane_kont(id_konta);
 ALTER TABLE zamowione_produkty ADD FOREIGN KEY (id_zamowienia) REFERENCES zamowienia(id_zamowienia);
 ALTER TABLE zamowione_produkty ADD FOREIGN KEY (id_produktu) REFERENCES produkty(id_produktu);
