@@ -50,7 +50,7 @@
 
                     <div class="cd-morph-dropdown">
                         <div class="show">
-                            <a href="#0" class="nav-trigger navbar-toggle" id="not active" style="border: 1px solid #333; border-radius: 4px;">
+                            <a href="#0" class="nav-trigger navbar-toggle" id="not active" style="top:10px; border: 1px solid #333; border-radius: 4px;">
                                 <span class="icon-bar" style="background-color:white;"></span>
                                 <span class="icon-bar" style="background-color:white;"></span>
                                 <span class="icon-bar" style="background-color:white;"></span>
@@ -188,8 +188,6 @@
                                     <div class="dropdown-list ">
                                         <ul>
                                             <li id="about" class="dropdown gallery">
-                                                <a href="#0" class="label">About</a>
-
                                                 <div class="content">
                                                     <ul>
                                                         <li>

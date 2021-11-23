@@ -36,7 +36,6 @@ html {
     white-space: nowrap;
     color: black;
     left: 10px;
-    top: 10px;
 }
 
 .cd-morph-dropdown .main-nav {
@@ -51,6 +50,9 @@ html {
     padding: 1.2em 5%;
     box-shadow: inset 0 1px 0 #e6e6e6;
     background-color: #ffffff;
+}
+.nav-trigger .navbar-toggle{
+    top:5px;
 }
 
 .cd-morph-dropdown.nav-open .morph-dropdown-wrapper {
@@ -465,6 +467,9 @@ html {
         height: 100vh;
         overflow: scroll;
     }
+    .dropdown-list{
+        margin-top:30px;
+    } 
 }
 
 @media only screen and (max-width: 900px) {
