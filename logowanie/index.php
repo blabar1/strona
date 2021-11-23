@@ -6,13 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/arkusz_mal.css">
-
 </head>
 
 <body>
-    <div class="c-login">
+    <div class="c-forms">
+        <button class="c-buttons">Logowanie</button>
+        <button class="c-buttons">Nowe konto</button>
         <!-- login form-->
-        <div class="c-form">
+        <div class="c-form c-login">
             <h1>Logowanie</h1>
             <form>
                 <fieldset class="c-fieldset">
@@ -29,9 +30,9 @@
             </form>
         </div>
 
-        <!-- rejstracja form-->
-        <div class="c-form">
-            <h1>Nie masz konta?</h1>
+        <!-- register form-->
+        <div class="c-form c-register">
+            <h1>Rejestracja</h1>
             <form>
                 <fieldset class="c-fieldset">
                     <legend>&nbsp;E-mail&nbsp;</legend>
@@ -46,6 +47,10 @@
                 <input class="c-input-submit" type="submit" id="zaloguj" name="zaloguj" value="Zaloguj">
             </form>
         </div>
+        <div>
+            <span>Witamy ponownie!</span>
+        </div>
+
     </div>
 </body>
 
