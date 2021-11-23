@@ -40,18 +40,3 @@ html {
     font-weight: bold;
     text-align: center;
 }
-.c-category-tile__after-hover{
-    display: block;
-    width:100%;
-    height:100%;
-    transition: all 500ms ease;
-    opacity:0;
-    background-color: var(--orange);
-    position: absolute;
-}
-.c-category-tile:hover .c-category-tile__after-hover{
-    opacity:1;
-}
-.c-category-tile__pre-hover:hover .c-category-tile{
-    background-color: var(--orange);
-}
