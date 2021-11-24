@@ -7,12 +7,12 @@ CREATE TABLE `dane_logowania` (
   `haslo` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `typy_kont` (
+CREATE TABLE `typy_konta` (
   `id_typ` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nazwa` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `dane_kont` (
+CREATE TABLE `dane_konta` (
   `id_konta` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `imie` varchar(32) NOT NULL,
   `nazwisko` varchar(32) NOT NULL,
@@ -25,13 +25,13 @@ CREATE TABLE `dane_kont` (
 
 CREATE TABLE `koszyk` (
   `id_kosz` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `id_konta` int NOT NULL
+  `konto` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `koszyk_produkty` (
+CREATE TABLE `koszyk_produkt` (
   `id_koszyk_produkty` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `koszyk_id_kosz` int NOT NULL,
-  `id_produktu` int NOT NULL,
+  `kosz` int NOT NULL,
+  `produkt` int NOT NULL,
   `ilosc` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -42,8 +42,8 @@ CREATE TABLE `kategoria` (
   `nadkategoria` int
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `produkty` (
-  `id_produktu` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE `produkt` (
+  `id_produkt` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nazwa` varchar(45) NOT NULL,
   `cena` decimal(10,2) NOT NULL,
   `ilosc` int NOT NULL,
@@ -55,31 +55,44 @@ CREATE TABLE `produkty` (
 CREATE TABLE `galeria_zdjec` (
   `id_zdjecia` int NOT NULL,
   `plik` varchar(45) NOT NULL,
-  `id_produktu` int NOT NULL
+  `produkt` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `wlasciowsc` (
+  `id_wlasciowsc` int NOT NULL,
+  `nazwa` varchar(45) NOT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `zamowienia` (
+CREATE TABLE `produkt_wlasciowsc` (
+  `id_wlasciowsc_produkt` int NOT NULL,
+  `produkt` int NOT NULL,
+  `nazwa_wlasciwosc` int NOT NULL,
+  `wartosc` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `zamowienie` (
   `id_zamowienia` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `id_klienta` int NOT NULL,
+  `klient` int NOT NULL,
   `data` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `zamowione_produkty` (
+CREATE TABLE `zamowienie_produkt` (
   `id_zamowione_produkty` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `id_zamowienia` int NOT NULL,
-  `id_produktu` int NOT NULL,
+  `zamowienie` int NOT NULL,
+  `produkt` int NOT NULL,
   `ilosc` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-ALTER TABLE dane_kont ADD FOREIGN KEY (login) REFERENCES dane_logowania(login);
-ALTER TABLE dane_kont ADD FOREIGN KEY (typ_konta) REFERENCES typy_kont(id_typ);
-ALTER TABLE koszyk ADD FOREIGN KEY (id_konta) REFERENCES dane_kont(id_konta);
-ALTER TABLE koszyk_produkty ADD FOREIGN KEY (koszyk_id_kosz) REFERENCES koszyk(id_kosz);
-ALTER TABLE koszyk_produkty ADD FOREIGN KEY (id_produktu) REFERENCES produkty(id_produktu);
+ALTER TABLE dane_konta ADD FOREIGN KEY (login) REFERENCES dane_logowania(login);
+ALTER TABLE dane_konta ADD FOREIGN KEY (typ_konta) REFERENCES typy_konta(id_typ);
+ALTER TABLE koszyk ADD FOREIGN KEY (konto) REFERENCES dane_konta(id_konta);
+ALTER TABLE koszyk_produkt ADD FOREIGN KEY (kosz) REFERENCES koszyk(id_kosz);
+ALTER TABLE koszyk_produkt ADD FOREIGN KEY (produkt) REFERENCES produkt(id_produkt);
 ALTER TABLE kategoria ADD FOREIGN KEY (nadkategoria) REFERENCES kategoria(id_kategoria);
-ALTER TABLE produkty ADD FOREIGN KEY (kategoria) REFERENCES kategoria(id_kategoria);
-ALTER TABLE galeria_zdjec ADD FOREIGN KEY (id_produktu) REFERENCES produkty(id_produktu);
-ALTER TABLE zamowienia ADD FOREIGN KEY (id_klienta) REFERENCES dane_kont(id_konta);
-ALTER TABLE zamowione_produkty ADD FOREIGN KEY (id_zamowienia) REFERENCES zamowienia(id_zamowienia);
-ALTER TABLE zamowione_produkty ADD FOREIGN KEY (id_produktu) REFERENCES produkty(id_produktu);
+ALTER TABLE produkt ADD FOREIGN KEY (kategoria) REFERENCES kategoria(id_kategoria);
+ALTER TABLE galeria_zdjec ADD FOREIGN KEY (produkt) REFERENCES produkt(id_produkt);
+ALTER TABLE zamowienie ADD FOREIGN KEY (klient) REFERENCES dane_konta(id_konta);
+ALTER TABLE zamowienie_produkt ADD FOREIGN KEY (zamowienie) REFERENCES zamowienie(id_zamowienia);
+ALTER TABLE zamowienie_produkt ADD FOREIGN KEY (produkt) REFERENCES produkt(id_produkt);
+ALTER TABLE produkt_wlasciowsc ADD FOREIGN KEY (nazwa_wlasciowsc) REFERENCES wlasciowsc(id_wlasciowsc);
+ALTER TABLE produkt_wlasciowsc ADD FOREIGN KEY (produkt) REFERENCES produkt(id_produkt);

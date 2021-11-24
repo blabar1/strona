@@ -24,10 +24,10 @@ INSERT INTO `kategoria` (`nazwa`, `miniaturka`, `nadkategoria`) VALUES
 ("Drukarki", "pk10.jpg", 5),
 ("Telewizory", "pk11.jpg", 6),
 ("Głośniki", "pk12.jpg", 6),
-("Inteligentny dom", "pk11.jpg", 7),
-("Zdrowie", "pk12.jpg", 7),
-("Kable", "pk11.jpg", 8),
-("Przejściówki", "pk12.jpg", 8);
+("Inteligentny dom", "pk13.jpg", 7),
+("Zdrowie", "pk14.jpg", 7),
+("Kable", "pk15.jpg", 8),
+("Przejściówki", "pk16.jpg", 8);
 
 INSERT INTO `produkty` (`nazwa`, `cena`, `ilosc`, `opis`, `miniaturka`, `kategoria`) VALUES
 ("Laptop ASUS TUF Dash F15", 5699, 25, "Opis ni ma jeszcze.", "p1.jpg", 9),
