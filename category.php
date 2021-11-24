@@ -8,8 +8,10 @@
 <!--category body-->
 <div class="o-wrapper">
     <div class="o-title">Kategorie</div>
+    <?php include_once "separator.php"; ?>
     <div class="c-category">
         <div class="row">
+            <!--list-->
             <div class="c-category-list-text__container col-xl-3 col-lg-3 col-md-3">
                 <div class="c-category-list-text">
                     <ul>
@@ -57,6 +59,7 @@
 
                 </div>
             </div>
+            <!-- category tiles-->
             <div class="c-category-tiles__container col-xl-9 col-lg-9 col-md-9" style="background-color:white;">
                 <?php get_element("elements/element-category-tile.php", array(
                     'thumbnail' => "images/myszka2.jpg",
@@ -74,6 +77,23 @@
                     'thumbnail' => "images/myszka2.jpg",
                     'category' => "COS"
                 )); ?>
+                <?php get_element("elements/element-category-tile.php", array(
+                    'thumbnail' => "images/myszka2.jpg",
+                    'category' => "COS"
+                )); ?>
+                <?php get_element("elements/element-category-tile.php", array(
+                    'thumbnail' => "images/myszka2.jpg",
+                    'category' => "COS"
+                )); ?>
+                <?php get_element("elements/element-category-tile.php", array(
+                    'thumbnail' => "images/myszka2.jpg",
+                    'category' => "COS"
+                )); ?>
+                <?php get_element("elements/element-category-tile.php", array(
+                    'thumbnail' => "images/myszka2.jpg",
+                    'category' => "COS"
+                )); ?>
+
 
             </div>
         </div>

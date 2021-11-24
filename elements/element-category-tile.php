@@ -54,7 +54,6 @@
         </div>
     </div>
     <div class="c-category-tile__content">
-
         <div class="c-category-tile__name"><?php echo $category; ?></div>
         <div class="c-category-tile__thumbnail" style="background-image: url(<?php echo $thumbnail; ?>);"></div>
     </div>
