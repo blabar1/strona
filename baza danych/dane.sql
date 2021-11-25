@@ -1,4 +1,4 @@
-INSERT INTO `typy_kont` (`nazwa`) VALUES
+INSERT INTO `typ_konta` (`nazwa`) VALUES
 ("uzytkownik"),
 ("pracownik"),
 ("admin");
@@ -29,7 +29,7 @@ INSERT INTO `kategoria` (`nazwa`, `miniaturka`, `nadkategoria`) VALUES
 ("Kable", "pk15.jpg", 8),
 ("Przejściówki", "pk16.jpg", 8);
 
-INSERT INTO `produkty` (`nazwa`, `cena`, `ilosc`, `opis`, `miniaturka`, `kategoria`) VALUES
+INSERT INTO `produkt` (`nazwa`, `cena`, `ilosc`, `opis`, `miniaturka`, `kategoria`) VALUES
 ("Laptop ASUS TUF Dash F15", 5699, 25, "Opis ni ma jeszcze.", "p1.jpg", 9),
 ("Komputer Apple Mac Pro Xeon E5", 15149.99, 40, "Opis ni ma jeszcze.", "p2.jpg", 10),
 ("Nokia 3310", 1000000, 1, "Opis ni ma jeszcze.", "p3.jpg", 11),

@@ -66,7 +66,7 @@ html {
 }
 
 .c-register{
-    visibility: hidden;
+    display: none;
 }
 
 .c-buttons{
