@@ -1,4 +1,7 @@
-    <!-- menu,header-->
+<?php
+    session_start();
+?>
+<!-- menu,header-->
 
     <div class="c-header">
 
@@ -37,7 +40,13 @@
                             </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="../strona/logowanie/"><span class="glyphicon glyphicon-user"></span> Zaloguj się</a></li>
+                            <?php
+                            if(empty($_SESSION['user'])){
+                                print("<li><a href='../strona/logowanie/'><span class='glyphicon glyphicon-user'></span> Zaloguj się</a></li>");
+                            }else{
+                                print("<li><a href='../strona/logowanie/'><span class='glyphicon glyphicon-user'></span>Zalgowany oglolnie jestes</a></li>");
+                            }
+                            ?>
                         </ul>
                     </div>
                 </div>

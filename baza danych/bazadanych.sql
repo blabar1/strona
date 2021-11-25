@@ -3,11 +3,11 @@ create database `sklep`;
 use `sklep`;
 
 CREATE TABLE `dane_logowania` (
-  `login` varchar(45) NOT NULL PRIMARY KEY,
-  `haslo` varchar(45) NOT NULL
+  `mail` varchar(45) NOT NULL PRIMARY KEY,
+  `haslo` varchar(72) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `typy_konta` (
+CREATE TABLE `typ_konta` (
   `id_typ` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nazwa` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -18,9 +18,8 @@ CREATE TABLE `dane_konta` (
   `nazwisko` varchar(32) NOT NULL,
   `adres` varchar(64) DEFAULT NULL,
   `miasto` varchar(45) DEFAULT NULL,
-  `mail` varchar(45) NOT NULL,
-  `typ_konta` int NOT NULL,
-  `login` varchar(45) NOT NULL
+  `konto_typ` int NOT NULL,
+  `mail` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `koszyk` (
@@ -83,8 +82,8 @@ CREATE TABLE `zamowienie_produkt` (
   `ilosc` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-ALTER TABLE dane_konta ADD FOREIGN KEY (login) REFERENCES dane_logowania(login);
-ALTER TABLE dane_konta ADD FOREIGN KEY (typ_konta) REFERENCES typy_konta(id_typ);
+ALTER TABLE dane_konta ADD FOREIGN KEY (mail) REFERENCES dane_logowania(mail);
+ALTER TABLE dane_konta ADD FOREIGN KEY (konto_typ) REFERENCES typ_konta(id_typ);
 ALTER TABLE koszyk ADD FOREIGN KEY (konto) REFERENCES dane_konta(id_konta);
 ALTER TABLE koszyk_produkt ADD FOREIGN KEY (kosz) REFERENCES koszyk(id_kosz);
 ALTER TABLE koszyk_produkt ADD FOREIGN KEY (produkt) REFERENCES produkt(id_produkt);
