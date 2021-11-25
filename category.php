@@ -15,86 +15,33 @@
             <div class="c-category-list-text__container col-xl-3 col-lg-3 col-md-3">
                 <div class="c-category-list-text">
                     <ul>
-                        <li>
+                        <?php
+                        $query = $conn->query("SELECT id_kategoria, nazwa, miniaturka FROM kategoria WHERE nadkategoria is NULL");
+                        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+                        foreach($result as $row){
+                            print('<li>
                             <a href="#0">
-                                <div class="c-category-list-element">Laptopy i komputery</div>
+                            <div class="c-category-list-element">'.$row['nazwa'].'</div>
                             </a>
-                        </li>
-                        <li>
-                            <a href="#0">
-                                <div class="c-category-list-element">Smartfony i smartwatche</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#0">
-                                <div class="c-category-list-element">Gaming i streaming</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#0">
-                                <div class="c-category-list-element">Podzespoły komputerowe</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#0">
-                                <div class="c-category-list-element">Urządzenie peryferyjne</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#0">
-                                <div class="c-category-list-element">TV i audio</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#0">
-                                <div class="c-category-list-element">Smarthome i lifestyle</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#0">
-                                <div class="c-category-list-element">Akcesoria</div>
-                            </a>
-                        </li>
+                            </li>');
+                        }
+                        ?>
                     </ul>
 
                 </div>
             </div>
             <!-- category tiles-->
             <div class="c-category-tiles__container col-xl-9 col-lg-9 col-md-9" style="background-color:white;">
-                <?php get_element("elements/element-category-tile.php", array(
-                    'thumbnail' => "images/myszka2.jpg",
-                    'category' => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora perspiciatis, rerum voluptates fuga odit? Atque officiis veritatis sed laboriosam quidem quibusdam explicabo hic soluta, distinctio perspiciatis laudantium totam eligendi."
-                )); ?>
-                <?php get_element("elements/element-category-tile.php", array(
-                    'thumbnail' => "images/myszka2.jpg",
-                    'category' => "COS"
-                )); ?>
-                <?php get_element("elements/element-category-tile.php", array(
-                    'thumbnail' => "images/myszka2.jpg",
-                    'category' => "COS"
-                )); ?>
-                <?php get_element("elements/element-category-tile.php", array(
-                    'thumbnail' => "images/myszka2.jpg",
-                    'category' => "COS"
-                )); ?>
-                <?php get_element("elements/element-category-tile.php", array(
-                    'thumbnail' => "images/myszka2.jpg",
-                    'category' => "COS"
-                )); ?>
-                <?php get_element("elements/element-category-tile.php", array(
-                    'thumbnail' => "images/myszka2.jpg",
-                    'category' => "COS"
-                )); ?>
-                <?php get_element("elements/element-category-tile.php", array(
-                    'thumbnail' => "images/myszka2.jpg",
-                    'category' => "COS"
-                )); ?>
-                <?php get_element("elements/element-category-tile.php", array(
-                    'thumbnail' => "images/myszka2.jpg",
-                    'category' => "COS"
-                )); ?>
 
-
+                <?php 
+                     foreach($result as $row){
+                        get_element("elements/element-category-tile.php", array(
+                            'thumbnail' => "images/kategorie/".$row['miniaturka'],
+                            'category' => $row['nazwa'],
+                            'id_category' => $row['id_kategoria']
+                        )); 
+                    }
+                    ?>
             </div>
         </div>
 

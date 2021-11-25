@@ -7,7 +7,7 @@
 
 <?php get_element("elements/element-featured-products.php"); ?>
 
-<?php include_once("elements/element-promotion-half.php"); ?>
+<!-- <?php include_once("elements/element-promotion-half.php"); ?> -->
 
 
 <?php get_element("templates/footer.php"); ?>

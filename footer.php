@@ -7,5 +7,4 @@
     <script src="scripts/modernizr-custom.js"></script>
     <script src="scripts/menu.js"></script>
     <script src="scripts/categoryProducts.js"></script>
-
     </html>
