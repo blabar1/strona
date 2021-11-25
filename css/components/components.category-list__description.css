@@ -46,6 +46,7 @@ html {
     margin:0;
     padding: 0;
     padding: 24px 16px;
+    width:100%;
 }
 .c-categoryProducts-list__name-span{
     display: -webkit-box;
@@ -71,10 +72,16 @@ line-height: 16px;
 color: rgb(77, 77, 77);
 font-weight: normal;
 text-decoration: none;
-width: 100%;
 overflow: hidden;
-text-overflow: ellipsis;
 white-space: nowrap;
+
+display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    visibility: visible;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
 }
 .c-categoryProducts-list__price{
     white-space: nowrap;
@@ -90,15 +97,34 @@ white-space: nowrap;
     -webkit-box-align: center;
     align-items: center;
     min-height: 52px;
-    width:30%;
     text-align: right;
 }
 .c-categoryProducts-list__button-container{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+     margin-top: 60%;
+     display: flex;
+     align-items: center;
+     justify-content: flex-end;
 }
 .c-categoryProducts-list__name-container{
     width:100%;
+}
+@media (max-width: 700px){
+    .c-categoryProducts-list__thumbnail{
+
+    }
+}
+@media (max-width: 700px){
+.c-categoryProducts-list__button-container{
+    margin-top:0;
+}
+.c-categoryProducts-list__thumbnail {
+    margin-left:0;
+}
+.c-categoryProducts-list__content{
+    display:block;
+}
+.c-categoryProducts-list__price-container{
+    text-align: left;
+    margin-top:10px;
+}
 }

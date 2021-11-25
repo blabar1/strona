@@ -57,33 +57,8 @@
                 </div>
 
                 <!--Products-->
-                <?php get_element("elements/element-product-list__description.php", array(
-                    'thumbnail' => "images/myszka2.jpg",
-                    'name' => "myszka",
-                    'price' => "999999",
-                    'description1' => "opis1",
-                    'description2' => "opis2",
-                    'description3' => "opis3",
-                    'description4' => "opis4",
-                )); ?>
-                <?php get_element("elements/element-product-list__description.php", array(
-                    'thumbnail' => "images/myszka2.jpg",
-                    'name' => "myszka",
-                    'price' => "999999",
-                    'description1' => "opis1",
-                    'description2' => "opis2",
-                    'description3' => "opis3",
-                    'description4' => "opis4",
-                )); ?>
-                <?php get_element("elements/element-product-list__description.php", array(
-                    'thumbnail' => "images/komputerek.jpg",
-                    'name' => "myszka",
-                    'price' => "999999",
-                    'description1' => "opis1",
-                    'description2' => "opis2",
-                    'description3' => "opis3",
-                    'description4' => "opis4",
-                )); ?>
+
+                <?php include_once("elements/element-categoryProduct.-list.php"); ?>
 
 
             </div>
