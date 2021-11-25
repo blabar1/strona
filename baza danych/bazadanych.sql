@@ -58,13 +58,13 @@ CREATE TABLE `galeria_zdjec` (
   `produkt` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `wlasciowsc` (
-  `id_wlasciowsc` int NOT NULL,
-  `nazwa` varchar(45) NOT NULL,
+CREATE TABLE `wlasciwosc` (
+  `id_wlasciwosc` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `nazwa` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `produkt_wlasciowsc` (
-  `id_wlasciowsc_produkt` int NOT NULL,
+CREATE TABLE `produkt_wlasciwosc` (
+  `id_wlasciwosc_produkt` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `produkt` int NOT NULL,
   `nazwa_wlasciwosc` int NOT NULL,
   `wartosc` varchar(45) NOT NULL
@@ -94,5 +94,5 @@ ALTER TABLE galeria_zdjec ADD FOREIGN KEY (produkt) REFERENCES produkt(id_produk
 ALTER TABLE zamowienie ADD FOREIGN KEY (klient) REFERENCES dane_konta(id_konta);
 ALTER TABLE zamowienie_produkt ADD FOREIGN KEY (zamowienie) REFERENCES zamowienie(id_zamowienia);
 ALTER TABLE zamowienie_produkt ADD FOREIGN KEY (produkt) REFERENCES produkt(id_produkt);
-ALTER TABLE produkt_wlasciowsc ADD FOREIGN KEY (nazwa_wlasciowsc) REFERENCES wlasciowsc(id_wlasciowsc);
-ALTER TABLE produkt_wlasciowsc ADD FOREIGN KEY (produkt) REFERENCES produkt(id_produkt);
+ALTER TABLE produkt_wlasciwosc ADD FOREIGN KEY (nazwa_wlasciwosc) REFERENCES wlasciwosc(id_wlasciwosc);
+ALTER TABLE produkt_wlasciwosc ADD FOREIGN KEY (produkt) REFERENCES produkt(id_produkt);
