@@ -13,6 +13,9 @@ html {
     margin-top:24px;
 
 }
+.c-categoryProduct-filters__container{
+height: 100vh;
+}
 .c-categoryProducts-list-element{
     font-size: 13px;
     line-height: 1.1;
@@ -28,17 +31,100 @@ html {
     color: var(--primary-color);
     position: relative;
 }
-.c-category-list-element:hover {
-    color:var(--orange);
-    top:-4px
-}
 
-@media only screen  and (max-width:992px){
-    .c-categoryProducts-list-text__container{
+
+@media only screen  and (max-width:900px){
+    .c-categoryProduct-filters__container{
         display:none;
     }
     
 }
-.c-category-list-text{
+/*.c-category-list-text{
 display: flex;
+}
+.c-category-list-element:hover {
+    color:var(--orange);
+    top:-4px
+}
+*/
+.c-categoryProducts-changer-container{
+    width:100%;
+
+}
+.c-categoryProducts-changer{
+-webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-left:-16px;
+    margin-right: -16px;
+}
+.c-categoryProducts-changer-container{
+-webkit-box-align: center;
+align-items: center;
+-webkit-box-pack: justify;
+justify-content: space-between;
+margin: 0px -16px;
+}
+
+.c-categoryProducts-changer-buttons-tiles{
+    overflow: hidden;
+    height: 32px;
+    width: 32px;
+    padding: 0px;
+    display: inline-block;
+
+}
+.c-categoryProducts-changer-buttons-list{
+    overflow: hidden;
+    height: 32px;
+    width: 32px;
+    padding: 0px;
+    display: inline-block;
+}
+.button-tiles{border:none;}
+.button-list{border:none;}
+
+button:disabled {
+    color: -internal-light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
+}
+
+.c-categoryProducts-changer{
+    display: flex;
+    margin: auto;
+
+}
+.c-categoryProducts-changer-per-page__select{
+    border-radius:12px;
+    border-color: var(--primary-color);
+    min-width:70px;
+    text-align: left;
+}
+.c-categoryProducts-changer-per-page__select-label{
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(112, 112, 112);
+    font-weight: normal;
+    text-decoration: none;
+    margin-left: 8px;
+}
+.button-tiles:disabled{
+    fill: rgb(77, 77, 77);
+}
+.button-tiles{
+     fill: rgb(204, 204, 204);
+    fill-rule: evenodd;
+}
+.button-list:disabled{
+    fill: rgb(77, 77, 77);
+}
+.button-list{
+     fill: rgb(204, 204, 204);
+    fill-rule: evenodd;
+}
+.button-list:enabled:hover{
+    fill: rgb(133, 132, 132);
+}
+.button-tiles:enabled:hover{
+    fill: rgb(133, 132, 132);
 }

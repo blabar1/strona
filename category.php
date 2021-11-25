@@ -63,7 +63,7 @@
             <div class="c-category-tiles__container col-xl-9 col-lg-9 col-md-9" style="background-color:white;">
                 <?php get_element("elements/element-category-tile.php", array(
                     'thumbnail' => "images/myszka2.jpg",
-                    'category' => "COS"
+                    'category' => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora perspiciatis, rerum voluptates fuga odit? Atque officiis veritatis sed laboriosam quidem quibusdam explicabo hic soluta, distinctio perspiciatis laudantium totam eligendi."
                 )); ?>
                 <?php get_element("elements/element-category-tile.php", array(
                     'thumbnail' => "images/myszka2.jpg",

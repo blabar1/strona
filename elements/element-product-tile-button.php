@@ -3,7 +3,7 @@
     <div class="c-product-tile__content">
         <div class="c-product-tile__category"><?php echo $category; ?></div>
         <div class="c-product-tile__name"><?php echo $name; ?></div>
-        <div class="c-product-tile__price"><?php echo $price; ?></div>
+        <div class="c-product-tile__price"><?php echo ($price . " zł"); ?></div>
         <div class="c-product-tile__button-container">
             <?php get_element("elements/element-basket-button.php", array(
                 'id' => "XD"

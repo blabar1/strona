@@ -16,7 +16,7 @@
                 </div>
                 <div class="modal-body-text">
                     <div class="modal-body-title"><?php echo $name; ?></div>
-                    <div class="modal-body-price"><?php echo $price; ?></div>
+                    <div class="modal-body-price"><?php echo ($price . " zł"); ?></div>
 
                 </div>
             </div>

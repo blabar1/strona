@@ -6,10 +6,12 @@
 @import "components/components.product-tile.css";
 @import "components/components.category-tile.css";
 @import "components/components.category-tile__description.css";
+@import "components/components.category-list__description.css";
 @import "components/components.promotion-half.css";
 @import "footer.css";
 @import "arkusz_mal.css";
 @import "categoryPage.css";
 @import "separator.css";
 @import "categoryProducts.css";
+
 
