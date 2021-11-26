@@ -7,7 +7,7 @@
 
 <!--category body-->
 <div class="o-wrapper">
-    <div class="o-title">Kategorie</div>
+    <div class="o-title">Nazwa sklepu</div>
     <?php include_once "separator.php"; ?>
     <div class="c-category">
         <div class="row">
