@@ -3,28 +3,8 @@
 
 
 <div class="o-wrapper">
-    <div class="c-productPage">
-        <div class="c-productPage-container">
-            <div class="c-productPage-container__gallery-block">
-                <div class="c-productPage-container__gallery-picture ">
+    <!-- gallery-->
 
-
-                </div>
-                <div class="c-productPage-container__gallery-photos">
-
-
-                </div>
-                <div class="c-productPage-container__description-block">
-
-                </div>
-
-
-
-
-
-            </div>
-        </div>
-    </div>
 </div>
 
 
