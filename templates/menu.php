@@ -15,7 +15,7 @@ session_start();
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">WebSiteName</a>
+                    <a class="navbar-brand" href="">TOWAR Z DRUGIEJ REKI NW CO BLAZEJ CHCE</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
@@ -28,14 +28,25 @@ session_start();
                                 <li><a href="#">Page 1-3</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Page 2</a></li>
-                        <li><a href="#">Page 3</a></li>
                         <li>
                             <div class="input-group">
-                                <input type="search" id="form1" class="search-responsive form-control" placeholder="Szukaj" />
-                                <button type="button" class="btn btn-dark">
-                                    <i class="fas fa-search"></i>
-                                </button>
+                                <form>
+                                    <input type="search" id="form1" class="search-responsive form-control" placeholder="Szukaj" />
+                                    <select name="category">
+                                        <option value='0'>Wszystko</option>
+                                        <option value='1'>Laptopy i komputery</option>
+                                        <option value='2'>Smartfony i smartwatche</option>
+                                        <option value='3'>Gaming i streaming</option>
+                                        <option value='4'>Podzespoły komputerowe</option>
+                                        <option value='5'>Urządzenia peryferyjne</option>
+                                        <option value='6'>TV i audio</option>
+                                        <option value='7'>Smarthome i lifestyle</option>
+                                        <option value='8'>Akcesoria</option>
+                                    </select>
+                                    <button type="button" class="btn btn-dark">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </form>
                             </div>
                         </li>
                     </ul>
@@ -44,7 +55,15 @@ session_start();
                         if (empty($_SESSION['user'])) {
                             print("<li><a href='../strona/logowanie/'><span class='glyphicon glyphicon-user'></span> Zaloguj się</a></li>");
                         } else {
-                            print("<li><a href='../strona/logowanie/'><span class='glyphicon glyphicon-user'></span>Zalgowany oglolnie jestes</a></li>");
+
+                            print('<li class="dropdown">
+                            <a class="dropdown" data-toggle="dropdown" href="#">Witaj ponownie ' . $_SESSION['user'] . ' <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Twoje Zamówienia</a></li>
+                                <li><a href="#">Ustawienia konta</a></li>
+                                <li><a href="logout.php">Wyloguj się</a></li>
+                            </ul>
+                        </li>');
                         }
                         ?>
                     </ul>
