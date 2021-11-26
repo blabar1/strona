@@ -12,9 +12,10 @@
                     <ul>
                          <?php
                         $ilosc = sizeof($description);
-                        if(!$ilosc)
-                        for($i = 0; $i<$ilosc;$i++)
+                        if($ilosc)
+                        for($i = 0; $i<$ilosc;$i++){
                             print('<li class="c-categoryProducts-tile__description-element">'.$description[$i].' </li>');
+                        }  
                         ?>
                     </ul>
                 </div>

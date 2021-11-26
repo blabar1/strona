@@ -35,4 +35,4 @@ INSERT INTO `produkt` (`nazwa`, `cena`, `ilosc`, `opis`, `miniaturka`, `kategori
 ("Nokia 3310", 1000000, 1, "Opis ni ma jeszcze.", "p3.jpg", 11),
 ("Zegarek Smartwatch Xiaomi Mi Watch", 249, 32, "Opis ni ma jeszcze.", "p4.jpg", 12),
 ("Elden Ring PC", 249, 100, "Opis ni ma jeszcze.", "p5.jpg", 13),
-("Statyw Quadralite Verso 190", 99.99, 12, "Opis ni ma jeszcze.", "p5.jpg", 14);
+("Statyw Quadralite Verso 190", 99.99, 12, "Opis ni ma jeszcze.", "p6.jpg", 14);

@@ -14,19 +14,15 @@
                             </div>
                             <div class="c-categoryProducts-list__description">
                                 <ul>
-                                    <p class="c-categoryProducts-list__description-span">
-                                        <li class="c-categoryProducts-list__description-element"><?php echo $description1; ?></li>
-                                    </p>
-                                    <p class="c-categoryProducts-list__description-span">
-                                        <li class="c-categoryProducts-list__description-element"><?php echo $description1; ?></li>
-                                    </p>
-                                    <p class="c-categoryProducts-list__description-span">
-                                        <li class="c-categoryProducts-list__description-element"><?php echo $description1; ?></li>
-                                    </p>
-                                    <p class="c-categoryProducts-list__description-span">
-                                        <li class="c-categoryProducts-list__description-element"><?php echo $description1; ?></li>
-                                    </p>
-
+                                    <?php
+                                    $ilosc = sizeof($description);
+                                    if ($ilosc)
+                                        for ($i = 0; $i < $ilosc; $i++) {
+                                            print('<p class="c-categoryProducts-list__description-span">
+                                            <li class="c-categoryProducts-list__description-element">'.$description[$i].' </li>
+                                            </p>');
+                                        }
+                                    ?>
                                 </ul>
                             </div>
                         </div>
@@ -45,7 +41,7 @@
         </div>
     </div>
     <?php get_element("elements/element-basket-button-modal.php", array(
-        'thumbnail' => "images/komputerek.jpg",
-        'name' => "nazwa",
-        'price' => "cena"
+        'thumbnail' => "images/produkty/" . $thumbnail,
+        'name' => $name,
+        'price' => $price
     )); ?>
