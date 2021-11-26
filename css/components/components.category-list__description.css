@@ -68,20 +68,17 @@ html {
 .c-categoryProducts-list__description-element{
 padding-bottom: 4px;
 font-size: 12px;
-line-height: 16px;
+line-height: 17px;
 color: rgb(77, 77, 77);
 font-weight: normal;
 text-decoration: none;
 overflow: hidden;
-white-space: nowrap;
-
 display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     visibility: visible;
-    overflow: hidden;
     text-overflow: ellipsis;
-    width: 100%;
+    width: 300px;
 }
 .c-categoryProducts-list__price{
     white-space: nowrap;

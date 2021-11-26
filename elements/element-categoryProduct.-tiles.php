@@ -1,3 +1,4 @@
+<?php include_once "../functions.php" ?>
   <!-- Product tiles-->
   <div class="c-categoryProducts-tiles__container col-xl-9 col-lg-9 col-md-9" style="background-color:white;">
     <!--tutaj foreachem ilosc kafelek -->

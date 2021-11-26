@@ -14,18 +14,18 @@
                             </div>
                             <div class="c-categoryProducts-list__description">
                                 <ul>
-                                    <span class="c-categoryProducts-list__description-span">
+                                    <p class="c-categoryProducts-list__description-span">
                                         <li class="c-categoryProducts-list__description-element"><?php echo $description1; ?></li>
-                                    </span>
-                                    <span class="c-categoryProducts-list__description-span">
+                                    </p>
+                                    <p class="c-categoryProducts-list__description-span">
                                         <li class="c-categoryProducts-list__description-element"><?php echo $description1; ?></li>
-                                    </span>
-                                    <span class="c-categoryProducts-list__description-span">
+                                    </p>
+                                    <p class="c-categoryProducts-list__description-span">
                                         <li class="c-categoryProducts-list__description-element"><?php echo $description1; ?></li>
-                                    </span>
-                                    <span class="c-categoryProducts-list__description-span">
+                                    </p>
+                                    <p class="c-categoryProducts-list__description-span">
                                         <li class="c-categoryProducts-list__description-element"><?php echo $description1; ?></li>
-                                    </span>
+                                    </p>
 
                                 </ul>
                             </div>

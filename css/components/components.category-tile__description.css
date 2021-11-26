@@ -44,6 +44,8 @@ html {
     margin:0;
     padding: 0;
     position: relative;
+    padding-left:16px;
+    padding-right:16px;
 }
 @media (max-width: 1200px){
     .c-categoryProducts-tile{
@@ -67,6 +69,7 @@ html {
 .c-categoryProducts-tile__inside{
     height:100%;
     padding: 16px 0px 0px;
+
 }
 @media (min-width: 992px){
 .c-categoryProducts-tile__inside{
@@ -114,7 +117,7 @@ white-space: nowrap;
 }
 .c-categoryProducts-tile__button-container{
    position: absolute;
-   right: 16px;
+   right: 36px;
 
 }
 .c-categoryProducts-tile__contet{  
