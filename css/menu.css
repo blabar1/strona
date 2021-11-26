@@ -371,13 +371,10 @@ html {
         margin-left: 0;
         color:var(--grey);
         display: -webkit-box;
-    -webkit-line-clamp: 1;
-    word-break: break-all;
-    -webkit-box-orient: vertical;
-    visibility: visible;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 100%;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+         width: 290px;
     }
 
 
@@ -404,6 +401,7 @@ html {
             font-size: 24px;
     color: #1A1A1A;
         margin: 0 0 .6em;
+        width:290px;
     }
     .cd-morph-dropdown .bg-layer {
         /* morph dropdown background */
@@ -786,6 +784,7 @@ a.label:hover{
 .cd-morph-dropdown .content h2:hover{
     color:var(--orange);
 }
+
 
 /*
 .o-hamburger.is-active {

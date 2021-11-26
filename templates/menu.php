@@ -346,6 +346,8 @@ session_start();
                                                 </ul>
                                             </div>
                                         </li>
+                                        </li>
+                                        </li>
                                         <li id="6" class="dropdown links">
                                             <a href="#0" class="label">TV i audio</a>
                                             <div class="content">
@@ -372,6 +374,8 @@ session_start();
                                                 </ul>
                                             </div>
                                         </li>
+                                        </li>
+                                        <li>
                                         <li id="7" class="dropdown links">
                                             <a href="#0" class="label">Smarthome i lifestyle</a>
                                             <div class="content">
