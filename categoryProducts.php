@@ -1,4 +1,5 @@
-<?php include_once "header.php"; ?>
+<?php 
+include_once "header.php"; ?>
 <?php include_once "templates/menu.php"; ?>
 
 <?php get_element("elements/element-banner-slider.php", array(
@@ -60,7 +61,8 @@
                 <div id="category-products">
                     <?php 
                    error_reporting(E_ALL ^ E_WARNING); 
-                    include_once("elements/element-categoryProduct.-tiles.php") ?> 
+                   include_once "elements/element-categoryProduct.-tiles.php"?>
+
                 
                     <div>
 
