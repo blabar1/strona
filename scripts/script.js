@@ -13,34 +13,6 @@ const initSlider = () => {
 };
 initSlider();
 
-const initTextOptions = () => {
-    const textOptions = document.querySelectorAll(".js-text-options");
-
-    if (textOptions.length > 0) {
-        textOptions.forEach(textOption => {
-            var menuItems = textOption.querySelectorAll(".js-text-options-menu-item");
-            var textItems = textOption.querySelectorAll(".js-text-options-item");
-
-            menuItems.forEach(menuItem => {
-                var target = menuItem.dataset.target;
-                var targetItem = textOption.querySelector(".js-text-options-item[data-id='" + target + "'");
-
-                menuItem.addEventListener("click", () => {
-                    textItems.forEach(el => {
-                        el.classList.remove("is-open");
-                    });
-                    menuItems.forEach(el => {
-                        el.classList.remove("is-open");
-                    });
-                    targetItem.classList.add("is-open");
-                    menuItem.classList.add("is-open");
-                });
-            });
-        });
-    }
-};
-initTextOptions();
-
 const initSliderItems = () => {
     const sliders = document.querySelectorAll(".js-products-slider");
 

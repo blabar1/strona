@@ -89,7 +89,7 @@ session_start();
 
                     <nav class="main-nav">
                         <ul>
-                            <li class="has-dropdown gallery" data-content="about">
+                            <li class="has-dropdown links" data-content="1">
                                 <a href="#0">
                                     <div class="svg-photo-wrap">
                                         <div class="svg-photo">
@@ -105,7 +105,7 @@ session_start();
                                 </a>
                             </li>
 
-                            <li class="has-dropdown links" data-content="pricing">
+                            <li class="has-dropdown links" data-content="2">
                                 <a href="#0">
                                     <div class="svg-photo-wrap">
                                         <div class="svg-photo">
@@ -122,7 +122,7 @@ session_start();
                                     </div>
                                 </a>
                             </li>
-                            <li class="has-dropdown links" data-content="pricing">
+                            <li class="has-dropdown links" data-content="3">
                                 <a href="#0">
                                     <div class="svg-photo-wrap">
                                         <div class="svg-photo"><svg class="svg-menu" style="width: 100%;height: 100%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -136,7 +136,7 @@ session_start();
                                 </a>
                             </li>
 
-                            <li class="has-dropdown button" data-content="contact">
+                            <li class="has-dropdown button" data-content="4">
                                 <a href="#0">
                                     <div class="svg-photo-wrap">
                                         <div class="svg-photo"><svg class="svg-menu" style="width: 100%;height: 100%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -149,7 +149,7 @@ session_start();
                                     </div>
                                 </a>
                             </li>
-                            <li class="has-dropdown gallery" data-content="about">
+                            <li class="has-dropdown gallery" data-content="5">
                                 <a href="#0">
                                     <div class="svg-photo-wrap">
                                         <div class="svg-photo"><svg class="svg-menu" style="width: 100%;height: 100%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -162,7 +162,7 @@ session_start();
                                     </div>
                                 </a>
                             </li>
-                            <li class="has-dropdown gallery" data-content="about">
+                            <li class="has-dropdown gallery" data-content="6">
                                 <a href="#0">
                                     <div class="svg-photo-wrap">
                                         <div class="svg-photo"><svg class="svg-menu" style="width: 100%;height: 100%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -175,7 +175,7 @@ session_start();
                                     </div>
                                 </a>
                             </li>
-                            <li class="has-dropdown gallery" data-content="about">
+                            <li class="has-dropdown gallery" data-content="7">
                                 <a href="#0">
                                     <div class="svg-photo-wrap">
                                         <div class="svg-photo"><svg class="svg-menu" style="width: 100%;height: 100%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -188,7 +188,7 @@ session_start();
                                     </div>
                                 </a>
                             </li>
-                            <li class="has-dropdown gallery" data-content="about">
+                            <li class="has-dropdown gallery" data-content="8">
                                 <a href="#0">
                                     <div class="svg-photo-wrap">
                                         <div class="svg-photo"><svg class="svg-menu" style="width: 100%;height: 100%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -215,111 +215,216 @@ session_start();
 
                                 <div class="dropdown-list ">
                                     <ul>
-                                        <li id="about" class="dropdown gallery">
+                                        <li id="1" class="dropdown links">
+                                            <a href="#0" class="label">Laptopy i komputery</a>
                                             <div class="content">
                                                 <ul>
                                                     <li>
                                                         <a href="#0">
-                                                            <em>Title here</em>
-                                                            <span>A brief description here</span>
+                                                            <h2>Laptopy i komputery</h2>
                                                         </a>
-                                                    </li>
 
-                                                    <li>
-                                                        <a href="#0">
-                                                            <em>Title here</em>
-                                                            <span>A brief description here</span>
-                                                        </a>
-                                                    </li>
 
-                                                    <li>
-                                                        <a href="#0">
-                                                            <em>Title here</em>
-                                                            <span>A brief description here</span>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#0">
-                                                            <em>Title here</em>
-                                                            <span>A brief description here</span>
-                                                        </a>
+                                                        <ul class="links-list">
+                                                            <li class="links-list-element"><a href="#0">Logo Design</a></li>
+                                                            <li class="links-list-element"><a href="#0">Branding</a></li>
+                                                            <li class="links-list-element"><a href="#0">Web Design</a></li>
+                                                            <li class="links-list-element"><a href="#0">iOS</a></li>
+                                                            <li class="links-list-element"><a href="#0">Android</a></li>
+                                                            <li class="links-list-element"><a href="#0">HTML/CSS/JS</a></li>
+                                                            <li class="links-list-element"><a href="#0">Packaging</a></li>
+                                                            <li class="links-list-element"><a href="#0">Mobile</a></li>
+                                                            <li class="links-list-element"><a href="#0">UI/UX</a></li>
+                                                            <li class="links-list-element"><a href="#0">Prototyping</a></li>
+                                                        </ul>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
-
-                                        <li id="pricing" class="dropdown links">
-                                            <a href="#0" class="label">Pricing</a>
-
+                                        <li id="2" class="dropdown links">
+                                            <a href="#0" class="label">Smartfony i smartwatche</a>
                                             <div class="content">
                                                 <ul>
                                                     <li>
-                                                        <h2>Services</h2>
+                                                        <a href="#0">
+                                                            <h2>Smartfony i smartwatche</h2>
+                                                        </a>
+
 
                                                         <ul class="links-list">
-                                                            <li><a href="#0">Logo Design</a></li>
-                                                            <li><a href="#0">Branding</a></li>
-                                                            <li><a href="#0">Web Design</a></li>
-                                                            <li><a href="#0">iOS</a></li>
-                                                            <li><a href="#0">Android</a></li>
-                                                            <li><a href="#0">HTML/CSS/JS</a></li>
-                                                            <li><a href="#0">Packaging</a></li>
-                                                            <li><a href="#0">Mobile</a></li>
-                                                            <li><a href="#0">UI/UX</a></li>
-                                                            <li><a href="#0">Prototyping</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                    <li>
-                                                        <h2>Services</h2>
-
-                                                        <ul class="links-list">
-                                                            <li><a href="#0">Logo Design</a></li>
-                                                            <li><a href="#0">Branding</a></li>
-                                                            <li><a href="#0">Web Design</a></li>
-                                                            <li><a href="#0">iOS</a></li>
-                                                            <li><a href="#0">Android</a></li>
-                                                            <li><a href="#0">HTML/CSS/JS</a></li>
-                                                            <li><a href="#0">Packaging</a></li>
-                                                            <li><a href="#0">Mobile</a></li>
-                                                            <li><a href="#0">UI/UX</a></li>
-                                                            <li><a href="#0">Prototyping</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-
-                                                    <li>
-
-                                                    <li>
-                                                        <h2>Projects</h2>
-
-                                                        <ul class="links-list">
-                                                            <li><a href="#0">Logo Design</a></li>
-                                                            <li><a href="#0">Branding</a></li>
-                                                            <li><a href="#0">Web Design</a></li>
-                                                            <li><a href="#0">iOS</a></li>
-                                                            <li><a href="#0">Android</a></li>
-                                                            <li><a href="#0">HTML/CSS/JS</a></li>
+                                                            <li class="links-list-element"><a href="#0">Logo Design</a></li>
+                                                            <li class="links-list-element"><a href="#0">Branding</a></li>
+                                                            <li class="links-list-element"><a href="#0">Web Design</a></li>
+                                                            <li class="links-list-element"><a href="#0">iOS</a></li>
+                                                            <li class="links-list-element"><a href="#0">Android</a></li>
+                                                            <li class="links-list-element"><a href="#0">HTML/CSS/JS</a></li>
+                                                            <li class="links-list-element"><a href="#0">Packaging</a></li>
+                                                            <li class="links-list-element"><a href="#0">Mobile</a></li>
+                                                            <li class="links-list-element"><a href="#0">UI/UX</a></li>
+                                                            <li class="links-list-element"><a href="#0">Prototyping</a></li>
                                                         </ul>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
 
-                                        <li id="contact" class="dropdown button">
-                                            <a href="#0" class="label">Contact</a>
-
+                                        <li id="3" class="dropdown links">
+                                            <a href="#0" class="label">Gaming i streaming</a>
                                             <div class="content">
-                                                <ul class="links-list">
-                                                    <li><a href="#0">Link #1</a></li>
-                                                    <li><a href="#0">Link #2</a></li>
-                                                    <li><a href="#0">Link #3</a></li>
-                                                    <li><a href="#0">Link #4</a></li>
-                                                    <li><a href="#0">Link #5</a></li>
-                                                    <li><a href="#0">Link #6</a></li>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#0">
+                                                            <h2>Gaming i streaming</h2>
+                                                        </a>
+
+
+                                                        <ul class="links-list">
+                                                            <li class="links-list-element"><a href="#0">Logo Design</a></li>
+                                                            <li class="links-list-element"><a href="#0">Branding</a></li>
+                                                            <li class="links-list-element"><a href="#0">Web Design</a></li>
+                                                            <li class="links-list-element"><a href="#0">iOS</a></li>
+                                                            <li class="links-list-element"><a href="#0">Android</a></li>
+                                                            <li class="links-list-element"><a href="#0">HTML/CSS/JS</a></li>
+                                                            <li class="links-list-element"><a href="#0">Packaging</a></li>
+                                                            <li class="links-list-element"><a href="#0">Mobile</a></li>
+                                                            <li class="links-list-element"><a href="#0">UI/UX</a></li>
+                                                            <li class="links-list-element"><a href="#0">Prototyping</a></li>
+                                                        </ul>
+                                                    </li>
                                                 </ul>
-                                                <a href="#0" class="btn">Get in Touch</a>
+                                            </div>
+                                        </li>
+                                        <li id="4" class="dropdown links">
+                                            <a href="#0" class="label">Podzespoły komputerowe</a>
+                                            <div class="content">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#0">
+                                                            <h2>Podzespoły komputerowe</h2>
+                                                        </a>
+
+
+                                                        <ul class="links-list">
+                                                            <li class="links-list-element"><a href="#0">Logo Design</a></li>
+                                                            <li class="links-list-element"><a href="#0">Branding</a></li>
+                                                            <li class="links-list-element"><a href="#0">Web Design</a></li>
+                                                            <li class="links-list-element"><a href="#0">iOS</a></li>
+                                                            <li class="links-list-element"><a href="#0">Android</a></li>
+                                                            <li class="links-list-element"><a href="#0">HTML/CSS/JS</a></li>
+                                                            <li class="links-list-element"><a href="#0">Packaging</a></li>
+                                                            <li class="links-list-element"><a href="#0">Mobile</a></li>
+                                                            <li class="links-list-element"><a href="#0">UI/UX</a></li>
+                                                            <li class="links-list-element"><a href="#0">Prototyping</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="5" class="dropdown links">
+                                            <a href="#0" class="label">Urządzenie peryferyjne</a>
+                                            <div class="content">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#0">
+                                                            <h2>Urządzenie peryferyjne</h2>
+                                                        </a>
+
+
+                                                        <ul class="links-list">
+                                                            <li class="links-list-element"><a href="#0">Logo Design</a></li>
+                                                            <li class="links-list-element"><a href="#0">Branding</a></li>
+                                                            <li class="links-list-element"><a href="#0">Web Design</a></li>
+                                                            <li class="links-list-element"><a href="#0">iOS</a></li>
+                                                            <li class="links-list-element"><a href="#0">Android</a></li>
+                                                            <li class="links-list-element"><a href="#0">HTML/CSS/JS</a></li>
+                                                            <li class="links-list-element"><a href="#0">Packaging</a></li>
+                                                            <li class="links-list-element"><a href="#0">Mobile</a></li>
+                                                            <li class="links-list-element"><a href="#0">UI/UX</a></li>
+                                                            <li class="links-list-element"><a href="#0">Prototyping</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        </li>
+                                        </li>
+                                        <li id="6" class="dropdown links">
+                                            <a href="#0" class="label">TV i audio</a>
+                                            <div class="content">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#0">
+                                                            <h2>TV i audio</h2>
+                                                        </a>
+
+
+                                                        <ul class="links-list">
+                                                            <li class="links-list-element"><a href="#0">Logo Design</a></li>
+                                                            <li class="links-list-element"><a href="#0">Branding</a></li>
+                                                            <li class="links-list-element"><a href="#0">Web Design</a></li>
+                                                            <li class="links-list-element"><a href="#0">iOS</a></li>
+                                                            <li class="links-list-element"><a href="#0">Android</a></li>
+                                                            <li class="links-list-element"><a href="#0">HTML/CSS/JS</a></li>
+                                                            <li class="links-list-element"><a href="#0">Packaging</a></li>
+                                                            <li class="links-list-element"><a href="#0">Mobile</a></li>
+                                                            <li class="links-list-element"><a href="#0">UI/UX</a></li>
+                                                            <li class="links-list-element"> <a href="#0">Prototyping</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        </li>
+                                        <li>
+                                        <li id="7" class="dropdown links">
+                                            <a href="#0" class="label">Smarthome i lifestyle</a>
+                                            <div class="content">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#0">
+                                                            <h2>Smarthome i lifestyle</h2>
+                                                        </a>
+
+
+                                                        <ul class="links-list">
+                                                            <li class="links-list-element"><a href="#0">Logo Design</a></li>
+                                                            <li class="links-list-element"><a href="#0">Branding</a></li>
+                                                            <li class="links-list-element"><a href="#0">Web Design</a></li>
+                                                            <li class="links-list-element"><a href="#0">iOS</a></li>
+                                                            <li class="links-list-element"><a href="#0">Android</a></li>
+                                                            <li class="links-list-element"><a href="#0">HTML/CSS/JS</a></li>
+                                                            <li class="links-list-element"><a href="#0">Packaging</a></li>
+                                                            <li class="links-list-element"><a href="#0">Mobile</a></li>
+                                                            <li class="links-list-element"><a href="#0">UI/UX</a></li>
+                                                            <li class="links-list-element"><a href="#0">Prototyping</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="8" class="dropdown links">
+                                            <a href="#0" class="label">Akcesoria</a>
+                                            <div class="content">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#0">
+                                                            <h2>Akcesoria</h2>
+                                                        </a>
+
+                                                        <ul class="links-list">
+                                                            <li class="links-list-element"><a href="#0">Logo Design</a></li>
+                                                            <li class="links-list-element"><a href="#0">Branding</a></li>
+                                                            <li class="links-list-element"><a href="#0">Web Design</a></li>
+                                                            <li class="links-list-element"><a href="#0">iOS</a></li>
+                                                            <li class="links-list-element"><a href="#0">Android</a></li>
+                                                            <li class="links-list-element"><a href="#0">HTML/CSS/JS</a></li>
+                                                            <li class="links-list-element"><a href="#0">Packaging</a></li>
+                                                            <li class="links-list-element"><a href="#0">Mobile</a></li>
+                                                            <li class="links-list-element"><a href="#0">UI/UX</a></li>
+                                                            <li class="links-list-element"><a href="#0">Prototyping</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </li>
                                     </ul>
