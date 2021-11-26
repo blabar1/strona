@@ -70,7 +70,7 @@ session_start();
 
                     <nav class="main-nav">
                         <ul>
-                            <li class="has-dropdown gallery" data-content="about">
+                            <li class="has-dropdown gallery" data-content="Laptopy i komputery">
                                 <a href="#0">
                                     <div class="svg-photo-wrap">
                                         <div class="svg-photo">
@@ -229,8 +229,7 @@ session_start();
                                                 </ul>
                                             </div>
                                         </li>
-
-                                        <li id="pricing" class="dropdown links">
+                                        <li id="Laptopy i komputery" class="dropdown links">
                                             <a href="#0" class="label">Pricing</a>
 
                                             <div class="content">
@@ -256,7 +255,65 @@ session_start();
                                                         <h2>Services</h2>
 
                                                         <ul class="links-list">
+                                                            <li><a href="#0">LogoDesign</a></li>
+                                                            <li><a href="#0">Branding</a></li>
+                                                            <li><a href="#0">Web Design</a></li>
+                                                            <li><a href="#0">iOS</a></li>
+                                                            <li><a href="#0">Android</a></li>
+                                                            <li><a href="#0">HTML/CSS/JS</a></li>
+                                                            <li><a href="#0">Packaging</a></li>
+                                                            <li><a href="#0">Mobile</a></li>
+                                                            <li><a href="#0">UI/UX</a></li>
+                                                            <li><a href="#0">Prototyping</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+
+                                                    <li>
+
+                                                    <li>
+                                                        <h2>Projects</h2>
+
+                                                        <ul class="links-list">
                                                             <li><a href="#0">Logo Design</a></li>
+                                                            <li><a href="#0">Branding</a></li>
+                                                            <li><a href="#0">Web Design</a></li>
+                                                            <li><a href="#0">iOS</a></li>
+                                                            <li><a href="#0">Android</a></li>
+                                                            <li><a href="#0">HTML/CSS/JS</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+
+                                        <li id="pricing" class="dropdown links">
+                                            <a href="#0" class="label">Pricing</a>
+
+                                            <div class="content">
+                                                <ul>
+                                                    <li>
+                                                        <h2>Services</h2>
+
+                                                        <ul class="links-list">
+                                                            <li><a href="#0">Logo Design</a></li>
+                                                            <li><a href="#0">Branding</a></li>
+                                                            <li><a href="#0">Web Design</a></li>
+                                                            <li><a href="#0">iOS</a></li>
+                                                            <li><a href="#0">Android</a></li>
+                                                            <li><a href="#0">HTML/CSS/JS</a></li>
+                                                            <li><a href="#0">Packaging</a></li>
+                                                            <li><a href="#0">Mobile</a></li>
+                                                            <li><a href="#0">UI/UX</a></li>
+                                                            <li><a href="#0">Prototyping</a></li>
+                                                        </ul>
+                                                     </li>
+                                                    <li>
+                                                    <li>
+                                                        <h2>Services</h2>
+
+                                                        <ul class="links-list">
+                                                            <li><a href="#0">LogoDesign</a></li>
                                                             <li><a href="#0">Branding</a></li>
                                                             <li><a href="#0">Web Design</a></li>
                                                             <li><a href="#0">iOS</a></li>
