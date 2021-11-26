@@ -58,10 +58,10 @@
 
                 <!--Products-->
                 <div id="category-products">
-                    <?php 
-                   error_reporting(E_ALL ^ E_WARNING); 
-                    include_once("elements/element-categoryProduct.-tiles.php") ?> 
-                
+                    <?php
+                    error_reporting(E_ALL ^ E_WARNING);
+                    include_once("elements/element-categoryProduct.-tiles.php") ?>
+
                     <div>
 
                     </div>
@@ -70,6 +70,6 @@
         </div>
     </div>
 </div>
-    <?php get_element("templates/footer.php"); ?>
+<?php get_element("templates/footer.php"); ?>
 
 <?php include_once "footer.php"; ?>

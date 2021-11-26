@@ -66,7 +66,7 @@ html {
 
 .cd-morph-dropdown .label {
     display: block;
-    font-size: 2.2rem;
+    font-size: 24px;
     color: #1A1A1A;
     margin-bottom: .8em;
 }
@@ -146,6 +146,13 @@ html {
     margin-left: 14px;
     font-size: 18px;
     line-height: 1.6;
+}
+.cd-morph-dropdown .links-list a{
+    color:var(--primary-color);
+
+}
+.cd-morph-dropdown .links-list a:hover{
+    color:var(--orange);
 }
 
 .cd-morph-dropdown .links-list a:hover,
@@ -321,6 +328,7 @@ html {
         /* hide the label on bigger devices */
         display: none;
     }
+
     .cd-morph-dropdown .content {
         padding: 2.2em 1.8em;
         -webkit-transition: -webkit-transform .3s;
@@ -361,8 +369,18 @@ html {
     .cd-morph-dropdown .links-list a {
         font-size: 18px;
         margin-left: 0;
-        color:black;
+        color:var(--grey);
+        display: -webkit-box;
+    -webkit-line-clamp: 1;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    visibility: visible;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
     }
+
+
     .cd-morph-dropdown .btn {
         display: block;
         width: 100%;
@@ -383,8 +401,8 @@ html {
     .cd-morph-dropdown .content h2 {
         font-size: 20px;
         text-transform: none;
-        font-weight: normal;
-        color: #1A1A1A;
+            font-size: 24px;
+    color: #1A1A1A;
         margin: 0 0 .6em;
     }
     .cd-morph-dropdown .bg-layer {
@@ -440,6 +458,12 @@ html {
     .svg-photo {
         display: none;
     }
+
+}
+@media only screen and (max-width: 900px) {
+.cd-morph-dropdown .content h2{
+    display: none;
+} 
 }
 
 .svg-photo {
@@ -753,7 +777,15 @@ html {
         width: 170px;
     }
 }
-
+a.label:hover{
+    color:var(--orange);
+}
+.cd-morph-dropdown .links-list a:hover{
+    color:var(--orange);
+}
+.cd-morph-dropdown .content h2:hover{
+    color:var(--orange);
+}
 
 /*
 .o-hamburger.is-active {
