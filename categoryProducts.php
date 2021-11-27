@@ -73,8 +73,13 @@ include_once "header.php"; ?>
                 <div id="category-products">
                     <?php
                     error_reporting(E_ALL ^ E_WARNING);
+                    if(isset($_COOKIE['widok'])){
+                        if($_COOKIE['widok']=='tiles')
+                        include_once "elements/element-categoryProduct.-tiles.php";
+                        else
+                        include_once "elements/element-categoryProduct.-list.php";
+                    }else
                     include_once "elements/element-categoryProduct.-tiles.php"  ?>
-
                     <div>
 
                     </div>
