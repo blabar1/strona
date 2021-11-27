@@ -31,7 +31,7 @@ session_start();
                         <li>
                             <div class="input-group">
                                 <form action="categoryProducts.php" method="GET">
-                                    <input type="search" name="search" id="form1" class="search-responsive form-control" placeholder="Szukaj" required>
+                                    <input type="search" name="search" id="form1" class="search-responsive form-control" placeholder="Szukaj">
                                     <select name="category">
                                         <option value='0'>Wszystko</option>
                                         <option value='1'>Laptopy i komputery</option>
@@ -43,7 +43,7 @@ session_start();
                                         <option value='7'>Smarthome i lifestyle</option>
                                         <option value='8'>Akcesoria</option>
                                     </select>
-                                    <button type="button" class="btn btn-dark">
+                                    <button type="submit" class="btn btn-dark">
                                         <i class="fas fa-search"></i>
                                     </button>
                                 </form>
@@ -236,9 +236,9 @@ session_start();
                                                 $query3 = $conn->query("SELECT id_kategoria, nazwa, miniaturka FROM kategoria WHERE nadkategoria = '" . $row2['id_kategoria'] . "'");
                                                 $result3 = $query3->fetchAll(PDO::FETCH_ASSOC);
                                                 if (!empty($result3)) {
-                                                    print('<ul class="links-list">');
+                                                    print('<ul class="links-list-subcategory">');
                                                     foreach ($result3 as $row3) {
-                                                        print('<li class="links-list-element"><a href="#0">' . $row3['nazwa'] . '</a></li>');
+                                                        print('<li class="links-list-element"> <a href="#0">' . $row3['nazwa'] . '</a></li>');
                                                     }
                                                     print('</ul>');
                                                 }

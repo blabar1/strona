@@ -75,41 +75,5 @@ const initSliderGallery = () => {
 };
 initSliderGallery();
 
-
-const initExtendPhoto = (imgs) => {
-    const photo = document.getElementById("expandedImg");
-    photo.src = imgs.src;
-    document.querySelector('.js-gallery-extended-container').style.display = "flex";
-
-};
-const initExtendPhotoProduct = (imgs) => {
-    const photo = document.getElementById("expandedImg");
-    photo.src = imgs.src;
-    document.querySelector('.js-product-extended-container').style.display = "flex";
-
-};
-$(document).ready(function () {
-    $('#smallPhotos img').on({
-        mouseover: function () {
-            $(this).css({
-                'cursor': 'pointer',
-                'border-Color': '#676767'
-            });
-        },
-        mouseout: function () {
-            $(this).css({
-                'cursor': 'default',
-                'border-color': '#cfcfcf'
-            });
-        },
-        click: function () {
-            var image = $(this).attr('src');
-            $('.mainImage').fadeOut(500, function () {
-                $(this).attr('src', image);
-            }).fadeIn(500);
-        }
-    });
-});
-
 var prevScrollpos = window.pageYOffset;
 

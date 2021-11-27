@@ -1,3 +1,16 @@
+const initExtendPhoto = (imgs) => {
+    const photo = document.getElementById("expandedImg");
+    photo.src = imgs.src;
+    document.querySelector('.js-gallery-extended-container').style.display = "flex";
+
+};
+const initExtendPhotoProduct = (imgs) => {
+    const photo = document.getElementById("expandedImg");
+    photo.src = imgs.src;
+    document.querySelector('.js-product-extended-container').style.display = "flex";
+
+};
+
 const initGallery = () => {
     const sliders = document.querySelectorAll(".js-gallery-product");
     if (sliders.length > 0) {
@@ -12,3 +25,4 @@ const initGallery = () => {
 
 };
 initGallery();
+

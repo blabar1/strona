@@ -1,12 +1,15 @@
 .c-productPage-container-gallery{
-    width:40%;
+   width:100%;
 }
-
+.c-productPage{
+    margin-top:0;
+}
 
 
 .c-productPage-container-gallery .c-productPage-slider__item{
     float: left;
-    height: 50vh;
+    height: 100%;
+    width:100%;
 }
 
 .c-productPage-slider__item{
