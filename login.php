@@ -5,8 +5,8 @@
     <title>Towar z drugiej ręki</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/arkusz_mal.css">
-    <?php include "../database.php"; ?>
+    <link rel="stylesheet" href="css/arkusz_mal.css">
+    <?php include "database.php"; ?>
 </head>
 <body>
     <div class="c-forms">
@@ -15,15 +15,17 @@
         <!-- login form-->
         <div class="c-form c-login">
             <h1>Logowanie</h1>
-            <form action='index.php' method="POST">
+            <form action='login.php' method="POST">
                 <?php
-                if (isset($_POST['login']) && $_POST['login'] != "") {
+                if(isset($_SESSION['user']))
+                header("Location:index.php");
+                else if (isset($_POST['login']) && $_POST['login'] != "") {
                     $login = $conn->query("SELECT haslo FROM dane_logowania WHERE mail ='" . $_POST['login'] . "' LIMIT 1");
                     $user = $login->fetch(PDO::FETCH_ASSOC);
                     if($user){
                         if(password_verify($_POST['password'],$user['haslo'])){
                             $_SESSION['user'] = htmlspecialchars($_POST['login']);
-                            header("Location: ../");
+                            header("Location:index.php");
                         }
                         else{
                             print("<fieldset class='c-fieldset'>
@@ -74,14 +76,16 @@
         <!-- register form-->
         <div class="c-form c-register">
             <h1>Rejestracja</h1>
-            <form action='index.php' method="POST">
+            <form action='login.php' method="POST">
                 <?php
-                if (isset($_POST['register']) && $_POST['register'] != "") {
+                if(isset($_SESSION['user']))
+                header("Location:index.php");
+                else if (isset($_POST['register']) && $_POST['register'] != "") {
                     try {
                         $hash = password_hash($_POST['password'], PASSWORD_BCRYPT);
                         $mail = $_POST['register'];
                         $register = $conn->query("INSERT INTO dane_logowania (`mail`, `haslo`) VALUES ('" . $mail . "', '" . $hash . "')");
-                        header("Location: http://localhost/strona");
+                        header("Location:index.php");
                     } catch (PDOException $ex) {
                         if ($ex->errorInfo[1] == 1062) {
                             print(" <fieldset class='c-fieldset'>
