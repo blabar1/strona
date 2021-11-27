@@ -1,4 +1,4 @@
-<?php 
+<?php
 include_once "header.php"; ?>
 <?php include_once "templates/menu.php"; ?>
 
@@ -7,7 +7,19 @@ include_once "header.php"; ?>
 )); ?>
 <!--category body-->
 <div class="o-wrapper">
-    <div class="o-title">Nazwa kategorii</div>
+
+    <?php
+    if (isset($_GET['category'])) {
+        if ($_GET['category'] != 0) {
+            $query = $conn->query("SELECT nazwa FROM kategoria WHERE id_kategoria = '" . $_GET['category'] . "' LIMIT 1");
+            $result = $query->fetch(PDO::FETCH_ASSOC);
+            print('<div class="o-title">' . $result['nazwa'] . '</div>');
+        }else
+        print('<div class="o-title">Wszystkie produkty</div>');
+    } else
+        print('<div class="o-title">Something wrong, I can feel it.</div>');
+    ?>
+
     <?php include_once "separator.php"; ?>
     <div class="c-categoryProducts">
         <div class="row">

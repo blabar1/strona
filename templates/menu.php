@@ -30,8 +30,8 @@ session_start();
                         </li>
                         <li>
                             <div class="input-group">
-                                <form>
-                                    <input type="search" id="form1" class="search-responsive form-control" placeholder="Szukaj" />
+                                <form action="categoryProducts.php" method="GET">
+                                    <input type="search" name="search" id="form1" class="search-responsive form-control" placeholder="Szukaj" required>
                                     <select name="category">
                                         <option value='0'>Wszystko</option>
                                         <option value='1'>Laptopy i komputery</option>
