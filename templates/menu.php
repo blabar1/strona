@@ -215,220 +215,42 @@ session_start();
 
                                 <div class="dropdown-list ">
                                     <ul>
-                                        <li id="1" class="dropdown links">
-                                            <a href="#0" class="label">Laptopy i komputery</a>
+                                        <?php
+                                         $query = $conn->query("SELECT id_kategoria, nazwa, miniaturka FROM kategoria WHERE nadkategoria is NULL");
+                                         $result = $query->fetchAll(PDO::FETCH_ASSOC);
+                                         foreach($result as $row){
+                                            print('<li id="'.$row['id_kategoria'].'" class="dropdown links">
+                                            <a href="#0" class="label">'.$row['nazwa'].'</a>
                                             <div class="content">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#0">
-                                                            <h2>Laptopy i komputery</h2>
-                                                        </a>
+                                            <ul>
+                                            <li>
+                                            <a href="#0">
+                                            <h2>'.$row['nazwa'].'</h2>
+                                            </a>
+                                            <ul class="links-list">');
 
-
-                                                        <ul class="links-list">
-                                                            <li class="links-list-element"><a href="#0">Logo Design</a></li>
-                                                            <li class="links-list-element"><a href="#0">Branding</a></li>
-                                                            <li class="links-list-element"><a href="#0">Web Design</a></li>
-                                                            <li class="links-list-element"><a href="#0">iOS</a></li>
-                                                            <li class="links-list-element"><a href="#0">Android</a></li>
-                                                            <li class="links-list-element"><a href="#0">HTML/CSS/JS</a></li>
-                                                            <li class="links-list-element"><a href="#0">Packaging</a></li>
-                                                            <li class="links-list-element"><a href="#0">Mobile</a></li>
-                                                            <li class="links-list-element"><a href="#0">UI/UX</a></li>
-                                                            <li class="links-list-element"><a href="#0">Prototyping</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
+                                            $query2 = $conn->query("SELECT id_kategoria, nazwa, miniaturka FROM kategoria WHERE nadkategoria = '".$row['id_kategoria']."'");
+                                            $result2 = $query2->fetchAll(PDO::FETCH_ASSOC);
+                                            foreach($result2 as $row2){
+                                            print('<li class="links-list-element"><a href="#0">'.$row2['nazwa'].'</a></li>');
+                                            $query3 = $conn->query("SELECT id_kategoria, nazwa, miniaturka FROM kategoria WHERE nadkategoria = '".$row2['id_kategoria']."'");
+                                            $result3 = $query3->fetchAll(PDO::FETCH_ASSOC);
+                                            if(!empty($result3)){
+                                                print('<ul class="links-list">');
+                                                foreach($result3 as $row3){
+                                                    print('<li class="links-list-element"><a href="#0">'.$row3['nazwa'].'</a></li>');   
+                                                }
+                                                print('</ul>');
+                                            }
+                                            }
+                                            print('</ul>
+                                            </li>
+                                            </ul>
                                             </div>
-                                        </li>
-                                        <li id="2" class="dropdown links">
-                                            <a href="#0" class="label">Smartfony i smartwatche</a>
-                                            <div class="content">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#0">
-                                                            <h2>Smartfony i smartwatche</h2>
-                                                        </a>
-
-
-                                                        <ul class="links-list">
-                                                            <li class="links-list-element"><a href="#0">Logo Design</a></li>
-                                                            <li class="links-list-element"><a href="#0">Branding</a></li>
-                                                            <li class="links-list-element"><a href="#0">Web Design</a></li>
-                                                            <li class="links-list-element"><a href="#0">iOS</a></li>
-                                                            <li class="links-list-element"><a href="#0">Android</a></li>
-                                                            <li class="links-list-element"><a href="#0">HTML/CSS/JS</a></li>
-                                                            <li class="links-list-element"><a href="#0">Packaging</a></li>
-                                                            <li class="links-list-element"><a href="#0">Mobile</a></li>
-                                                            <li class="links-list-element"><a href="#0">UI/UX</a></li>
-                                                            <li class="links-list-element"><a href="#0">Prototyping</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-
-                                        <li id="3" class="dropdown links">
-                                            <a href="#0" class="label">Gaming i streaming</a>
-                                            <div class="content">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#0">
-                                                            <h2>Gaming i streaming</h2>
-                                                        </a>
-
-
-                                                        <ul class="links-list">
-                                                            <li class="links-list-element"><a href="#0">Logo Design</a></li>
-                                                            <li class="links-list-element"><a href="#0">Branding</a></li>
-                                                            <li class="links-list-element"><a href="#0">Web Design</a></li>
-                                                            <li class="links-list-element"><a href="#0">iOS</a></li>
-                                                            <li class="links-list-element"><a href="#0">Android</a></li>
-                                                            <li class="links-list-element"><a href="#0">HTML/CSS/JS</a></li>
-                                                            <li class="links-list-element"><a href="#0">Packaging</a></li>
-                                                            <li class="links-list-element"><a href="#0">Mobile</a></li>
-                                                            <li class="links-list-element"><a href="#0">UI/UX</a></li>
-                                                            <li class="links-list-element"><a href="#0">Prototyping</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li id="4" class="dropdown links">
-                                            <a href="#0" class="label">Podzespoły komputerowe</a>
-                                            <div class="content">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#0">
-                                                            <h2>Podzespoły komputerowe</h2>
-                                                        </a>
-
-
-                                                        <ul class="links-list">
-                                                            <li class="links-list-element"><a href="#0">Logo Design</a></li>
-                                                            <li class="links-list-element"><a href="#0">Branding</a></li>
-                                                            <li class="links-list-element"><a href="#0">Web Design</a></li>
-                                                            <li class="links-list-element"><a href="#0">iOS</a></li>
-                                                            <li class="links-list-element"><a href="#0">Android</a></li>
-                                                            <li class="links-list-element"><a href="#0">HTML/CSS/JS</a></li>
-                                                            <li class="links-list-element"><a href="#0">Packaging</a></li>
-                                                            <li class="links-list-element"><a href="#0">Mobile</a></li>
-                                                            <li class="links-list-element"><a href="#0">UI/UX</a></li>
-                                                            <li class="links-list-element"><a href="#0">Prototyping</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li id="5" class="dropdown links">
-                                            <a href="#0" class="label">Urządzenie peryferyjne</a>
-                                            <div class="content">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#0">
-                                                            <h2>Urządzenie peryferyjne</h2>
-                                                        </a>
-
-
-                                                        <ul class="links-list">
-                                                            <li class="links-list-element"><a href="#0">Logo Design</a></li>
-                                                            <li class="links-list-element"><a href="#0">Branding</a></li>
-                                                            <li class="links-list-element"><a href="#0">Web Design</a></li>
-                                                            <li class="links-list-element"><a href="#0">iOS</a></li>
-                                                            <li class="links-list-element"><a href="#0">Android</a></li>
-                                                            <li class="links-list-element"><a href="#0">HTML/CSS/JS</a></li>
-                                                            <li class="links-list-element"><a href="#0">Packaging</a></li>
-                                                            <li class="links-list-element"><a href="#0">Mobile</a></li>
-                                                            <li class="links-list-element"><a href="#0">UI/UX</a></li>
-                                                            <li class="links-list-element"><a href="#0">Prototyping</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        </li>
-                                        </li>
-                                        <li id="6" class="dropdown links">
-                                            <a href="#0" class="label">TV i audio</a>
-                                            <div class="content">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#0">
-                                                            <h2>TV i audio</h2>
-                                                        </a>
-
-
-                                                        <ul class="links-list">
-                                                            <li class="links-list-element"><a href="#0">Logo Design</a></li>
-                                                            <li class="links-list-element"><a href="#0">Branding</a></li>
-                                                            <li class="links-list-element"><a href="#0">Web Design</a></li>
-                                                            <li class="links-list-element"><a href="#0">iOS</a></li>
-                                                            <li class="links-list-element"><a href="#0">Android</a></li>
-                                                            <li class="links-list-element"><a href="#0">HTML/CSS/JS</a></li>
-                                                            <li class="links-list-element"><a href="#0">Packaging</a></li>
-                                                            <li class="links-list-element"><a href="#0">Mobile</a></li>
-                                                            <li class="links-list-element"><a href="#0">UI/UX</a></li>
-                                                            <li class="links-list-element"> <a href="#0">Prototyping</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        </li>
-                                        <li>
-                                        <li id="7" class="dropdown links">
-                                            <a href="#0" class="label">Smarthome i lifestyle</a>
-                                            <div class="content">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#0">
-                                                            <h2>Smarthome i lifestyle</h2>
-                                                        </a>
-
-
-                                                        <ul class="links-list">
-                                                            <li class="links-list-element"><a href="#0">Logo Design</a></li>
-                                                            <li class="links-list-element"><a href="#0">Branding</a></li>
-                                                            <li class="links-list-element"><a href="#0">Web Design</a></li>
-                                                            <li class="links-list-element"><a href="#0">iOS</a></li>
-                                                            <li class="links-list-element"><a href="#0">Android</a></li>
-                                                            <li class="links-list-element"><a href="#0">HTML/CSS/JS</a></li>
-                                                            <li class="links-list-element"><a href="#0">Packaging</a></li>
-                                                            <li class="links-list-element"><a href="#0">Mobile</a></li>
-                                                            <li class="links-list-element"><a href="#0">UI/UX</a></li>
-                                                            <li class="links-list-element"><a href="#0">Prototyping</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li id="8" class="dropdown links">
-                                            <a href="#0" class="label">Akcesoria</a>
-                                            <div class="content">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#0">
-                                                            <h2>Akcesoria</h2>
-                                                        </a>
-
-                                                        <ul class="links-list">
-                                                            <li class="links-list-element"><a href="#0">Logo Design</a></li>
-                                                            <li class="links-list-element"><a href="#0">Branding</a></li>
-                                                            <li class="links-list-element"><a href="#0">Web Design</a></li>
-                                                            <li class="links-list-element"><a href="#0">iOS</a></li>
-                                                            <li class="links-list-element"><a href="#0">Android</a></li>
-                                                            <li class="links-list-element"><a href="#0">HTML/CSS/JS</a></li>
-                                                            <li class="links-list-element"><a href="#0">Packaging</a></li>
-                                                            <li class="links-list-element"><a href="#0">Mobile</a></li>
-                                                            <li class="links-list-element"><a href="#0">UI/UX</a></li>
-                                                            <li class="links-list-element"><a href="#0">Prototyping</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
-
+                                            </li>');
+                                         }     
+                                        ?>
+                                    </ul>                            
                                     <div class="bg-layer" aria-hidden="true"></div>
                                 </div>
                             </div> <!-- morph-dropdown-wrapper -->
