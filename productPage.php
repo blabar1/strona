@@ -12,6 +12,7 @@
                 )); ?>
                 <?php get_element("elements/element-product-productDescription.php", array(
                     'name' => 'Nazwa',
+                    'category' => 'kategoria',
                     'description1' => 'opis 1',
                     'description2' => 'opis 2',
                     'description3' => 'opis 3',
