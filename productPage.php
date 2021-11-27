@@ -11,20 +11,25 @@
                     'images' => ['images/produkty/p7.jpg', 'images/produkty/p3.jpg', 'images/produkty/p4.jpg']
                 )); ?>
                 <?php get_element("elements/element-product-productDescription.php", array(
-                    'name' => 'Nazwa',
-                    'category' => 'kategoria',
+                    'name' => 'Microsoft Surface Go 3 Y/4GB/64GB/Win11',
                     'description1' => 'opis 1',
                     'description2' => 'opis 2',
                     'description3' => 'opis 3',
                     'description4' => 'opis 4',
-                    'price' => 'CENA',
+                    'price' => '123123.99',
                 )); ?>
-
 
 
             </div>
         </div>
     </div>
+    <span class="o-separator specifications-span"></span>
+    <?php get_element("elements/element-product-specification.php", array(
+        'SpecificationName' => 'Microsoft Surface Go 3 Y/4GB/64GB/Win11',
+        'SpecificationValue' => 'Microsoft Surface Go 3 Y/4GB/64GB/Win11 Microsoft Surface Go 3 Y/4GB/64GB/Win11Microsoft Su Y/4GB/64GB/Win11 Microsoft Surface Go 3 Y/4GB/64GB/Win11Microsoft Su Y/4GB/64GB/Win11 Microsoft Surface Go 3 Y/4GB/64GB/Win11Microsoft Su Y/4GB/64GB/Win11 Microsoft Surface Go 3 Y/4GB/64GB/Win11Microsoft Su Y/4GB/64GB/Win11 Microsoft Surface Go 3 Y/4GB/64GB/Win11Microsoft Su Y/4GB/64GB/Win11 Microsoft Surface Go 3 Y/4GB/64GB/Win11Microsoft Surface Go 3 Y/4GB/64GB/Win11',
+        'SpecificationName1' => 'Microsoft Surface Go 3 Y/4GB/64GB/Win11',
+        'SpecificationValue1' => 'Microsoft Surface Go 3 Y/4GB/64GB/Win11 Microsoft Surface Go 3 Y/4GB/64GB/Win11Microsoft Surface Go 3 Y/4GB/64GB/Win11',
+    )); ?>
 </div>
 
 

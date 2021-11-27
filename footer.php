@@ -8,6 +8,7 @@
     <script src="scripts/menu.js"></script>
     <script src="scripts/categoryProducts.js"></script>
     <script src="scripts/product-gallery.js"></script>
+    <script src="scripts/productPage.js"></script>
 
 
     </html>

@@ -1,0 +1,31 @@
+html {
+    font-family: "Lato", sans-serif;
+    --primary-color: #222;
+    --orange: #EB5E28;
+    --grey:#403D39;
+    --white:#FFFCF2;
+    --brudas:#CCC5B9;
+    word-wrap: break-word;
+}
+.c-productPage-container-specifications__name{
+    font-weight: 700;
+    text-align: center;
+}
+.c-productPage-container-specifications__value{
+text-align: left;
+} 
+.c-productPage-container-specifications__container{
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(26, 26, 26);
+    font-weight: normal;
+    text-decoration: none;
+    margin: 0px;
+    border-top: 1px solid rgb(235, 235, 235);
+    display: flex;
+}
+.c-productPage-container-specifications__body{
+    margin-top:24px;
+}
