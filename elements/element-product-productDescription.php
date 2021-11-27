@@ -26,6 +26,13 @@
                                     <?php echo ($price . " zł"); ?>
                                 </div>
                                 <div class="c-productPage-container-payment__button-container">
+                                    <div class="c-productPage-container-payment__select-container">
+                                        <select class="c-productPage-container-payment__select">
+                                            <option>1</option>
+                                            <option>1</option>
+                                            <option>100</option>
+                                        </select>
+                                    </div>
                                     <div class="c-productPage-container-payment__button">
                                         <button class="c-productPage-container-payment__button-element">
                                             <div class="c-productPage-container-payment__button-text">
@@ -40,13 +47,11 @@
                                         </button>
 
                                     </div>
-                                    <div class="c-productPage-container-payment__select">
-
-                                    </div>
                                 </div>
 
                             </div>
                         </div>
+
 
 
 
