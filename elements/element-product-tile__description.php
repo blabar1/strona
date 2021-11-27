@@ -10,12 +10,12 @@
                 </div>
                 <div class="c-categoryProducts-tile__description">
                     <ul>
-                         <?php
+                        <?php
                         $ilosc = sizeof($description);
-                        if($ilosc)
-                        for($i = 0; $i<$ilosc;$i++){
-                            print('<li class="c-categoryProducts-tile__description-element">'.$description[$i].' </li>');
-                        }  
+                        if ($ilosc)
+                            for ($i = 0; $i < $ilosc; $i++) {
+                                print('<li class="c-categoryProducts-tile__description-element">' . $description[$i] . ' </li>');
+                            }
                         ?>
                     </ul>
                 </div>
@@ -33,7 +33,7 @@
     </div>
 </div>
 <?php get_element("elements/element-basket-button-modal.php", array(
-    'thumbnail' => "images/produkty/".$thumbnail,
+    'thumbnail' => $thumbnail,
     'name' => $name,
     'price' => $price
 )); ?>

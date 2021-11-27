@@ -112,11 +112,14 @@ html {
 
 
 .modal-product-tile__thumbnail{
-    margin-top:18px;
+    margin-top: 18px;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     margin-bottom: 8px;
+    height: 100%;
+    min-width: 0px;
+    min-height: 150px;
     padding-bottom: 42%;
     width: 100%;
 }

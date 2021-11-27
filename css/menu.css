@@ -364,7 +364,7 @@ html {
     }
     .cd-morph-dropdown .links .content,
     .cd-morph-dropdown .button .content {
-        width: 390px;
+        width: 300px;
     }
     .cd-morph-dropdown .links-list a {
         font-size: 18px;
@@ -374,7 +374,7 @@ html {
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
         overflow: hidden;
-         width: 290px;
+         width: 250px;
     }
 
 
@@ -396,9 +396,8 @@ html {
         color: #FFFFFF;
     }
     .cd-morph-dropdown .content h2 {
-        font-size: 20px;
         text-transform: none;
-            font-size: 24px;
+            font-size: 20px;
     color: #1A1A1A;
         margin: 0 0 .6em;
         width:290px;
@@ -785,6 +784,9 @@ a.label:hover{
     color:var(--orange);
 }
 
+ul .links-list-subcategory{
+    margin-left:10px;
+}
 
 /*
 .o-hamburger.is-active {
