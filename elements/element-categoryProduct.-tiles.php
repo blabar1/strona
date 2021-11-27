@@ -1,12 +1,21 @@
+<?php
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
+?>
 <?php include_once "../functions.php" ?>
 <?php include_once "database.php" ?>
 <!-- Product tiles-->
 <div class="c-categoryProducts-tiles__container col-xl-9 col-lg-9 col-md-9" style="background-color:white;">
   <?php
-  if ($_GET['category'] != 0)
-    $query = $conn->query("SELECT id_produkt, nazwa, cena, miniaturka FROM produkt WHERE nazwa LIKE '%" . trim($_GET['search']) . "%' AND kategoria IN (SELECT id_kategoria FROM kategoria WHERE nadkategoria = '" . $_GET['category'] . "')");
+  if (isset($_SESSION['search'])) {
+    $szukana = $_SESSION['search'];
+  }
+  if ($_SESSION['category'] != 0)
+    $query = $conn->query("SELECT id_produkt, nazwa, cena, miniaturka FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%' AND kategoria IN (SELECT id_kategoria FROM kategoria WHERE nadkategoria = '" . $_SESSION['category'] . "')");
   else
-    $query = $conn->query("SELECT id_produkt, nazwa, cena, miniaturka FROM produkt WHERE nazwa LIKE '%" . trim($_GET['search']) . "%'");
+    $query = $conn->query("SELECT id_produkt, nazwa, cena, miniaturka FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%'");
   $results = $query->fetchAll(PDO::FETCH_ASSOC);
   if (!empty($results)) {
     foreach ($results as $row) {
