@@ -1,11 +1,13 @@
 <?php
 session_start();
-if(isset($_GET['category']))
-$_SESSION['category']=$_GET['category'];
-if(isset($_GET['search']))
-$_SESSION['search']=$_GET['search'];
+if (isset($_GET['category']))
+    $_SESSION['category'] = $_GET['category'];
 else
-$_SESSION['search']="%";
+    $_SESSION['category'] = 0;
+if (isset($_GET['search']))
+    $_SESSION['search'] = $_GET['search'];
+else
+    $_SESSION['search'] = "%";
 ?>
 <!-- menu,header-->
 
@@ -39,15 +41,17 @@ $_SESSION['search']="%";
                                 <form action="categoryProducts.php" method="GET">
                                     <input type="search" name="search" id="form1" class="search-responsive form-control" placeholder="Szukaj" required>
                                     <select name="category">
-                                        <option value='0'>Wszystko</option>
-                                        <option value='1'>Laptopy i komputery</option>
-                                        <option value='2'>Smartfony i smartwatche</option>
-                                        <option value='3'>Gaming i streaming</option>
-                                        <option value='4'>Podzespoły komputerowe</option>
-                                        <option value='5'>Urządzenia peryferyjne</option>
-                                        <option value='6'>TV i audio</option>
-                                        <option value='7'>Smarthome i lifestyle</option>
-                                        <option value='8'>Akcesoria</option>
+                                        <?php
+                                        $query = $conn->query("SELECT id_kategoria, nazwa FROM kategoria WHERE nadkategoria is NULL");
+                                        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+                                        print("<option value='0'>Wszystko</option>");
+                                        foreach ($result as $row) {
+                                            if ($row['id_kategoria'] == $_SESSION['category'])
+                                                print("<option value='" . $row['id_kategoria'] . "' selected>" . $row['nazwa'] . "</option>");
+                                            else
+                                                print("<option value='" . $row['id_kategoria'] . "'>" . $row['nazwa'] . "</option>");
+                                        }
+                                        ?>
                                     </select>
                                     <button type="button" class="btn btn-dark">
                                         <i class="fas fa-search"></i>
