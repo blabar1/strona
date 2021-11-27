@@ -216,41 +216,41 @@ session_start();
                                 <div class="dropdown-list ">
                                     <ul>
                                         <?php
-                                         $query = $conn->query("SELECT id_kategoria, nazwa, miniaturka FROM kategoria WHERE nadkategoria is NULL");
-                                         $result = $query->fetchAll(PDO::FETCH_ASSOC);
-                                         foreach($result as $row){
-                                            print('<li id="'.$row['id_kategoria'].'" class="dropdown links">
-                                            <a href="#0" class="label">'.$row['nazwa'].'</a>
+                                        $query = $conn->query("SELECT id_kategoria, nazwa, miniaturka FROM kategoria WHERE nadkategoria is NULL");
+                                        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+                                        foreach ($result as $row) {
+                                            print('<li id="' . $row['id_kategoria'] . '" class="dropdown links">
+                                            <a href="#0" class="label">' . $row['nazwa'] . '</a>
                                             <div class="content">
                                             <ul>
                                             <li>
                                             <a href="#0">
-                                            <h2>'.$row['nazwa'].'</h2>
+                                            <h2>' . $row['nazwa'] . '</h2>
                                             </a>
                                             <ul class="links-list">');
 
-                                            $query2 = $conn->query("SELECT id_kategoria, nazwa, miniaturka FROM kategoria WHERE nadkategoria = '".$row['id_kategoria']."'");
+                                            $query2 = $conn->query("SELECT id_kategoria, nazwa, miniaturka FROM kategoria WHERE nadkategoria = '" . $row['id_kategoria'] . "'");
                                             $result2 = $query2->fetchAll(PDO::FETCH_ASSOC);
-                                            foreach($result2 as $row2){
-                                            print('<li class="links-list-element"><a href="#0">'.$row2['nazwa'].'</a></li>');
-                                            $query3 = $conn->query("SELECT id_kategoria, nazwa, miniaturka FROM kategoria WHERE nadkategoria = '".$row2['id_kategoria']."'");
-                                            $result3 = $query3->fetchAll(PDO::FETCH_ASSOC);
-                                            if(!empty($result3)){
-                                                print('<ul class="links-list">');
-                                                foreach($result3 as $row3){
-                                                    print('<li class="links-list-element"><a href="#0">'.$row3['nazwa'].'</a></li>');   
+                                            foreach ($result2 as $row2) {
+                                                print('<li class="links-list-element"><a href="#0">' . $row2['nazwa'] . '</a></li>');
+                                                $query3 = $conn->query("SELECT id_kategoria, nazwa, miniaturka FROM kategoria WHERE nadkategoria = '" . $row2['id_kategoria'] . "'");
+                                                $result3 = $query3->fetchAll(PDO::FETCH_ASSOC);
+                                                if (!empty($result3)) {
+                                                    print('<ul class="links-list">');
+                                                    foreach ($result3 as $row3) {
+                                                        print('<li class="links-list-element"><a href="#0">' . $row3['nazwa'] . '</a></li>');
+                                                    }
+                                                    print('</ul>');
                                                 }
-                                                print('</ul>');
-                                            }
                                             }
                                             print('</ul>
                                             </li>
                                             </ul>
                                             </div>
                                             </li>');
-                                         }     
+                                        }
                                         ?>
-                                    </ul>                            
+                                    </ul>
                                     <div class="bg-layer" aria-hidden="true"></div>
                                 </div>
                             </div> <!-- morph-dropdown-wrapper -->

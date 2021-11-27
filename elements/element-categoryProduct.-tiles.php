@@ -6,8 +6,8 @@
   if ($_GET['category'] != 0)
     $query = $conn->query("SELECT id_produkt, nazwa, cena, miniaturka FROM produkt WHERE nazwa LIKE '%" . trim($_GET['search']) . "%' AND kategoria IN (SELECT id_kategoria FROM kategoria WHERE nadkategoria = '" . $_GET['category'] . "')");
   else
-  $query = $conn->query("SELECT id_produkt, nazwa, cena, miniaturka FROM produkt WHERE nazwa LIKE '%" . trim($_GET['search']) . "%'");
-    $results = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query = $conn->query("SELECT id_produkt, nazwa, cena, miniaturka FROM produkt WHERE nazwa LIKE '%" . trim($_GET['search']) . "%'");
+  $results = $query->fetchAll(PDO::FETCH_ASSOC);
   if (!empty($results)) {
     foreach ($results as $row) {
       $wlasciowsci = array();
