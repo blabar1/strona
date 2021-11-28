@@ -30,7 +30,8 @@ if(!isset($_SESSION))
         'thumbnail' => "images/produkty/" . $row['miniaturka'],
         'name' => $row['nazwa'],
         'price' => $row['cena'],
-        'description' =>  $wlasciowsci
+        'description' =>  $wlasciowsci,
+        'id' => $row['id_produkt']
       ));
     }
   } else

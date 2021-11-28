@@ -30,7 +30,7 @@
                             <div class="c-categoryProducts-list__price"><?php echo ($price . " zł"); ?></div>
                             <div class="c-categoryProducts-list__button-container">
                                 <?php get_element("elements/element-basket-button.php", array(
-                                    'id' => "XD"
+                                    'id' => $id
                                 )); ?>
                             </div>
                         </div>
@@ -41,7 +41,8 @@
         </div>
     </div>
     <?php get_element("elements/element-basket-button-modal.php", array(
-        'thumbnail' => "images/produkty/" . $thumbnail,
+        'thumbnail' => $thumbnail,
         'name' => $name,
-        'price' => $price
+        'price' => $price,
+        'id' => $id
     )); ?>
