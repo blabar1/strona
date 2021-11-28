@@ -10,7 +10,11 @@
 @import "components/components.promotion-half.css";
 @import "components/components.product-description.css";
 @import "components/components.product-gallery.css";
-@import "components/compoonents.product-specification.css";
+@import "components/components.product-specification.css";
+@import "components/components.basket-button.css";
+@import "components/components.basket-list.css";
+@import "components/components.basket-title-button.css";
+@import "components/components.basket-payment.css";
 @import "components/loading.css";
 @import "footer.css";
 @import "arkusz_mal.css";
@@ -18,4 +22,5 @@
 @import "separator.css";
 @import "categoryProducts.css";
 @import "productPage.css";
+@import "basket.css";
 

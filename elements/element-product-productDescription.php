@@ -33,7 +33,7 @@
                                         </select>
                                     </div>
                                     <div class="c-productPage-container-payment__button">
-                                        <button class="c-productPage-container-payment__button-element">
+                                        <button value="<?php echo $id; ?> " data-toggle="modal" class="c-productPage-container-payment__button-element" data-target="#modal-basket-pageProduct">
                                             <div class="c-productPage-container-payment__button-text">
                                                 <span class="c-productPage-container-payment__button-span">
                                                     <svg class="c-productPage-container-payment__button-svg">

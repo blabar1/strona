@@ -1,0 +1,122 @@
+html {
+    font-family: "Lato", sans-serif;
+    --primary-color: #222;
+    --orange: #EB5E28;
+    --grey:#403D39;
+    --white:#FFFCF2;
+    --brudas:#CCC5B9;
+    word-wrap: break-word;
+}
+.c-basket-list{
+    display: flex;
+}
+.c-basket-list:hover .c-product-title__button {
+    opacity:1;
+}
+.c-basket-list__content{  
+    width:100%;
+    display: flex;
+    }
+.c-basket-list__thumbnail{
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    max-width: 240px;
+    max-height: 200px;
+    transform: translate(0%, 0%);
+}
+.c-basket-list:hover{
+    box-shadow: rgb(0 0 0 / 20%) 0px 4px 8px 0px, rgb(0 0 0 / 8%) 0px 0px 2px 1px;
+}
+.c-basket-list__name{
+    font-size: 14px;
+    padding-right: 24px;
+    line-height: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: normal;
+    text-decoration: none;
+    white-space: normal;
+    max-height:40px;
+}
+.c-basket-list{
+    margin:0;
+    padding: 0;
+    padding: 24px 16px;
+    width:100%;
+}
+.c-basket-list__name-span{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    visibility: visible;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+.c-basket-list__inside{
+    display: flex;
+    width: 100%;
+}
+
+.c-basket-list__price{
+    white-space: nowrap;
+    font-size: 18px;
+    line-height: 24px;
+    color: rgb(26, 26, 26);
+    font-weight: normal;
+    text-decoration: none;
+    margin-right:12px;
+
+
+}
+.c-basket-list__price-container{
+    -webkit-box-align: center;
+    align-items: center;
+    min-height: 52px;
+    text-align: right;
+    display: flex;
+}
+.c-basket-list__button-container{
+     display: flex;
+     align-items: center;
+     justify-content: flex-end;
+     margin-right:12px;
+     margin-left: 12px;
+}
+.c-basket-list__name-container{
+    width:100%;
+    display: flex;
+    align-items: center;
+}
+@media (max-width: 700px){
+    .c-basket-list__thumbnail{
+
+    }
+}
+@media (max-width: 700px){
+.c-basket-list__button-container{
+    margin-top:0;
+}
+.c-basket-list__thumbnail {
+    margin-left:0;
+}
+.c-basket-list__content{
+    display:block;
+}
+.c-basket-list__price-container{
+    text-align: left;
+    margin-top:10px;
+}
+}
+.c-basket-list__select-container{
+    margin-right: 8px;
+}
+
+.c-basket-list__select{
+border-radius: 16px;
+border-color: var(--primary-color);
+width:50px;
+height: 30px;
+text-align: left;
+}
