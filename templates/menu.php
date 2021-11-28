@@ -65,9 +65,10 @@ else
                         if (empty($_SESSION['user'])) {
                             print("<li><a href='login.php'><span class='glyphicon glyphicon-user'></span> Zaloguj się</a></li>");
                         } else {
-
+                            $user = $conn->query("SELECT imie FROM dane_konta WHERE mail ='" . $_SESSION['user'] . "' LIMIT 1");
+                            $user_imie = $user->fetch(PDO::FETCH_ASSOC);
                             print('<li class="dropdown">
-                            <a class="dropdown" data-toggle="dropdown" href="#">Witaj ponownie ' . $_SESSION['user'] . ' <span class="caret"></span></a>
+                            <a class="dropdown" data-toggle="dropdown" href="#">Witaj ponownie ' . $user_imie['imie'] . ' <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Twoje Zamówienia</a></li>
                                 <li><a href="konto.php">Ustawienia konta</a></li>

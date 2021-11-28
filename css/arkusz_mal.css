@@ -20,12 +20,9 @@ html {
     outline: none;
 }
 
-.c-form {
-    width: 20vw;
-    margin: auto;
-    margin-right: 20px;
+.c-forms {
+    width: 40vw;
     color: var(--primary-color);
-    float: left;
 }
 
 .c-fieldset {
@@ -53,29 +50,32 @@ html {
     border-color: var(--orange);
 }
 
-.c-forms {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--white);
-}
-
-.c-login{
-    display: block;
-}
-
-.c-register{
-    display: none;
+.c-forms-compoments {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
 }
 
 .c-buttons{
+    width: 100%;
+    display: flex;
+}
+
+.c-button{
+    height: 40px;
     width: 50%;
-    float: left;
     background: none;
     border:none;
-    border-bottom: solid 1px var(--orange);
     color: var(--orange);
     font-weight: bold;
     font-size: 15px;
+}
+
+.c-button-clicked{
+    border-bottom: solid 3px var(--orange);
+}
+
+#register{
+    display: none;
 }
