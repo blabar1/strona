@@ -8,6 +8,11 @@
     <script src="scripts/menu.js"></script>
     <script src="scripts/categoryProducts.js"></script>
     <script src="scripts/product-gallery.js"></script>
+<<<<<<< HEAD
     <script src="scripts/login-register-swap.js"></script> 
+=======
+    <script src="scripts/productPage.js"></script>
+    <script src="scripts/login-register-swap.js"></script>
+>>>>>>> 4ae1862a9f15399830566911b2912c2b8f04e187
 
     </html>

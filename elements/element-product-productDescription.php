@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="c-productPage-container-content">
                         <div class="col-xs-12 col-sm-12 col-xl-7 col-lg-7 col-md-7">
-                            <div class=" c-productPage-container-description">
+                            <div class="c-productPage-container-description">
                                 <ul>
                                     <li class="c-productPage-list__description-element"><?php echo $description1; ?></li>
                                     <li class="c-productPage-list__description-element"><?php echo $description2; ?></li>
@@ -17,7 +17,6 @@
                                     <li class="c-productPage-list__description-element"><?php echo $description4; ?></li>
 
                                 </ul>
-
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-xl-5 col-lg-5 col-md-5">
@@ -26,6 +25,13 @@
                                     <?php echo ($price . " zł"); ?>
                                 </div>
                                 <div class="c-productPage-container-payment__button-container">
+                                    <div class="c-productPage-container-payment__select-container">
+                                        <select class="c-productPage-container-payment__select">
+                                            <option>1</option>
+                                            <option>1</option>
+                                            <option>100</option>
+                                        </select>
+                                    </div>
                                     <div class="c-productPage-container-payment__button">
                                         <button class="c-productPage-container-payment__button-element">
                                             <div class="c-productPage-container-payment__button-text">
@@ -36,26 +42,21 @@
                                                 </span>
                                                 Dodaj do koszyka
                                             </div>
-
                                         </button>
-
-                                    </div>
-                                    <div class="c-productPage-container-payment__select">
-
                                     </div>
                                 </div>
 
                             </div>
                         </div>
-
-
-
                     </div>
                 </div>
-
-
+                <div class="c-productPage-container-description__button-specification">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="scrollSpecifications" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
+                    </svg></button>
+                    <div class="c-productPage-container-description__button-specification-text">Do specyfikacji</div>
+                </div>
             </div>
         </div>
-
     </div>
 </div>

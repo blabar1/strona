@@ -1,9 +1,8 @@
 <?php
-setcookie('widok', 'tiles', time()+3600*24*14, "/");
-if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-} 
+setcookie('widok', 'tiles', time() + 3600 * 24 * 14, "/");
+if (!isset($_SESSION)) {
+  session_start();
+}
 ?>
 <?php include_once "../functions.php" ?>
 <?php include_once "database.php" ?>
