@@ -1,7 +1,5 @@
-$(".scrollSpecifications").click(function () {
-
-    $('html,body').animate({
-        scrollTop: $(".specifications-span").offset().top
-    },
-        2000);
+$(document).ready(function () {
+    $(".scrollSpecifications").click(function (event) {
+        $('html, body').animate({ scrollTop: $('.specifications-span').position().top - 150 }, 2000);
+    });
 });
