@@ -1,0 +1,69 @@
+html {
+    font-family: "Lato", sans-serif;
+    --primary-color: #222;
+    --orange: #EB5E28;
+    --grey:#403D39;
+    --white:#FFFCF2;
+    --brudas:#CCC5B9;
+    word-wrap: break-word;
+}
+.c-basket-payment-desc{
+margin-top:24px;
+padding:8px;
+display:flex;
+margin-bottom: 12px;
+
+}
+.c-basket-payment-container{
+display: block;
+}
+.c-basket-products-payment__container{
+    position: -webkit-sticky;
+    position: sticky;
+    top:150px;
+}
+.c-basket-payment__button-element{
+    border-radius: 512px;
+    border: none;
+    white-space: nowrap;
+    width:100%;
+    height: 40px;
+    padding: 0px 8px;
+    background: var(--orange);
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-left: 4px;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: normal;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+.c-basket-payment__button-element:hover{
+    background: #a1421c;
+}
+.c-basket-payment__title{
+    width:50%;
+    text-align: left;
+}
+.c-basket-payment__value{
+    width:50%;
+    text-align: right;
+}
+.c-basket-payment__button-body{
+    display: flex;
+    justify-content: center;
+}
+@media(min-width: 900px){
+    .c-basket-payment__button-element{
+        width:40%;
+        
+    }
+    .c-basket-payment__button-body{
+        display: flex;
+        justify-content: right;
+    }
+}

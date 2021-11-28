@@ -1,0 +1,18 @@
+.c-basket__button-svg{
+    fill:var(--orange);
+    filter:none;
+    width: 100%;
+    transition: fill 0.1s ease-in-out;
+    height: 100%;
+}
+.c-basket__button-span{
+    overflow: hidden;
+    height: 24px;
+    width: 24px;
+    padding: 0px;
+    display: inline-block;
+}
+
+.c-product-title__button:hover .c-basket__button-svg {
+    fill:white;
+}

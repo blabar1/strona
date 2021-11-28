@@ -92,6 +92,7 @@ button:disabled {
 .c-categoryProducts-changer{
     display: flex;
     margin: auto;
+    margin-left:16px;
 
 }
 .c-categoryProducts-changer-per-page__select{
