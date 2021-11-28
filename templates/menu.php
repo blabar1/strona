@@ -23,11 +23,15 @@ else
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="">TOWAR Z DRUGIEJ REKI NW CO BLAZEJ CHCE</a>
+                    <div class="c-menu-icon__element-wrapper">
+                        <a href="index.php">
+                            <div class="c-menu-icon__element"><img class="c-menu-icon" src="images/ikonka.png"></div>
+                        </a>
+                    </div>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li class=""><a href="#">Home</a></li>
+
                         <li class="dropdown">
                             <a class="dropdown" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -39,26 +43,32 @@ else
                         <li>
                             <div class="input-group">
                                 <form action="categoryProducts.php" method="GET">
-                                    <input type="search" name="search" id="form1" class="search-responsive form-control" placeholder="Szukaj">
-                                    <select name="category">
-                                        <?php
-                                        $query = $conn->query("SELECT id_kategoria, nazwa FROM kategoria WHERE nadkategoria is NULL");
-                                        $result = $query->fetchAll(PDO::FETCH_ASSOC);
-                                        print("<option value='0'>Wszystko</option>");
-                                        foreach ($result as $row) {
-                                            if ($row['id_kategoria'] == $_SESSION['category'])
-                                                print("<option value='" . $row['id_kategoria'] . "' selected>" . $row['nazwa'] . "</option>");
-                                            else
-                                                print("<option value='" . $row['id_kategoria'] . "'>" . $row['nazwa'] . "</option>");
-                                        }
-                                        ?>
-                                    </select>
-                                    <button type="submit" class="btn btn-dark">
-                                        <i class="fas fa-search"></i>
-                                    </button>
+                                    <div class="input-group-container">
+                                        <div class="input-search">
+                                            <input type="search" name="search" id="form1" class="input-group-container__search search-responsive form-control" placeholder="Szukaj"> <button type="submit" class="btn btn-dark">
+                                                <i class="fas fa-search"></i>
+                                            </button>
+                                        </div>
+                                        <select name="category" class="input-group-container__category">
+                                            <?php
+                                            $query = $conn->query("SELECT id_kategoria, nazwa FROM kategoria WHERE nadkategoria is NULL");
+                                            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+                                            print("<option value='0'>Wszystko</option>");
+                                            foreach ($result as $row) {
+                                                if ($row['id_kategoria'] == $_SESSION['category'])
+                                                    print("<option value='" . $row['id_kategoria'] . "' selected>" . $row['nazwa'] . "</option>");
+                                                else
+                                                    print("<option value='" . $row['id_kategoria'] . "'>" . $row['nazwa'] . "</option>");
+                                            }
+                                            ?>
+                                        </select>
+
+                                    </div>
                                 </form>
+
                             </div>
                         </li>
+
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <?php
@@ -77,6 +87,21 @@ else
                         </li>');
                         }
                         ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <div class="c-menu-element-basket">
+                                    <div class="svg-photo-basket">
+                                        <div class="svg-photo-basket"><svg class="svg-menu-basket" style="width: 100%;height: 100%;" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M22 22a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-1a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm-10 1a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-1a3 3 0 1 1 0 6 3 3 0 0 1 0-6zM8.098 6H4.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 .488.393l3.5 16a.5.5 0 1 1-.976.214L8.098 6zM9.5 9a.5.5 0 0 1 0-1h15a.5.5 0 0 1 .488.608l-2 9A.5.5 0 0 1 22.5 18h-11a.5.5 0 1 1 0-1h10.599l1.778-8H9.5zm2 13v-1H22v1H11.5z"></path>
+                                            </svg></div>
+
+                                    </div>
+
+                                    <div class="c-menu-element-basket__text">Koszyk</div>
+                                </div>
+                            </a>
+                        </li>
+
                     </ul>
                 </div>
             </div>
