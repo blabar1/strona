@@ -70,7 +70,9 @@ else
                         </li>
 
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right" style="display: flex!important;
+    align-content: center!important;
+    align-items: center!important;">
                         <?php
                         if (empty($_SESSION['user'])) {
                             print("<li><a href='login.php'><span class='glyphicon glyphicon-user'></span> Zaloguj się</a></li>");

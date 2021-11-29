@@ -46,7 +46,8 @@ text-align: left;
 
 .c-menu-element-basket{
     display: flex;
-    margin-left: -9px;
+    margin-left: -7px;
+    align-items: center;
 }
 
 .svg-photo-wrap {
