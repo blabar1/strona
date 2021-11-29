@@ -1,0 +1,56 @@
+html {
+    font-family: "Lato", sans-serif;
+    --primary-color: #222;
+    --orange: #EB5E28;
+    --grey:#403D39;
+    --white:#FFFCF2;
+    --brudas:#CCC5B9;
+    word-wrap: break-word;
+}
+
+.c-basket__buttonDelete-span{
+    width:24px;
+    height:24px;
+}
+.c-basket__buttonDelete-svg{
+    fill:white;
+}
+#deleteModal{
+    top:30%;
+}
+.c-basket__buttonDelete-svg__button {
+font-size: 16px;
+    color: rgb(255, 255, 255);
+    font-weight: normal;
+    text-decoration: none;
+    -webkit-box-align: center;
+    align-items: center;
+    place-content: center;
+    -webkit-box-pack: center;
+    width: 32px;
+    min-height: 32px;
+    height: 32px;
+    padding: 0px;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border-radius: 512px;
+    border: 1px solid var(--orange);
+    transition: background-color 0.1s ease-in-out;
+    opacity: 0;
+    transition: opacity 0.1s ease-in;
+}
+.c-basket-list:hover .c-basket__buttonDelete-svg__button{
+    opacity:1;
+
+}
+.c-basket__buttonDelete-svg__list{
+    fill:var(--orange);
+}
+
+.c-basket__buttonDelete-svg__button:hover .c-basket__buttonDelete-svg__list{
+fill:white;
+}
+.c-basket__buttonDelete-svg__button:hover{
+    background-color: var(--orange);
+    transition: background-color 0.1s ease-in-out;
+}

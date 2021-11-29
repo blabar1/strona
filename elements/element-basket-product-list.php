@@ -27,7 +27,7 @@
                             </select>
                         </div>
                         <div class="c-basket-list__button-container">
-                            <?php get_element("elements/element-basket-button.php", array(
+                            <?php get_element("elements/element-basket-delete-button.php", array(
                                 'id' => "XD"
                             )); ?>
                         </div>

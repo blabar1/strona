@@ -515,8 +515,8 @@ text-align: left;
 
 .svg-photo {
     display: flex;
-    width: 30px;
-    height: 70px;
+    width: 24px;
+    height: 24px;
     margin-right: 8px;
 }
 
@@ -573,6 +573,9 @@ text-align: left;
 .svg-photo-wrap {
     width: 24px;
     margin-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .animation-right {
