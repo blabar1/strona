@@ -125,7 +125,7 @@ else
 
                     <nav class="main-nav">
                         <ul>
-                             <a href="/strona/categoryProducts.php?category=1">
+                             <a href="/strona/categoryProducts.php?category=1&page=1">
                             <li class="has-dropdown links" data-content="1">
                                
                                     <div class="svg-photo-wrap">
@@ -141,7 +141,7 @@ else
                                     </div>
                                 </a>
                             </li>
- <a href="/strona/categoryProducts.php?category=2">
+ <a href="/strona/categoryProducts.php?category=2&page=1">
                             <li class="has-dropdown links" data-content="2">
                                
                                     <div class="svg-photo-wrap">
@@ -159,7 +159,7 @@ else
                                     </div>
                                 </a>
                             </li>
-                            <a href="/strona/categoryProducts.php?category=3">
+                            <a href="/strona/categoryProducts.php?category=3&page=1">
                             <li class="has-dropdown links" data-content="3">
                                 
                                     <div class="svg-photo-wrap">
@@ -173,7 +173,7 @@ else
                                     </div>
                                 </a>
                             </li>
- <a href="/strona/categoryProducts.php?category=4">
+ <a href="/strona/categoryProducts.php?category=4&page=1">
                             <li class="has-dropdown button" data-content="4">
                                
                                     <div class="svg-photo-wrap">
@@ -187,7 +187,7 @@ else
                                     </div>
                                 </a>
                             </li> 
-                             <a href="/strona/categoryProducts.php?category=5">
+                             <a href="/strona/categoryProducts.php?category=5&page=1">
                             <li class="has-dropdown gallery" data-content="5">
                               
                                     <div class="svg-photo-wrap">
@@ -201,7 +201,7 @@ else
                                     </div>
                                 </a>
                             </li>
-                            <a href="/strona/categoryProducts.php?category=6">
+                            <a href="/strona/categoryProducts.php?category=6&page=1">
                             <li class="has-dropdown gallery" data-content="6">
                                 
                                     <div class="svg-photo-wrap">
@@ -215,7 +215,7 @@ else
                                     </div>
                                 </a>
                             </li>
-                            <a href="/strona/categoryProducts.php?category=7">
+                            <a href="/strona/categoryProducts.php?category=7&page=1">
                             <li class="has-dropdown gallery" data-content="7">
                                 
                                     <div class="svg-photo-wrap">
@@ -230,7 +230,7 @@ else
                                     </div>
                                   </a>
                             </li>
-                               <a href="/strona/categoryProducts.php?category=8">
+                               <a href="/strona/categoryProducts.php?category=8&page=1">
                             <li class="has-dropdown gallery" data-content="8">
                              
                                     <div class="svg-photo-wrap">
@@ -266,11 +266,11 @@ else
                                         $result = $query->fetchAll(PDO::FETCH_ASSOC);
                                         foreach ($result as $row) {
                                             print('<li id="' . $row['id_kategoria'] . '" class="dropdown links">
-                                            <a href="#0" class="label">' . $row['nazwa'] . '</a>
+                                            <a href="/strona/categoryProducts.php?category='. $row['id_kategoria'] . '&page=1" class="label">' . $row['nazwa'] . '</a>
                                             <div class="content">
                                             <ul>
                                             <li>
-                                            <a href="#0">
+                                            <a href="/strona/categoryProducts.php?category='. $row['id_kategoria'] . '&page=1">
                                             <h2>' . $row['nazwa'] . '</h2>
                                             </a>
                                             <ul class="links-list">');
@@ -278,13 +278,13 @@ else
                                             $query2 = $conn->query("SELECT id_kategoria, nazwa, miniaturka FROM kategoria WHERE nadkategoria = '" . $row['id_kategoria'] . "'");
                                             $result2 = $query2->fetchAll(PDO::FETCH_ASSOC);
                                             foreach ($result2 as $row2) {
-                                                print('<li class="links-list-element"><a href="#0">' . $row2['nazwa'] . '</a></li>');
+                                                print('<li class="links-list-element"><a href="/strona/categoryProducts.php?category='. $row2['id_kategoria'] . '&page=1">' . $row2['nazwa'] . '</a></li>');
                                                 $query3 = $conn->query("SELECT id_kategoria, nazwa, miniaturka FROM kategoria WHERE nadkategoria = '" . $row2['id_kategoria'] . "'");
                                                 $result3 = $query3->fetchAll(PDO::FETCH_ASSOC);
                                                 if (!empty($result3)) {
                                                     print('<ul class="links-list-subcategory">');
                                                     foreach ($result3 as $row3) {
-                                                        print('<li class="links-list-element"> <a href="#0">' . $row3['nazwa'] . '</a></li>');
+                                                        print('<li class="links-list-element"> <a href="/strona/categoryProducts.php?category='. $row3['id_kategoria'] . '&page=1">' . $row3['nazwa'] . '</a></li>');
                                                     }
                                                     print('</ul>');
                                                 }

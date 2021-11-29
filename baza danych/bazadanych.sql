@@ -1,4 +1,3 @@
-
 CREATE TABLE `dane_logowania` (
   `mail` varchar(45) NOT NULL PRIMARY KEY,
   `haslo` varchar(72) NOT NULL
