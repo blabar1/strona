@@ -1,17 +1,19 @@
+
     <div class="c-categoryProducts-list-wrapper">
         <div>
-
             <div class="c-categoryProducts-list ">
                 <div class="c-categoryProducts-list__thumbnail" style="background-image: url(<?php echo $thumbnail; ?>);"></div>
                 <div class="c-categoryProducts-list__inside">
 
                     <div class="c-categoryProducts-list__content">
                         <div class="c-categoryProducts-list__name-container">
+                                 <a href="productPage.php">
                             <div class="c-categoryProducts-list__name">
                                 <h3 title="<?php echo $name; ?>"><span class="c-categoryProducts-list__name-span">
                                         <?php echo $name; ?>
                                     </span></h3>
                             </div>
+</a>
                             <div class="c-categoryProducts-list__description">
                                 <ul>
                                     <?php
@@ -26,8 +28,11 @@
                                 </ul>
                             </div>
                         </div>
+                       
+                                  
                         <div class="c-categoryProducts-list__price-container">
                             <div class="c-categoryProducts-list__price"><?php echo ($price . " zł"); ?></div>
+                               
                             <div class="c-categoryProducts-list__button-container">
                                 <?php get_element("elements/element-basket-button.php", array(
                                     'id' => $id

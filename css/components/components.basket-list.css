@@ -120,3 +120,13 @@ width:50px;
 height: 30px;
 text-align: left;
 }
+@media (max-width:700px){
+    .c-basket-list__button-container{
+display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 20px;
+    float: right;
+    margin-left: auto;
+    }
+}

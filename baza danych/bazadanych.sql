@@ -1,6 +1,3 @@
-DROP database IF EXISTS `sklep`;
-create database `sklep`;
-use `sklep`;
 
 CREATE TABLE `dane_logowania` (
   `mail` varchar(45) NOT NULL PRIMARY KEY,
