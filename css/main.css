@@ -16,7 +16,8 @@
 @import "components/components.basket-title-button.css";
 @import "components/components.basket-payment.css";
 @import "components/comoponets.basket-button-delete.css";
-
+@import "components/components.categoryProduct-pagination.css";
+@import "components/components.categoryProduct-filters.css";
 @import "components/loading.css";
 @import "footer.css";
 @import "arkusz_mal.css";

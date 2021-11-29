@@ -1,0 +1,34 @@
+html {
+    font-family: "Lato", sans-serif;
+    --primary-color: #222;
+    --orange: #EB5E28;
+    --grey:#403D39;
+    --white:#FFFCF2;
+    --brudas:#CCC5B9;
+    word-wrap: break-word;
+}
+.c-categoryProduct-filter__title{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0px;
+    hyphens: none;
+    overflow-wrap: normal;
+    margin-top:24px;
+}
+.c-categoryProduct-filter__checkbox-label{
+    list-style-type: none;
+    font-size: 13px;
+    line-height: 20px;
+    color: rgb(26, 26, 26);
+    font-weight: normal;
+    text-decoration: none;
+    margin-left:8px;
+}
+input[type="checkbox"]{
+    background-color: var(--orange);
+}

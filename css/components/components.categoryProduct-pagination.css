@@ -1,0 +1,23 @@
+html {
+    font-family: "Lato", sans-serif;
+    --primary-color: #222;
+    --orange: #EB5E28;
+    --grey:#403D39;
+    --white:#FFFCF2;
+    --brudas:#CCC5B9;
+    word-wrap: break-word;
+}
+.c-category-pagination-container{
+display: flex;
+    justify-content: flex-end;
+}
+.c-category-pagination__element{
+color:var(--primary-color)!important;
+}
+.pagination>li>a, .pagination>li>span{
+color:var(--primary-color)!important;
+}
+.pagination>.active>span{
+    background-color:var(--orange)!important;
+    border-color: var(--orange)!important;
+}
