@@ -26,11 +26,17 @@ include_once "header.php"; ?>
             <!--list-->
             <div class="c-categoryProduct-filters__container col-xl-3 col-lg-3 col-md-3">
                 <div class="c-categoryProduct-filters">
-                    <div class="o-title">Filtry</div>
+                    <div class="c-categoryProduct-filters__header">
+                        <div class="o-title">Filtry<div class="c-categoryProduct-filters__header-exit">&times;</div>
+
+
+                    </div>
                     <div class="c-categoryProduct-filter__title">przyklad</div>
                     <form>
-                        <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="">
-                        <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id"> opis</label><br>
+                        <div class="c-categoryProduct-filter__body">
+                            <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="">
+                            <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id">opis</label>
+                        </div>
                     </form>
 
 
@@ -51,9 +57,11 @@ include_once "header.php"; ?>
                                     </select>
                                     <label class="c-categoryProducts-changer-per-page__select-label">Ilość wyświetlanych produktów</label>
                                 </form>
+
                             </div>
                             <div class="c-categoryProducts-changer-buttons-container">
                                 <div class="c-categoryProducts-changer-buttons">
+                                    <div class="c-categoryProducts-changer-per-page__select-filters"><button class="c-categoryProducts-changer-per-page__select-filters__button">Filtry</button></div>
                                     <button title="Widok kafelków" class="button-tiles" id="js-button-tiles" <?php if (isset($_COOKIE['widok'])) {
                                                                                                                     if ($_COOKIE['widok'] == "tiles") print('disabled');
                                                                                                                 } else print('disabled'); ?>><span class="c-categoryProducts-changer-buttons-tiles"><svg style="width: 100%;height: 100%;" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
@@ -70,6 +78,7 @@ include_once "header.php"; ?>
                                             </svg>
                                         </span>
                                     </button>
+
                                 </div>
                             </div>
                         </div>
@@ -95,7 +104,7 @@ include_once "header.php"; ?>
 
 
 
-            <div class="col-xl-9 col-lg-9 col-md-9">
+            <div class=" col-xs-12 col-sm-12 col-xl-9 col-lg-9 col-md-9">
                 <div class="c-category-pagination-container">
                     <nav aria-label="...">
                         <ul class="pagination pagination-sm">

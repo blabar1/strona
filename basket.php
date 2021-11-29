@@ -18,6 +18,8 @@
                     <span class="o-separator"></span>
                     <div class="c-basket-products-list__container col-xs-12 col-sm-12 col-xl-7 col-lg-7 col-md-7">
 
+
+
                         <?php get_element("elements/element-basket-product-list.php", array(
                             'name' => 'col-xs-12 col-sm-12 col-xl-7 col-lg-7 col-md-7col-xs-12 col-sm-12 col-xl-7 col-lg-7 col-md-7col-xs-12 col-sm-12 col-xl-7 col-lg-7 col-md-7col-xs-12 col-sm-12 col-xl-7 col-lg-7 col-md-7col-xs-12 col-sm-12 col-xl-7 col-lg-7 col-md-7col-xs-12 col-sm-12 col-xl-7 col-lg-7 col-md-7col-xs-12 col-sm-12 col-xl-7 col-lg-7 col-md-7col-xs-12 col-sm-12 col-xl-7 col-lg-7 col-md-7col-xs-12 col-sm-12 col-xl-7 col-lg-7 col-md-7col-xs-12 col-sm-12 col-xl-7 col-lg-7 col-md-7',
                             'thumbnail' => 'images/produkty/p1.jpg',
@@ -96,6 +98,8 @@
 
 
                     </div>
+
+
                     <div class="c-basket-products-payment__container col-xs-12 col-sm-12 col-xl-5 col-lg-5 col-md-5">
                         <?php get_element("elements/element-basket-payment.php", array(
                             'price' => '12999999',

@@ -37,6 +37,7 @@ html {
     position: relative;
     left: 75%;
     width: 25%;
+    padding:4px;
     background: none;
     border-color: var(--orange);
     border-radius: 15px;
@@ -48,6 +49,7 @@ html {
     background: var(--orange);
     color: var(--white);
     border-color: var(--orange);
+    transition: all 0.1s ease-in-out;
 }
 
 .c-forms-compoments {

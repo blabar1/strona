@@ -15,8 +15,8 @@
         <div class="c-forms-compoments">
             <div class="c-forms">
                 <div class="c-buttons">
-                <button class="c-button c-button-clicked" id='loging'>Logowanie</button>
-                <button class="c-button" id='registerg'>Nowe konto</button>
+                    <button class="c-button c-button-clicked" id='loging'>Logowanie</button>
+                    <button class="c-button" id='registerg'>Nowe konto</button>
                 </div>
                 <!-- login form-->
                 <div class="c-form" id='login'>
@@ -89,7 +89,7 @@
                                 $hash = password_hash($_POST['password'], PASSWORD_BCRYPT);
                                 $mail = $_POST['register'];
                                 $register = $conn->query("INSERT INTO dane_logowania (`mail`, `haslo`) VALUES ('" . $mail . "', '" . $hash . "')");
-                                $userdate = $conn->query("INSERT INTO dane_konta (`imie`, `nazwisko`, `konto_typ`, `mail`) VALUES ('" . $_POST['fname'] . "', '" . $_POST['lname'] . "', 1 , '". $mail . "')");
+                                $userdate = $conn->query("INSERT INTO dane_konta (`imie`, `nazwisko`, `konto_typ`, `mail`) VALUES ('" . $_POST['fname'] . "', '" . $_POST['lname'] . "', 1 , '" . $mail . "')");
                                 header("Location:index.php");
                             } catch (PDOException $ex) {
                                 if ($ex->errorInfo[1] == 1062) {

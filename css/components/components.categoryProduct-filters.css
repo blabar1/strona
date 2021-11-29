@@ -7,6 +7,17 @@ html {
     --brudas:#CCC5B9;
     word-wrap: break-word;
 }
+
+.c-categoryProduct-filters__container{
+    height: 150vh;
+    }
+    @media only screen  and (max-width:992px){
+        .c-categoryProduct-filters__container{
+            display:none;
+        }
+        
+    }
+    
 .c-categoryProduct-filter__title{
     display: block;
     margin-bottom: 8px;
@@ -26,9 +37,59 @@ html {
     line-height: 20px;
     color: rgb(26, 26, 26);
     font-weight: normal;
-    text-decoration: none;
-    margin-left:8px;
+    text-decoration: none; 
+    margin-left:18px;
+    margin-top: 4px;
+    width:100%;
+    overflow: hidden;
+display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    visibility: visible;
+    text-overflow: ellipsis;
 }
-input[type="checkbox"]{
-    background-color: var(--orange);
+.c-categoryProduct-filter__body{
+    display: flex;
+    align-items: center;
+    margin-top:24px;
 }
+  input[type="checkbox"].c-categoryProduct-filter__checkbox{
+    font-size: 10px;
+
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    width: 3.5em;
+    height: 1.5em;
+    background: rgb(201, 201, 201);
+    border-radius: 3em;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    }
+    
+    input[type="checkbox"].c-categoryProduct-filter__checkbox:checked{
+    background: var(--orange);
+    }
+    
+    input[type="checkbox"].c-categoryProduct-filter__checkbox:after{
+    position: absolute;
+    content: "";
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background: #fff;
+    -webkit-box-shadow: 0 0 .25em rgba(0,0,0,.3);
+            box-shadow: 0 0 .25em rgba(0,0,0,.3);
+    -webkit-transform: scale(.7);
+            transform: scale(.7);
+    left: 0;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    }
+    
+    input[type="checkbox"].c-categoryProduct-filter__checkbox:checked:after{
+    left: calc(100% - 1.5em);
+    }
