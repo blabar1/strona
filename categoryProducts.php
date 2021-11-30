@@ -25,21 +25,148 @@ include_once "header.php"; ?>
         <div class="row">
             <!--list-->
             <div class="c-categoryProduct-filters__container col-xl-3 col-lg-3 col-md-3">
-                <div class="c-categoryProduct-filters">
+                <div class="c-categoryProduct-filters ">
                     <div class="c-categoryProduct-filters__header">
                         <div class="o-title">Filtry<div class="c-categoryProduct-filters__header-exit">&times;</div>
 
 
+
                         </div>
                     </div>
-                    <div class="c-categoryProduct-filter__title">przyklad</div>
-                    <form>
-                        <div class="c-categoryProduct-filter__body">
-                            <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="">
-                            <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id">opis</label>
-                        </div>
-                    </form>
+                    <div class="c-categoryProduct-filter-elements-container">
+                        <div class="c-categoryProduct-filter__title">przyklad</div>
+                        <form>
+                            <div class="c-categoryProduct-filter__body">
+                                <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="">
+                                <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id">opis</label>
+                            </div>
+                        </form>
+                        <div class="c-categoryProduct-filter__title">przyklad</div>
+                        <form>
+                            <div class="c-categoryProduct-filter__body">
+                                <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="">
+                                <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id">opis</label>
+                            </div>
+                        </form>
+                        <div class="c-categoryProduct-filter__title">przyklad</div>
+                        <form>
+                            <div class="c-categoryProduct-filter__body">
+                                <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="">
+                                <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id">opis</label>
+                            </div>
+                        </form>
+                        <div class="c-categoryProduct-filter__title">przyklad</div>
+                        <form>
+                            <div class="c-categoryProduct-filter__body">
+                                <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="">
+                                <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id">opis</label>
+                            </div>
+                        </form>
+                        <div class="c-categoryProduct-filter__title">przyklad</div>
+                        <form>
+                            <div class="c-categoryProduct-filter__body">
+                                <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="">
+                                <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id">opis</label>
+                            </div>
+                        </form>
+                        <div class="c-categoryProduct-filter__title">przyklad</div>
+                        <form>
+                            <div class="c-categoryProduct-filter__body">
+                                <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="">
+                                <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id">opis</label>
+                            </div>
+                        </form>
 
+
+                        <div class="c-categoryProduct-filter__title">przyklad</div>
+                        <form>
+                            <div class="c-categoryProduct-filter__body">
+                                <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="">
+                                <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id">opis</label>
+                            </div>
+                        </form>
+                        <div class="c-categoryProduct-filter__title">przyklad</div>
+                        <form>
+                            <div class="c-categoryProduct-filter__body">
+                                <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="">
+                                <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id">opis</label>
+                            </div>
+                        </form>
+                        <div class="c-categoryProduct-filter__title">przyklad</div>
+                        <form>
+                            <div class="c-categoryProduct-filter__body">
+                                <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="">
+                                <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id">opis</label>
+                            </div>
+                        </form>
+                        <div class="c-categoryProduct-filter__title">przyklad</div>
+                        <form>
+                            <div class="c-categoryProduct-filter__body">
+                                <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="">
+                                <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id">opis</label>
+                            </div>
+                        </form>
+                        <div class="c-categoryProduct-filter__title">przyklad</div>
+                        <form>
+                            <div class="c-categoryProduct-filter__body">
+                                <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="">
+                                <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id">opis</label>
+                            </div>
+                        </form>
+                        <div class="c-categoryProduct-filter__title">przyklad</div>
+                        <form>
+                            <div class="c-categoryProduct-filter__body">
+                                <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="">
+                                <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id">opis</label>
+                            </div>
+                        </form>
+
+
+                        <div class="c-categoryProduct-filter__title">przyklad</div>
+                        <form>
+                            <div class="c-categoryProduct-filter__body">
+                                <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="">
+                                <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id">opis</label>
+                            </div>
+                        </form>
+                        <div class="c-categoryProduct-filter__title">przyklad</div>
+                        <form>
+                            <div class="c-categoryProduct-filter__body">
+                                <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="">
+                                <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id">opis</label>
+                            </div>
+                        </form>
+                        <div class="c-categoryProduct-filter__title">przyklad</div>
+                        <form>
+                            <div class="c-categoryProduct-filter__body">
+                                <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="">
+                                <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id">opis</label>
+                            </div>
+                        </form>
+                        <div class="c-categoryProduct-filter__title">przyklad</div>
+                        <form>
+                            <div class="c-categoryProduct-filter__body">
+                                <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="">
+                                <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id">opis</label>
+                            </div>
+                        </form>
+                        <div class="c-categoryProduct-filter__title">przyklad</div>
+                        <form>
+                            <div class="c-categoryProduct-filter__body">
+                                <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="">
+                                <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id">opis</label>
+                            </div>
+                        </form>
+                        <div class="c-categoryProduct-filter__title">przyklad</div>
+                        <form>
+                            <div class="c-categoryProduct-filter__body">
+                                <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="">
+                                <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id">opis</label>
+                            </div>
+                            <div class="o-title">Koniec</div>
+                        </form>
+
+                    </div>
                 </div>
             </div>
             <div class="c-categoryProducts-container">
@@ -61,7 +188,7 @@ include_once "header.php"; ?>
                             </div>
                             <div class="c-categoryProducts-changer-buttons-container">
                                 <div class="c-categoryProducts-changer-buttons">
-                                    <div class="c-categoryProducts-changer-per-page__select-filters"><button class="c-categoryProducts-changer-per-page__select-filters__button">Filtry</button></div>
+                                    <div class="c-categoryProducts-changer-per-page__select-filters"><button id="js-filters-button" class="c-categoryProducts-changer-per-page__select-filters__button">Filtry</button></div>
                                     <button title="Widok kafelków" class="button-tiles" id="js-button-tiles" <?php if (isset($_COOKIE['widok'])) {
                                                                                                                     if ($_COOKIE['widok'] == "tiles") print('disabled');
                                                                                                                 } else print('disabled'); ?>><span class="c-categoryProducts-changer-buttons-tiles"><svg style="width: 100%;height: 100%;" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">

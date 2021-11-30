@@ -32,3 +32,10 @@ function loadDoc() {
 }
 
 
+$(document).ready(function () {
+  $("#js-filters-button").click(function () {
+    $(".overlay").toggle();
+    $('.c-categoryProduct-filters').toggleClass("animation-right");
+
+  });
+});
