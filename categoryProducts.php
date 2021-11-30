@@ -30,6 +30,7 @@ include_once "header.php"; ?>
                         <div class="o-title">Filtry<div class="c-categoryProduct-filters__header-exit">&times;</div>
 
 
+                        </div>
                     </div>
                     <div class="c-categoryProduct-filter__title">przyklad</div>
                     <form>
@@ -38,7 +39,6 @@ include_once "header.php"; ?>
                             <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id">opis</label>
                         </div>
                     </form>
-
 
                 </div>
             </div>
