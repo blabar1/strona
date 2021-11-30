@@ -6,7 +6,8 @@
         <div class="c-banner-slider">
             <div class="c-banner-slider__slider js-banner-slider">
                 <?php foreach ($images as $image) : ?>
-                    <div class="c-banner-slider__item" style="background-image: url(<?php echo $image; ?>);"></div>
+                    <img class="c-banner-slider__item" src="<?php echo $image; ?>">
+
                 <?php endforeach; ?>
             </div>
         </div>

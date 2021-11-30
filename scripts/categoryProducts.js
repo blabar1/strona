@@ -33,9 +33,31 @@ function loadDoc() {
 
 
 $(document).ready(function () {
+
+  $(".c-categoryProduct-filters__header-exit").click(function () {
+    $(".overlay").toggle();
+    $('.c-categoryProduct-filters__container').toggleClass("animation-left");
+    $('.c-categoryProduct-filters__container').removeClass("animation-right");
+  });
   $("#js-filters-button").click(function () {
     $(".overlay").toggle();
-    $('.c-categoryProduct-filters').toggleClass("animation-right");
+    $('.c-categoryProduct-filters__container').show();
+    $('.c-categoryProduct-filters__container').toggleClass("animation-right");
+    $('.c-categoryProduct-filters__container').removeClass("animation-left");
+  });
+});
 
+$(document).ready(function () {
+  $(window).resize(function () {
+    if ($(window).width() > 992) {
+      $(".overlay").hide();
+      $('.c-categoryProduct-filters__container').show();
+      $('.c-categoryProduct-filters__container').removeClass("animation-right");
+      $('.c-categoryProduct-filters__container').removeClass("animation-left");
+
+    }
+    if ($(window).width() < 992) {
+      $('.c-categoryProduct-filters__container').hide();
+    }
   });
 });
