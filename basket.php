@@ -6,7 +6,14 @@
         <div class="c-basket">
             <div class="c-basket-container">
                 <div class="row">
+                    <!-- <div class="c-basket-empty">
+                        <div class="c-basket-empty-container">
+                            <div class="c-basket-empty-container__title">Twój koszyk jest pusty</div>
+                            <div class="c-basket-empty-container__subtext">Zainspiruj się</div>
+                            <div class="c-basket-empty-container__button"><a href="index.php"><button class="c-basket-empty-container__button-element">Przejdź do strony głównej </button></a></div>
+                        </div>
 
+                    </div> -->
                     <?php get_element("elements/element-basket-title-button.php", array(
                         'quantity' => '9999'
                         // tam tez jest ten przycisk do usuwania wszystkego
@@ -106,12 +113,14 @@
                         )); ?>
 
                     </div>
+
                 </div>
 
             </div>
 
         </div>
     </div>
+
 
 
 </div>

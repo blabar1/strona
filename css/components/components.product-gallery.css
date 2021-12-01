@@ -45,17 +45,16 @@
     z-index: 10;
     cursor: pointer;
     font-size: 60px;
-    opacity: 0.5;
+    opacity: 1;
+    mix-blend-mode: difference;
 }
 
 .c-banner-slider__arrow--right {
     right: 20px;
-    color: var(--primary-color);
 }
 
 .c-banner-slider__arrow--left {
     left: 20px;
-    color: var(--primary-color);
 }
 
 .slick-dots {

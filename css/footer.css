@@ -59,9 +59,6 @@ html {
             width: 50%;
         }
     }
-    a:hover{
-        color:var(--orange);
-    }
     footer a:hover{
     color: var(--brudas);
     }
