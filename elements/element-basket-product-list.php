@@ -7,11 +7,13 @@
 
                 <div class="c-basket-list__content">
                     <div class="c-basket-list__name-container">
-                        <div class="c-basket-list__name">
-                            <h3 title="<?php echo $name; ?>"><span class="c-basket-list__name-span">
-                                    <?php echo $name; ?>
-                                </span></h3>
-                        </div>
+                        <a href="#">
+                            <div class="c-basket-list__name">
+                                <h3 title="<?php echo $name; ?>"><span class="c-basket-list__name-span">
+                                        <?php echo $name; ?>
+                                    </span></h3>
+                            </div>
+                        </a>
                     </div>
                     <div class="c-basket-list__price-container">
                         <div class="c-basket-list__price"><?php echo ($price . " zł"); ?></div>

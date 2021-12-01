@@ -7,6 +7,7 @@ html {
     --brudas: #CCC5B9;
     word-wrap: break-word;
     margin: 0;
+    overflow-x: hidden;
 }
 
 a,
@@ -104,17 +105,6 @@ ul {
     padding: 10px;
     height: 50px;
 }
-
-.c-logo {
-    max-height: 60px;
-    width: auto;
-}
-
-.c-icon-basket {
-    max-height: 50px;
-    width: auto;
-}
-
 .o-hamburger {
     display: none;
     height: 33px;
@@ -168,49 +158,8 @@ ul {
     opacity: 0.64;
 }
 
-.c-menu__list {
-    width: 100%;
-    display: inline-flex
-}
-
-.c-menu-start_option {
-    margin: auto;
-    width: 100%;
-    height: 100%;
-}
-
-@media only screen and (max-width: 1200px) {
-    .c-menu-start-submenu {
-        margin-right: 10px;
-        height: 250px;
-    }
-    .c-menu-start:hover .c-menu-start-list {
-        height: auto;
-    }
-}
-
 .o-hamburger.is-active {
     z-index: 1000;
-}
-
-.c-menu__list.is-active {
-    display: flex;
-    word-wrap: break-all;
-}
-
-.c-icon-basket.is-active {
-    display: none;
-}
-
-.c-menu-basket.is-active {
-    display: flex;
-}
-
-.c-menu-start-list.is-active {
-    align-items: center;
-    border-radius: 0px;
-    border-width: 0px;
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 }
 
 .o-hamburger .o-hamburger__bar--first {
@@ -275,115 +224,6 @@ ul {
     border-radius: 15px;
 } */
 
-.c-banner-slider .c-banner-slider__slider {
-    display: block;
-    width: 100%;
-}
-.slick-initialized .slick-slide {
-    border-radius: 24px;
-}
-
-.c-banner-slider {
-    margin-top: 90px;
-    height: 100%;
-    overflow: hidden;
-}
-
-.c-banner-slider__slider {
-    margin-bottom: 0 !important;
-}
-
-.c-banner-slider__arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    cursor: pointer;
-    font-size: 60px;
-    opacity: 0.5;
-}
-
-.c-banner-slider__arrow--right {
-    right: 20px;
-    color: var(--primary-color);
-}
-
-.c-banner-slider__arrow--left {
-    left: 20px;
-    color: var(--primary-color);
-}
-
-.slick-dots {
-    bottom: 15px;
-    display: flex;
-    justify-content: center;
-}
-
-.slick-dots li button:before {
-    font-size: 15px;
-}
-
-.c-banner-slider__item .slick-slide .slick-current .slick-active {
-    mix-blend-mode: screen;
-}
-
-.c-text-options__container {
-    display: flex;
-}
-
-.c-products-cards__slider-item-image {
-    background-position: center;
-    background-size: contain;
-    border-color: var(--primary-color);
-    height: 152px;
-    background-repeat: no-repeat;
-}
-
-.c-products-cards__slider-item {
-    width: 120px;
-}
-
-.c-products-cards__slider-item {
-    height: auto;
-    padding: 10px;
-    margin: 10px;
-    border-color: var(--primary-color);
-    border-radius: 2px;
-    border-width: 1px;
-    border-style: solid;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
-    margin-top: 100px;
-}
-
-.c-products-cards__slider-item-content {
-    padding: 10px 10px 10px 10px;
-    font-size: 15px;
-}
-
-.c-small-gallery-container {
-    position: relative;
-    border-color: var(--primary-color);
-    border-radius: 2px;
-    border-width: 1px;
-    border-style: solid;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
-    height: 450px;
-    width: 300px;
-}
-
-.c-small-gallery__slider-item {
-    height: 300px;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.c-small-gallery__slider-item-nav {
-    height: 100px;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
 @media only screen and (max-width: 700px) {
     .c-small-gallery {
         display: flex;
@@ -422,154 +262,11 @@ ul {
     background-repeat: no-repeat;
     margin-left: 225px;
 }
-
-.c-products-cards__slider-item-decor {
-    transform: translateY(-100%);
-    position: absolute;
-    width: 194px;
-    background-repeat: no-repeat;
-}
-
-.c-login {
-    display: flex;
-}
-
-.c-login-container-password {
-    margin-top: 50px;
-}
-
-.c-login-container-button {
-    font-family: 'Quicksand', sans-serif;
-    color: #000;
-    margin-top: 50px;
-    margin-bottom: 30px;
-    font-size: 17px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: #fff;
-    display: flex;
-    transition-duration: 0.4s;
-    border-radius: 25px;
-    border-color: var(--primary-color);
-}
-
-.c-login-container-button:hover {
-    background-color: var(--primary-color);
-    color: #fff;
-}
-
-.c-login-container-register {
-    margin-top: 100px;
-}
-
-.c-login-container {
-    display: block;
-    padding-left: 30px;
-    padding-right: 50px;
-    padding-top: 30px;
-    font-size: 20px;
-    margin-top: 50px;
-    margin-bottom: 25px;
-    width: 35vw;
-    height: 430px;
-    background-color: #ffffff;
-    border-color: var(--primary-color);
-    border-radius: 3px;
-    border-width: 1px;
-    border-style: solid;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
-}
-
-@media only screen and (max-width: 800px) {}
-
-@media only screen and (max-width: 700px) {
-    .c-login-container {
-        width: 60vw;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    .c-login-container {
-        width: 80vw;
-    }
-}
-
 a {
     color: inherit;
     text-decoration: none;
 }
 
-.o-wrapper-basket {
-    margin-left: 100px;
-    margin-right: 100px;
-}
-
-.c-basket-items {
-    display: flex;
-    justify-content: center;
-    padding-top: 50px;
-}
-
-.c-basket-items-container {
-    width: 100vw;
-    height: 50vh;
-    right: 10px;
-    left: 10px;
-    top: 10px;
-    bottom: 10px;
-    border-color: var(--primary-color);
-    border-radius: 2px;
-    border-width: 1px;
-    border-style: solid;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
-}
-
-.c-basket-description-price {
-    margin-left: auto;
-}
-
-@media only screen and (max-width: 800px) {
-    .c-basket-description-button {
-        right: 0;
-    }
-}
-
-.c-basket-description-button {
-    font-family: 'Quicksand', sans-serif;
-    color: #000;
-    font-size: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: #fff;
-    display: flex;
-    margin-top: 50px;
-    position: absolute;
-    right: 32px;
-    transition-duration: 0.4s;
-    border-radius: 25px;
-    border-color: var(--primary-color);
-}
-
-.c-basket-description-button:hover {
-    background-color: var(--primary-color);
-    color: #fff;
-}
-
-.c-basket-description {
-    padding-top: 10px;
-    display: flex;
-}
-
-.c-basket-items-container-content {
-    padding-left: 10px;
-    padding-top: 10px;
-}
-
-@media only screen and (max-width: 550px) {}
 
 .c-text__basket {
     margin-top: 90px;
@@ -670,51 +367,6 @@ a {
     }
 }
 
-.map {
-    width: 400px;
-    height: 400px;
-    border-top-image: url('images/deska gora.png');
-}
-
-.c-shop__title {
-    padding-top: 10px;
-    font-size: 24px;
-}
-
-.c-shop {
-    display: flex;
-}
-
-.c-shop__card {
-    cursor: pointer;
-    margin-top: 30px;
-    border: 1px solid var(--primary-color);
-    border-radius: 3px;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
-}
-
-.c-shop__card-description {
-    padding: 15px;
-    text-align: center;
-    word-break: break-all;
-    height: 170px;
-}
-
-.c-shop__card-image {
-    display: flex;
-    background-position: center;
-    background-size: contain;
-    border-color: var(--primary-color);
-    height: 350px;
-    background-repeat: no-repeat;
-}
-
-.c-shop-responsive {
-    padding: 0 6px;
-    float: left;
-    width: 33.333%;
-}
-
 @media only screen and (max-width: 800px) {
     .c-shop-responsive {
         width: 49.99999%;
@@ -736,51 +388,6 @@ a {
     .c-footer__wrapper {
         display: block;
     }
-}
-
-.c-footer__wrapper-title {
-    padding-bottom: 10px;
-}
-
-.c-informations {
-    margin-top: 32px;
-    display: flex;
-}
-
-.c-informations-content-photo {
-    width: 100%;
-}
-
-.c-informations-content {
-    display: flex;
-    padding-top: 15px;
-}
-
-.c-informations-content-text {
-    width: 49.999%;
-    margin-left: 10px;
-}
-
-.c-informations-content-photo {
-    width: 49.999%;
-}
-
-.c-informations-content-photo img {
-    width: 100%;
-}
-
-.c-informations-content-map {
-    width: 49.999%;
-}
-
-.map {
-    border-image: url('images/deska_gora.png') 30 30 stretch;
-    border-width: 10px;
-    width: 100%;
-}
-
-.c-informations-content-text-top {
-    padding-right: 10px;
 }
 
 @media only screen and (max-width: 800px) {
@@ -948,14 +555,4 @@ a {
     justify-content: space-between;
 }
 
-@media only screen and (max-width: 1200px) {
-    .c-banner-slider {
-        margin-top: 70px;
-    }
-}
 
-.c-products-cards__title {
-    font-size: 26px;
-    font-weight: bold;
-    margin-top: 24px;
-}

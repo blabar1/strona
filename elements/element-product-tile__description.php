@@ -1,14 +1,16 @@
 <div class=" col-xs-12 col-sm-6 col-xl-4 col-lg-4 col-md-4">
-    <a href="productPage.php">
+
     <div class="c-categoryProducts-tile">
         <div class="c-categoryProducts-tile__inside">
             <div class="c-categoryProducts-tile__thumbnail" style="background-image: url(<?php echo $thumbnail; ?>);"></div>
             <div class="c-categoryProducts-tile__content">
-                <div class="c-categoryProducts-tile__name">
-                    <h3 title="<?php echo $name; ?>"><span class="c-categoryProducts-tile__name-span">
-                            <?php echo $name; ?>
-                        </span></h3>
-                </div>
+                <a href="productPage.php">
+                    <div class="c-categoryProducts-tile__name">
+                        <h3 title="<?php echo $name; ?>"><span class="c-categoryProducts-tile__name-span">
+                                <?php echo $name; ?>
+                            </span></h3>
+                    </div>
+                </a>
                 <div class="c-categoryProducts-tile__description">
                     <ul>
                         <?php
@@ -19,8 +21,8 @@
                             }
                         ?>
                     </ul>
-                </div> 
-                  </a>
+                </div>
+
                 <div class="c-categoryProducts-tile__price-container">
                     <div class="c-categoryProducts-tile__price"><?php echo ($price . " zł"); ?></div>
                     <div class="c-categoryProducts-tile__button-container">
@@ -33,7 +35,8 @@
             </div>
         </div>
     </div>
-             
+
+
 </div>
 <?php get_element("elements/element-basket-button-modal.php", array(
     'thumbnail' => $thumbnail,

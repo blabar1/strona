@@ -90,7 +90,7 @@ else
                         }
                         ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="basket.php">
                                 <div class="c-menu-element-basket">
                                     <div class="svg-photo-basket">
                                         <div class="svg-photo-basket">
@@ -134,9 +134,9 @@ else
 
                     <nav class="main-nav">
                         <ul>
-                             <a href="/strona/categoryProducts.php?category=1&page=1">
-                            <li class="has-dropdown links" data-content="1">
-                               
+                            <a href="/strona/categoryProducts.php?category=1&page=1">
+                                <li class="has-dropdown links" data-content="1">
+
                                     <div class="svg-photo-wrap">
                                         <div class="svg-photo">
                                             <svg class="svg-menu" style="width: 100%;height: 100%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -150,9 +150,9 @@ else
                                     </div>
                             </a>
                             </li>
- <a href="/strona/categoryProducts.php?category=2&page=1">
-                            <li class="has-dropdown links" data-content="2">
-                               
+                            <a href="/strona/categoryProducts.php?category=2&page=1">
+                                <li class="has-dropdown links" data-content="2">
+
                                     <div class="svg-photo-wrap">
                                         <div class="svg-photo">
                                             <svg class="svg-menu" style="width: 100%;height: 100%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -169,8 +169,8 @@ else
                             </a>
                             </li>
                             <a href="/strona/categoryProducts.php?category=3&page=1">
-                            <li class="has-dropdown links" data-content="3">
-                                
+                                <li class="has-dropdown links" data-content="3">
+
                                     <div class="svg-photo-wrap">
                                         <div class="svg-photo"><svg class="svg-menu" style="width: 100%;height: 100%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                                 <path d="M9.743 18A5.5 5.5 0 1 1 5 9.022L19 9a5.98 5.98 0 0 1 1.97.585A5.5 5.5 0 1 1 14.258 18H9.743zm-4.45-8l-.203.018a4.5 4.5 0 1 0 3.882 7.345l.3-.363h5.456l.3.363a4.5 4.5 0 1 0 3.882-7.345L18.706 10H5.294zm9.207 7v1h-5v-1h5zm-9-7V9h13v1h-13zm-2 5a.5.5 0 1 1 0-1h4a.5.5 0 1 1 0 1h-4zM5 12.5a.5.5 0 1 1 1 0v4a.5.5 0 1 1-1 0v-4zm8-3a.5.5 0 1 1-1 0V8.472c.043-.77.471-1.468 1.176-1.874l2.183-1.03c.387-.225.63-.634.641-1.068v-2a.5.5 0 1 1 1 0v2.013c-.021.794-.452 1.52-1.176 1.939l-2.183 1.03c-.377.219-.618.611-.641 1.018v1zm7 4.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm-2 3a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm-7-4v-1h2v1h-2zm0 2v-1h2v1h-2z"></path>
@@ -182,9 +182,9 @@ else
                                     </div>
                             </a>
                             </li>
- <a href="/strona/categoryProducts.php?category=4&page=1">
-                            <li class="has-dropdown button" data-content="4">
-                               
+                            <a href="/strona/categoryProducts.php?category=4&page=1">
+                                <li class="has-dropdown button" data-content="4">
+
                                     <div class="svg-photo-wrap">
                                         <div class="svg-photo"><svg class="svg-menu" style="width: 100%;height: 100%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                                 <path d="M16.5 3a.5.5 0 0 1 .5.5v1.55c.98.2 1.751.97 1.95 1.95h1.55a.5.5 0 1 1 0 1H19v2h1.5a.5.5 0 1 1 0 1H19v2h1.5a.5.5 0 1 1 0 1H19v2h1.5a.5.5 0 1 1 0 1h-1.55c-.199.98-.97 1.751-1.95 1.95v1.55a.5.5 0 1 1-1 0V19h-2v1.5a.5.5 0 1 1-1 0V19h-2v1.5a.5.5 0 1 1-1 0V19H8v1.5a.5.5 0 1 1-1 0v-1.55A2.503 2.503 0 0 1 5.05 17H3.5a.5.5 0 1 1 0-1H5v-2H3.5a.5.5 0 1 1 0-1H5v-2H3.5a.5.5 0 1 1 0-1H5V8H3.5a.5.5 0 0 1 0-1h1.55c.199-.98.97-1.751 1.95-1.95V3.5a.5.5 0 0 1 1 0V5h2V3.5a.5.5 0 1 1 1 0V5h2V3.5a.5.5 0 1 1 1 0V5h2V3.5a.5.5 0 0 1 .5-.5zm0 3h-9A1.5 1.5 0 0 0 6 7.5v9A1.5 1.5 0 0 0 7.5 18h9a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 16.5 6zm-2 2A1.5 1.5 0 0 1 16 9.5v5a1.5 1.5 0 0 1-1.5 1.5h-5A1.5 1.5 0 0 1 8 14.5v-5A1.5 1.5 0 0 1 9.5 8h5zm0 1h-5a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 .5-.5v-5a.5.5 0 0 0-.5-.5z"></path>
@@ -194,11 +194,11 @@ else
                                     <div class="has-dropdown-title">
                                         <div class="has-dropdown-title__title">Podzespoły komputerowe</div>
                                     </div>
-                                </a>
-                            </li> 
-                             <a href="/strona/categoryProducts.php?category=5&page=1">
-                            <li class="has-dropdown gallery" data-content="5">
-                              
+                            </a>
+                            </li>
+                            <a href="/strona/categoryProducts.php?category=5&page=1">
+                                <li class="has-dropdown gallery" data-content="5">
+
                                     <div class="svg-photo-wrap">
                                         <div class="svg-photo"><svg class="svg-menu" style="width: 100%;height: 100%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                                 <path d="M16 16.5a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5V18H4.5A1.5 1.5 0 0 1 3 16.5v-7A1.5 1.5 0 0 1 4.5 8h15A1.5 1.5 0 0 1 21 9.5v7a1.5 1.5 0 0 1-1.5 1.5H16v-1.5zm1 .5h2.5a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5h-15a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .5.5H7v-.5A1.5 1.5 0 0 1 8.5 15h7a1.5 1.5 0 0 1 1.5 1.5v.5zM7 9V4.5A1.5 1.5 0 0 1 8.5 3h7A1.5 1.5 0 0 1 17 4.5V9H7zm9-1V4.5a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5V8h8zm-7.5 7h7a1.5 1.5 0 0 1 1.5 1.5v4a1.5 1.5 0 0 1-1.5 1.5h-7A1.5 1.5 0 0 1 7 20.5v-4A1.5 1.5 0 0 1 8.5 15zm0 1a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5h-7zm9.5-6a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM9 20v-1h4v1H9zm0-2v-1h6v1H9z"></path>
@@ -211,8 +211,8 @@ else
                             </a>
                             </li>
                             <a href="/strona/categoryProducts.php?category=6&page=1">
-                            <li class="has-dropdown gallery" data-content="6">
-                                
+                                <li class="has-dropdown gallery" data-content="6">
+
                                     <div class="svg-photo-wrap">
                                         <div class="svg-photo"><svg class="svg-menu" style="width: 100%;height: 100%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                                 <path d="M11.46 19H5v1h14v-1h-7.54zm10.04-1h-19A2.5 2.5 0 0 1 0 15.5v-10A2.5 2.5 0 0 1 2.5 3h19A2.5 2.5 0 0 1 24 5.5v10a2.5 2.5 0 0 1-2.5 2.5zm0-1a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 21.5 4h-19A1.5 1.5 0 0 0 1 5.5v10A1.5 1.5 0 0 0 2.5 17h19zM10 13.5v-6a.5.5 0 0 1 .757-.429l5 3a.5.5 0 0 1 0 .858l-5 3A.5.5 0 0 1 10 13.5zm4.528-3L11 8.383v4.234l3.528-2.117zM5 5v1H3.5a.5.5 0 0 0-.5.5V8H2V6.5A1.5 1.5 0 0 1 3.5 5H5zm14 11v-1h1.5a.5.5 0 0 0 .5-.5V13h1v1.5a1.5 1.5 0 0 1-1.5 1.5H19z"></path>
@@ -225,8 +225,8 @@ else
                             </a>
                             </li>
                             <a href="/strona/categoryProducts.php?category=7&page=1">
-                            <li class="has-dropdown gallery" data-content="7">
-                                
+                                <li class="has-dropdown gallery" data-content="7">
+
                                     <div class="svg-photo-wrap">
                                         <div class="svg-photo"><svg class="svg-menu" style="width: 100%;height: 100%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                                 <path d="M19.5 13a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-15a.5.5 0 0 1-.5-.5v-8a.5.5 0 1 1 1 0V21h14v-7.5a.5.5 0 0 1 .5-.5zm-6.793 2.293a1 1 0 1 1-1.414 1.414 1 1 0 0 1 1.414-1.414zm1.768-1.768a.5.5 0 1 1-.707.707 2.5 2.5 0 0 0-3.536 0 .5.5 0 1 1-.707-.707 3.5 3.5 0 0 1 4.95 0zm1.768-1.768a.5.5 0 0 1-.707.707 5 5 0 0 0-7.072 0 .5.5 0 0 1-.707-.707 6 6 0 0 1 8.486 0zm-3.9-9.62l9.5 9a.5.5 0 1 1-.687.726L12 3.189l-9.156 8.674a.5.5 0 1 1-.688-.726l9.5-9a.5.5 0 0 1 .688 0z"></path>
@@ -239,9 +239,9 @@ else
                                     </div>
                             </a>
                             </li>
-                               <a href="/strona/categoryProducts.php?category=8&page=1">
-                            <li class="has-dropdown gallery" data-content="8">
-                             
+                            <a href="/strona/categoryProducts.php?category=8&page=1">
+                                <li class="has-dropdown gallery" data-content="8">
+
                                     <div class="svg-photo-wrap">
                                         <div class="svg-photo"><svg class="svg-menu" style="width: 100%;height: 100%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                                 <path d="M3 9.5h1v1.71H3V9.5zm6 0h1v8H9v-8zm-5 0H3a3.5 3.5 0 0 1 7 0H9a2.5 2.5 0 0 0-5 0zm13 8h1a4.5 4.5 0 1 1-9 0h1a3.5 3.5 0 0 0 7 0zm0-6h1v6h-1v-6zM13.5 6h8a.5.5 0 0 1 .5.5v4a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 0 1-1.5-1.5v-4a.5.5 0 0 1 .5-.5zm.5 1v3.5a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 .5-.5V7h-7zm.5-4h6a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-6a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5zm.5 1v2h5V4h-5zM1.5 14h4a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5zm.5 1v1h3v-1H2zm4.5 0h-6a.5.5 0 0 1-.5-.5v-2A1.5 1.5 0 0 1 1.5 11h4A1.5 1.5 0 0 1 7 12.5v2a.5.5 0 0 1-.5.5zM6 12.5a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 0-.5.5V14h5v-1.5zM16 5h1v2h-1V5zm2 0h1v2h-1V5z"></path>
@@ -275,11 +275,11 @@ else
                                         $result = $query->fetchAll(PDO::FETCH_ASSOC);
                                         foreach ($result as $row) {
                                             print('<li id="' . $row['id_kategoria'] . '" class="dropdown links">
-                                            <a href="/strona/categoryProducts.php?category='. $row['id_kategoria'] . '&page=1" class="label">' . $row['nazwa'] . '</a>
+                                            <a href="/strona/categoryProducts.php?category=' . $row['id_kategoria'] . '&page=1" class="label">' . $row['nazwa'] . '</a>
                                             <div class="content">
                                             <ul>
                                             <li>
-                                            <a href="/strona/categoryProducts.php?category='. $row['id_kategoria'] . '&page=1">
+                                            <a href="/strona/categoryProducts.php?category=' . $row['id_kategoria'] . '&page=1">
                                             <h2>' . $row['nazwa'] . '</h2>
                                             </a>
                                             <ul class="links-list">');
@@ -287,13 +287,13 @@ else
                                             $query2 = $conn->query("SELECT id_kategoria, nazwa, miniaturka FROM kategoria WHERE nadkategoria = '" . $row['id_kategoria'] . "'");
                                             $result2 = $query2->fetchAll(PDO::FETCH_ASSOC);
                                             foreach ($result2 as $row2) {
-                                                print('<li class="links-list-element"><a href="/strona/categoryProducts.php?category='. $row2['id_kategoria'] . '&page=1">' . $row2['nazwa'] . '</a></li>');
+                                                print('<li class="links-list-element"><a href="/strona/categoryProducts.php?category=' . $row2['id_kategoria'] . '&page=1">' . $row2['nazwa'] . '</a></li>');
                                                 $query3 = $conn->query("SELECT id_kategoria, nazwa, miniaturka FROM kategoria WHERE nadkategoria = '" . $row2['id_kategoria'] . "'");
                                                 $result3 = $query3->fetchAll(PDO::FETCH_ASSOC);
                                                 if (!empty($result3)) {
                                                     print('<ul class="links-list-subcategory">');
                                                     foreach ($result3 as $row3) {
-                                                        print('<li class="links-list-element"> <a href="/strona/categoryProducts.php?category='. $row3['id_kategoria'] . '&page=1">' . $row3['nazwa'] . '</a></li>');
+                                                        print('<li class="links-list-element"> <a href="/strona/categoryProducts.php?category=' . $row3['id_kategoria'] . '&page=1">' . $row3['nazwa'] . '</a></li>');
                                                     }
                                                     print('</ul>');
                                                 }
