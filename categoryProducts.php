@@ -235,11 +235,25 @@ include_once "header.php"; ?>
                 <div class="c-category-pagination-container">
                     <nav aria-label="...">
                         <ul class="pagination pagination-sm">
-                            <li class="page-item active" aria-current="page">
-                                <span class="page-link">1</span>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <?php
+                            if (isset($_SESSION['search'])) {
+                                $szukana = $_SESSION['search'];
+                              }
+                              if ($_SESSION['category'] != 0)
+                                $query = $conn->query("SELECT count(id_produkt) AS jd FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%' AND (kategoria IN (SELECT id_kategoria FROM kategoria WHERE nadkategoria = '" . $_SESSION['category'] . "') OR kategoria = '" . $_SESSION['category'] . "') LIMIT 1 ");
+                              else
+                                $query = $conn->query("SELECT count(id_produkt) AS jd FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%' LIMIT 1");
+                            $ilosc_produktow = $query->fetch(PDO::FETCH_ASSOC);
+                            $i = $ilosc_produktow['jd'];
+                            $i/=1;
+                            ceil($i);
+                            for($j=1;$j<=$i;$j++){
+                                if($j==$_SESSION['page'])
+                                    print('<li class="page-item active" aria-current="page"><span class="page-link">'.$j.'</span></li>');
+                                else
+                                    print('<li class="page-item"><a class="page-link" href="/strona/categoryProducts.php?category=' . $_SESSION['category'] . '&page='.$j.'">'.$j.'</a></li>');
+                             }
+                            ?>
                         </ul>
                     </nav>
                 </div>
