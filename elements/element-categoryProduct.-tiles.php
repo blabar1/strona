@@ -36,6 +36,6 @@ if (!isset($_SESSION)) {
       ));
     }
   } else
-    print('<h6><div class="o-title">Nie znaleziono produktów</div></h6>'); // dobrze zrobione co ni blazej?
+    print('<h6><div class="o-title">Nie znaleziono produktów</div> <span><img class="o-notFound-image c-categoryProduct-fitter" src="images/imageNotFound.svg"></span></h6>'); // dobrze zrobione co ni blazej?
   ?>
 </div>

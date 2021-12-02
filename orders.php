@@ -10,9 +10,9 @@ include_once "templates/menu.php"; ?>
             </div>
             <div class="c-ordersPage-body">
                 <div class="c-ordersPage-notFound-text">
-                    <div class=" o-title">Nie masz zamówień</div>
-                    <h6> Wygląda na to że nic jeszcze nie zamawiałeś :(</h6>
-                    <span></span>
+                    <div class=" o-title">Nie masz zamówień <span><img class="o-notFound-image" src="images/imageNotFound.svg"></span></div>
+                    <h6 class="c-ordersPage-notFound-sub-text"> Wygląda na to że nic jeszcze nie zamawiałeś :(</h6>
+
                 </div>
 
 
@@ -20,6 +20,7 @@ include_once "templates/menu.php"; ?>
         </div>
     </div>
 </div>
+
 
 
 
