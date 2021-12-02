@@ -29,8 +29,9 @@ html {
     color: var(--primary-color);
     position: relative;
 }
-
-
+.c-categoryProduct-fitter{
+top: 50px;
+}
 
 .c-categoryProducts-changer-container{
     width:100%;

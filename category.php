@@ -6,6 +6,11 @@
 )); ?>
 
 <!--category body-->
+
+<?php get_element("elements/element-breadcrumbs.php", array(
+    'prevPage' => 'prevPage',
+    'actPage' => 'actPage'
+)); ?>
 <div class="o-wrapper">
     <div class="o-title">Nazwa sklepu</div>
     <?php include_once "separator.php"; ?>

@@ -1,9 +1,8 @@
 <?php
-setcookie('widok', 'list', time()+3600*24*14,"/");
-if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-} 
+setcookie('widok', 'list', time() + 3600 * 24 * 14, "/");
+if (!isset($_SESSION)) {
+  session_start();
+}
 ?>
 <?php include_once "../functions.php" ?>
 <?php include_once "database.php" ?>
@@ -37,6 +36,6 @@ if(!isset($_SESSION))
       ));
     }
   } else
-    print('<h6 style="color:red;font-size:50px;">Ni ma produktow. WYNOCHA!!!1!</h6>'); // dobrze zrobione co ni blazej?
+    print('<h6><div class="o-title">Nie znaleziono produktów</div> <span><img class="o-notFound-image c-categoryProduct-fitter" src="images/imageNotFound.svg"></span></h6>'); // dobrze zrobione co ni blazej?
   ?>
 </div>

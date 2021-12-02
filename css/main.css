@@ -20,11 +20,14 @@
 @import "components/components.categoryProduct-filters.css";
 @import "components/components.slider-banner.css";
 @import "components/components.products-cards.css";
+@import "components/components.breadcrumbs.css";
 @import "components/loading.css";
 @import "footer.css";
+@import "orders.css";
 @import "arkusz_mal.css";
 @import "categoryPage.css";
 @import "separator.css";
+@import "account.css";
 @import "categoryProducts.css";
 @import "productPage.css";
 @import "basket.css";
