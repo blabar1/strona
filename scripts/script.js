@@ -47,4 +47,3 @@ const initSliderItems = () => {
 initSliderItems();
 
 var prevScrollpos = window.pageYOffset;
-

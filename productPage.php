@@ -1,7 +1,10 @@
 <?php include_once "header.php"; ?>
 <?php include_once "templates/menu.php"; ?>
 
-
+<?php get_element("elements/element-breadcrumbs.php", array(
+    'prevPage' => 'prevPage',
+    'actPage' => 'actPage'
+)); ?>
 <div class="o-wrapper">
 
     <div class="c-productPage">
