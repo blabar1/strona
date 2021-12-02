@@ -8,9 +8,9 @@ if (isset($_GET['search']))
     $_SESSION['search'] = $_GET['search'];
 else
     $_SESSION['search'] = "%";
-if(isset($_GET['page']))
+if (isset($_GET['page']))
     $_SESSION['page'] = $_GET['page'];
-    else
+else
     $_SESSION['page'] = 1;
 ?>
 <!-- menu,header-->

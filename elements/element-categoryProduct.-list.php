@@ -1,9 +1,8 @@
 <?php
-setcookie('widok', 'list', time()+3600*24*14,"/");
-if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-} 
+setcookie('widok', 'list', time() + 3600 * 24 * 14, "/");
+if (!isset($_SESSION)) {
+  session_start();
+}
 ?>
 <?php include_once "../functions.php" ?>
 <?php include_once "database.php" ?>
@@ -16,9 +15,9 @@ if(!isset($_SESSION))
   if ($_SESSION['category'] != 0)
     $query = $conn->query("SELECT id_produkt, nazwa, cena, miniaturka FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%' AND (kategoria IN (SELECT id_kategoria FROM kategoria WHERE nadkategoria = '" . $_SESSION['category'] . "') OR kategoria = '" . $_SESSION['category'] . "')
     
-    LIMIT 1 OFFSET " . ($_SESSION['page']-1)*1);
+    LIMIT 1 OFFSET " . ($_SESSION['page'] - 1) * 1);
   else
-    $query = $conn->query("SELECT id_produkt, nazwa, cena, miniaturka FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%' LIMIT 1 OFFSET " . ($_SESSION['page']-1)*1);
+    $query = $conn->query("SELECT id_produkt, nazwa, cena, miniaturka FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%' LIMIT 1 OFFSET " . ($_SESSION['page'] - 1) * 1);
   $results = $query->fetchAll(PDO::FETCH_ASSOC);
   if (!empty($results)) {
     foreach ($results as $row) {
@@ -37,6 +36,6 @@ if(!isset($_SESSION))
       ));
     }
   } else
-    print('<h6 style="color:red;font-size:50px;">Ni ma produktow. WYNOCHA!!!1!</h6>'); // dobrze zrobione co ni blazej?
+    print('<h6><div class="o-title">Nie znaleziono produktów</div></h6>'); // dobrze zrobione co ni blazej?
   ?>
 </div>

@@ -15,9 +15,9 @@ if (!isset($_SESSION)) {
   if ($_SESSION['category'] != 0)
     $query = $conn->query("SELECT id_produkt, nazwa, cena, miniaturka FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%' AND (kategoria IN (SELECT id_kategoria FROM kategoria WHERE nadkategoria = '" . $_SESSION['category'] . "') OR kategoria = '" . $_SESSION['category'] . "') 
   
-    LIMIT 1 OFFSET " . ($_SESSION['page']-1)*1);
+    LIMIT 1 OFFSET " . ($_SESSION['page'] - 1) * 1);
   else
-    $query = $conn->query("SELECT id_produkt, nazwa, cena, miniaturka FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%'". " LIMIT 15 OFFSET " . ($_SESSION['page']-1)*15 );
+    $query = $conn->query("SELECT id_produkt, nazwa, cena, miniaturka FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%'" . " LIMIT 15 OFFSET " . ($_SESSION['page'] - 1) * 15);
   $results = $query->fetchAll(PDO::FETCH_ASSOC);
   if (!empty($results)) {
     foreach ($results as $row) {
@@ -29,13 +29,13 @@ if (!isset($_SESSION)) {
       }
       get_element("elements/element-product-tile__description.php", array(
         'thumbnail' => "images/produkty/" . $row['miniaturka'],
-        'name' => $row['nazwa'],  
+        'name' => $row['nazwa'],
         'price' => $row['cena'],
         'description' =>  $wlasciowsci,
         'id' => $row['id_produkt']
       ));
     }
   } else
-    print('<h6 style="color:red;font-size:50px;">Ni ma produktow. WYNOCHA!!!1!</h6>'); // dobrze zrobione co ni blazej?
+    print('<h6><div class="o-title">Nie znaleziono produktów</div></h6>'); // dobrze zrobione co ni blazej?
   ?>
 </div>

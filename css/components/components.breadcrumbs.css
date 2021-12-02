@@ -10,3 +10,6 @@ html {
 .c-breadcrumbs-container{
     margin-top:24px;
 }
+.breadcrumb{
+    background-color: white!important;
+}
