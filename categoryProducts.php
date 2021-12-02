@@ -123,7 +123,6 @@ include_once "header.php"; ?>
                                 $query = $conn->query("SELECT count(id_produkt) AS jd FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%' LIMIT 1");
                             $ilosc_produktow = $query->fetch(PDO::FETCH_ASSOC);
                             $i = $ilosc_produktow['jd'];
-<<<<<<< HEAD
                             $i/=15;
                             $i=ceil($i);
                             for($j=1;$j<=$i;$j++){
@@ -132,16 +131,6 @@ include_once "header.php"; ?>
                                 else
                                     print('<li class="page-item"><a class="page-link page-chooser" href="/strona/categoryProducts.php?category=' . $_SESSION['category'] . '&page='.$j.'">'.$j.'</a></li>');
                              }
-=======
-                            $i /= 1;
-                            ceil($i);
-                            for ($j = 1; $j <= $i; $j++) {
-                                if ($j == $_SESSION['page'])
-                                    print('<li class="page-item active" aria-current="page"><span class="page-link">' . $j . '</span></li>');
-                                else
-                                    print('<li class="page-item"><a class="page-link" href="/strona/categoryProducts.php?category=' . $_SESSION['category'] . '&page=' . $j . '">' . $j . '</a></li>');
-                            }
->>>>>>> 988f2d637282460779ad7ca2393002c4c2dfa31c
                             ?>
                         </ul>
                     </nav>

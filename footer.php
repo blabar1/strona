@@ -10,9 +10,4 @@
     <script src="scripts/product-gallery.js"></script>
     <script src="scripts/productPage.js"></script>
     <script src="scripts/login-register-swap.js"></script>
-<<<<<<< HEAD
     </html>
-=======
-
-    </html>
->>>>>>> 988f2d637282460779ad7ca2393002c4c2dfa31c
