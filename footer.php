@@ -10,5 +10,4 @@
     <script src="scripts/product-gallery.js"></script>
     <script src="scripts/productPage.js"></script>
     <script src="scripts/login-register-swap.js"></script>
-
     </html>

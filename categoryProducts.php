@@ -84,10 +84,10 @@ include_once "header.php"; ?>
                         </div>
                     </div>
                 </div>
-
+                <script src="scripts/categoryPage.js"></script>
                 <!--Products-->
                 <div id="category-products">
-                    <?php
+                <?php      
                     error_reporting(E_ALL ^ E_WARNING);
                     if (isset($_COOKIE['widok'])) {
                         if ($_COOKIE['widok'] == 'tiles')
@@ -95,7 +95,8 @@ include_once "header.php"; ?>
                         else
                             include_once "elements/element-categoryProduct.-list.php";
                     } else
-                        include_once "elements/element-categoryProduct.-tiles.php"  ?>
+                        include_once "elements/element-categoryProduct.-tiles.php";
+?>
                     <div>
 
                     </div>
@@ -118,13 +119,13 @@ include_once "header.php"; ?>
                                 $query = $conn->query("SELECT count(id_produkt) AS jd FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%' LIMIT 1");
                             $ilosc_produktow = $query->fetch(PDO::FETCH_ASSOC);
                             $i = $ilosc_produktow['jd'];
-                            $i/=1;
-                            ceil($i);
+                            $i/=15;
+                            $i=ceil($i);
                             for($j=1;$j<=$i;$j++){
                                 if($j==$_SESSION['page'])
                                     print('<li class="page-item active" aria-current="page"><span class="page-link">'.$j.'</span></li>');
                                 else
-                                    print('<li class="page-item"><a class="page-link" href="/strona/categoryProducts.php?category=' . $_SESSION['category'] . '&page='.$j.'">'.$j.'</a></li>');
+                                    print('<li class="page-item"><a class="page-link page-chooser" href="/strona/categoryProducts.php?category=' . $_SESSION['category'] . '&page='.$j.'">'.$j.'</a></li>');
                              }
                             ?>
                         </ul>

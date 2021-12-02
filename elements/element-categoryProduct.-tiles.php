@@ -15,7 +15,7 @@ if (!isset($_SESSION)) {
   if ($_SESSION['category'] != 0)
     $query = $conn->query("SELECT id_produkt, nazwa, cena, miniaturka FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%' AND (kategoria IN (SELECT id_kategoria FROM kategoria WHERE nadkategoria = '" . $_SESSION['category'] . "') OR kategoria = '" . $_SESSION['category'] . "') 
   
-    LIMIT 1 OFFSET " . ($_SESSION['page']-1)*1);
+    LIMIT 15 OFFSET " . ($_SESSION['page']-1)*15);
   else
     $query = $conn->query("SELECT id_produkt, nazwa, cena, miniaturka FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%'". " LIMIT 15 OFFSET " . ($_SESSION['page']-1)*15 );
   $results = $query->fetchAll(PDO::FETCH_ASSOC);
