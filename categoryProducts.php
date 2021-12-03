@@ -88,10 +88,10 @@ include_once "header.php"; ?>
                         </div>
                     </div>
                 </div>
-                <script src="scripts/categoryPage.js"></script>
+
                 <!--Products-->
                 <div id="category-products">
-                <?php      
+                    <?php
                     error_reporting(E_ALL ^ E_WARNING);
                     if (isset($_COOKIE['widok'])) {
                         if ($_COOKIE['widok'] == 'tiles')
@@ -100,7 +100,7 @@ include_once "header.php"; ?>
                             include_once "elements/element-categoryProduct.-list.php";
                     } else
                         include_once "elements/element-categoryProduct.-tiles.php";
-?>
+                    ?>
                     <div>
 
                     </div>
@@ -112,7 +112,7 @@ include_once "header.php"; ?>
             <div class=" col-xs-12 col-sm-12 col-xl-9 col-lg-9 col-md-9">
                 <div class="c-category-pagination-container">
                     <nav aria-label="...">
-                        <ul class="pagination pagination-sm">
+                        <ul id="page-chooser" class="pagination pagination-sm">
                             <?php
                             if (isset($_SESSION['search'])) {
                                 $szukana = $_SESSION['search'];
@@ -123,15 +123,18 @@ include_once "header.php"; ?>
                                 $query = $conn->query("SELECT count(id_produkt) AS jd FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%' LIMIT 1");
                             $ilosc_produktow = $query->fetch(PDO::FETCH_ASSOC);
                             $i = $ilosc_produktow['jd'];
-                            $i/=15;
-                            $i=ceil($i);
-                            for($j=1;$j<=$i;$j++){
-                                if($j==$_SESSION['page'])
-                                    print('<li class="page-item active" aria-current="page"><span class="page-link">'.$j.'</span></li>');
-                                else
-                                    print('<li class="page-item"><a class="page-link page-chooser" href="/strona/categoryProducts.php?category=' . $_SESSION['category'] . '&page='.$j.'">'.$j.'</a></li>');
-                             }
+                            $i /= 15;
+                            $i = ceil($i);
+                            for ($j = 1; $j <= $i; $j++) {
+                                if ($j == $_SESSION['page'])
+                                    print('<li class="page-item active" aria-current="page"><span class="page-link">' . $j . '</span></li>');
+                                else{
+                                    $id = "b".$j;
+                                     print('<li class="page-item"><a id="'. $id .'"  class="page-link page-number" onclick="event.preventDefault(); button_event(\''. $id .'\')" href="/strona/categoryProducts.php?category=' . $_SESSION['category'] . '&page=' . $j . '">' . $j . '</a></li>');
+                                }  
+                            }
                             ?>
+                            <script src="scripts/categoryPage.js"></script>
                         </ul>
                     </nav>
                 </div>

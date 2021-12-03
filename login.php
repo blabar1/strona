@@ -90,6 +90,7 @@
                                 $mail = $_POST['register'];
                                 $register = $conn->query("INSERT INTO dane_logowania (`mail`, `haslo`) VALUES ('" . $mail . "', '" . $hash . "')");
                                 $userdate = $conn->query("INSERT INTO dane_konta (`imie`, `nazwisko`, `konto_typ`, `mail`) VALUES ('" . $_POST['fname'] . "', '" . $_POST['lname'] . "', 1 , '" . $mail . "')");
+                                $_SESSION['user'] = $mail;
                                 header("Location:index.php");
                             } catch (PDOException $ex) {
                                 if ($ex->errorInfo[1] == 1062) {
