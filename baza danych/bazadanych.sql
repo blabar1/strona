@@ -43,7 +43,7 @@ CREATE TABLE `produkt` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `galeria_zdjec` (
-  `id_zdjecia` int NOT NULL,
+  `id_zdjecia` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `plik` varchar(45) NOT NULL,
   `produkt` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

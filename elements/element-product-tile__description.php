@@ -4,7 +4,10 @@
         <div class="c-categoryProducts-tile__inside">
             <div class="c-categoryProducts-tile__thumbnail" style="background-image: url(<?php echo $thumbnail; ?>);"></div>
             <div class="c-categoryProducts-tile__content">
-                <a href="productPage.php">
+                <?php 
+                $named= str_replace(' ', '-', $name);
+                ?>
+                <a href="productPage.php?name=<?php echo $named; ?>&id=<?php echo $id; ?>">
                     <div class="c-categoryProducts-tile__name">
                         <h3 title="<?php echo $name; ?>"><span class="c-categoryProducts-tile__name-span">
                                 <?php echo $name; ?>

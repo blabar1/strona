@@ -11,10 +11,13 @@
                         <div class="col-xs-12 col-sm-12 col-xl-7 col-lg-7 col-md-7">
                             <div class="c-productPage-container-description">
                                 <ul>
-                                    <li class="c-productPage-list__description-element"><?php echo $description1; ?></li>
-                                    <li class="c-productPage-list__description-element"><?php echo $description2; ?></li>
-                                    <li class="c-productPage-list__description-element"><?php echo $description3; ?></li>
-                                    <li class="c-productPage-list__description-element"><?php echo $description4; ?></li>
+                                <?php
+                        $ilosc = sizeof($description);
+                        if ($ilosc)
+                            for ($i = 0; $i < $ilosc; $i++) {
+                                print('<li class="c-categoryProducts-tile__description-element">' . $description[$i] . ' </li>');
+                            }
+                        ?>
 
                                 </ul>
                             </div>

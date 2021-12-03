@@ -3,10 +3,12 @@
         <div class="c-categoryProducts-list ">
             <div class="c-categoryProducts-list__thumbnail" style="background-image: url(<?php echo $thumbnail; ?>);"></div>
             <div class="c-categoryProducts-list__inside">
-
+            <?php 
+                $named= str_replace(' ', '-', $name);
+                ?>
                 <div class="c-categoryProducts-list__content">
                     <div class="c-categoryProducts-list__name-container">
-                        <a href="productPage.php">
+                        <a href="productPage.php?name=<?php echo $named; ?>&id=<?php echo $id; ?>">
                             <div class="c-categoryProducts-list__name">
                                 <h3 title="<?php echo $name; ?>"><span class="c-categoryProducts-list__name-span">
                                         <?php echo $name; ?>
