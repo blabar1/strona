@@ -1,0 +1,22 @@
+
+html {
+    font-family: "Lato", sans-serif;
+    --primary-color: #222;
+    --orange: #EB5E28;
+    --grey: #403D39;
+    --white: #FFFCF2;
+    --brudas: #CCC5B9;
+    word-wrap: break-word;
+    margin: 0;
+    overflow-x: hidden;
+}
+.c-ordersPage-body__date{
+    font-size: 18px;
+    line-height: 20px;
+    color: var(--grey);
+    font-weight: normal;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 28px;
+    margin-bottom:24px;
+}

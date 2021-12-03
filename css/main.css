@@ -21,6 +21,8 @@
 @import "components/components.slider-banner.css";
 @import "components/components.products-cards.css";
 @import "components/components.breadcrumbs.css";
+@import "components/components.orders-date.css";
+@import "components/components.ordersItem-list.css";
 @import "components/loading.css";
 @import "footer.css";
 @import "orders.css";

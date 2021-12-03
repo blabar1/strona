@@ -1,3 +1,12 @@
+html {
+    font-family: "Lato", sans-serif;
+    --primary-color: #222;
+    --orange: #EB5E28;
+    --grey:#403D39;
+    --white:#FFFCF2;
+    --brudas:#CCC5B9;
+    word-wrap: break-word;
+}
 .c-ordersPage-title{
 margin-top:140px;
 }
@@ -18,6 +27,16 @@ font-size: 14px;
 .c-ordersPage-container{
     min-height:calc(47vh + 1px);
 }
+.c-ordersPage-container-footer{
+    text-align: right;
+    margin-top:24px;
+font-size: 18px;
+    line-height: 20px;
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
 
+
+}
 
 
