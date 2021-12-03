@@ -28,7 +28,7 @@ html {
     justify-content: center;
 }
 .c-account-forms__form-input{
-
+    position: relative;
     margin-top:8px;
     max-width:700px;
     width:400px;
@@ -63,4 +63,17 @@ align-items: center;
 }
 .c-account-forms__form-button:hover{
     background: #a1421c;
+}
+
+.form-group-password-block{
+display: flex;
+align-items: center;
+justify-content: flex-end;
+}
+
+#togglePassword{
+    margin-top: 8px;
+    margin-right: 8px;
+    color: rgb(77, 77, 77);
+    position: absolute;
 }

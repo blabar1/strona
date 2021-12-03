@@ -27,9 +27,11 @@
                                         <label for="inputEmail4">Email</label>
                                         <input type="email" class="form-control c-account-forms__form-input" id="inputEmail4" placeholder="Email">
                                     </div>
-                                    <div class="form-group ">
+                                    <div>
                                         <label for="inputPassword4">Hasło</label>
-                                        <input type="password" class="form-control c-account-forms__form-input" id="inputPassword4" placeholder="Hasło">
+                                        <p class="form-group-password-block form-group ">
+                                            <input type="password" class="form-control c-account-forms__form-input" id="password" placeholder="Hasło" /><i class="bi bi-eye-slash" id="togglePassword"></i>
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="form-group">
