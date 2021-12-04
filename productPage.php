@@ -32,7 +32,9 @@
                     }
                 }
                 else{
-                    $images[]='images/komputerek.jpg';
+                    $query = $conn->query("SELECT * FROM produkt WHERE id_produkt = $idp LIMIT 1");
+                    $result = $query->fetch(PDO::FETCH_ASSOC);
+                    $images = array();
                 }
                 $query = $conn->query("SELECT * FROM produkt WHERE id_produkt = $idp LIMIT 1");
                 $result = $query->fetch(PDO::FETCH_ASSOC);
