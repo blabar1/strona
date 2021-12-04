@@ -5,15 +5,16 @@
             <div class="c-product-tile__category"><?php echo $category; ?></div>
             <div class="c-product-tile__name"><?php echo $name; ?></div>
             <div class="c-product-tile__price"><?php echo ($price . " zł"); ?></div>
-            <div class="c-product-tile__button-container">
-                <?php get_element("elements/element-basket-button.php", array(
-                    'id' => "XD"
-                )); ?>
-
-            </div>
-        </div>
-    </div>
 </a>
+<div class="c-product-tile__button-container">
+    <?php get_element("elements/element-basket-button.php", array(
+        'id' => "XD"
+    )); ?>
+
+</div>
+</div>
+</div>
+
 <?php get_element("elements/element-basket-button-modal.php", array(
     'thumbnail' => "images/komputerek.jpg",
     'name' => "nazwa",
