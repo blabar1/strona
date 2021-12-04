@@ -3,6 +3,7 @@
 @import "reset.css";
 @import "arkusz.css";
 @import "menu.css";
+@import "orderDetails.css";
 @import "components/components.product-tile.css";
 @import "components/components.category-tile.css";
 @import "components/components.category-tile__description.css";

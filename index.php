@@ -11,11 +11,7 @@ include_once "header.php"; ?>
 <?php get_element("elements/element-featured-products.php"); ?>
 
 <?php get_element("elements/element-products-cards.php", array(
-    'thumbnail' => 'images/produkty/p1.jpg',
-    'title' => 'tytul',
-    'category' => 'category',
-    'name' => 'name',
-    'price' => 'price'
+    'title' => 'XD',
 )); ?>
 <?php include_once("elements/element-promotion-half.php"); ?>
 

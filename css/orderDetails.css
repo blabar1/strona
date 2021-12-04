@@ -1,0 +1,53 @@
+html {
+    font-family: "Lato", sans-serif;
+    --primary-color: #222;
+    --orange: #EB5E28;
+    --grey:#403D39;
+    --white:#FFFCF2;
+    --brudas:#CCC5B9;
+    word-wrap: break-word;
+}
+
+.c-orderDetails-wrapper{
+margin-top:140px;
+}
+.c-orderDetails-form__form-input{
+    position: relative;
+    margin-top: 28px;
+    max-width: 700px;
+    width: 400px;
+    border-radius: 24px;
+
+}
+.c-orderDetails-form__form-input:focus{
+    border-color:var(--orange);
+}
+.c-orderDetails-form__form-button{
+border-radius: 512px;
+border: none;
+white-space: nowrap;
+width: 30%;
+height: 40px;
+padding: 0px 8px;
+background: var(--orange);
+display: flex;
+justify-content: center;
+flex-direction: row;
+font-size: 14px;
+line-height: 20px;
+color: rgb(255, 255, 255);
+font-weight: normal;
+text-decoration: none;
+display: flex;
+align-items: center;
+    min-width:200px;
+    margin-top:28px;
+}
+.c-orderDetails-form{
+display: inline-flex;
+justify-content: center;
+}
+.c-orderDetails-form__form-button-container{
+    display: flex;
+
+}
