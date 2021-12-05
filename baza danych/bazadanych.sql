@@ -14,6 +14,7 @@ CREATE TABLE `dane_konta` (
   `nazwisko` varchar(32) NOT NULL,
   `adres` varchar(64) DEFAULT NULL,
   `miasto` varchar(45) DEFAULT NULL,
+  `kod_pocztowy` varchar(6) DEFAULT NULL,
   `konto_typ` int NOT NULL,
   `mail` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -66,6 +67,7 @@ CREATE TABLE `zamowienie` (
   `nazwisko` varchar(32) NOT NULL,
   `adres` varchar(64) DEFAULT NULL,
   `miasto` varchar(45) DEFAULT NULL,
+  `kod_pocztowy` varchar(6) DEFAULT NULL,
   `mail` varchar(45) NOT NULL,
   `dostawa` varchar(20) NOT NULL,
   `data_zlozenia` date NOT NULL,
