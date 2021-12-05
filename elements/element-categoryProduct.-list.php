@@ -9,15 +9,18 @@ if (!isset($_SESSION)) {
 <!-- Product lists-->
 <div class="c-categoryProducts-tiles__container col-xl-9 col-lg-9 col-md-9" style="background-color:white;">
   <?php
+  if (isset($_SESSION['order'])) {
+    $o = $_SESSION['order'];
+  }
   if (isset($_SESSION['search'])) {
     $szukana = $_SESSION['search'];
   }
   if ($_SESSION['category'] != 0)
     $query = $conn->query("SELECT id_produkt, nazwa, cena, miniaturka FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%' AND (kategoria IN (SELECT id_kategoria FROM kategoria WHERE nadkategoria = '" . $_SESSION['category'] . "') OR kategoria = '" . $_SESSION['category'] . "')
-    
+    $o
     LIMIT 15 OFFSET " . ($_SESSION['page']-1)*15);
   else
-    $query = $conn->query("SELECT id_produkt, nazwa, cena, miniaturka FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%' LIMIT 15 OFFSET " . ($_SESSION['page']-1)*15);
+    $query = $conn->query("SELECT id_produkt, nazwa, cena, miniaturka FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%' $o LIMIT 15 OFFSET " . ($_SESSION['page']-1)*15);
   $results = $query->fetchAll(PDO::FETCH_ASSOC);
   if (!empty($results)) {
     foreach ($results as $row) {

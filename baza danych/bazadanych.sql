@@ -65,13 +65,16 @@ CREATE TABLE `zamowienie` (
   `id_zamowienia` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `imie` varchar(32) NOT NULL,
   `nazwisko` varchar(32) NOT NULL,
-  `adres` varchar(64) DEFAULT NULL,
-  `miasto` varchar(45) DEFAULT NULL,
-  `kod_pocztowy` varchar(6) DEFAULT NULL,
+  `adres` varchar(64) NOT NULL,
+  `miasto` varchar(45) NOT NULL,
+  `kod_pocztowy` varchar(6) NOT NULL,
   `mail` varchar(45) NOT NULL,
-  `dostawa` varchar(20) NOT NULL,
+  `dostawa` int NOT NULL,
+  `metoda` int NOT NULL,
   `data_zlozenia` date NOT NULL,
-  `data_wyslania` date NOT NULL
+  `data_wyslania` date DEFAULT NULL,
+  `koszt` decimal(10,2) NOT NULL,
+  `status` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `zamowienie_produkt` (
@@ -81,9 +84,20 @@ CREATE TABLE `zamowienie_produkt` (
   `ilosc` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-ALTER TABLE dane_konta ADD FOREIGN KEY (mail) REFERENCES dane_logowania(mail);
+CREATE TABLE `dostawa` (
+  `id_dostawa` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `nazwa` varchar(64) NOT NULL,
+  `cena` decimal(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `metoda_platnosci` (
+  `id_metoda` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `nazwa` varchar(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE dane_konta ADD FOREIGN KEY (mail) REFERENCES dane_logowania(mail) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE dane_konta ADD FOREIGN KEY (konto_typ) REFERENCES typ_konta(id_typ);
-ALTER TABLE koszyk ADD FOREIGN KEY (konto) REFERENCES dane_konta(id_konta);
+ALTER TABLE koszyk ADD FOREIGN KEY (konto) REFERENCES dane_konta(id_konta) ON DELETE CASCADE;
 ALTER TABLE koszyk ADD FOREIGN KEY (produkt) REFERENCES produkt(id_produkt);
 ALTER TABLE kategoria ADD FOREIGN KEY (nadkategoria) REFERENCES kategoria(id_kategoria);
 ALTER TABLE produkt ADD FOREIGN KEY (kategoria) REFERENCES kategoria(id_kategoria);
@@ -92,3 +106,5 @@ ALTER TABLE zamowienie_produkt ADD FOREIGN KEY (zamowienie) REFERENCES zamowieni
 ALTER TABLE zamowienie_produkt ADD FOREIGN KEY (produkt) REFERENCES produkt(id_produkt);
 ALTER TABLE produkt_wlasciwosc ADD FOREIGN KEY (nazwa_wlasciwosc) REFERENCES wlasciwosc(id_wlasciwosc);
 ALTER TABLE produkt_wlasciwosc ADD FOREIGN KEY (produkt) REFERENCES produkt(id_produkt);
+ALTER TABLE zamowienie ADD FOREIGN KEY (dostawa) REFERENCES dostawa(id_dostawa);
+ALTER TABLE zamowienie ADD FOREIGN KEY (metoda) REFERENCES metoda_platnosci(id_metoda);

@@ -52,16 +52,16 @@ include_once "header.php"; ?>
                     <div class="c-categoryProducts-changer-container">
                         <div class="c-categoryProducts-changer">
                             <div class="c-categoryProducts-changer-per-page">
-                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
-
-                                    <select class="c-categoryProducts-changer-per-page__select">
-                                        <option value="10">10</option>
-                                        <option value="20">20</option>
-                                        <option value="30">30</option>
+                                <form name="jd">
+                                    <select autocomplete="off" id='order' name="order" onchange="select_event()" href=<?php print("'/strona/categoryProducts.php?category=" . $_SESSION['category'] . "&page=1&order='"); ?> class="c-categoryProducts-changer-per-page__select">
+                                        <option value=" " >Domyślne</option>
+                                        <option value="cr" >Cena - od najniższej </option>
+                                        <option value="cm" >Cena - od najwyższej</option>
+                                        <option value="nr" >Nazwa - od A do Z</option>
+                                        <option value="nm" >Nazwa - od Z do A</option>
                                     </select>
-                                    <label class="c-categoryProducts-changer-per-page__select-label">Ilość wyświetlanych produktów</label>
+                                    <label class="c-categoryProducts-changer-per-page__select-label">Sortowanie</label>
                                 </form>
-
                             </div>
                             <div class="c-categoryProducts-changer-buttons-container">
                                 <div class="c-categoryProducts-changer-buttons">
@@ -125,13 +125,17 @@ include_once "header.php"; ?>
                             $i = $ilosc_produktow['jd'];
                             $i /= 15;
                             $i = ceil($i);
+                            if(isset($_GET['order']))
+                                $o=$_GET['order'];
+                            else
+                                $o=" ";
                             for ($j = 1; $j <= $i; $j++) {
                                 if ($j == $_SESSION['page'])
                                     print('<li class="page-item active" aria-current="page"><span class="page-link">' . $j . '</span></li>');
-                                else{
-                                    $id = "b".$j;
-                                     print('<li class="page-item"><a id="'. $id .'"  class="page-link page-number" onclick="event.preventDefault(); button_event(\''. $id .'\')" href="/strona/categoryProducts.php?category=' . $_SESSION['category'] . '&page=' . $j . '">' . $j . '</a></li>');
-                                }  
+                                else {
+                                    $id = "b" . $j;
+                                    print('<li class="page-item"><a id="' . $id . '"  class="page-link page-number" onclick="event.preventDefault(); button_event(\'' . $id . '\')" href="/strona/categoryProducts.php?category=' . $_SESSION['category'] . '&page=' . $j . '&order='.$o.'">' . $j . '</a></li>');
+                                }
                             }
                             ?>
                             <script src="scripts/categoryPage.js"></script>

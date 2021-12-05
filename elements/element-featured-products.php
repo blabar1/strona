@@ -9,10 +9,11 @@
             <?php
             $query = $conn->query("SELECT * FROM produkt LIMIT 12");
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
-            $i = 1;
+            $i = 0;
             foreach ($result as $row) {
                 if ($i == 6) {
-                    print('<div class="row">');
+                    print('</div><div class="row">');
+                    $i=0;
                 }
                 $query1 = $conn->query("SELECT nazwa FROM kategoria WHERE id_kategoria = '" . $row['kategoria'] . "' LIMIT 1");
                 $result1 = $query1->fetch(PDO::FETCH_ASSOC);
@@ -25,12 +26,7 @@
                     'id' => $row['id_produkt']
                 ));
                 print('</div>');
-                if ($i == 6) {
-                    print('</div>');
-                    $i = 0;
-                } else {
-                    $i++;
-                }
+                $i++;
             }
             ?>
         </div>

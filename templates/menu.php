@@ -12,6 +12,17 @@ if (isset($_GET['page']))
     $_SESSION['page'] = $_GET['page'];
 else
     $_SESSION['page'] = 1;
+
+    if(isset($_GET['order']) && $_GET['order']=="cr")
+    $_SESSION['order']=" ORDER BY cena ASC ";
+  else if(isset($_GET['order']) && $_GET['order']=="cm")
+    $_SESSION['order']=" ORDER BY cena DESC ";
+  else if(isset($_GET['order']) && $_GET['order']=="nr")
+    $_SESSION['order']=" ORDER BY nazwa ASC ";
+  else if(isset($_GET['order']) && $_GET['order']=="nm")
+    $_SESSION['order']=" ORDER BY nazwa DESC ";
+  else
+    $_SESSION['order']=" ";
 ?>
 <!-- menu,header-->
 

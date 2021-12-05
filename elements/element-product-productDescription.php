@@ -1,4 +1,5 @@
 <!-- product description-->
+<?php include_once "database.php" ?>
 <div class="col-xs-12 col-sm-6 col-xl-8 col-lg-7 col-md-7">
     <div class="c-productPage-container-description-block">
         <div class="o-wrapper">
@@ -29,11 +30,21 @@
                                 </div>
                                 <div class="c-productPage-container-payment__button-container">
                                     <div class="c-productPage-container-payment__select-container">
-                                        <select class="c-productPage-container-payment__select">
-                                            <option>1</option>
-                                            <option>1</option>
-                                            <option>100</option>
-                                        </select>
+                                        
+                                            <?php
+                                                $query = $conn->query("SELECT ilosc FROM produkt WHERE id_produkt = $id LIMIT 1");
+                                                $result = $query->fetch(PDO::FETCH_ASSOC);
+                                                if($result['ilosc']==0){
+                                                    print('<select class="c-productPage-container-payment__select" disabled>');
+                                                    print('<option>Produkt niedostępny</option></select>');
+                                                }else{
+                                                    print('<select class="c-productPage-container-payment__select"');
+                                                    for($i = 0; $i<=$result['ilosc'];$i++)
+                                                        print('<option>'.$i.'</option>');
+                                                    print('</select>');
+                                                }      
+                                            ?>
+                                        
                                     </div>
                                     <div class="c-productPage-container-payment__button">
                                         <button value="<?php echo $id; ?> " data-toggle="modal" class="c-productPage-container-payment__button-element" data-target="#modal-basket-pageProduct">
