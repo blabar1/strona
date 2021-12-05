@@ -11,7 +11,7 @@ include_once "header.php"; ?>
 <?php get_element("elements/element-featured-products.php"); ?>
 
 <?php get_element("elements/element-products-cards.php", array(
-    'title' => 'XD',
+    'title' => 'Szczęśliwy traf',
 )); ?>
 <?php include_once("elements/element-promotion-half.php"); ?>
 

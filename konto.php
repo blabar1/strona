@@ -1,6 +1,10 @@
 <?php include_once "header.php"; ?>
 <?php include_once "templates/menu.php"; ?>
-<?php if (!isset($_SESSION['user'])) print("<script>open('login.php','_self');</script>"); ?>
+<?php 
+if (!isset($_SESSION['user'])) print("<script>open('login.php','_self');</script>");
+else
+
+?>
 
 <div class="o-wrapper">
     <div class="row">

@@ -1,4 +1,7 @@
-<a href="#">
+<?php
+$named = str_replace(' ', '-', $name);
+?>
+<a href="productPage.php?name=<?php echo $named; ?>&id=<?php echo $id; ?>">
     <div class="c-product-tile">
         <div class="c-product-tile__thumbnail" style="background-image: url(<?php echo $thumbnail; ?>);"></div>
         <div class="c-product-tile__content">
@@ -8,7 +11,7 @@
 </a>
 <div class="c-product-tile__button-container">
     <?php get_element("elements/element-basket-button.php", array(
-        'id' => "XD"
+        'id' => $id
     )); ?>
 
 </div>
@@ -16,7 +19,8 @@
 </div>
 
 <?php get_element("elements/element-basket-button-modal.php", array(
-    'thumbnail' => "images/komputerek.jpg",
-    'name' => "nazwa",
-    'price' => "cena"
+    'thumbnail' => $thumbnail,
+    'name' => $name,
+    'price' => $price,
+    'id' => $id
 )); ?>
