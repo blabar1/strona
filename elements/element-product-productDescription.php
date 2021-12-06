@@ -1,5 +1,5 @@
 <!-- product description-->
-<?php include_once "database.php" ?>
+<?php include "database.php" ?>
 <div class="col-xs-12 col-sm-6 col-xl-8 col-lg-7 col-md-7">
     <div class="c-productPage-container-description-block">
         <div class="o-wrapper">
