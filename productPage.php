@@ -2,8 +2,7 @@
 <?php include_once "templates/menu.php"; ?>
 
 <?php get_element("elements/element-breadcrumbs.php", array(
-    'prevPage' => 'prevPage',
-    'actPage' => 'actPage'
+    'page' => $_SESSION['category']
 )); ?>
 <div class="o-wrapper">
 

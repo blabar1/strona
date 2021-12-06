@@ -6,8 +6,7 @@ include_once "header.php"; ?>
 )); ?>
 <!--category body-->
 <?php get_element("elements/element-breadcrumbs.php", array(
-    'prevPage' => 'prevPage',
-    'actPage' => 'actPage'
+    'page' => $_SESSION['category']
 )); ?>
 <div class="o-wrapper">
 
@@ -38,11 +37,17 @@ include_once "header.php"; ?>
                     </div>
 
                     <div class="c-categoryProduct-filter-elements-container">
-                        <?php get_element("elements/element-categoryProduct-filters.php", array(
-                            'title' => 'tytul',
-                            'value' => 'wartosc',
-                            'description' => 'opis'
-                        )); ?>
+                        
+                        <?php 
+                        $query = $conn->query("SELECT DISTINCT id_wlasciwosc, nazwa FROM wlasciwosc WHERE id_wlasciwosc IN (SELECT nazwa_wlasciwosc from produkt_wlasciwosc WHERE produkt IN (SELECT id_produkt FROM produkt WHERE (kategoria IN (SELECT id_kategoria FROM kategoria WHERE nadkategoria = '" . $_SESSION['category'] . "') OR kategoria = '" . $_SESSION['category'] . "')))");
+                        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+                        foreach($result as $row){
+                            get_element("elements/element-categoryProduct-filters.php", array(
+                                'title' => $row['nazwa'],
+                                'id_title' => $row['id_wlasciwosc']
+                            ));
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -54,11 +59,11 @@ include_once "header.php"; ?>
                             <div class="c-categoryProducts-changer-per-page">
                                 <form name="jd">
                                     <select autocomplete="off" id='order' name="order" onchange="select_event()" href=<?php print("'/strona/categoryProducts.php?category=" . $_SESSION['category'] . "&page=1&order='"); ?> class="c-categoryProducts-changer-per-page__select">
-                                        <option value=" " >Domyślne</option>
-                                        <option value="cr" >Cena - od najniższej </option>
-                                        <option value="cm" >Cena - od najwyższej</option>
-                                        <option value="nr" >Nazwa - od A do Z</option>
-                                        <option value="nm" >Nazwa - od Z do A</option>
+                                        <option value=" ">Domyślne</option>
+                                        <option value="cr" <?php if(isset($_GET['order']) && $_GET['order']=="cr") echo 'selected' ?>>Cena - od najniższej </option>
+                                        <option value="cm" <?php if(isset($_GET['order']) && $_GET['order']=="cm") echo 'selected' ?>>Cena - od najwyższej</option>
+                                        <option value="nr" <?php if(isset($_GET['order']) && $_GET['order']=="nr") echo 'selected' ?>>Nazwa - od A do Z</option>
+                                        <option value="nm" <?php if(isset($_GET['order']) && $_GET['order']=="nm") echo 'selected' ?>>Nazwa - od Z do A</option>
                                     </select>
                                     <label class="c-categoryProducts-changer-per-page__select-label">Sortowanie</label>
                                 </form>

@@ -22,7 +22,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn" style="background-color:var(--orange);" data-dismiss="modal">Zamknij</button>
-                <button type="button" class="btn " style="background-color:var(--orange);"><a href="strona/basket.php">Przejdz do koszyka</a></button>
+                <button type="button" class="btn " style="background-color:var(--orange);"><a href="basket.php">Przejdz do koszyka</a></button>
             </div>
         </div>
     </div>

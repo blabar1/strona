@@ -1,31 +1,12 @@
 <div class="c-categoryProduct-filter__title"><?php echo $title; ?></div>
-<form>
-    <div class="c-categoryProduct-filter__body">
-        <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="<?php echo $value; ?>">
-        <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id"><?php echo $description; ?></label>
-    </div>
-    <div class="c-categoryProduct-filter__body">
-        <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="<?php echo $value; ?>">
-        <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id"><?php echo $description; ?></label>
-    </div>
-    <div class="c-categoryProduct-filter__body">
-        <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="<?php echo $value; ?>">
-        <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id"><?php echo $description; ?></label>
-    </div>
-    <div class="c-categoryProduct-filter__body">
-        <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="<?php echo $value; ?>">
-        <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id"><?php echo $description; ?></label>
-    </div>
-    <div class="c-categoryProduct-filter__body">
-        <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="<?php echo $value; ?>">
-        <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id"><?php echo $description; ?></label>
-    </div>
-    <div class="c-categoryProduct-filter__body">
-        <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="<?php echo $value; ?>">
-        <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id"><?php echo $description; ?></label>
-    </div>
-    <div class="c-categoryProduct-filter__body">
-        <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="tutaj to samo co w for" name="" value="<?php echo $value; ?>">
-        <label class="c-categoryProduct-filter__checkbox-label" for="tutaj to samo co w id"><?php echo $description; ?></label>
-    </div>
-</form>
+<?php include "database.php" ?>
+<?php
+    $query = $conn->query("SELECT DISTINCT wartosc FROM produkt_wlasciwosc WHERE nazwa_wlasciwosc = $id_title AND produkt IN (SELECT id_produkt FROM produkt WHERE (kategoria IN (SELECT id_kategoria FROM kategoria WHERE nadkategoria = '" . $_SESSION['category'] . "') OR kategoria = '" . $_SESSION['category'] . "'))");
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    foreach($result as $row){
+        print('<div class="c-categoryProduct-filter__body">
+        <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="f'.$row['wartosc'].'" name="f'.$row['wartosc'].'" value="'.$row['wartosc'].'">
+        <label class="c-categoryProduct-filter__checkbox-label" for="f'.$row['wartosc'].'">'.$row['wartosc'].'</label>
+    </div>');
+    }
+?>
