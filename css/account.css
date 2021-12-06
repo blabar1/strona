@@ -77,3 +77,15 @@ justify-content: flex-end;
     color: rgb(77, 77, 77);
     position: absolute;
 }
+.c-account-forms-password-changer{
+    font-size: 16px;
+    line-height: 32px;
+    color: rgb(77, 77, 77);
+    font-weight: normal;
+    text-decoration: none;
+    margin-top:14px;
+}
+.c-account-forms-password-changer:hover{
+    color:var(--orange);
+    transition: color 100ms ease-in-out;
+}

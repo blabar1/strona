@@ -77,6 +77,11 @@ ul {
     
     
 }
+.o-none{
+    border:none;
+    height:auto;
+    background-color: white;
+}
 input{
     font-family: 'Lato';
 }

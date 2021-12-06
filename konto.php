@@ -65,12 +65,20 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
                                         <input type="text" value="<?php echo $result['kod_pocztowy']; ?>" class="form-control c-account-forms__form-input" name="kod" id="kod-poczty" placeholder="Kod pocztowy">
                                     </div>
                                 </div>
+                                <div class="c-account-forms-password-changer c-account-forms-password-changer-pass">
+                                    <button class="o-none">Zmień hasło</button>
+                                </div>
+                                <div class="c-account-forms-password-changer c-account-forms-password-changer-mail">
+                                    <button class="o-none">Zmień mail</button>
+
+                                </div>
                                 <div class="c-account-forms__form-button-container">
                                     <button class="c-account-forms__form-button" value="anuluj"><a href="index.php" style="color: white">Anuluj</a></button>
                                     <button type="submit" class="c-account-forms__form-button">Zapisz zmiany</button>
 
                                 </div>
                             </form>
+
                         </div>
 
                     </div>
@@ -83,7 +91,9 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
     </div>
 </div>
 
+<!-- Button trigger modal -->
 
+<!-- Modal -->
 
 
 

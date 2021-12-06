@@ -13,11 +13,11 @@
             foreach ($result as $row) {
                 if ($i == 6) {
                     print('</div><div class="row">');
-                    $i=0;
+                    $i = 0;
                 }
                 $query1 = $conn->query("SELECT nazwa FROM kategoria WHERE id_kategoria = '" . $row['kategoria'] . "' LIMIT 1");
                 $result1 = $query1->fetch(PDO::FETCH_ASSOC);
-                print('<div class="col-xl-1 col-lg-2 col-sm-4 col-xs-6>');
+                print('<div class="col-xl-1 col-lg-2 col-sm-4 col-xs-6">');
                 get_element("elements/element-product-tile-button.php", array(
                     'thumbnail' => "images/produkty/" . $row['miniaturka'],
                     'category'  => $result1['nazwa'],
