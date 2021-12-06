@@ -15,7 +15,7 @@ margin-top:140px;
     position: relative;
     margin-top: 28px;
     max-width: 700px;
-    width: 400px;
+    width: 450px;
     border-radius: 24px;
 
 }
@@ -26,7 +26,7 @@ margin-top:140px;
 border-radius: 512px;
 border: none;
 white-space: nowrap;
-width: 30%;
+width:100%;
 height: 40px;
 padding: 0px 8px;
 background: var(--orange);
@@ -49,5 +49,179 @@ justify-content: center;
 }
 .c-orderDetails-form__form-button-container{
     display: flex;
+    justify-content: center;
 
 }
+.c-orderDetails-form-delivery{
+    margin-top:24px;
+}
+.c-orderDetails-form-delivery-element{
+    height:100%;
+    min-height:80px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    visibility: visible;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width:450px;
+    transition: box-shadow 0.1s ease-in-out;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    padding:8px;
+    margin-bottom:4px;
+}
+.c-orderDetails-form-delivery-element:hover{
+    box-shadow: rgb(0 0 0 / 20%) 0px 4px 8px 0px, rgb(0 0 0 / 8%) 0px 0px 2px 1px;
+}
+.c-orderDetails-form-delivery-radio-wrapper{
+    margin-right:10px;
+}
+.c-orderDetails-form-delivery-text{
+    font-size: 14px;
+    padding-right: 24px;
+    line-height: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-decoration: none;
+    white-space: normal;
+    max-height:40px;
+    top:2px;
+    position: relative;
+}
+.c-orderDetails-form-delivery-price{
+    min-width:50px;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(112, 112, 112);
+    font-weight: normal;
+    text-decoration: none;
+    text-align: center;
+}
+
+.c-orderDetails-form-payment{
+    margin-top:24px;
+}
+.c-orderDetails-form-payment-element{
+    height:100%;
+    min-height:80px;
+    width:450px;
+    transition: box-shadow 0.1s ease-in-out;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    padding:8px;
+    margin-bottom:4px;
+}
+.c-orderDetails-form-payment-element:hover{
+    box-shadow: rgb(0 0 0 / 20%) 0px 4px 8px 0px, rgb(0 0 0 / 8%) 0px 0px 2px 1px;
+}
+.c-orderDetails-form-payment-radio-wrapper{
+    margin-right:10px;
+}
+.c-orderDetails-form-payment-text{
+    font-size: 14px;
+    padding-right: 24px;
+    line-height: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-decoration: none;
+    white-space: normal;
+    max-height:40px;
+    top:2px;
+    position: relative;
+}
+.c-orderDetails-form{
+    display: inline-flex;
+    flex-direction: column;
+    
+}
+.c-orderDetails-form-elements-payment{
+    padding-bottom:30px;
+    margin:auto;
+}
+.c-orderDetails-payment-text{
+}
+.c-orderDetails-form-elements-delivering{
+    padding-bottom:30px;
+    margin:auto;
+}
+.c-orderDetails-form-elements-informations{
+    margin:auto;
+    padding-bottom:30px;
+}
+.c-orderDetails-payment-basket-value__text{
+
+}
+.c-orderDetails-payment-basket-value__value{
+
+}
+.c-orderDetails-payment-text-row{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:8px;
+}
+/* .c-orderDetails-payment{
+        position: sticky;
+    position: -webkit-sticky;
+    top:150px;
+} */
+.c-orderDetails-payment-wrapper{
+    padding: 8px;
+    width: 450px;
+
+}
+@supports (position: sticky) or (position: -webkit-sticky) {
+    .c-orderDetails-payment{
+        top: 150px!important;
+        position: sticky;
+        display: inline-flex;
+        justify-content: center;
+    }
+  }
+  .c-orderDetails-payment-basket-value__text{
+    padding-right: 14px;
+    line-height: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: normal;
+    text-decoration: none;
+    white-space: normal;
+    max-height: 40px;
+    top: 2px;
+    position: relative;
+  }
+  .c-orderDetails-payment-basket-value__value{
+    padding-right: 24px;
+    line-height: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: normal;
+    text-decoration: none;
+    white-space: normal;
+    max-height: 40px;
+    top: 2px;
+    position: relative;
+  }
+  .c-orderDetails-payment-basket-value__value-last{
+    padding-right: 24px;
+    line-height: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-decoration: none;
+    white-space: normal;
+    max-height: 40px;
+    top: 2px;
+    position: relative;
+  }
+  .c-orderDetails-payment-basket-value__text-last{
+    padding-right: 24px;
+    line-height: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-decoration: none;
+    white-space: normal;
+    max-height: 40px;
+    top: 2px;
+    position: relative;
+  }

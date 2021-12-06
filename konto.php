@@ -1,18 +1,18 @@
 <?php include_once "header.php"; ?>
 <?php include_once "templates/menu.php"; ?>
-<?php 
+<?php
 if (!isset($_SESSION['user'])) print("<script>open('login.php','_self');</script>");
 else
-$query = $conn->query("SELECT * FROM dane_konta INNER JOIN dane_logowania ON dane_konta.mail = dane_logowania.mail WHERE dane_konta.mail ='" . $_SESSION['user'] . "' LIMIT 1"); 
+    $query = $conn->query("SELECT * FROM dane_konta INNER JOIN dane_logowania ON dane_konta.mail = dane_logowania.mail WHERE dane_konta.mail ='" . $_SESSION['user'] . "' LIMIT 1");
 $result = $query->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <div class="o-wrapper">
     <div class="row">
-        <?php 
-            if (isset($_POST['imie'])){
-                $conn->query("UPDATE dane_konta SET `imie`='".$_POST['imie']."',`nazwisko`='".$_POST['nazwisko']."',`adres`='".$_POST['adres']."',`miasto`='".$_POST['miasto']."',`kod_pocztowy`='".$_POST['kod']."' WHERE mail = '".$_SESSION['user']."'");
-                print('<div class="alert alert-success alert-dismissible" style="color:white; background-color: #28a745; display:flex; align-items:center;">
+        <?php
+        if (isset($_POST['imie'])) {
+            $conn->query("UPDATE dane_konta SET `imie`='" . $_POST['imie'] . "',`nazwisko`='" . $_POST['nazwisko'] . "',`adres`='" . $_POST['adres'] . "',`miasto`='" . $_POST['miasto'] . "',`kod_pocztowy`='" . $_POST['kod'] . "' WHERE mail = '" . $_SESSION['user'] . "'");
+            print('<div class="alert alert-success alert-dismissible" style="color:white; background-color: #28a745; display:flex; align-items:center;">
 
                 <strong>
                     <svg style="margin-right:15px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-square-fill" viewBox="0 0 16 16">
@@ -21,7 +21,7 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
                 </strong>Zmiany zapisano pomyślnie.<a href="#" class="close" data-dismiss="alert" aria-label="close" style=" margin-right: 0;
                 margin-left: auto;">&times;</a>
                 </div>');
-            }
+        }
         ?>
         <div class="c-account-container">
             <div class="c-account-banner col-xs-12 col-sm-12 col-xl-12 col-lg-12 col-md-12">
@@ -44,7 +44,8 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
                                 <!-- <div class="form-group">
                                     <div class="form-group">
                                         <label for="inputEmail4">Email</label>
-                                        <input type="email" value="<?php //echo $result['mail']; ?>" class="form-control c-account-forms__form-input" name="mail" id="inputEmail4" placeholder="Email">
+                                        <input type="email" value="<?php //echo $result['mail']; 
+                                                                    ?>" class="form-control c-account-forms__form-input" name="mail" id="inputEmail4" placeholder="Email">
                                     </div>
                                     
                                 </div> -->
