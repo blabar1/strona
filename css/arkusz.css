@@ -609,5 +609,9 @@ a {
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
-
+.c-modal-button:hover{
+    color:white;
+}
+a.o-href{
+    color:white;
+}

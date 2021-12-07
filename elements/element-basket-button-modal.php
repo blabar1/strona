@@ -5,10 +5,11 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Dodano do koszyka</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
+                <h5 class="modal-title">Dodano do koszyka</h5>
+
             </div>
             <div class="modal-body">
                 <div class="modal-body-picture">
@@ -21,8 +22,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn" style="background-color:var(--orange);" data-dismiss="modal">Zamknij</button>
-                <button type="button" class="btn " style="background-color:var(--orange);"><a href="basket.php">Przejdz do koszyka</a></button>
+                <button type="button" class="btn c-modal-button" style="background-color:var(--orange); color:white;" data-dismiss="modal">Zamknij</button>
+                <button type="button" class="btn c-modal-button" style="background-color:var(--orange); color:white;"><a class="o-href" href="basket.php">Przejdz do koszyka</a></button>
             </div>
         </div>
     </div>
