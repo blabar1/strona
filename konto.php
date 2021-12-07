@@ -72,7 +72,15 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
 
                                 </div>
                             </form>
+                            <div class="c-account-forms-password-changer c-account-forms-password-changer-pass">
+                                <button class="o-none" data-toggle="modal" data-target="#passwordModal">Zmień hasło</button>
+                            </div>
+                            <div class="c-account-forms-password-changer c-account-forms-password-changer-mail">
+                                <button class="o-none" data-toggle="modal" data-target="#mail">Zmień mail</button>
+
+                            </div>
                         </div>
+
 
                     </div>
 
@@ -83,12 +91,103 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
         </div>
     </div>
 </div>
+<!-- Button trigger modal -->
 
+<!-- Modal -->
+<div class="modal fade top30" id="passwordModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title o-title">Zmiana Hasła</h5>
 
+            </div>
+            <div class="modal-body-account">
+                <div class="form-group">
+                    <label for="inputEmail4">Obecne hasło</label>
+                    <div class="c-account-modal-wrapper">
 
+                        <input type="password" class="form-control c-account-forms__form-input" id="password" placeholder="Hasło" /><i class="bi bi-eye-slash" id="togglePassword"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail4">Nowe hasło</label>
+                    <div class="c-account-modal-wrapper">
+                        <input type="password" value="" class="form-control c-account-forms__form-input example-popover" name="mail" id="password_new" placeholder="Nowe hasło" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" /><i class="bi bi-eye-slash" id="togglePassword_new"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail4">Powtórz nowe hasło</label>
+                    <div class="c-account-modal-wrapper">
+                        <input type="password" value="" class="form-control c-account-forms__form-input" name="mail" id="password_newSND" placeholder="Powtórz nowe hasło" /><i class="bi bi-eye-slash" id="togglePassword_newSND"></i>
+                    </div>
+                </div>
 
+            </div>
+            <div class="c-account-passMeter-container">
+                <div class="c-account-passMeter-wrapper">
+                    Długość nowego hasła:<div id="c-account-passMeter-feedback">brak</div>
+                </div>
+                <div class="c-account-passMeter-meter">
+                    <div class="c-account-passMeter-meter__element" id="element-1"></div>
+                    <div class="c-account-passMeter-meter__element" id="element-2"></div>
+                    <div class="c-account-passMeter-meter__element " id="element-3"></div>
+                    <div class="c-account-passMeter-meter__element" id="element-4"></div>
+                    <div class="c-account-passMeter-meter__element" id="element-5"></div>
+                    <div class="c-account-passMeter-meter__element" id="element-6"></div>
+                    <div class="c-account-passMeter-meter__element" id="element-7"></div>
+                    <div class="c-account-passMeter-meter__element" id="element-8"></div>
+                    <div class="c-account-passMeter-meter__element" id="element-9"></div>
 
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn c-modal-button" style="background-color:var(--orange); color:white;" data-dismiss="modal">Anuluj</button>
+                <button type="button" class="btn c-modal-button" style="background-color:var(--orange); color:white;">Zapisz zmainy</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade top30" id="mail" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title o-title">Dodano do koszyka</h5>
+
+            </div>
+            <div class="modal-body-account">
+                <div class="modal-body-account">
+                    <div class="form-group">
+                        <label for="inputEmail4">Obecny mail</label>
+                        <div class="c-account-modal-wrapper">
+                            <input type="password" value="" class="form-control c-account-forms__form-input" name="mail" id="mail" placeholder="Maciek w placeholderze value" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail4">Nowy mail</label>
+                        <div class="c-account-modal-wrapper">
+                            <input type="password" value="" class="form-control c-account-forms__form-input" name="mail" id="mail" placeholder="Nowy mail">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn c-modal-button" style="background-color:var(--orange); color:white;" data-dismiss="modal">Anuluj</button>
+                <button type="button" class="btn c-modal-button" style="background-color:var(--orange); color:white;">Zapisz zmiany</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <?php get_element("templates/footer.php"); ?>
+
 
 <?php include_once "footer.php"; ?>

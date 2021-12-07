@@ -9,7 +9,6 @@ include_once "header.php"; ?>
     <div class="c-orderDetails-wrapper">
         <div class="row">
             <div class="c-orderDetails-form col-xs-12 col-sm-12 col-xl-5 col-lg-5 col-md-5">
-
                 <div class="c-orderDetails-form-elements-payment">
                     <div class="o-title">1.Metody Płatności</div>
                     <div class="c-orderDetails-form-payment">
@@ -20,7 +19,6 @@ include_once "header.php"; ?>
                                 </div>
                                 <div class="c-orderDetails-form-payment-text">BLIK</div>
                             </div>
-
                             <div class="c-orderDetails-form-payment-element">
                                 <div class="c-orderDetails-form-payment-radio-wrapper">
                                     <input type="radio" name="payment" class="o-radio">

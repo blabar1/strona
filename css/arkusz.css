@@ -77,6 +77,11 @@ ul {
     
     
 }
+.o-none{
+    border:none;
+    height:auto;
+    background-color: white;
+}
 input{
     font-family: 'Lato';
 }
@@ -604,5 +609,9 @@ a {
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
-
+.c-modal-button:hover{
+    color:white;
+}
+a.o-href{
+    color:white;
+}

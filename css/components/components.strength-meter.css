@@ -1,0 +1,22 @@
+.c-account-passMeter-meter__element{
+    display: inline-block;
+    width: 28px;
+    height: 8px;
+    margin-right: 2px;
+    border-radius: 2px;
+    background-color: rgb(221, 221, 221);
+    -webkit-transition: background-color 200ms ease-in-out;
+    -moz-transition: background-color 200ms ease-in-out;
+    -o-transition: background-color 200ms ease-in-out;
+    transition: background-color 200ms ease-in-out;
+    
+    }
+    .c-account-passMeter-meter{
+        margin-top:10px;
+    }
+    .c-account-passMeter-wrapper{
+        display: flex;
+    }
+    #c-account-passMeter-feedback{
+        margin-left:10px;
+    }
