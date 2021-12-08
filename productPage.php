@@ -1,8 +1,15 @@
 <?php include_once "header.php"; ?>
 <?php include_once "templates/menu.php"; ?>
 
-<?php get_element("elements/element-breadcrumbs.php", array(
-    'page' => $_SESSION['category']
+<?php 
+if(isset($_GET['id']))
+$idp=$_GET['id'];
+else
+$idp=69;
+$query = $conn->query("SELECT kategoria FROM produkt WHERE id_produkt = '" . $idp . "' LIMIT 1");
+$result = $query->fetch(PDO::FETCH_ASSOC);
+get_element("elements/element-breadcrumbs.php", array(
+    'page' => $result['kategoria']
 )); ?>
 <div class="o-wrapper">
 
@@ -10,10 +17,6 @@
         <div class="row">
             <div class="c-productPage-container">
                 <?php 
-                if(isset($_GET['id']))
-                    $idp=$_GET['id'];
-                else
-                    $idp=69;
                 $query = $conn->query("SELECT wartosc, nazwa FROM produkt_wlasciwosc INNER JOIN  wlasciwosc ON nazwa_wlasciwosc = id_wlasciwosc WHERE produkt = $idp ORDER BY nazwa LIMIT 4");
                 $results = $query->fetchAll(PDO::FETCH_ASSOC);
                 if (!empty($results)) {

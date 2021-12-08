@@ -8,11 +8,10 @@
 <!--category body-->
 
 <?php get_element("elements/element-breadcrumbs.php", array(
-    'prevPage' => 'prevPage',
-    'actPage' => 'actPage'
+    'page' => $_SESSION['category']
 )); ?>
 <div class="o-wrapper">
-    <div class="o-title">Nazwa sklepu</div>
+    <div class="o-title">PlaceHolder.pl</div>
     <?php include_once "separator.php"; ?>
     <div class="c-category">
         <div class="row">
@@ -21,11 +20,11 @@
                 <div class="c-category-list-text">
                     <ul>
                         <?php
-                        $query = $conn->query("SELECT id_kategoria, nazwa, miniaturka FROM kategoria WHERE nadkategoria is NULL");
+                        $query = $conn->query("SELECT id_kategoria, nazwa FROM kategoria WHERE nadkategoria is NULL");
                         $result = $query->fetchAll(PDO::FETCH_ASSOC);
                         foreach ($result as $row) {
                             print('<li>
-                            <a href="#0">
+                            <a id="c' . $row['id_kategoria'] . '" onclick="event.preventDefault(); category_event(\'c' . $row['id_kategoria'] . '\')" href="/strona/category.php?category=' . $row['id_kategoria'] . '">
                             <div class="c-category-list-element">' . $row['nazwa'] . '</div>
                             </a>
                             </li>');
@@ -36,9 +35,11 @@
                 </div>
             </div>
             <!-- category tiles-->
-            <div class="c-category-tiles__container col-xl-9 col-lg-9 col-md-9" style="background-color:white;">
+            <div id="categoryTitles" class="c-category-tiles__container col-xl-9 col-lg-9 col-md-9" style="background-color:white;">
 
                 <?php
+                $query = $conn->query("SELECT id_kategoria, nazwa, miniaturka FROM kategoria WHERE nadkategoria ='".$_SESSION['category']."'");
+                $result = $query->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($result as $row) {
                     get_element("elements/element-category-tile.php", array(
                         'thumbnail' => "images/kategorie/" . $row['miniaturka'],

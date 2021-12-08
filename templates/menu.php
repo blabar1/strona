@@ -13,16 +13,19 @@ if (isset($_GET['page']))
 else
     $_SESSION['page'] = 1;
 
-    if(isset($_GET['order']) && $_GET['order']=="cr")
-    $_SESSION['order']=" ORDER BY cena ASC ";
-  else if(isset($_GET['order']) && $_GET['order']=="cm")
-    $_SESSION['order']=" ORDER BY cena DESC ";
-  else if(isset($_GET['order']) && $_GET['order']=="nr")
-    $_SESSION['order']=" ORDER BY nazwa ASC ";
-  else if(isset($_GET['order']) && $_GET['order']=="nm")
-    $_SESSION['order']=" ORDER BY nazwa DESC ";
-  else
-    $_SESSION['order']=" ";
+if (isset($_GET['order']) && $_GET['order'] == "cr")
+    $_SESSION['order'] = " ORDER BY cena ASC ";
+else if (isset($_GET['order']) && $_GET['order'] == "cm")
+    $_SESSION['order'] = " ORDER BY cena DESC ";
+else if (isset($_GET['order']) && $_GET['order'] == "nr")
+    $_SESSION['order'] = " ORDER BY nazwa ASC ";
+else if (isset($_GET['order']) && $_GET['order'] == "nm")
+    $_SESSION['order'] = " ORDER BY nazwa DESC ";
+else
+    $_SESSION['order'] = " ";
+
+if (isset($_GET['filters']))
+    $_SESSION['filters'] = $_GET['filters'];
 ?>
 <!-- menu,header-->
 
@@ -149,7 +152,7 @@ else
 
                     <nav class="main-nav">
                         <ul>
-                            <a href="/strona/categoryProducts.php?category=1&page=1">
+                            <a href="/strona/category.php?category=1">
                                 <li class="has-dropdown links" data-content="1">
 
                                     <div class="svg-photo-wrap">
@@ -165,7 +168,7 @@ else
                                     </div>
                             </a>
                             </li>
-                            <a href="/strona/categoryProducts.php?category=2&page=1">
+                            <a href="/strona/category.php?category=2">
                                 <li class="has-dropdown links" data-content="2">
 
                                     <div class="svg-photo-wrap">
@@ -183,7 +186,7 @@ else
                                     </div>
                             </a>
                             </li>
-                            <a href="/strona/categoryProducts.php?category=3&page=1">
+                            <a href="/strona/category.php?category=3">
                                 <li class="has-dropdown links" data-content="3">
 
                                     <div class="svg-photo-wrap">
@@ -197,7 +200,7 @@ else
                                     </div>
                             </a>
                             </li>
-                            <a href="/strona/categoryProducts.php?category=4&page=1">
+                            <a href="/strona/category.php?category=4">
                                 <li class="has-dropdown button" data-content="4">
 
                                     <div class="svg-photo-wrap">
@@ -211,7 +214,7 @@ else
                                     </div>
                             </a>
                             </li>
-                            <a href="/strona/categoryProducts.php?category=5&page=1">
+                            <a href="/strona/category.php?category=5">
                                 <li class="has-dropdown gallery" data-content="5">
 
                                     <div class="svg-photo-wrap">
@@ -225,7 +228,7 @@ else
                                     </div>
                             </a>
                             </li>
-                            <a href="/strona/categoryProducts.php?category=6&page=1">
+                            <a href="/strona/category.php?category=6">
                                 <li class="has-dropdown gallery" data-content="6">
 
                                     <div class="svg-photo-wrap">
@@ -239,7 +242,7 @@ else
                                     </div>
                             </a>
                             </li>
-                            <a href="/strona/categoryProducts.php?category=7&page=1">
+                            <a href="/strona/category.php?category=7">
                                 <li class="has-dropdown gallery" data-content="7">
 
                                     <div class="svg-photo-wrap">
@@ -254,7 +257,7 @@ else
                                     </div>
                             </a>
                             </li>
-                            <a href="/strona/categoryProducts.php?category=8&page=1">
+                            <a href="/strona/category.php?category=8">
                                 <li class="has-dropdown gallery" data-content="8">
 
                                     <div class="svg-photo-wrap">

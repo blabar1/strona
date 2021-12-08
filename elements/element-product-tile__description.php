@@ -1,13 +1,13 @@
 <div class=" col-xs-12 col-sm-6 col-xl-4 col-lg-4 col-md-4">
+    <?php
+    $named = str_replace(' ', '-', $name);
+    ?>
 
     <div class="c-categoryProducts-tile">
         <a href="productPage.php?name=<?php echo $named; ?>&id=<?php echo $id; ?>">
             <div class="c-categoryProducts-tile__inside">
                 <div class="c-categoryProducts-tile__thumbnail" style="background-image: url(<?php echo $thumbnail; ?>);"></div>
                 <div class="c-categoryProducts-tile__content">
-                    <?php
-                    $named = str_replace(' ', '-', $name);
-                    ?>
 
                     <div class="c-categoryProducts-tile__name">
                         <h3 title="<?php echo $name; ?>"><span class="c-categoryProducts-tile__name-span">

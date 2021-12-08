@@ -37,7 +37,7 @@ include_once "header.php"; ?>
                     </div>
 
                     <div class="c-categoryProduct-filter-elements-container">
-
+                    <form action="index.php" method="GET">
                         <?php
                         $query = $conn->query("SELECT DISTINCT id_wlasciwosc, nazwa FROM wlasciwosc WHERE id_wlasciwosc IN (SELECT nazwa_wlasciwosc from produkt_wlasciwosc WHERE produkt IN (SELECT id_produkt FROM produkt WHERE (kategoria IN (SELECT id_kategoria FROM kategoria WHERE nadkategoria = '" . $_SESSION['category'] . "') OR kategoria = '" . $_SESSION['category'] . "')))");
                         $result = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -48,6 +48,8 @@ include_once "header.php"; ?>
                             ));
                         }
                         ?>
+                        <input type="submit" value="TAK">
+</form>
                     </div>
                 </div>
             </div>
