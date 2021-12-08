@@ -12,5 +12,7 @@
     <script src="scripts/login-register-swap.js"></script>
     <script src="scripts/categoryPage.js"></script>
     <script src="scripts/productOrder.js"></script>
+    <script src="scripts/account.js"></script>
+    <script src="scripts/login.js"></script>
 
     </html>

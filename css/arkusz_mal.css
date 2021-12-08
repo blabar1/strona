@@ -8,12 +8,39 @@ html {
     word-wrap: break-word;
     margin: 0;
 }
+.animation-gradient{
+    background: linear-gradient(270deg, var(--grey), var(--brudas), var(--primary-color));
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 29s ease infinite;
+    -moz-animation: AnimationName 29s ease infinite;
+    animation: AnimationName 29s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
 
 .c-input {
     background: none;
     border: none;
     width: 100%;
     color: var(--primary-color);
+    min-width: 450px;
+    max-width:450px;
+
 }
 
 .c-input:focus {
@@ -21,34 +48,41 @@ html {
 }
 
 .c-forms {
-    width: 40vw;
+    width: 100%;
     color: var(--primary-color);
+    background-color: white;
+    padding:50px;
+    border-radius: 10px;
+    -webkit-box-shadow: -1px 1px 36px -1px black;
+-moz-box-shadow: -1px 1px 36px -1px black;
+box-shadow: -1px 1px 36px -1px black;
 }
 
 .c-fieldset {
     width: auto;
     border-style: solid;
-    border-radius: 15px;
-    border-color: var(--orange);
+    border-radius: 12px;
+    margin-bottom:24px;
+    margin-top:24px;
 }
 
 .c-input-submit {
     border-style: solid;
     position: relative;
-    left: 75%;
-    width: 25%;
-    padding:4px;
-    background: none;
+    width: 40%;
+    height:40px;
+    padding:8px;
+    background: var(--orange);
     border-color: var(--orange);
     border-radius: 15px;
-    color: var(--orange);
+    color: white;
     font-weight: bold;
+    margin-top:40px;
 }
 
 .c-input-submit:hover {
-    background: var(--orange);
-    color: var(--white);
-    border-color: var(--orange);
+    background: #a1421c;
+    border-color: #a1421c;
     transition: all 0.1s ease-in-out;
 }
 
@@ -65,19 +99,110 @@ html {
 }
 
 .c-button{
-    height: 40px;
+    padding:8px;
     width: 50%;
     background: none;
     border:none;
-    color: var(--orange);
+    color: var(--primary-color);
     font-weight: bold;
     font-size: 15px;
 }
 
 .c-button-clicked{
+
+}
+.c-button-clicked:after{
+    content:' ';
+    transition: transform 500ms ease-in-out; 
     border-bottom: solid 3px var(--orange);
+    transform: scaleX(1);  
+
+ 
+    display:block; margin:0;
 }
 
 #register{
     display: none;
 }
+.c-forms-container{
+    display: flex;
+    justify-content: center;
+    margin-top:8vh;
+    margin-bottom:8vh;
+
+}
+
+.c-button-clicked:hover:after { transform: scaleX(0);     transition: transform 500ms ease-in-out; }
+.c-button-clicked.fromRight:after{ transform-origin: 100% 50%; padding-top:10px; }
+.c-button-clicked.fromLeft:after{  transform-origin:  0% 50%; padding-top:10px;}
+
+.c-input-button{
+    display: flex;
+    
+
+}
+.c-account-passMeter-container{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+#togglePassword_new{
+    color: rgb(77, 77, 77);
+}
+.fade-in-left {
+	-webkit-animation: fade-in-left 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in-left 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+@-webkit-keyframes fade-in-left {
+    0% {
+      -webkit-transform: translateX(-50px);
+              transform: translateX(-50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in-left {
+    0% {
+      -webkit-transform: translateX(-50px);
+              transform: translateX(-50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .fade-in-right {
+	-webkit-animation: fade-in-right 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in-right 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+@-webkit-keyframes fade-in-right {
+    0% {
+      -webkit-transform: translateX(50px);
+              transform: translateX(50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in-right {
+    0% {
+      -webkit-transform: translateX(50px);
+              transform: translateX(50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
