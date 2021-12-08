@@ -30,8 +30,8 @@ html {
 .c-account-forms__form-input{
     position: relative;
     margin-top:8px;
-    max-width:700px;
-    width:400px;
+    max-width:450px;
+    width:450px;
     border-radius:24px;
 }
 .c-account-forms__form-input:focus{
@@ -123,3 +123,4 @@ flex-direction: column;
 justify-content: center;
 margin: auto;
 }
+

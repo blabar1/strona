@@ -115,7 +115,7 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
                 <div class="form-group">
                     <label for="inputEmail4">Nowe hasło</label>
                     <div class="c-account-modal-wrapper">
-                        <input type="password" value="" class="form-control c-account-forms__form-input example-popover" name="mail" id="password_new" placeholder="Nowe hasło" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" /><i class="bi bi-eye-slash" id="togglePassword_new"></i>
+                        <input type="password" value="" class="form-control c-account-forms__form-input" name="mail" id="password_new" placeholder="Nowe hasło" /><i class="bi bi-eye-slash" id="togglePassword_new"></i>
                     </div>
                 </div>
                 <div class="form-group">
