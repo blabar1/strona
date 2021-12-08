@@ -12,11 +12,7 @@
     <script src="scripts/login-register-swap.js"></script>
     <script src="scripts/categoryPage.js"></script>
     <script src="scripts/productOrder.js"></script>
-<<<<<<< HEAD
-    <script src="scripts/category.js"></script>
-=======
     <script src="scripts/account.js"></script>
     <script src="scripts/login.js"></script>
-
->>>>>>> 2be22076272a563a61ce8ea31d582b5a94fb27df
+    <script src="scripts/category.js"></script>
     </html>
