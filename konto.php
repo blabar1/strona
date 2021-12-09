@@ -21,7 +21,7 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
                 </strong>Zmiany zapisano pomyślnie.<a href="#" class="close" data-dismiss="alert" aria-label="close" style=" margin-right: 0;
                 margin-left: auto;">&times;</a>
                 </div>');
-                print('<script>$("#form").load(location.href + " #form>*", "");</script>');
+            print('<script>$("#form").load(location.href + " #form>*", "");</script>');
         }
         ?>
         <div class="c-account-container">
@@ -79,6 +79,10 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
                                 <button class="o-none" data-toggle="modal" data-target="#mail">Zmień mail</button>
 
                             </div>
+                            <div class="c-account-forms-password-changer c-account-forms-password-changer-delete">
+                                <button class="o-none" data-toggle="modal" data-target="#delete">Usuń konto</button>
+
+                            </div>
                         </div>
 
 
@@ -91,6 +95,30 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
         </div>
     </div>
 </div>
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade top30" id="delete" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="title">Czy chcesz usunać konto? </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body c-basket__modal-body">
+                Czy zamierzasz usunąć konto? Pamiętaj, że tej akcji nie można cofnąć.
+            </div>
+            <div class="modal-footer c-basket-modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
+                <button type="button" class="c-basket-modal__button-clean">Usuń</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Button trigger modal -->
+
 <!-- Button trigger modal -->
 
 <!-- Modal -->
