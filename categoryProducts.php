@@ -39,7 +39,11 @@ include_once "header.php"; ?>
                     <div class="c-categoryProduct-filter-elements-container">
                     <form action="index.php" method="GET">
                         <?php
-                        $query = $conn->query("SELECT DISTINCT id_wlasciwosc, nazwa FROM wlasciwosc WHERE id_wlasciwosc IN (SELECT nazwa_wlasciwosc from produkt_wlasciwosc WHERE produkt IN (SELECT id_produkt FROM produkt WHERE (kategoria IN (SELECT id_kategoria FROM kategoria WHERE nadkategoria = '" . $_SESSION['category'] . "') OR kategoria = '" . $_SESSION['category'] . "')))");
+                        if($_SESSION['category']!=0){
+                            $query = $conn->query("SELECT DISTINCT id_wlasciwosc, nazwa FROM wlasciwosc WHERE id_wlasciwosc IN (SELECT nazwa_wlasciwosc from produkt_wlasciwosc WHERE produkt IN (SELECT id_produkt FROM produkt WHERE (kategoria IN (SELECT id_kategoria FROM kategoria WHERE nadkategoria = '" . $_SESSION['category'] . "') OR kategoria = '" . $_SESSION['category'] . "')))");
+                        }else{
+                            $query = $conn->query("SELECT DISTINCT id_wlasciwosc, nazwa FROM wlasciwosc WHERE id_wlasciwosc IN (SELECT nazwa_wlasciwosc from produkt_wlasciwosc)");
+                        }
                         $result = $query->fetchAll(PDO::FETCH_ASSOC);
                         foreach ($result as $row) {
                             get_element("elements/element-categoryProduct-filters.php", array(

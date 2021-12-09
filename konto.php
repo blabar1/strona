@@ -1,18 +1,10 @@
 <?php include_once "header.php"; ?>
 <?php include_once "templates/menu.php"; ?>
 <?php
-if (!isset($_SESSION['user'])) print("<script>open('login.php','_self');</script>");
-else
-    $query = $conn->query("SELECT * FROM dane_konta INNER JOIN dane_logowania ON dane_konta.mail = dane_logowania.mail WHERE dane_konta.mail ='" . $_SESSION['user'] . "' LIMIT 1");
-$result = $query->fetch(PDO::FETCH_ASSOC);
-?>
-
-<div class="o-wrapper">
-    <div class="row">
-        <?php
-        if (isset($_POST['imie'])) {
-            $conn->query("UPDATE dane_konta SET `imie`='" . $_POST['imie'] . "',`nazwisko`='" . $_POST['nazwisko'] . "',`adres`='" . $_POST['adres'] . "',`miasto`='" . $_POST['miasto'] . "',`kod_pocztowy`='" . $_POST['kod'] . "' WHERE mail = '" . $_SESSION['user'] . "'");
-            print('<div class="alert alert-success alert-dismissible" style="color:white; background-color: #28a745; display:flex; align-items:center;">
+if (isset($_POST['mail'])) {
+    $conn->query("UPDATE dane_logowania SET `mail`='" . $_POST['mail'] . "' WHERE mail = '" . $_SESSION['user'] . "'");
+    $_SESSION['user']=$_POST['mail'];
+    print('<div class="alert alert-success alert-dismissible" style="color:white; background-color: #28a745; display:flex; align-items:center;">
 
                 <strong>
                     <svg style="margin-right:15px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-square-fill" viewBox="0 0 16 16">
@@ -21,9 +13,37 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
                 </strong>Zmiany zapisano pomyślnie.<a href="#" class="close" data-dismiss="alert" aria-label="close" style=" margin-right: 0;
                 margin-left: auto;">&times;</a>
                 </div>');
-                print('<script>$("#form").load(location.href + " #form>*", "");</script>');
-        }
-        ?>
+    unset($_POST['mail']);
+    unset($_POST['zapiszmail']);
+}
+if (isset($_POST['imie'])) {
+    $conn->query("UPDATE dane_konta SET `imie`='" . $_POST['imie'] . "',`nazwisko`='" . $_POST['nazwisko'] . "',`adres`='" . $_POST['adres'] . "',`miasto`='" . $_POST['miasto'] . "',`kod_pocztowy`='" . $_POST['kod'] . "' WHERE mail = '" . $_SESSION['user'] . "'");
+    print('<div class="alert alert-success alert-dismissible" style="color:white; background-color: #28a745; display:flex; align-items:center;">
+
+                <strong>
+                    <svg style="margin-right:15px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                    </svg>
+                </strong>Zmiany zapisano pomyślnie.<a href="#" class="close" data-dismiss="alert" aria-label="close" style=" margin-right: 0;
+                margin-left: auto;">&times;</a>
+                </div>');
+    unset($_POST['imie']);
+    unset($_POST['nazwisko']);
+    unset($_POST['adres']);
+    unset($_POST['miasto']);
+    unset($_POST['kod']);
+    unset($_POST['zapisz']);
+}
+?>
+<?php
+if (!isset($_SESSION['user'])) print("<script>open('login.php','_self');</script>");
+else
+    $query = $conn->query("SELECT * FROM dane_konta INNER JOIN dane_logowania ON dane_konta.mail = dane_logowania.mail WHERE dane_konta.mail ='" . $_SESSION['user'] . "' LIMIT 1");
+$result = $query->fetch(PDO::FETCH_ASSOC);
+?>
+
+<div class="o-wrapper">
+    <div class="row">
         <div class="c-account-container">
             <div class="c-account-banner col-xs-12 col-sm-12 col-xl-12 col-lg-12 col-md-12">
                 <div class="o-title">Witaj <?php echo $result['imie']; ?> </div>
@@ -36,39 +56,31 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
                             <form action="konto.php" method="POST">
                                 <div class="form-group">
                                     <label for="inputAddress">Imie</label>
-                                    <input type="text" value="<?php echo $result['imie']; ?>" class="form-control c-account-forms__form-input" name="imie" id="inputname" placeholder="Imie">
+                                    <input type="text" value="<?php echo $result['imie']; ?>" maxlength="32" class="form-control c-account-forms__form-input" name="imie" id="inputname" placeholder="Imie" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputAddress">Nazwisko</label>
-                                    <input type="text" value="<?php echo $result['nazwisko']; ?>" class="form-control c-account-forms__form-input" name="nazwisko" id="inputsurname" placeholder="Nazwisko">
+                                    <input type="text" value="<?php echo $result['nazwisko']; ?>" maxlength="32" class="form-control c-account-forms__form-input" name="nazwisko" id="inputsurname" placeholder="Nazwisko" required>
                                 </div>
-                                <!-- <div class="form-group">
-                                    <div class="form-group">
-                                        <label for="inputEmail4">Email</label>
-                                        <input type="email" value="<?php //echo $result['mail']; 
-                                                                    ?>" class="form-control c-account-forms__form-input" name="mail" id="inputEmail4" placeholder="Email">
-                                    </div>
-                                    
-                                </div> -->
                                 <div class="form-group">
                                     <label for="inputAddress">Adres</label>
-                                    <input type="text" value="<?php echo $result['adres']; ?>" class="form-control c-account-forms__form-input" name="adres" id="inputAddress" placeholder="Adres">
+                                    <input type="text" value="<?php echo $result['adres']; ?>" maxlength="64" class="form-control c-account-forms__form-input" name="adres" id="inputAddress" placeholder="Adres">
                                 </div>
                                 <div class="form-group">
                                     <div class="form-group">
                                         <label for="inputCity">Miasto</label>
-                                        <input type="text" value="<?php echo $result['miasto']; ?>" class="form-control c-account-forms__form-input" name="miasto" id="inputCity" placeholder="Miasto">
+                                        <input type="text" value="<?php echo $result['miasto']; ?>" maxlength="45" class="form-control c-account-forms__form-input" name="miasto" id="inputCity" placeholder="Miasto">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="form-group">
                                         <label for="kod-poczty">Kod pocztowy</label>
-                                        <input type="text" value="<?php echo $result['kod_pocztowy']; ?>" class="form-control c-account-forms__form-input" name="kod" id="kod-poczty" placeholder="Kod pocztowy">
+                                        <input type="text" value="<?php echo $result['kod_pocztowy']; ?>" maxlength="6" class="form-control c-account-forms__form-input" pattern="^[0-9]{2}-[0-9]{3}$" name="kod" id="kod-poczty" placeholder="np. 00-000">
                                     </div>
                                 </div>
                                 <div class="c-account-forms__form-button-container">
                                     <button class="c-account-forms__form-button" value="anuluj"><a href="index.php" style="color: white">Anuluj</a></button>
-                                    <button type="submit" class="c-account-forms__form-button">Zapisz zmiany</button>
+                                    <button type="submit" name="zapisz" class="c-account-forms__form-button">Zapisz zmiany</button>
 
                                 </div>
                             </form>
@@ -109,19 +121,19 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
                     <label for="inputEmail4">Obecne hasło</label>
                     <div class="c-account-modal-wrapper">
 
-                        <input type="password" class="form-control c-account-forms__form-input" id="password" placeholder="Hasło" /><i class="bi bi-eye-slash" id="togglePassword"></i>
+                        <input type="password" class="form-control c-account-forms__form-input" id="passwordA" placeholder="Hasło" /><i class="bi bi-eye-slash" id="togglePassword"></i>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail4">Nowe hasło</label>
                     <div class="c-account-modal-wrapper">
-                        <input type="password" value="" class="form-control c-account-forms__form-input" name="mail" id="password_new" placeholder="Nowe hasło" /><i class="bi bi-eye-slash" id="togglePassword_new"></i>
+                        <input type="password" value="" class="form-control c-account-forms__form-input" name="passwordN1" id="password_new" placeholder="Nowe hasło" /><i class="bi bi-eye-slash" id="togglePassword_new"></i>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail4">Powtórz nowe hasło</label>
                     <div class="c-account-modal-wrapper">
-                        <input type="password" value="" class="form-control c-account-forms__form-input" name="mail" id="password_newSND" placeholder="Powtórz nowe hasło" /><i class="bi bi-eye-slash" id="togglePassword_newSND"></i>
+                        <input type="password" value="" class="form-control c-account-forms__form-input" name="passwordN2" id="password_newSND" placeholder="Powtórz nowe hasło" /><i class="bi bi-eye-slash" id="togglePassword_newSND"></i>
                     </div>
                 </div>
 
@@ -159,30 +171,35 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
             <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h5 class="modal-title o-title">Dodano do koszyka</h5>
+                <h5 class="modal-title o-title">Zmiana maila</h5>
 
             </div>
-            <div class="modal-body-account">
+            <form action="konto.php" method="POST">
                 <div class="modal-body-account">
-                    <div class="form-group">
-                        <label for="inputEmail4">Obecny mail</label>
-                        <div class="c-account-modal-wrapper">
-                            <input type="password" value="" class="form-control c-account-forms__form-input" name="mail" id="mail" placeholder="Maciek w placeholderze value" disabled>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputEmail4">Nowy mail</label>
-                        <div class="c-account-modal-wrapper">
-                            <input type="password" value="" class="form-control c-account-forms__form-input" name="mail" id="mail" placeholder="Nowy mail">
-                        </div>
-                    </div>
-                </div>
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn c-modal-button" style="background-color:var(--orange); color:white;" data-dismiss="modal">Anuluj</button>
-                <button type="button" class="btn c-modal-button" style="background-color:var(--orange); color:white;">Zapisz zmiany</button>
-            </div>
+                    <div class="modal-body-account">
+
+                        <div class="form-group">
+                            <label for="inputEmail4">Obecny mail</label>
+                            <div class="c-account-modal-wrapper">
+                                <input type="email" value="" class="form-control c-account-forms__form-input" name="obecny" id="mail" placeholder="<?php echo $result['mail']; ?>" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail4">Nowy mail</label>
+                            <div class="c-account-modal-wrapper">
+                                <input type="email" value="" class="form-control c-account-forms__form-input" name="mail" id="mail" placeholder="Nowy mail">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn c-modal-button" style="background-color:var(--orange); color:white;" data-dismiss="modal">Anuluj</button>
+                    <button type="submit" name="zapiszmail" class="btn c-modal-button" style="background-color:var(--orange); color:white;">Zapisz zmiany</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

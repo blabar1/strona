@@ -15,4 +15,5 @@
     <script src="scripts/account.js"></script>
     <script src="scripts/login.js"></script>
     <script src="scripts/category.js"></script>
+    <script src="scripts/categoryFilters.js"></script>
     </html>
