@@ -14,18 +14,20 @@ else
     $_SESSION['page'] = 1;
 
 if (isset($_GET['order']) && $_GET['order'] == "cr")
-    $_SESSION['order'] = " ORDER BY cena ASC ";
+    $_SESSION['order'] = "cr";
 else if (isset($_GET['order']) && $_GET['order'] == "cm")
-    $_SESSION['order'] = " ORDER BY cena DESC ";
+    $_SESSION['order'] = "cm";
 else if (isset($_GET['order']) && $_GET['order'] == "nr")
-    $_SESSION['order'] = " ORDER BY nazwa ASC ";
+    $_SESSION['order'] = "nr";
 else if (isset($_GET['order']) && $_GET['order'] == "nm")
-    $_SESSION['order'] = " ORDER BY nazwa DESC ";
+    $_SESSION['order'] = "nm";
 else
-    $_SESSION['order'] = " ";
+    $_SESSION['order'] = "d";
 
-if (isset($_GET['filters']))
-    $_SESSION['filters'] = $_GET['filters'];
+if (isset($_GET['filters'])){
+    $_SESSION['filters'] =  $_GET['filters'];
+}else
+    $_SESSION['filters'] = array();
 ?>
 <!-- menu,header-->
 
@@ -78,6 +80,8 @@ if (isset($_GET['filters']))
                                                 else
                                                     print("<option value='" . $row['id_kategoria'] . "'>" . $row['nazwa'] . "</option>");
                                             }
+                                            print('<input type="hidden" name ="page" value="1">');
+                                            print('<input type="hidden" name ="order" value="d">')
                                             ?>
                                         </select>
 
@@ -293,11 +297,11 @@ if (isset($_GET['filters']))
                                         $result = $query->fetchAll(PDO::FETCH_ASSOC);
                                         foreach ($result as $row) {
                                             print('<li id="' . $row['id_kategoria'] . '" class="dropdown links">
-                                            <a href="/strona/categoryProducts.php?category=' . $row['id_kategoria'] . '&page=1" class="label">' . $row['nazwa'] . '</a>
+                                            <a href="/strona/categoryProducts.php?search=' . $_SESSION['search'] . '&category=' . $row['id_kategoria'] . '&page=1&order=d" class="label">' . $row['nazwa'] . '</a>
                                             <div class="content">
                                             <ul>
                                             <li>
-                                            <a href="/strona/categoryProducts.php?category=' . $row['id_kategoria'] . '&page=1">
+                                            <a href="/strona/categoryProducts.php?search=' . $_SESSION['search'] . '&category=' . $row['id_kategoria'] . '&page=1&order=d">
                                             <h2>' . $row['nazwa'] . '</h2>
                                             </a>
                                             <ul class="links-list">');
@@ -305,13 +309,13 @@ if (isset($_GET['filters']))
                                             $query2 = $conn->query("SELECT id_kategoria, nazwa, miniaturka FROM kategoria WHERE nadkategoria = '" . $row['id_kategoria'] . "'");
                                             $result2 = $query2->fetchAll(PDO::FETCH_ASSOC);
                                             foreach ($result2 as $row2) {
-                                                print('<li class="links-list-element"><a href="/strona/categoryProducts.php?category=' . $row2['id_kategoria'] . '&page=1">' . $row2['nazwa'] . '</a></li>');
+                                                print('<li class="links-list-element"><a href="/strona/categoryProducts.php?search=' . $_SESSION['search'] . '&category=' . $row2['id_kategoria'] . '&page=1&order=d">' . $row2['nazwa'] . '</a></li>');
                                                 $query3 = $conn->query("SELECT id_kategoria, nazwa, miniaturka FROM kategoria WHERE nadkategoria = '" . $row2['id_kategoria'] . "'");
                                                 $result3 = $query3->fetchAll(PDO::FETCH_ASSOC);
                                                 if (!empty($result3)) {
                                                     print('<ul class="links-list-subcategory">');
                                                     foreach ($result3 as $row3) {
-                                                        print('<li class="links-list-element"> <a href="/strona/categoryProducts.php?category=' . $row3['id_kategoria'] . '&page=1">' . $row3['nazwa'] . '</a></li>');
+                                                        print('<li class="links-list-element"> <a href="/strona/categoryProducts.php?search=' . $_SESSION['search'] . '&category=' . $row3['id_kategoria'] . '&page=1&order=d">' . $row3['nazwa'] . '</a></li>');
                                                     }
                                                     print('</ul>');
                                                 }

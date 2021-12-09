@@ -15,9 +15,15 @@ include_once "header.php"; ?>
         if ($_GET['category'] != 0) {
             $query = $conn->query("SELECT nazwa FROM kategoria WHERE id_kategoria = '" . $_GET['category'] . "' LIMIT 1");
             $result = $query->fetch(PDO::FETCH_ASSOC);
-            print('<div class="o-title">' . $result['nazwa'] . '</div>');
+            if(isset($_GET['search']) && $_GET['search']!="%")
+                print('<div class="o-title">' . $result['nazwa'] . ' - szukana fraza: "'. $_GET['search'] .'" </div>');
+            else
+                print('<div class="o-title">' . $result['nazwa'] . '</div>');
         } else
-            print('<div class="o-title">Wszystkie produkty</div>');
+            if(isset($_GET['search']) && $_GET['search']!="%")
+                print('<div class="o-title">Wszystkie produkty - szukana fraza: "'. $_GET['search'] .'"</div>');
+            else
+                print('<div class="o-title">Wszystkie produkty</div>');
     } else
         print('<div class="o-title">Nie znaleziono kategorii</div>');
     ?>
@@ -37,7 +43,6 @@ include_once "header.php"; ?>
                     </div>
 
                     <div class="c-categoryProduct-filter-elements-container">
-                    <form action="index.php" method="GET">
                         <?php
                         if($_SESSION['category']!=0){
                             $query = $conn->query("SELECT DISTINCT id_wlasciwosc, nazwa FROM wlasciwosc WHERE id_wlasciwosc IN (SELECT nazwa_wlasciwosc from produkt_wlasciwosc WHERE produkt IN (SELECT id_produkt FROM produkt WHERE (kategoria IN (SELECT id_kategoria FROM kategoria WHERE nadkategoria = '" . $_SESSION['category'] . "') OR kategoria = '" . $_SESSION['category'] . "')))");
@@ -52,8 +57,6 @@ include_once "header.php"; ?>
                             ));
                         }
                         ?>
-                        <input type="submit" value="TAK">
-</form>
                     </div>
                 </div>
             </div>
@@ -65,7 +68,7 @@ include_once "header.php"; ?>
                             <div class="c-categoryProducts-changer-per-page">
                                 <form name="jd">
                                     <select autocomplete="off" id='order' name="order" onchange="select_event()" href=<?php print("'/strona/categoryProducts.php?category=" . $_SESSION['category'] . "&page=1&order='"); ?> class="c-categoryProducts-changer-per-page__select">
-                                        <option value=" ">Domyślne</option>
+                                        <option value="d">Domyślne</option>
                                         <option value="cr" <?php if (isset($_GET['order']) && $_GET['order'] == "cr") echo 'selected' ?>>Cena - od najniższej </option>
                                         <option value="cm" <?php if (isset($_GET['order']) && $_GET['order'] == "cm") echo 'selected' ?>>Cena - od najwyższej</option>
                                         <option value="nr" <?php if (isset($_GET['order']) && $_GET['order'] == "nr") echo 'selected' ?>>Nazwa - od A do Z</option>
@@ -136,6 +139,12 @@ include_once "header.php"; ?>
                             $i = $ilosc_produktow['jd'];
                             $i /= 15;
                             $i = ceil($i);
+                            $filtry = "";
+                            if(!empty($_SESSION['filters'])){
+                                $d = sizeof($_SESSION['filters']);
+                                for($k=0;$k<$d;$k++)
+                                $filtry = "&filters[]=".$_SESSION['filters'][$k].$filtry;
+                            }
                             if (isset($_GET['order']))
                                 $o = $_GET['order'];
                             else
@@ -145,7 +154,7 @@ include_once "header.php"; ?>
                                     print('<li class="page-item active" aria-current="page"><span class="page-link">' . $j . '</span></li>');
                                 else {
                                     $id = "b" . $j;
-                                    print('<li class="page-item"><a id="' . $id . '"  class="page-link page-number" onclick="event.preventDefault(); button_event(\'' . $id . '\')" href="/strona/categoryProducts.php?category=' . $_SESSION['category'] . '&page=' . $j . '&order=' . $o . '">' . $j . '</a></li>');
+                                    print('<li class="page-item"><a id="' . $id . '"  class="page-link page-number" onclick="event.preventDefault(); button_event(\'' . $id . '\')" href="/strona/categoryProducts.php?search=' . $_SESSION['search'] . '&category=' . $_SESSION['category'] . '&page=' . $j . '&order=' . $o .$filtry.'">' . $j . '</a></li>');
                                 }
                             }
                             ?>

@@ -12,9 +12,16 @@ if (!isset($_SESSION)) {
   if (isset($_SESSION['search'])) {
     $szukana = $_SESSION['search'];
   }
-  if (isset($_SESSION['order'])) {
-    $o = $_SESSION['order'];
-  }
+  if (isset($_GET['order']) && $_GET['order'] == "cr")
+    $o = " ORDER BY cena ASC ";
+else if (isset($_GET['order']) && $_GET['order'] == "cm")
+    $o = " ORDER BY cena DESC ";
+else if (isset($_GET['order']) && $_GET['order'] == "nr")
+    $o = " ORDER BY nazwa ASC ";
+else if (isset($_GET['order']) && $_GET['order'] == "nm")
+    $o = " ORDER BY nazwa DESC ";
+else
+    $o = "";
   if ($_SESSION['category'] != 0)
     $query = $conn->query("SELECT id_produkt, nazwa, cena, miniaturka FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%' AND (kategoria IN (SELECT id_kategoria FROM kategoria WHERE nadkategoria = '" . $_SESSION['category'] . "') OR kategoria = '" . $_SESSION['category'] . "') 
     $o
