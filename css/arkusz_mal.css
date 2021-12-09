@@ -38,8 +38,8 @@ html {
     border: none;
     width: 100%;
     color: var(--primary-color);
-    min-width: 450px;
-    max-width:450px;
+    min-width:450px;
+    max-width: 450px;
 
 }
 
@@ -56,6 +56,9 @@ html {
     -webkit-box-shadow: -1px 1px 36px -1px black;
 -moz-box-shadow: -1px 1px 36px -1px black;
 box-shadow: -1px 1px 36px -1px black;
+height: auto;
+transition: height 200ms ease-in-out;
+
 }
 
 .c-fieldset {
@@ -90,7 +93,8 @@ box-shadow: -1px 1px 36px -1px black;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50%;
+
+    
 }
 
 .c-buttons{
@@ -142,7 +146,7 @@ box-shadow: -1px 1px 36px -1px black;
 
 }
 .c-account-passMeter-container{
-    width: 400px;
+    width:100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -150,6 +154,7 @@ box-shadow: -1px 1px 36px -1px black;
 #togglePassword_new{
     color: rgb(77, 77, 77);
 }
+
 .fade-in-left {
 	-webkit-animation: fade-in-left 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	        animation: fade-in-left 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
@@ -205,4 +210,13 @@ box-shadow: -1px 1px 36px -1px black;
               transform: translateX(0);
       opacity: 1;
     }
+  }
+
+  @media only screen and (max-width: 650px) {
+    .c-input {
+    min-width:300px;
+    max-width: 300px;
+    width:100%;
+
+}
   }

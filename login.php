@@ -19,7 +19,7 @@
     <div class="o-wrapper">
         <div class="row">
             <div class="c-forms-container">
-                <div class="c-forms-compoments col-xs-8 col-sm-8 col-xl-8 col-lg-8 col-md-8">
+                <div class="c-forms-compoments col-xs-6 col-sm-6 col-xl-8 col-lg-8 col-md-8">
                     <div class="c-forms">
                         <div class="c-buttons">
                             <button class="c-button c-button-clicked fromRight" id='loging'>Logowanie</button>
