@@ -1,11 +1,12 @@
 .c-productPage-descriptionBody{
 padding: 8px;
-font-size: 14px;
+font-size: 18px;
 line-height: 20px;
 color: rgb(26, 26, 26);
 font-weight: normal;
 text-decoration: none;
 margin: 0px;
+
 }
 .c-productPage-descriptionBody-container{
     margin-bottom: 24px;
