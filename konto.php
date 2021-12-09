@@ -21,6 +21,7 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
                 </strong>Zmiany zapisano pomyślnie.<a href="#" class="close" data-dismiss="alert" aria-label="close" style=" margin-right: 0;
                 margin-left: auto;">&times;</a>
                 </div>');
+                print('<script>$("#form").load(location.href + " #form>*", "");</script>');
         }
         ?>
         <div class="c-account-container">
@@ -31,7 +32,7 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
             <div class="c-account-forms-body">
                 <div class="c-account-body col-xs-12 col-sm-12 col-xl-12 col-lg-12 col-md-12">
                     <div class="c-account-forms">
-                        <div class="c-account-forms__form">
+                        <div id="form" class="c-account-forms__form">
                             <form action="konto.php" method="POST">
                                 <div class="form-group">
                                     <label for="inputAddress">Imie</label>

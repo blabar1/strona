@@ -5,7 +5,7 @@
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     foreach($result as $row){
         print('<div class="c-categoryProduct-filter__body">
-        <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="f'.$row['wartosc'].'" name="f'.$row['wartosc'].'" value="'.$row['wartosc'].'">
+        <input class="c-categoryProduct-filter__checkbox" type="checkbox" id="f'.$row['wartosc'].'" name="filters[]" value="'.$row['wartosc'].'">
         <label class="c-categoryProduct-filter__checkbox-label" for="f'.$row['wartosc'].'">'.$row['wartosc'].'</label>
     </div>');
     }

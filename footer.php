@@ -14,5 +14,5 @@
     <script src="scripts/productOrder.js"></script>
     <script src="scripts/account.js"></script>
     <script src="scripts/login.js"></script>
-
+    <script src="scripts/category.js"></script>
     </html>
