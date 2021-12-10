@@ -88,10 +88,10 @@
                         <div class="footer-col col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                             <!-- Links -->
                             <h6 class="footer-sub__title text-uppercase fw-bold mb-4">
-                                Useful links
+                                Linki
                             </h6>
                             <p class="footer__link">
-                                <a href="#!" class="text-reset">Pricing</a>
+                                <a href="regulamin.php" class="text-reset">Regulamin</a>
                             </p>
                             <p class="footer__link">
                                 <a href="#!" class="text-reset">Settings</a>

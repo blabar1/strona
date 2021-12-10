@@ -1,3 +1,18 @@
 .slick-slide {
     outline: none
 }
+.c-product-cards-arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    font-size: 40px;
+    opacity: 1;
+}
+.c-product-cards-arrow__right{
+    right:5px;
+}
+.c-product-cards-arrow__left{
+    left:5px;
+}

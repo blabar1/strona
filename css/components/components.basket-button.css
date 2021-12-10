@@ -18,4 +18,8 @@
 }
 .top30{
     top:30%;
+    opacity: 1!important;
+}
+.modal-open{
+    overflow: initial!important;
 }

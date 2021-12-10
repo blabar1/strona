@@ -24,13 +24,13 @@ else if (isset($_GET['order']) && $_GET['order'] == "nm")
 else
     $_SESSION['order'] = "d";
 
-if (isset($_GET['filters'])){
+if (isset($_GET['filters'])) {
     $_SESSION['filters'] =  $_GET['filters'];
-}else
+} else
     $_SESSION['filters'] = array();
 ?>
 <!-- menu,header-->
-
+<?php include_once "elements/element-cookie-popover.php"; ?>
 <div class="c-header">
 
     <nav class="navbar navbar-inverse" style="border-radius:0px; margin-bottom:0px;">

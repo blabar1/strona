@@ -636,4 +636,10 @@ a.o-href{
       opacity: 1;
     }
   }
+  .credit{
+      display: none!important;
+  }
+  #cookie-btn{
+      background-color: #EB5E28!important;
+  }
   

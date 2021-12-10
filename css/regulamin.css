@@ -1,0 +1,7 @@
+.c-regulamin-body-container{
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    margin-top:100px;
+    line-height: 2;
+    font-size: 16px;
+}
