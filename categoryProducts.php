@@ -15,15 +15,15 @@ include_once "header.php"; ?>
         if ($_GET['category'] != 0) {
             $query = $conn->query("SELECT nazwa FROM kategoria WHERE id_kategoria = '" . $_GET['category'] . "' LIMIT 1");
             $result = $query->fetch(PDO::FETCH_ASSOC);
-            if(isset($_GET['search']) && $_GET['search']!="%")
-                print('<div class="o-title">' . $result['nazwa'] . ' - szukana fraza: "'. $_GET['search'] .'" </div>');
+            if (isset($_GET['search']) && $_GET['search'] != "%")
+                print('<div class="o-title">' . $result['nazwa'] . ' - szukana fraza: "' . $_GET['search'] . '" </div>');
             else
                 print('<div class="o-title">' . $result['nazwa'] . '</div>');
         } else
-            if(isset($_GET['search']) && $_GET['search']!="%")
-                print('<div class="o-title">Wszystkie produkty - szukana fraza: "'. $_GET['search'] .'"</div>');
-            else
-                print('<div class="o-title">Wszystkie produkty</div>');
+            if (isset($_GET['search']) && $_GET['search'] != "%")
+            print('<div class="o-title">Wszystkie produkty - szukana fraza: "' . $_GET['search'] . '"</div>');
+        else
+            print('<div class="o-title">Wszystkie produkty</div>');
     } else
         print('<div class="o-title">Nie znaleziono kategorii</div>');
     ?>
@@ -44,9 +44,9 @@ include_once "header.php"; ?>
 
                     <div class="c-categoryProduct-filter-elements-container">
                         <?php
-                        if($_SESSION['category']!=0){
+                        if ($_SESSION['category'] != 0) {
                             $query = $conn->query("SELECT DISTINCT id_wlasciwosc, nazwa FROM wlasciwosc WHERE id_wlasciwosc IN (SELECT nazwa_wlasciwosc from produkt_wlasciwosc WHERE produkt IN (SELECT id_produkt FROM produkt WHERE (kategoria IN (SELECT id_kategoria FROM kategoria WHERE nadkategoria = '" . $_SESSION['category'] . "') OR kategoria = '" . $_SESSION['category'] . "')))");
-                        }else{
+                        } else {
                             $query = $conn->query("SELECT DISTINCT id_wlasciwosc, nazwa FROM wlasciwosc WHERE id_wlasciwosc IN (SELECT nazwa_wlasciwosc from produkt_wlasciwosc)");
                         }
                         $result = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -128,17 +128,16 @@ include_once "header.php"; ?>
                     <nav aria-label="...">
                         <ul id="page-chooser" class="pagination pagination-sm">
                             <?php
-                            if(isset($_SESSION['filters']) && !empty($_SESSION['filters'])){
-                                $p = explode(";",$_SESSION['filters'][0]);
-                                $filter = "AND id_produkt IN (SELECT produkt FROM produkt_wlasciwosc WHERE (nazwa_wlasciwosc = ".$p[0]." AND wartosc = '".$p[1]."')";
-                                for($i=1;$i<sizeof($_SESSION['filters']);$i++){
-                                  $f=$_SESSION['filters'];
-                                  $e = explode(";",$f[$i]);
-                                  $filter.=' OR (nazwa_wlasciwosc = '.$e[0].' AND wartosc = "'.$e[1].'") ';
+                            if (isset($_SESSION['filters']) && !empty($_SESSION['filters'])) {
+                                $p = explode(";", $_SESSION['filters'][0]);
+                                $filter = "AND id_produkt IN (SELECT produkt FROM produkt_wlasciwosc WHERE (nazwa_wlasciwosc = " . $p[0] . " AND wartosc = '" . $p[1] . "')";
+                                for ($i = 1; $i < sizeof($_SESSION['filters']); $i++) {
+                                    $f = $_SESSION['filters'];
+                                    $e = explode(";", $f[$i]);
+                                    $filter .= ' OR (nazwa_wlasciwosc = ' . $e[0] . ' AND wartosc = "' . $e[1] . '") ';
                                 }
-                                $filter.=")";
-                                }
-                                else
+                                $filter .= ")";
+                            } else
                                 $filter = "";
                             if (isset($_SESSION['search'])) {
                                 $szukana = $_SESSION['search'];
@@ -152,10 +151,10 @@ include_once "header.php"; ?>
                             $i /= 15;
                             $i = ceil($i);
                             $filtry = "";
-                            if(!empty($_SESSION['filters'])){
+                            if (!empty($_SESSION['filters'])) {
                                 $d = sizeof($_SESSION['filters']);
-                                for($k=0;$k<$d;$k++)
-                                $filtry = "&filters[]=".$_SESSION['filters'][$k].$filtry;
+                                for ($k = 0; $k < $d; $k++)
+                                    $filtry = "&filters[]=" . $_SESSION['filters'][$k] . $filtry;
                             }
                             if (isset($_GET['order']))
                                 $o = $_GET['order'];
@@ -166,7 +165,7 @@ include_once "header.php"; ?>
                                     print('<li class="page-item active" aria-current="page"><span class="page-link">' . $j . '</span></li>');
                                 else {
                                     $id = "b" . $j;
-                                    print('<li class="page-item"><a id="' . $id . '"  class="page-link page-number" onclick="event.preventDefault(); button_event(\'' . $id . '\')" href="/strona/categoryProducts.php?search=' . $_SESSION['search'] . '&category=' . $_SESSION['category'] . '&page=' . $j . '&order=' . $o .$filtry.'">' . $j . '</a></li>');
+                                    print('<li class="page-item"><a id="' . $id . '"  class="page-link page-number" onclick="event.preventDefault(); button_event(\'' . $id . '\')" href="/strona/categoryProducts.php?search=' . $_SESSION['search'] . '&category=' . $_SESSION['category'] . '&page=' . $j . '&order=' . $o . $filtry . '">' . $j . '</a></li>');
                                 }
                             }
                             ?>

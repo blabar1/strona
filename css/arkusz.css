@@ -9,6 +9,9 @@ html {
     margin: 0;
     overflow-x: hidden;
 }
+body{
+    padding: 0px !important;;
+}
 
 a,
 a:hover,

@@ -30,7 +30,7 @@ if (isset($_GET['filters'])) {
     $_SESSION['filters'] = array();
 ?>
 <!-- menu,header-->
-<?php include_once "elements/element-cookie-popover.php"; ?>
+
 <div class="c-header">
 
     <nav class="navbar navbar-inverse" style="border-radius:0px; margin-bottom:0px;">
@@ -101,7 +101,7 @@ if (isset($_GET['filters'])) {
                         } else {
                             $user = $conn->query("SELECT id_konta, imie FROM dane_konta WHERE mail ='" . $_SESSION['user'] . "' LIMIT 1");
                             $user_imie = $user->fetch(PDO::FETCH_ASSOC);
-                            $idk=$user_imie['id_konta'];
+                            $idk = $user_imie['id_konta'];
                             print('<li class="dropdown">
                             <a class="dropdown" data-toggle="dropdown" href="#">' . $user_imie['imie'] . ' <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -117,22 +117,21 @@ if (isset($_GET['filters'])) {
                                 <div class="c-menu-element-basket">
                                     <div class="svg-photo-basket">
                                         <div class="svg-photo-basket">
-                                                    <?php
-                                                        if(isset($_SESSION["user"])){
-                                                            $query = $conn->query("SELECT count(id_koszyk) as i FROM koszyk WHERE konto = $idk");
-                                                            $result = $query->fetch(PDO::FETCH_ASSOC);
-                                                            if($result['i']!=0)
-                                                            print(' <div class="c-menu-element-basket__dot-container">
-                                                            <div class="c-menu-element-basket__dot"><span>'.$result['i'].'</span></div>
+                                            <?php
+                                            if (isset($_SESSION["user"])) {
+                                                $query = $conn->query("SELECT count(id_koszyk) as i FROM koszyk WHERE konto = $idk");
+                                                $result = $query->fetch(PDO::FETCH_ASSOC);
+                                                if ($result['i'] != 0)
+                                                    print(' <div class="c-menu-element-basket__dot-container">
+                                                            <div class="c-menu-element-basket__dot"><span>' . $result['i'] . '</span></div>
                                                             </div>');
-                                                        }else{
-                                                            if(isset($_COOKIE['koszyk'])){
-                                                                
-                                                            }
-                                                        }
-                                                    ?>
-                                                    <!-- maciek tutaj pokazuje sie ilosc w koszyku -->
-                                                <svg class="svg-menu-basket" style="width: 100%;height: 100%;" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                            } else {
+                                                if (isset($_COOKIE['koszyk'])) {
+                                                }
+                                            }
+                                            ?>
+                                            <!-- maciek tutaj pokazuje sie ilosc w koszyku -->
+                                            <svg class="svg-menu-basket" style="width: 100%;height: 100%;" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M22 22a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-1a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm-10 1a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-1a3 3 0 1 1 0 6 3 3 0 0 1 0-6zM8.098 6H4.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 .488.393l3.5 16a.5.5 0 1 1-.976.214L8.098 6zM9.5 9a.5.5 0 0 1 0-1h15a.5.5 0 0 1 .488.608l-2 9A.5.5 0 0 1 22.5 18h-11a.5.5 0 1 1 0-1h10.599l1.778-8H9.5zm2 13v-1H22v1H11.5z"></path>
                                             </svg>
                                         </div>

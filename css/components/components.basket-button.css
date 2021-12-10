@@ -17,9 +17,12 @@
     fill:white;
 }
 .top30{
-    top:30%;
-    opacity: 1!important;
+    top:25%;
 }
 .modal-open{
     overflow: initial!important;
 }
+.modal{
+    
+}
+
