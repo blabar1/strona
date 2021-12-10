@@ -3,7 +3,7 @@
     $named = str_replace(' ', '-', $name);
     ?>
 
-    <div class="c-categoryProducts-tile">
+    <div class="c-categoryProducts-tile fade-in">
         <a href="productPage.php?name=<?php echo $named; ?>&id=<?php echo $id; ?>">
             <div class="c-categoryProducts-tile__inside">
                 <div class="c-categoryProducts-tile__thumbnail" style="background-image: url(<?php echo $thumbnail; ?>);"></div>

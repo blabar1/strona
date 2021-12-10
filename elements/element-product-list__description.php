@@ -1,6 +1,6 @@
 <div class="c-categoryProducts-list-wrapper">
     <div>
-        <div class="c-categoryProducts-list ">
+        <div class="c-categoryProducts-list fade-in ">
 
             <div class="c-categoryProducts-list__thumbnail" style="background-image: url(<?php echo $thumbnail; ?>);"></div>
             <div class="c-categoryProducts-list__inside">
