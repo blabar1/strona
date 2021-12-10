@@ -4,7 +4,7 @@
 ob_start();
 if (isset($_POST['mail'])) {
     $conn->query("UPDATE dane_logowania SET `mail`='" . $_POST['mail'] . "' WHERE mail = '" . $_SESSION['user'] . "'");
-    $_SESSION['user']=$_POST['mail'];
+    $_SESSION['user'] = $_POST['mail'];
     print('<div class="alert alert-success alert-dismissible" style="color:white; background-color: #28a745; display:flex; align-items:center;">
 
                 <strong>
@@ -35,10 +35,37 @@ if (isset($_POST['imie'])) {
     unset($_POST['kod']);
     unset($_POST['zapisz']);
 }
-if(isset($_POST['usuwanie'])){
+if (isset($_POST['usuwanie'])) {
     $conn->query("DELETE FROM dane_logowania WHERE mail = '" . $_SESSION['user'] . "'");
     unset($_POST['usuwanie']);
     unset($_SESSION['user']);
+}
+if (isset($_POST['password'])) {
+    $login = $conn->query("SELECT haslo FROM dane_logowania WHERE mail ='" . $_SESSION['user'] . "' LIMIT 1");
+    $user = $login->fetch(PDO::FETCH_ASSOC);
+    if (password_verify($_POST['password'], $user['haslo'])) {
+        $hash = password_hash($_POST['passwordN1'],PASSWORD_BCRYPT);
+        $conn->query("UPDATE dane_logowania SET `haslo`='" . $hash . "' WHERE mail = '" . $_SESSION['user'] . "'");
+        print('<div class="alert alert-success alert-dismissible" style="color:white; background-color: #28a745; display:flex; align-items:center;">
+
+        <strong>
+            <svg style="margin-right:15px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+            </svg>
+        </strong>Zmiany zapisano pomyślnie.<a href="#" class="close" data-dismiss="alert" aria-label="close" style=" margin-right: 0;
+        margin-left: auto;">&times;</a>
+        </div>');
+    } else {
+        print('<div class="alert alert-danger alert-dismissible" style="color:white; background-color: #28a745; display:flex; align-items:center;">
+
+        <strong>
+            <svg style="margin-right:15px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+            </svg>
+        </strong>Nie udało się zmienić hasła. Niepoprawne obecne hasło.<a href="#" class="close" data-dismiss="alert" aria-label="close" style=" margin-right: 0;
+        margin-left: auto;">&times;</a>
+        </div>');
+    }
 }
 ?>
 <?php
@@ -152,51 +179,53 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
                 <h5 class="modal-title o-title">Zmiana Hasła</h5>
 
             </div>
-            <div class="modal-body-account">
-                <div class="form-group">
-                    <label for="inputEmail4">Obecne hasło</label>
-                    <div class="c-account-modal-wrapper">
+            <form action="konto.php" method="POST">
+                <div class="modal-body-account">
+                    <div class="form-group">
+                        <label for="inputEmail4">Obecne hasło</label>
+                        <div class="c-account-modal-wrapper">
 
-                        <input type="password" class="form-control c-account-forms__form-input" id="passwordA" placeholder="Hasło" /><i class="bi bi-eye-slash" id="togglePassword"></i>
+                            <input type="password" class="form-control c-account-forms__form-input" name="password" id="passwordA" placeholder="Hasło" /><i class="bi bi-eye-slash" id="togglePassword"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail4">Nowe hasło</label>
+                        <div class="c-account-modal-wrapper">
+                            <input onkeyup="check()" type="password" value="" class="form-control c-account-forms__form-input" name="passwordN1" id="password_new" placeholder="Nowe hasło" /><i class="bi bi-eye-slash" id="togglePassword_new"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail4">Powtórz nowe hasło</label>
+                        <div class="c-account-modal-wrapper">
+                            <input onkeyup="check()" type="password" value="" class="form-control c-account-forms__form-input" name="passwordN2" id="password_newSND" placeholder="Powtórz nowe hasło" /><i class="bi bi-eye-slash" id="togglePassword_newSND"></i>
+                        </div>
+                    </div>
+                    <div id="alert" class="c-account-passMeter-wrapper">
+                        Nowe hasło musi być takie samo w obu polach.
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="inputEmail4">Nowe hasło</label>
-                    <div class="c-account-modal-wrapper">
-                        <input onkeyup="check()" type="password" value="" class="form-control c-account-forms__form-input" name="passwordN1" id="password_new" placeholder="Nowe hasło" /><i class="bi bi-eye-slash" id="togglePassword_new"></i>
+                <div class="c-account-passMeter-container">
+                    <div class="c-account-passMeter-wrapper">
+                        Długość nowego hasła:<div id="c-account-passMeter-feedback">brak</div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputEmail4">Powtórz nowe hasło</label>
-                    <div class="c-account-modal-wrapper">
-                        <input onkeyup="check()" type="password" value="" class="form-control c-account-forms__form-input" name="passwordN2" id="password_newSND" placeholder="Powtórz nowe hasło" /><i class="bi bi-eye-slash" id="togglePassword_newSND"></i>
-                    </div>
-                </div>
-                <div id="alert" class="c-account-passMeter-wrapper">
-                    Nowe hasło musi być takie samo w obu polach.
-                </div>
-            </div>
-            <div class="c-account-passMeter-container">
-                <div class="c-account-passMeter-wrapper">
-                    Długość nowego hasła:<div id="c-account-passMeter-feedback">brak</div>
-                </div>
-                <div class="c-account-passMeter-meter">
-                    <div class="c-account-passMeter-meter__element" id="element-1"></div>
-                    <div class="c-account-passMeter-meter__element" id="element-2"></div>
-                    <div class="c-account-passMeter-meter__element " id="element-3"></div>
-                    <div class="c-account-passMeter-meter__element" id="element-4"></div>
-                    <div class="c-account-passMeter-meter__element" id="element-5"></div>
-                    <div class="c-account-passMeter-meter__element" id="element-6"></div>
-                    <div class="c-account-passMeter-meter__element" id="element-7"></div>
-                    <div class="c-account-passMeter-meter__element" id="element-8"></div>
-                    <div class="c-account-passMeter-meter__element" id="element-9"></div>
+                    <div class="c-account-passMeter-meter">
+                        <div class="c-account-passMeter-meter__element" id="element-1"></div>
+                        <div class="c-account-passMeter-meter__element" id="element-2"></div>
+                        <div class="c-account-passMeter-meter__element " id="element-3"></div>
+                        <div class="c-account-passMeter-meter__element" id="element-4"></div>
+                        <div class="c-account-passMeter-meter__element" id="element-5"></div>
+                        <div class="c-account-passMeter-meter__element" id="element-6"></div>
+                        <div class="c-account-passMeter-meter__element" id="element-7"></div>
+                        <div class="c-account-passMeter-meter__element" id="element-8"></div>
+                        <div class="c-account-passMeter-meter__element" id="element-9"></div>
 
+                    </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn c-modal-button" style="background-color:var(--orange); color:white;" data-dismiss="modal">Anuluj</button>
-                <button id="guzik" type="button" class="btn c-modal-button" style="background-color:var(--orange); color:white;" disabled>Zapisz zmainy</button>
-            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn c-modal-button" style="background-color:var(--orange); color:white;" data-dismiss="modal">Anuluj</button>
+                    <button id="guzik" type="submit" class="btn c-modal-button" style="background-color:var(--orange); color:white;" disabled>Zapisz zmainy</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

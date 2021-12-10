@@ -6,6 +6,6 @@ function check(){
         document.getElementById('alert').style.visibility = "hidden";
     }else{
         document.getElementById('guzik').disabled = true;
-        document.getElementById('alert').style.visibility = "visable";
+        document.getElementById('alert').style.visibility = "visible";
     }
 }
