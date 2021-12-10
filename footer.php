@@ -16,4 +16,5 @@
     <script src="scripts/login.js"></script>
     <script src="scripts/category.js"></script>
     <script src="scripts/categoryFilters.js"></script>
+    <script src="scripts/passwords.js"></script>
     </html>
