@@ -104,7 +104,7 @@ include_once "header.php"; ?>
                 </div>
 
                 <!--Products-->
-                <div id="category-products">
+                <div class="fade-in" id="category-products">
                     <?php
                     error_reporting(E_ALL ^ E_WARNING);
                     if (isset($_COOKIE['widok'])) {
@@ -128,13 +128,25 @@ include_once "header.php"; ?>
                     <nav aria-label="...">
                         <ul id="page-chooser" class="pagination pagination-sm">
                             <?php
+                            if(isset($_SESSION['filters']) && !empty($_SESSION['filters'])){
+                                $p = explode(";",$_SESSION['filters'][0]);
+                                $filter = "AND id_produkt IN (SELECT produkt FROM produkt_wlasciwosc WHERE (nazwa_wlasciwosc = ".$p[0]." AND wartosc = '".$p[1]."')";
+                                for($i=1;$i<sizeof($_SESSION['filters']);$i++){
+                                  $f=$_SESSION['filters'];
+                                  $e = explode(";",$f[$i]);
+                                  $filter.=' OR (nazwa_wlasciwosc = '.$e[0].' AND wartosc = "'.$e[1].'") ';
+                                }
+                                $filter.=")";
+                                }
+                                else
+                                $filter = "";
                             if (isset($_SESSION['search'])) {
                                 $szukana = $_SESSION['search'];
                             }
                             if ($_SESSION['category'] != 0)
-                                $query = $conn->query("SELECT count(id_produkt) AS jd FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%' AND (kategoria IN (SELECT id_kategoria FROM kategoria WHERE nadkategoria = '" . $_SESSION['category'] . "') OR kategoria = '" . $_SESSION['category'] . "') LIMIT 1 ");
+                                $query = $conn->query("SELECT count(id_produkt) AS jd FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%' $filter AND (kategoria IN (SELECT id_kategoria FROM kategoria WHERE nadkategoria = '" . $_SESSION['category'] . "') OR kategoria = '" . $_SESSION['category'] . "') LIMIT 1 ");
                             else
-                                $query = $conn->query("SELECT count(id_produkt) AS jd FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%' LIMIT 1");
+                                $query = $conn->query("SELECT count(id_produkt) AS jd FROM produkt WHERE nazwa LIKE '%" . trim($szukana) . "%' $filter LIMIT 1");
                             $ilosc_produktow = $query->fetch(PDO::FETCH_ASSOC);
                             $i = $ilosc_produktow['jd'];
                             $i /= 15;

@@ -145,3 +145,9 @@ display: none;
 .c-categoryProduct-filters__header{
     display: flex;
 }
+#category-products{
+    opacity: 0;
+}
+.c-categoryProducts-changer-per-page__select{
+    background-color: white;
+}
