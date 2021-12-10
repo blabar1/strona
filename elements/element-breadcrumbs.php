@@ -7,7 +7,7 @@
                 <li class="breadcrumb-item c-breadcrum-element"><a class="c-breadcrum-element-prev" href="category.php?category=1">Kategorie</a></li>
                 <?php
                 if ($page == 0) {
-                    print('<li class="breadcrumb-item c-breadcrum-element"><a href="category.php?category=0&page=1">Wszystkie produkty</a></li>');
+                    print('<li class="breadcrumb-item c-breadcrum-element"><a href="categoryProducts.php?category=0&page=1">Wszystkie produkty</a></li>');
                 } else {
                     $list = "";
                     $name = "";

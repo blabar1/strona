@@ -9,7 +9,7 @@
                 <div class="c-category-tile__past-list-container"><div class="c-category-tile__past-list"><ul>');
                 foreach ($results as $row) {
                     print("<li>
-                                <a href='/strona/categoryProducts.php?category=' " . $row['id_kategoria'] . " '&page=1'>
+                                <a href='/strona/categoryProducts.php?search=" . $_SESSION['search'] . "&category=' " . $row['id_kategoria'] . " '&page=1&order=d'>
                                     <div class='c-category-tile__past-hover-list-element'>" . $row['nazwa'] . "</div>
                                 </a>
                             </li>");
@@ -20,7 +20,7 @@
             ?>
         
     <div class="c-category-tile__content">
-        <a href='/strona/categoryProducts.php?category=<?php echo $id_category; ?>&page=1'>
+        <a href='/strona/categoryProducts.php?search=<?php echo $_SESSION['search']; ?>&category=<?php echo $id_category; ?>&page=1&order=d'>
             <div class="c-category-tile__name"><?php echo $category; ?></div>
             <div class="c-category-tile__thumbnail" style="background-image: url(<?php echo $thumbnail; ?>);"></div>
         </a>

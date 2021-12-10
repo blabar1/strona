@@ -44,24 +44,6 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
 
 <div class="o-wrapper">
     <div class="row">
-<<<<<<< HEAD
-=======
-        <?php
-        if (isset($_POST['imie'])) {
-            $conn->query("UPDATE dane_konta SET `imie`='" . $_POST['imie'] . "',`nazwisko`='" . $_POST['nazwisko'] . "',`adres`='" . $_POST['adres'] . "',`miasto`='" . $_POST['miasto'] . "',`kod_pocztowy`='" . $_POST['kod'] . "' WHERE mail = '" . $_SESSION['user'] . "'");
-            print('<div class="alert alert-success alert-dismissible" style="color:white; background-color: #28a745; display:flex; align-items:center;">
-
-                <strong>
-                    <svg style="margin-right:15px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-square-fill" viewBox="0 0 16 16">
-                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
-                    </svg>
-                </strong>Zmiany zapisano pomyślnie.<a href="#" class="close" data-dismiss="alert" aria-label="close" style=" margin-right: 0;
-                margin-left: auto;">&times;</a>
-                </div>');
-            print('<script>$("#form").load(location.href + " #form>*", "");</script>');
-        }
-        ?>
->>>>>>> 6582cfc0dcee411a94c674eecb6fba4ad4c35a35
         <div class="c-account-container">
             <div class="c-account-banner col-xs-12 col-sm-12 col-xl-12 col-lg-12 col-md-12">
                 <div class="o-title">Witaj <?php echo $result['imie']; ?> </div>
