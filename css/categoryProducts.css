@@ -151,3 +151,6 @@ display: none;
 .c-categoryProducts-changer-per-page__select{
     background-color: white;
 }
+#category-products{
+    opacity: 1;
+}

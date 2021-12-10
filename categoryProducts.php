@@ -41,7 +41,10 @@ include_once "header.php"; ?>
 
                         </div>
                     </div>
-
+                    <?php
+                    print("<div id='filtry'><input type='hidden' id='kat' value='" . $_SESSION['category'] . "'>");
+                    print("<input type='hidden' id='ord' value='" . $_SESSION['order'] . "'><input type='hidden' id='srch' value='" . $_SESSION['search'] . "'></div>");
+                    ?>
                     <div class="c-categoryProduct-filter-elements-container">
                         <?php
                         if ($_SESSION['category'] != 0) {
@@ -104,18 +107,18 @@ include_once "header.php"; ?>
                 </div>
 
                 <!--Products-->
-
-                <?php
-                error_reporting(E_ALL ^ E_WARNING);
-                if (isset($_COOKIE['widok'])) {
-                    if ($_COOKIE['widok'] == 'tiles')
+                <div id="category-products">
+                    <?php
+                    error_reporting(E_ALL ^ E_WARNING);
+                    if (isset($_COOKIE['widok'])) {
+                        if ($_COOKIE['widok'] == 'tiles')
+                            include_once "elements/element-categoryProduct.-tiles.php";
+                        else
+                            include_once "elements/element-categoryProduct.-list.php";
+                    } else
                         include_once "elements/element-categoryProduct.-tiles.php";
-                    else
-                        include_once "elements/element-categoryProduct.-list.php";
-                } else
-                    include_once "elements/element-categoryProduct.-tiles.php";
-                ?>
-
+                    ?>
+                </div>
             </div>
 
 

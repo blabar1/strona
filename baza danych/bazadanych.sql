@@ -35,7 +35,7 @@ CREATE TABLE `kategoria` (
 
 CREATE TABLE `produkt` (
   `id_produkt` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `nazwa` varchar(45) NOT NULL,
+  `nazwa` varchar(255) NOT NULL,
   `cena` decimal(10,2) NOT NULL,
   `ilosc` int NOT NULL,
   `opis` TEXT NOT NULL,
