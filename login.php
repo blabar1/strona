@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php session_start(); 
+ob_start();
+?>
 <!DOCTYPE html>
 <html lang="pl-PL">
 
@@ -98,7 +100,7 @@
                                         $register = $conn->query("INSERT INTO dane_logowania (`mail`, `haslo`) VALUES ('" . $mail . "', '" . $hash . "')");
                                         $userdate = $conn->query("INSERT INTO dane_konta (`imie`, `nazwisko`, `konto_typ`, `mail`) VALUES ('" . $_POST['fname'] . "', '" . $_POST['lname'] . "', 1 , '" . $mail . "')");
                                         $_SESSION['user'] = $mail;
-                                        header("Location:index.php");
+                                        header("Location: index.php");
                                     } catch (PDOException $ex) {
                                         if ($ex->errorInfo[1] == 1062) {
                                             print(" <fieldset class='c-fieldset'><legend>&nbsp;Imię&nbsp;</legend>

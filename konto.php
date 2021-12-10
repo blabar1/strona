@@ -1,6 +1,7 @@
 <?php include_once "header.php"; ?>
 <?php include_once "templates/menu.php"; ?>
 <?php
+ob_start();
 if (isset($_POST['mail'])) {
     $conn->query("UPDATE dane_logowania SET `mail`='" . $_POST['mail'] . "' WHERE mail = '" . $_SESSION['user'] . "'");
     $_SESSION['user']=$_POST['mail'];
@@ -34,9 +35,14 @@ if (isset($_POST['imie'])) {
     unset($_POST['kod']);
     unset($_POST['zapisz']);
 }
+if(isset($_POST['usuwanie'])){
+    $conn->query("DELETE FROM dane_logowania WHERE mail = '" . $_SESSION['user'] . "'");
+    unset($_POST['usuwanie']);
+    unset($_SESSION['user']);
+}
 ?>
 <?php
-if (!isset($_SESSION['user'])) print("<script>open('login.php','_self');</script>");
+if (!isset($_SESSION['user'])) print("<script>open('index.php','_self');</script>");
 else
     $query = $conn->query("SELECT * FROM dane_konta INNER JOIN dane_logowania ON dane_konta.mail = dane_logowania.mail WHERE dane_konta.mail ='" . $_SESSION['user'] . "' LIMIT 1");
 $result = $query->fetch(PDO::FETCH_ASSOC);
@@ -124,7 +130,9 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
             </div>
             <div class="modal-footer c-basket-modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
-                <button type="button" class="c-basket-modal__button-clean">Usuń</button>
+                <form action="konto.php" method="POST">
+                    <button type="submit" name="usuwanie" class="c-basket-modal__button-clean">Usuń</button>
+                </form>
             </div>
         </div>
     </div>
@@ -155,16 +163,18 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
                 <div class="form-group">
                     <label for="inputEmail4">Nowe hasło</label>
                     <div class="c-account-modal-wrapper">
-                        <input type="password" value="" class="form-control c-account-forms__form-input" name="passwordN1" id="password_new" placeholder="Nowe hasło" /><i class="bi bi-eye-slash" id="togglePassword_new"></i>
+                        <input onkeyup="check()" type="password" value="" class="form-control c-account-forms__form-input" name="passwordN1" id="password_new" placeholder="Nowe hasło" /><i class="bi bi-eye-slash" id="togglePassword_new"></i>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail4">Powtórz nowe hasło</label>
                     <div class="c-account-modal-wrapper">
-                        <input type="password" value="" class="form-control c-account-forms__form-input" name="passwordN2" id="password_newSND" placeholder="Powtórz nowe hasło" /><i class="bi bi-eye-slash" id="togglePassword_newSND"></i>
+                        <input onkeyup="check()" type="password" value="" class="form-control c-account-forms__form-input" name="passwordN2" id="password_newSND" placeholder="Powtórz nowe hasło" /><i class="bi bi-eye-slash" id="togglePassword_newSND"></i>
                     </div>
                 </div>
-
+                <div id="alert" class="c-account-passMeter-wrapper">
+                    Nowe hasło musi być takie samo w obu polach.
+                </div>
             </div>
             <div class="c-account-passMeter-container">
                 <div class="c-account-passMeter-wrapper">
@@ -185,7 +195,7 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn c-modal-button" style="background-color:var(--orange); color:white;" data-dismiss="modal">Anuluj</button>
-                <button type="button" class="btn c-modal-button" style="background-color:var(--orange); color:white;">Zapisz zmainy</button>
+                <button id="guzik" type="button" class="btn c-modal-button" style="background-color:var(--orange); color:white;" disabled>Zapisz zmainy</button>
             </div>
         </div>
     </div>
