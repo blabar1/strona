@@ -4,7 +4,7 @@
 <div class="o-wrapper">
     <div class="c-basket-wrapper">
         <div class="c-basket">
-            <div class="c-basket-container">
+            <div id="basket_con" class="c-basket-container">
                 <div class="row">
                     <?php
                     if (isset($_SESSION['user'])) {
@@ -17,7 +17,7 @@
                                 <div class="c-basket-empty-container__subtext">Zainspiruj się</div>
                                 <div class="c-basket-empty-container__button"><a href="index.php"><button class="c-basket-empty-container__button-element">Przejdź do strony głównej </button></a></div>
                             </div>
-    
+
                         </div>');
                         } else {
                             $query = $conn->query("SELECT sum(ilosc) as i FROM koszyk WHERE konto = (SELECT id_konta FROM dane_konta WHERE mail = '" . $_SESSION['user'] . "')");
@@ -33,6 +33,7 @@
                             $result = $query->fetchAll(PDO::FETCH_ASSOC);
                             foreach ($result as $row) {
                                 get_element("elements/element-basket-product-list.php", array(
+                                    'id' => $row['id_produkt'],
                                     'name' => $row['nazwa'],
                                     'thumbnail' => 'images/produkty/' . $row['miniaturka'],
                                     'price' => $row['cena']
@@ -55,18 +56,18 @@
                                 <div class="c-basket-empty-container__subtext">Zainspiruj się</div>
                                 <div class="c-basket-empty-container__button"><a href="index.php"><button class="c-basket-empty-container__button-element">Przejdź do strony głównej </button></a></div>
                             </div>
-    
+
                         </div>');
                         }
                     }
                     ?>
 
-                    <?php get_element("elements/element-basket-productList-delete.php", array(
-                        'name' => 'XD'
-                    )); ?>
-                    
+                    <?php //get_element("elements/element-basket-productList-delete.php", array(
+                       // 'name' => 'XD'
+                    //)); ?>
 
-                    
+
+
 
                 </div>
 

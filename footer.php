@@ -17,5 +17,5 @@
     <script src="scripts/category.js"></script>
     <script src="scripts/categoryFilters.js"></script>
     <script src="scripts/passwords.js"></script>
-    <script src="scripts/basketAdd.js"></script>
+    <script src="scripts/basket.js"></script>
     </html>

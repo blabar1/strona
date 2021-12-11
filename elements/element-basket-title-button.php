@@ -30,7 +30,7 @@
             </div>
             <div class="modal-footer c-basket-modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
-                <button type="button" class="c-basket-modal__button-clean">Wyczyść</button>
+                <button onclick="basketDeleteAll()" type="button" class="c-basket-modal__button-clean">Wyczyść</button>
             </div>
         </div>
     </div>
