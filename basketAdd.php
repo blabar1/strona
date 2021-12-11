@@ -9,6 +9,6 @@
         $conn->query("INSERT INTO koszyk(konto, produkt, ilosc) VALUES ('".$result['id_konta']."', '".$_POST['produkt']."', '".$_POST['ilosc']."')");
     else{
         $i = $_POST['ilosc'] + $result2['ilosc'];
-        $conn->query("UPDATE `koszyk` SET `ilosc`=$i WHERE konto = '".$result['id_konta']."' AND '".$_POST['produkt']."' ");
+        $conn->query("UPDATE `koszyk` SET `ilosc`=$i WHERE konto = '".$result['id_konta']."' AND produkt = '".$_POST['produkt']."' ");
     }
 ?>
