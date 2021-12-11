@@ -114,7 +114,7 @@ if (isset($_GET['filters'])) {
                         ?>
                         <li class="nav-item">
                             <a class="nav-link" href="basket.php">
-                                <div class="c-menu-element-basket">
+                                <div id="basket" class="c-menu-element-basket">
                                     <div class="svg-photo-basket">
                                         <div class="svg-photo-basket">
                                             <?php
