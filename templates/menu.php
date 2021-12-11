@@ -119,7 +119,7 @@ if (isset($_GET['filters'])) {
                                         <div class="svg-photo-basket">
                                             <?php
                                             if (isset($_SESSION["user"])) {
-                                                $query = $conn->query("SELECT count(id_koszyk) as i FROM koszyk WHERE konto = $idk");
+                                                $query = $conn->query("SELECT sum(ilosc) as i FROM koszyk WHERE konto = $idk");
                                                 $result = $query->fetch(PDO::FETCH_ASSOC);
                                                 if ($result['i'] != 0)
                                                     print(' <div class="c-menu-element-basket__dot-container">
