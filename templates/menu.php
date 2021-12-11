@@ -123,7 +123,7 @@ if (isset($_GET['filters'])) {
                                                 $result = $query->fetch(PDO::FETCH_ASSOC);
                                                 if ($result['i'] != 0)
                                                     print(' <div class="c-menu-element-basket__dot-container">
-                                                            <div class="c-menu-element-basket__dot"><span>' . $result['i'] . '</span></div>
+                                                            <div class="c-menu-element-basket__dot fade-in" ><span>' . $result['i'] . '</span></div>
                                                             </div>');
                                             } else {
                                                 if (isset($_COOKIE['koszyk'])) {

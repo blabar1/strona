@@ -1,43 +1,9 @@
-<?php include_once "header.php"; ?>
+<?php include("database.php"); ?>
+<?php include("header.php"); ?>
 
 <body onload="formreset()">
     <?php include_once "topBar.php"; ?>
-    <!-- top navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="offcanvasExample">
-                <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
-            </button>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavBar" aria-controls="topNavBar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="topNavBar">
-                <form class="d-flex ms-auto my-3 my-lg-0 ">
-                    <div class="input-group">
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
-                        <button class="btn btn-primary" type="submit">
-                            <i class="bi bi-search"></i>
-                        </button>
-                    </div>
-                </form>
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-person-fill"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- top navigation bar -->
+
     <!-- offcanvas -->
     <div class="offcanvas offcanvas-start sidebar-nav bg-dark" tabindex="-1" id="sidebar">
         <div class="offcanvas-body p-0">
@@ -169,13 +135,8 @@
     <main class="mt-5 pt-3">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12">
-                    <h4>Kategorie</h4>
-                </div>
             </div>
             <div class="row">
-                <div class="card-body">
-                </div>
             </div>
         </div>
 
@@ -186,7 +147,7 @@
             <div class="col-md-12 mb-3">
                 <div class="card">
                     <div class="card-header">
-                        <span><i class="bi bi-table me-2"></i></span> Data Table
+                        <span><i class="bi bi-table me-2"></i></span> Kategorie
                         <div class="float-right">
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -196,6 +157,67 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
+                            <table id="example" class="table table-striped data-table " style="width: 100%">
+                                <thead>
+                                    <tr>
+                                        <th>id_kategoria</th>
+                                        <th>nazwa</th>
+                                        <th>miniaturka</th>
+                                        <th>nadkategoria</th>
+                                        <th> </th>
+                                        <th> </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $query = $conn->query("Select * from kategoria");
+                                    $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+                                    foreach ($result as $rekord) {
+                                        print("<tr><td>");
+                                        echo $rekord["id_kategoria"];
+                                        print("</td><td>");
+                                        echo $rekord["nazwa"];
+                                        print("</td>");
+                                        print("</td><td>");
+                                        print('<img class="table-thumbnail" src="../images/kategorie/' . $rekord["miniaturka"] . '"');
+                                        print("</td>");
+                                        print("</td><td>");
+                                        if ($rekord['nadkategoria'] == null) {
+                                            echo "Brak nadkategorii ¯\_(ツ)_/¯";
+                                        } else {
+                                            $query = $conn->query('Select nazwa from kategoria where id_kategoria like ' . $rekord['nadkategoria']);
+                                            $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+                                            foreach ($result as $record) {
+
+                                                echo $record['nazwa'];
+                                            }
+                                        }
+
+                                        print("</td>");
+                                        print("</td><td>");
+
+
+
+
+                                        print("</td>");
+                                        print("</td><td>");
+                                        echo "<div class='functional-buttons'><form method='post' action='edycja.php' class='temp''><button type='submit' name='idkategorii_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_kategoria'] . "'>edytuj</button></form><form  method='post' action='Kategorie.php' ><button type='submit'  class='submit  btn btn-primary edycja' value='" . $rekord['id_kategoria'] . "'>usun</button></form></div>";
+                                        print("</td>");
+                                    }
+                                    print("</tr>");
+                                    ?>
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>id_kategoria</th>
+                                        <th>nazwa</th>
+                                        <th>miniaturka</th>
+                                        <th>nadkategoria</th>
+                                        <th> </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -219,7 +241,27 @@
                                 <label for="formGroupExampleInput" class="form-label">Nazwa Kategorii</label>
                                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nazwa kategorii" value="" required>
                             </div>
+
+                            <div class="mb-3">
+                                <label for="formGroupExampleInput" class="form-label">Miniaturka</label>
+                                <div class="file-drop-area-category"> <span class="btn btn-primary ">Wybierz plik</span> <span class="file-message" id="divImageMediaPreview3">albo upuść tutaj</span> <input type="file" class="file-input-category" accept=".jfif,.jpg,.jpeg,.png,.gif" required /> </div>
+                                <div id=> </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="formGroupExampleInput2" class="form-label">Wybierz nadkategorie</label>
+                                <select class="form-control" id="formGroupExampleInput2" required>
+                                    <option selected disabled hidden value="">Przykład</option>
+                                    <?php
+                                    $query = $conn->query('Select Distinct id_kategoria, nazwa from kategoria');
+                                    $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+                                    foreach ($result as $record) {
+                                        print("<option value=" . $record['id_kategoria'] . ">" . $record['nazwa'] . "</option>");
+                                    }
+                                    ?>
+                                </select>
+                            </div>
                         </div>
+
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
                             <input type="submit" value="Zapisz" name="DODAJ" class="btn btn-primary">

@@ -1,43 +1,13 @@
-<?php include_once "header.php"; ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<body onload="formreset()">
-    <?php include_once "topBar.php"; ?>
-    <!-- top navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="offcanvasExample">
-                <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
-            </button>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavBar" aria-controls="topNavBar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="topNavBar">
-                <form class="d-flex ms-auto my-3 my-lg-0 ">
-                    <div class="input-group">
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
-                        <button class="btn btn-primary" type="submit">
-                            <i class="bi bi-search"></i>
-                        </button>
-                    </div>
-                </form>
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-person-fill"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- top navigation bar -->
+<?php include("database.php"); ?>
+<?php include("header.php"); ?>
+<?php include("topBar.php"); ?>
+<!-- Maciek tam jest menu takie jakby z uzytkownikiem -->
+
+<body>
+
     <!-- offcanvas -->
     <div class="offcanvas offcanvas-start sidebar-nav bg-dark" tabindex="-1" id="sidebar">
         <div class="offcanvas-body p-0">
@@ -169,13 +139,8 @@
     <main class="mt-5 pt-3">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12">
-                    <h4>Konta</h4>
-                </div>
             </div>
             <div class="row">
-                <div class="card-body">
-                </div>
             </div>
         </div>
 
@@ -196,6 +161,87 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
+                            <table id="example" class="table table-striped data-table " style="width: 100%">
+                                <thead>
+                                    <tr>
+                                        <th>id_konta</th>
+                                        <th>imie</th>
+                                        <th>nazwisko</th>
+                                        <th>adres</th>
+                                        <th>miasto</th>
+                                        <th>kod_pocztowy</th>
+                                        <th>konto_typ</th>
+                                        <th>mail</th>
+                                        <th> </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $query = $conn->query("Select * from dane_konta");
+                                    $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+                                    foreach ($result as $rekord) {
+                                        print("<tr><td>");
+                                        echo $rekord["id_konta"];
+                                        print("</td><td>");
+                                        echo $rekord["imie"];
+                                        print("</td>");
+                                        print("</td><td>");
+                                        echo $rekord["nazwisko"];
+                                        print("</td>");
+                                        print("</td><td>");
+                                        if ($rekord['adres'] == null) {
+                                            echo "Brak podanego adresu (⌣̩̩́_⌣̩̩̀)";
+                                        } else {
+                                            echo $rekord["adres"];
+                                        }
+                                        print("</td>");
+                                        print("</td><td>");
+                                        if ($rekord['miasto'] == null) {
+                                            echo "Brak podanego miasta ಥ_ಥ";
+                                        } else {
+                                            echo $rekord["miasto"];
+                                        }
+                                        print("</td>");
+                                        print("</td><td>");
+                                        if ($rekord['kod_pocztowy'] == null) {
+                                            echo "Brak podanego kodu pocztowego (._.)";
+                                        } else {
+                                            echo $rekord["kod_pocztowy"];
+                                        }
+                                        print("</td>");
+                                        print("</td><td>");
+
+                                        $query = $conn->query('Select nazwa from typ_konta where id_typ =' . $rekord["konto_typ"]);
+                                        $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+                                        foreach ($result as $record) {
+                                            echo $record['nazwa'];
+                                        }
+                                        print("</td>");
+                                        print("</td><td>");
+                                        echo $rekord["mail"];
+
+
+                                        print("</td>");
+                                        print("</td><td>");
+                                        echo "<div class='functional-buttons'><form method='post' action='edycja.php' class='temp''><button type='submit' name='idkonta_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_konta'] . "'>edytuj</button></form><form  method='post' action='Konta.php' ><button type='submit'  class='submit  btn btn-primary edycja' value='" . $rekord['id_konta'] . "'>usun</button></form></div>";
+                                        print("</td>");
+                                    }
+                                    print("</tr>");
+                                    ?>
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>id_produktu</th>
+                                        <th>nazwa</th>
+                                        <th>cena</th>
+                                        <th>ilosc</th>
+                                        <th>opis</th>
+                                        <th>miniaturka</th>
+                                        <th>kategoria</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -228,6 +274,14 @@
                                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="adres" value="" required>
                             </div>
                             <div class="mb-3">
+                                <label for="formGroupExampleInput" class="form-label">miasto</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="miasto" value="" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="kod-poczty">Kod pocztowy</label>
+                                <input type="text" value="" maxlength="6" class="form-control c-account-forms__form-input" pattern="^[0-9]{2}-[0-9]{3}$" name="kod" id="kod-poczty" placeholder="np. 00-000">
+                            </div>
+                            <div class="mb-3">
                                 <label for="exampleInputEmail1">Adres email</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email">
                             </div>
@@ -235,9 +289,10 @@
                                 <label for="formGroupExampleInput" class="form-label">Login</label>
                                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="login" value="" required>
                             </div>
-                            <div class="mb-3">
-                                <label for="formGroupExampleInput" class="form-label">Hasło</label>
-                                <input type="password" class="form-control" id="formGroupExampleInput" placeholder="hasło" value="" required>
+                            <label for="formGroupExampleInput" class="form-label">Hasło</label>
+                            <div class="mb-3 eye-toggle">
+
+                                <input type="password" class="form-control" id="add_user" placeholder="hasło" value="" required /><i class="bi bi-eye-slash" id="add_user_toggle"></i>
                             </div>
                             <div class="mb-3">
                                 <div class="form-check">
