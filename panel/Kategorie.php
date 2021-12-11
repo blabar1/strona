@@ -201,7 +201,7 @@
 
                                         print("</td>");
                                         print("</td><td>");
-                                        echo "<div class='functional-buttons'><form method='post' action='edycja.php' class='temp''><button type='submit' name='idkategorii_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_kategoria'] . "'>edytuj</button></form><form  method='post' action='Kategorie.php' ><button type='submit'  class='submit  btn btn-primary edycja' value='" . $rekord['id_kategoria'] . "'>usun</button></form></div>";
+                                        echo "<div class='functional-buttons'><form method='post' action='edycja.php' class='temp''><button type='submit' name='idkategorii_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_kategoria'] . "'>edytuj</button></form><form  method='post' action='Kategorie.php' ><button type='submit' onclick='return confirm(`Czy napewno chcesz kategorie " . $rekord['nazwa'] . " ?`);'  class='submit  btn btn-primary edycja' value='" . $rekord['id_kategoria'] . "'>usun</button></form></div>";
                                         print("</td>");
                                     }
                                     print("</tr>");

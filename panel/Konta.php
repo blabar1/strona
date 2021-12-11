@@ -223,7 +223,7 @@
 
                                         print("</td>");
                                         print("</td><td>");
-                                        echo "<div class='functional-buttons'><form method='post' action='edycja.php' class='temp''><button type='submit' name='idkonta_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_konta'] . "'>edytuj</button></form><form  method='post' action='Konta.php' ><button type='submit'  class='submit  btn btn-primary edycja' value='" . $rekord['id_konta'] . "'>usun</button></form></div>";
+                                        echo "<div class='functional-buttons'><form method='post' action='edycja.php' class='temp''><button type='submit' name='idkonta_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_konta'] . "'>edytuj</button></form><form  method='post' action='Konta.php' ><button type='submit' onclick='return confirm(`Czy napewno chcesz usunac konto uzytkownika " . $rekord['imie'] . " " . $rekord['nazwisko'] . " ?`);'  class='submit  btn btn-primary edycja' value='" . $rekord['id_konta'] . "'>usun</button></form></div>";
                                         print("</td>");
                                     }
                                     print("</tr>");
