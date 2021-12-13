@@ -285,10 +285,6 @@
                                 <label for="exampleInputEmail1">Adres email</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email">
                             </div>
-                            <div class="mb-3">
-                                <label for="formGroupExampleInput" class="form-label">Login</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="login" value="" required>
-                            </div>
                             <label for="formGroupExampleInput" class="form-label">Hasło</label>
                             <div class="mb-3 eye-toggle">
 

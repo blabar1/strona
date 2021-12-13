@@ -15,7 +15,7 @@
                         $query1 = $conn->query("SELECT nazwa FROM kategoria WHERE id_kategoria = '".$row['kategoria']."' LIMIT 1"); 
                         $result1 = $query1->fetch(PDO::FETCH_ASSOC);
                         print('<div class="c-products-cards__slider-item">');
-                        get_element("elements/element-product-tile-button.php", array(
+                        get_element("elements/elementjd.php", array(
                             'thumbnail' => "images/produkty/".$row['miniaturka'],
                             'category'  => $result1['nazwa'],
                             'name'  =>  $row['nazwa'],

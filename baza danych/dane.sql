@@ -34,7 +34,7 @@ INSERT INTO `produkt` (`nazwa`, `cena`, `ilosc`, `opis`, `miniaturka`, `kategori
 ("Komputer Apple Mac Pro Xeon E5", 15149.99, 40, "Opis ni ma jeszcze.", "p2.jpg", 10),
 ("Nokia 3310", 1000000, 1, "Opis ni ma jeszcze.", "p3.jpg", 11),
 ("Zegarek Smartwatch Xiaomi Mi Watch", 249, 32, "Opis ni ma jeszcze.", "p4.jpg", 12),
-("Elden Ring PC", 249, 100, "Opis ni ma jeszcze.", "p5.jpg", 13),
+("Elden Ring PS4", 249, 100, "Opis ni ma jeszcze.", "p5.jpg", 13),
 ("Statyw Quadralite Verso 190", 99.99, 12, "Opis ni ma jeszcze.", "p6.jpg", 14),
 ("Lenovo IdeaPad Gaming 3 15ACH6", 3299, 40, "Klawiatura z dodatkowym podświetleniem umożliwia pracę nawet w ciemnościach, bez konieczności instalowania dodatkowych źródeł światła. Proste włączanie i wyłączanie podświetlenia wpływa na wygodę i szybkość pracy na komputerze. System Windows 10 łączy najlepsze cechy swoich poprzedników - Windows 7 oraz 8. Znane menu Start zostało rozbudowane, łącząc listę narzędzi z kafelkami. Nowa przeglądarka Edge pozwala przeglądać internet szybko i intuicyjnie, obsługa ekranów dotykowych ułatwi pracę, a wbudowane zabezpieczenia wzmocnią Twoje poczucie bezpieczeństwa.", "p7.jpg", 9),
 ("Lenovo IdeaPad 3 15ADA05 15,6 AMD Athlon 3050U", 1849, 10, "USB 3.1 to nowy standard, nowa jakość. Prędkość przesyłu danych do 10 Gbit/s jest dwukrotnie większa niż standardu USB 3.0, co pozwala na jeszcze szybszą komunikację między urządzeniami. Przy najwyższej prędkości przeniesienie zawartości 32 GB pendrive'a zajmie jedynie 26 sekund! Zainstalowana fabrycznie pamięć RAM o pojemności 8 GB to gwarancja szybkiej i płynnej pracy. Bez żadnych problemów możesz uruchomić kilka aplikacji jednocześnie oraz grać w bardziej wymagające gry i korzystać z programów graficznych i multimediów.", "p8.jpg", 9),
@@ -120,3 +120,80 @@ INSERT INTO `dostawa`(`nazwa`, `cena`) VALUES ("Kurier – InPost, UPS, FedEx, D
 ("Odbiór osobisty w salonie", 0),
 ("Paczkomaty 24/7",16.99),
 ("Punkty odbioru – Poczta Polska, Żabka, Ruch, Orlen i inne",10.99);
+INSERT INTO `metoda_platnosci` (`nazwa`) VALUES ('BLIK'), ('Karta płatnicza online'), ('Płatność online'), ('Przy odbiorze');
+
+
+INSERT INTO `dane_logowania`(`mail`, `haslo`) VALUES ('admin@ork.jd','$2y$10$BX.jINPgOVkXJ6lzP/0T3.cnmeFQ8qvOnZLb4wb9Cr9KlWaT4BKFq'); -- haslo: Admin12
+INSERT INTO `dane_konta`(`imie`, `nazwisko`, `konto_typ`, `mail`) VALUES ('ADMIN','ADMIN','3','admin@ork.jd');
+
+INSERT INTO `dane_logowania`(`mail`, `haslo`) VALUES ('pracownik1@ork.jd','$2y$10$BX.jINPgOVkXJ6lzP/0T3.cnmeFQ8qvOnZLb4wb9Cr9KlWaT4BKFq'); -- haslo: Admin12
+INSERT INTO `dane_konta`(`imie`, `nazwisko`, `konto_typ`, `mail`) VALUES ('Pracownik1','Pracuj','2','pracownik1@ork.jd');
+
+INSERT INTO `dane_logowania`(`mail`, `haslo`) VALUES ('pracownik2@ork.jd','$2y$10$BX.jINPgOVkXJ6lzP/0T3.cnmeFQ8qvOnZLb4wb9Cr9KlWaT4BKFq'); -- haslo: Admin12
+INSERT INTO `dane_konta`(`imie`, `nazwisko`, `konto_typ`, `mail`) VALUES ('Pracownik2','Pracujowski','2','pracownik1@ork.jd');
+
+INSERT INTO `dane_logowania`(`mail`, `haslo`) VALUES ('user1@ork.jd','$2y$10$BX.jINPgOVkXJ6lzP/0T3.cnmeFQ8qvOnZLb4wb9Cr9KlWaT4BKFq'); -- haslo: Admin12
+INSERT INTO `dane_konta`(`imie`, `nazwisko`, `konto_typ`, `mail`) VALUES ('Uzytkownik1','Nazwisko','1','user1@ork.jd');
+
+INSERT INTO `dane_logowania`(`mail`, `haslo`) VALUES ('user2@ork.jd','$2y$10$BX.jINPgOVkXJ6lzP/0T3.cnmeFQ8qvOnZLb4wb9Cr9KlWaT4BKFq'); -- haslo: Admin12
+INSERT INTO `dane_konta`(`imie`, `nazwisko`, `konto_typ`, `mail`) VALUES ('Uzytkownik2','Nazwisko','1','user2@ork.jd');
+
+INSERT INTO `dane_logowania`(`mail`, `haslo`) VALUES ('user3@ork.jd','$2y$10$BX.jINPgOVkXJ6lzP/0T3.cnmeFQ8qvOnZLb4wb9Cr9KlWaT4BKFq'); -- haslo: Admin12
+INSERT INTO `dane_konta`(`imie`, `nazwisko`, `konto_typ`, `mail`) VALUES ('Uzytkownik3','Nazwisko','1','user3@ork.jd');
+
+INSERT INTO `dane_logowania`(`mail`, `haslo`) VALUES ('user4@ork.jd','$2y$10$BX.jINPgOVkXJ6lzP/0T3.cnmeFQ8qvOnZLb4wb9Cr9KlWaT4BKFq'); -- haslo: Admin12
+INSERT INTO `dane_konta`(`imie`, `nazwisko`, `konto_typ`, `mail`) VALUES ('Uzytkownik4','Nazwisko','1','user4@ork.jd');
+
+INSERT INTO `dane_logowania`(`mail`, `haslo`) VALUES ('user5@ork.jd','$2y$10$BX.jINPgOVkXJ6lzP/0T3.cnmeFQ8qvOnZLb4wb9Cr9KlWaT4BKFq'); -- haslo: Admin12
+INSERT INTO `dane_konta`(`imie`, `nazwisko`, `konto_typ`, `mail`) VALUES ('Uzytkownik5','Nazwisko','1','user5@ork.jd');
+
+INSERT INTO `wlasciwosc`(`nazwa`) VALUES ("Producent"),
+("Ilosc Ramu"),
+("Kolor"),
+("Procesor"),
+("Pojemnosc dysku"),
+("Platforma");
+INSERT INTO `produkt_wlasciwosc`(`produkt`, `nazwa_wlasciwosc`, `wartosc`) VALUES (1,1,"Asus"),
+(1,2,"16 Gb"),
+(1,5,"512 Gb"),
+(1,4,"Intel i5"),
+(5,6,"PlayStation 5"),
+(13,6,"PlayStation 4"),
+(15,6,"PC"),
+(11,6,"PC"),
+(10,3,"Różowy"),
+(16,6,"PlayStation 5"),
+(6,2,"8 Gb"),
+(6,1,"Lenovo"),
+(6,5,"1 Tb"),
+(6,4,"AMD Ryzen 5"),
+(9,3,"Niebieski"),
+(14,6,"PlayStation 4"),
+(17,1,"Intel"),
+(46,1,"Intel"),
+(18,1,"AMD"),
+(19,1,"AMD"),
+(20,1,"Acer"),
+(21,1,"Gigabyte"),
+(22,1,"MSI"),
+(23,1,"Gigabyte"),
+(24,1,"Asus"),
+(25,1,"Acer"),
+(26,1,"Dell"),
+(27,1,"Samsung"),
+(28,1,"HP"),
+(29,1,"HP"),
+(30,1,"Samsung"),
+(31,1,"Xiaomi"),
+(32,1,"LG"),
+(33,1,"Logitech"),
+(34,1,"Creativ"),
+(35,1,"Logitech"),
+(36,1,"Google"),
+(37,1,"TP-Link"),
+(41,1,"Silver Monkey"),
+(42,1,"Silver Monkey"),
+(43,1,"Unitek"),
+(44,1,"Silver Monkey"),
+(45,1,"Unitek");
+

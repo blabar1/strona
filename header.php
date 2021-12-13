@@ -2,7 +2,7 @@
 <html lang="pl-PL">
 
 <head>
-    <title>Sklep Komputerowy</title>
+    <title>PlaceHolder.pl</title>
 
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.gstatic.com">

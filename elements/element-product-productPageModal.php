@@ -21,8 +21,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn" style="background-color:var(--orange);" data-dismiss="modal">Zamknij</button>
-                <button type="button" class="btn " style="background-color:var(--orange);">Przejdz do koszyka</button>
+                <button type="button" class="btn" style="background-color:var(--orange);color:white" data-dismiss="modal">Zamknij</button>
+                <button type="button" class="btn " style="background-color:var(--orange);"><a class="o-href" href="basket.php">Przejdz do koszyka</a></button>
             </div>
         </div>
     </div>

@@ -17,6 +17,7 @@ function basketDeleteAll(){
     });
     $("#basket").load(location.href + " #basket>*", "");
     $("#basket_con").load(location.href + " #basket_con>*", "");
+    window.location.href = 'index.php';
 }
 
 function basketDelete(id){
@@ -31,7 +32,20 @@ function basketDelete(id){
     $("#basket_con").load(location.href + " #basket_con>*", "");
 }
 
-function basketMoreItem(id){
+function basketChange(id){
+    $.ajax({
+        url: 'basketChange.php',
+        type: 'POST',
+        data: {
+            'produkt': id,
+            'value': document.getElementById('s'+id).value
+        },            
+    });
+    $("#basket").load(location.href + " #basket>*", "");
+    $("#basket_con").load(location.href + " #basket_con>*", "");
+}
+
+function basketMore(id){
     $.ajax({
         url: 'basketMore.php',
         type: 'POST',
@@ -42,4 +56,10 @@ function basketMoreItem(id){
     });
     $("#basket").load(location.href + " #basket>*", "");
     $("#basket_con").load(location.href + " #basket_con>*", "");
+}
+
+function delivery12(i){
+    document.getElementById("dostawa").innerHTML = i+" zł";
+    document.getElementById("wszystko").innerHTML = parseInt(document.getElementById('koszyk').value)+i+" zł";
+    document.getElementById('total').value = parseInt(document.getElementById('koszyk').value)+i;
 }

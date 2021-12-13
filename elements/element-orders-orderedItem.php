@@ -1,12 +1,16 @@
 <div class="c-ordersItem-list-wrapper">
     <div>
+    <?php
+    $named = str_replace(' ', '-', $name);
+    ?>
+
         <div class="c-ordersItem-list ">
             <div class="c-ordersItem-list__thumbnail" style="background-image: url(<?php echo $thumbnail; ?>);"></div>
             <div class="c-ordersItem-list__inside">
 
                 <div class="c-ordersItem-list__content">
                     <div class="c-ordersItem-list__name-container">
-                        <a href="productPage.php">
+                        <a href="productPage.php?name=<?php echo $named; ?>&id=<?php echo $id; ?>">
                             <div class="c-ordersItem-list__name">
                                 <h3 title="<?php echo $name; ?>"><span class="c-ordersItem-list__name-span">
                                         <?php echo $name; ?>

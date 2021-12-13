@@ -9,9 +9,12 @@
                     <?php echo $price . " zł"; ?>
                 </div>
             </div>
-            <div class="c-basket-payment__button-body">
-                <button class="c-basket-payment__button-element">Przejdź do płatności </buttom>
+            <form action="orderDetails.php" method="POST">
+            <input type="hidden" name="total" value="<?php echo $price; ?>">
+            <div class="c-basket-payment__button-body">    
+                <button type="submit" class="c-basket-payment__button-element">Przejdź do płatności </buttom>
             </div>
+            </form>
         </div>
     </div>
 

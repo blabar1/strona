@@ -48,7 +48,43 @@
                             print('</div>');
                         }
                     } else {
-                        if (isset($_COOKIE['koszyk'])) {
+                        if (isset($_SESSION['koszyk']) && !empty($_SESSION['koszyk'])) {
+                            $a = array_values($_SESSION['koszyk']);
+                            $i = 0;
+                            for ($j = 0; $j < sizeof($a); $j++) {
+                                $i += $a[$j];
+                            }
+                            get_element("elements/element-basket-title-button.php", array(
+                                'quantity' => $i
+                                // tam tez jest ten przycisk do usuwania wszystkego
+                            ));
+
+                            print('<span class="o-separator"></span>
+                            <div class="c-basket-products-list__container col-xs-12 col-sm-12 col-xl-7 col-lg-7 col-md-7">');
+                            $a = array_keys($_SESSION['koszyk']);
+                            for($j = 0 ; $j<sizeof($a);$j++){
+                                $query = $conn->query("SELECT * FROM produkt WHERE id_produkt ='".$a[$j]."'");
+                                $result = $query->fetch(PDO::FETCH_ASSOC);
+                                get_element("elements/element-basket-product-list.php", array(
+                                    'id' => $result ['id_produkt'],
+                                    'name' => $result ['nazwa'],
+                                    'thumbnail' => 'images/produkty/' . $result ['miniaturka'],
+                                    'price' => $result['cena']
+                                ));
+                            }
+                            $t=0;
+                            $a = array_keys($_SESSION['koszyk']);
+                            for($j = 0 ; $j<sizeof($a);$j++){
+                                $query = $conn->query("SELECT cena FROM produkt WHERE id_produkt ='".$a[$j]."'");
+                                $result = $query->fetch(PDO::FETCH_ASSOC);
+                                $t += $_SESSION['koszyk'][$a[$j]]*$result['cena'];
+                            }
+
+                            print('</div><div class="c-basket-products-payment__container col-xs-12 col-sm-12 col-xl-5 col-lg-5 col-md-5">');
+                            get_element("elements/element-basket-payment.php", array(
+                                'price' => $t,
+                            ));
+                            print('</div>');
                         } else {
                             print('<div class="c-basket-empty">
                             <div class="c-basket-empty-container">
@@ -63,8 +99,9 @@
                     ?>
 
                     <?php //get_element("elements/element-basket-productList-delete.php", array(
-                       // 'name' => 'XD'
-                    //)); ?>
+                    // 'name' => 'XD'
+                    //)); 
+                    ?>
 
 
 

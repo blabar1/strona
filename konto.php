@@ -118,6 +118,7 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
 
                                 </div>
                             </form>
+                            
                             <div class="c-account-forms-password-changer c-account-forms-password-changer-pass">
                                 <button class="o-none" data-toggle="modal" data-target="#passwordModal">Zmień hasło</button>
                             </div>
@@ -125,10 +126,15 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
                                 <button class="o-none" data-toggle="modal" data-target="#mail">Zmień mail</button>
 
                             </div>
-                            <div class="c-account-forms-password-changer c-account-forms-password-changer-delete">
-                                <button class="o-none" data-toggle="modal" data-target="#delete">Usuń konto</button>
-
-                            </div>
+                            <?php
+                                if($result['konto_typ'] !=3){
+                                    print('<div class="c-account-forms-password-changer c-account-forms-password-changer-delete">
+                                    <button class="o-none" data-toggle="modal" data-target="#delete">Usuń konto</button>
+    
+                                </div>');
+                                }
+                            ?>
+                            
                         </div>
 
 

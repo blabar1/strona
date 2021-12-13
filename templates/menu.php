@@ -28,6 +28,12 @@ if (isset($_GET['filters'])) {
     $_SESSION['filters'] =  $_GET['filters'];
 } else
     $_SESSION['filters'] = array();
+
+if (!isset($_SESSION['user'])) {
+    if (!isset($_SESSION['koszyk'])) {
+        $_SESSION['koszyk'] = array();
+    }
+}
 ?>
 <!-- menu,header-->
 
@@ -51,15 +57,6 @@ if (isset($_GET['filters'])) {
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-
-                        <li class="dropdown">
-                            <a class="dropdown" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Page 1-1</a></li>
-                                <li><a href="#">Page 1-2</a></li>
-                                <li><a href="#">Page 1-3</a></li>
-                            </ul>
-                        </li>
                         <li>
                             <div class="input-group">
                                 <form action="categoryProducts.php" method="GET">
@@ -99,17 +96,38 @@ if (isset($_GET['filters'])) {
                         if (empty($_SESSION['user'])) {
                             print("<li><a href='login.php'><span class='glyphicon glyphicon-user'></span> Zaloguj się</a></li>");
                         } else {
-                            $user = $conn->query("SELECT id_konta, imie FROM dane_konta WHERE mail ='" . $_SESSION['user'] . "' LIMIT 1");
+                            $user = $conn->query("SELECT id_konta, imie, konto_typ FROM dane_konta WHERE mail ='" . $_SESSION['user'] . "' LIMIT 1");
                             $user_imie = $user->fetch(PDO::FETCH_ASSOC);
                             $idk = $user_imie['id_konta'];
-                            print('<li class="dropdown">
-                            <a class="dropdown" data-toggle="dropdown" href="#">' . $user_imie['imie'] . ' <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Twoje Zamówienia</a></li>
-                                <li><a href="konto.php">Ustawienia konta</a></li>
-                                <li><a href="logout.php">Wyloguj się</a></li>
-                            </ul>
-                        </li>');
+                            if($user_imie['konto_typ']==1){
+                                print('<li class="dropdown">
+                                <a class="dropdown" data-toggle="dropdown" href="#">' . $user_imie['imie'] . ' <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="orders.php">Twoje Zamówienia</a></li>
+                                    <li><a href="konto.php">Ustawienia konta</a></li>
+                                    <li><a href="logout.php">Wyloguj się</a></li>
+                                </ul>
+                            </li>');
+                            }else if($user_imie['konto_typ']==2){
+                                print('<li class="dropdown">
+                                <a class="dropdown" data-toggle="dropdown" href="#">' . $user_imie['imie'] . ' <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="panel/index.php">Panel pracownika</a></li>
+                                    <li><a href="konto.php">Ustawienia konta</a></li>
+                                    <li><a href="logout.php">Wyloguj się</a></li>
+                                </ul>
+                            </li>');     
+                            }else if($user_imie['konto_typ']==3){
+                                print('<li class="dropdown">
+                                <a class="dropdown" data-toggle="dropdown" href="#">' . $user_imie['imie'] . ' <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="panel/index.php">Panel administratora</a></li>
+                                    <li><a href="konto.php">Ustawienia konta</a></li>
+                                    <li><a href="logout.php">Wyloguj się</a></li>
+                                </ul>
+                            </li>');     
+                            }
+                            
                         }
                         ?>
                         <li class="nav-item">
@@ -126,7 +144,17 @@ if (isset($_GET['filters'])) {
                                                             <div class="c-menu-element-basket__dot fade-in" ><span>' . $result['i'] . '</span></div>
                                                             </div>');
                                             } else {
-                                                if (isset($_COOKIE['koszyk'])) {
+                                                if (isset($_SESSION['koszyk'])) {
+                                                    if (sizeof($_SESSION['koszyk']) != 0){
+                                                        $a = array_values($_SESSION['koszyk']);
+                                                        $i=0;
+                                                        for($j = 0 ; $j<sizeof($a);$j++){
+                                                            $i+=$a[$j];
+                                                        }
+                                                        print(' <div class="c-menu-element-basket__dot-container">
+                                                            <div class="c-menu-element-basket__dot fade-in" ><span>' . $i . '</span></div>
+                                                            </div>');
+                                                    }
                                                 }
                                             }
                                             ?>

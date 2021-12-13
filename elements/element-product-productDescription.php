@@ -38,7 +38,7 @@
                                                     print('<select class="c-productPage-container-payment__select" disabled>');
                                                     print('<option>Produkt niedostępny</option></select>');
                                                 }else{
-                                                    print('<select class="c-productPage-container-payment__select"');
+                                                    print('<select id="s'.$id.'" class="c-productPage-container-payment__select"');
                                                     for($i = 0; $i<=$result['ilosc'];$i++)
                                                         print('<option>'.$i.'</option>');
                                                     print('</select>');
@@ -47,7 +47,7 @@
                                         
                                     </div>
                                     <div class="c-productPage-container-payment__button">
-                                        <button value="<?php echo $id; ?> " data-toggle="modal" class="c-productPage-container-payment__button-element" data-target="#modal-basket-pageProduct">
+                                        <button onclick="basketMore(<?php echo $id; ?>)" value="<?php echo $id; ?> " data-toggle="modal" class="c-productPage-container-payment__button-element" data-target="#modal-basket-pageProduct">
                                             <div class="c-productPage-container-payment__button-text">
                                                 <span class="c-productPage-container-payment__button-span">
                                                     <svg class="c-productPage-container-payment__button-svg">

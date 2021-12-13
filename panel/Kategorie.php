@@ -3,7 +3,18 @@
 
 <body onload="formreset()">
     <?php include_once "topBar.php"; ?>
-
+<?php
+    if(isset($_POST['DODAJ'])){
+        $conn->query("INSERT INTO `kategoria`(`nazwa`, `miniaturka`, `nadkategoria`) VALUES ('".$_POST['kat']."','".$_FILES['plik']['name']."','".$_POST['nadkat']."')");
+        move_uploaded_file($_FILES['plik']['tmp_name'], "../images/kategorie/".$_FILES['plik']['name']);
+    }
+    if(isset($_POST['USUN'])){
+        $query = $conn->query("SELECT miniaturka FROM kategoria WHERE id_kategoria = '".$_POST['id']."'");
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+        unlink("../images/kategorie/".$result['miniaturka']);
+        $conn->query("DELETE FROM kategoria WHERE id_kategoria = '".$_POST['id']."'");
+    }
+?>
     <!-- offcanvas -->
     <div class="offcanvas offcanvas-start sidebar-nav bg-dark" tabindex="-1" id="sidebar">
         <div class="offcanvas-body p-0">
@@ -201,7 +212,7 @@
 
                                         print("</td>");
                                         print("</td><td>");
-                                        echo "<div class='functional-buttons'><form method='post' action='edycja.php' class='temp''><button type='submit' name='idkategorii_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_kategoria'] . "'>edytuj</button></form><form  method='post' action='Kategorie.php' ><button type='submit' onclick='return confirm(`Czy napewno chcesz kategorie " . $rekord['nazwa'] . " ?`);'  class='submit  btn btn-primary edycja' value='" . $rekord['id_kategoria'] . "'>usun</button></form></div>";
+                                        echo "<div class='functional-buttons'><form method='post' action='edycja.php' class='temp''><input type='hidden' name='id' value='" . $rekord['id_kategoria'] . "'><button type='submit' name='idkategorii_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_kategoria'] . "'>edytuj</button></form><form  method='post' action='Kategorie.php' ><input type='hidden' name='id' value='" . $rekord['id_kategoria'] . "'><button type='submit' onclick='return confirm(`Czy napewno chcesz kategorie " . $rekord['nazwa'] . " ?`);'  class='submit  btn btn-primary edycja' name='USUN' value='" . $rekord['id_kategoria'] . "'>usun</button></form></div>";
                                         print("</td>");
                                     }
                                     print("</tr>");
@@ -228,28 +239,28 @@
         </div>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content" style="overflow-y:scroll;">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Dodawanie Produktu</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Dodawanie kategori</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="dod">
+                    <form  enctype = "multipart/form-data" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="dod" >
                         <div class="modal-body">
 
                             <div class="mb-3">
                                 <label for="formGroupExampleInput" class="form-label">Nazwa Kategorii</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nazwa kategorii" value="" required>
+                                <input name="kat" type="text" class="form-control" id="formGroupExampleInput" placeholder="Nazwa kategorii" value="" required>
                             </div>
 
                             <div class="mb-3">
                                 <label for="formGroupExampleInput" class="form-label">Miniaturka</label>
-                                <div class="file-drop-area-category"> <span class="btn btn-primary ">Wybierz plik</span> <span class="file-message" id="divImageMediaPreview3">albo upuść tutaj</span> <input type="file" class="file-input-category" accept=".jfif,.jpg,.jpeg,.png,.gif" required /> </div>
+                                <div class="file-drop-area-category" > <span class="btn btn-primary " >Wybierz plik</span> <span class="file-message" id="divImageMediaPreview3">albo upuść tutaj</span> <input name="plik" type="file" class="file-input-category" accept=".jfif,.jpg,.jpeg,.png,.gif" required /> </div>
                                 <div id=> </div>
                             </div>
                             <div class="mb-3">
                                 <label for="formGroupExampleInput2" class="form-label">Wybierz nadkategorie</label>
-                                <select class="form-control" id="formGroupExampleInput2" required>
+                                <select name="nadkat" class="form-control" id="formGroupExampleInput2" required>
                                     <option selected disabled hidden value="">Przykład</option>
                                     <?php
                                     $query = $conn->query('Select Distinct id_kategoria, nazwa from kategoria');
