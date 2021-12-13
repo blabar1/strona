@@ -27,9 +27,6 @@ button {
 }
 
 @media (min-width: 992px) {
-    body {
-        overflow: auto !important;
-    }
     main {
         margin-left: var(--offcanvas-width);
     }

@@ -60,27 +60,27 @@ if (!isset($_SESSION['user'])) {
                         <li>
                             <div class="input-group">
                                 <form action="categoryProducts.php" method="GET">
-                                    <div class="input-group-container">
+                                    <div class="input-group-container ">
                                         <div class="input-search">
-                                            <input type="search" name="search" id="form1" class="input-group-container__search search-responsive form-control" placeholder="Szukaj"> <button type="submit" class="btn btn-dark">
+                                            <input type="search" name="search" id="form1" class="input-group-container__search search-responsive form-control" placeholder="Szukaj" /> <select name="category" class="input-group-container__category">
+                                                <?php
+                                                $query = $conn->query("SELECT id_kategoria, nazwa FROM kategoria WHERE nadkategoria is NULL");
+                                                $result = $query->fetchAll(PDO::FETCH_ASSOC);
+                                                print("<option value='0'>Wszystko</option>");
+                                                foreach ($result as $row) {
+                                                    if ($row['id_kategoria'] == $_SESSION['category'])
+                                                        print("<option value='" . $row['id_kategoria'] . "' selected>" . $row['nazwa'] . "</option>");
+                                                    else
+                                                        print("<option value='" . $row['id_kategoria'] . "'>" . $row['nazwa'] . "</option>");
+                                                }
+                                                print('<input type="hidden" name ="page" value="1">');
+                                                print('<input type="hidden" name ="order" value="d">')
+                                                ?>
+                                            </select> <button type="submit" class="btn btn-dark search-btn">
                                                 <i class="fas fa-search"></i>
                                             </button>
                                         </div>
-                                        <select name="category" class="input-group-container__category">
-                                            <?php
-                                            $query = $conn->query("SELECT id_kategoria, nazwa FROM kategoria WHERE nadkategoria is NULL");
-                                            $result = $query->fetchAll(PDO::FETCH_ASSOC);
-                                            print("<option value='0'>Wszystko</option>");
-                                            foreach ($result as $row) {
-                                                if ($row['id_kategoria'] == $_SESSION['category'])
-                                                    print("<option value='" . $row['id_kategoria'] . "' selected>" . $row['nazwa'] . "</option>");
-                                                else
-                                                    print("<option value='" . $row['id_kategoria'] . "'>" . $row['nazwa'] . "</option>");
-                                            }
-                                            print('<input type="hidden" name ="page" value="1">');
-                                            print('<input type="hidden" name ="order" value="d">')
-                                            ?>
-                                        </select>
+
 
                                     </div>
                                 </form>
@@ -99,7 +99,7 @@ if (!isset($_SESSION['user'])) {
                             $user = $conn->query("SELECT id_konta, imie, konto_typ FROM dane_konta WHERE mail ='" . $_SESSION['user'] . "' LIMIT 1");
                             $user_imie = $user->fetch(PDO::FETCH_ASSOC);
                             $idk = $user_imie['id_konta'];
-                            if($user_imie['konto_typ']==1){
+                            if ($user_imie['konto_typ'] == 1) {
                                 print('<li class="dropdown">
                                 <a class="dropdown" data-toggle="dropdown" href="#">' . $user_imie['imie'] . ' <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -108,7 +108,7 @@ if (!isset($_SESSION['user'])) {
                                     <li><a href="logout.php">Wyloguj się</a></li>
                                 </ul>
                             </li>');
-                            }else if($user_imie['konto_typ']==2){
+                            } else if ($user_imie['konto_typ'] == 2) {
                                 print('<li class="dropdown">
                                 <a class="dropdown" data-toggle="dropdown" href="#">' . $user_imie['imie'] . ' <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -116,8 +116,8 @@ if (!isset($_SESSION['user'])) {
                                     <li><a href="konto.php">Ustawienia konta</a></li>
                                     <li><a href="logout.php">Wyloguj się</a></li>
                                 </ul>
-                            </li>');     
-                            }else if($user_imie['konto_typ']==3){
+                            </li>');
+                            } else if ($user_imie['konto_typ'] == 3) {
                                 print('<li class="dropdown">
                                 <a class="dropdown" data-toggle="dropdown" href="#">' . $user_imie['imie'] . ' <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -125,9 +125,8 @@ if (!isset($_SESSION['user'])) {
                                     <li><a href="konto.php">Ustawienia konta</a></li>
                                     <li><a href="logout.php">Wyloguj się</a></li>
                                 </ul>
-                            </li>');     
+                            </li>');
                             }
-                            
                         }
                         ?>
                         <li class="nav-item">
@@ -145,11 +144,11 @@ if (!isset($_SESSION['user'])) {
                                                             </div>');
                                             } else {
                                                 if (isset($_SESSION['koszyk'])) {
-                                                    if (sizeof($_SESSION['koszyk']) != 0){
+                                                    if (sizeof($_SESSION['koszyk']) != 0) {
                                                         $a = array_values($_SESSION['koszyk']);
-                                                        $i=0;
-                                                        for($j = 0 ; $j<sizeof($a);$j++){
-                                                            $i+=$a[$j];
+                                                        $i = 0;
+                                                        for ($j = 0; $j < sizeof($a); $j++) {
+                                                            $i += $a[$j];
                                                         }
                                                         print(' <div class="c-menu-element-basket__dot-container">
                                                             <div class="c-menu-element-basket__dot fade-in" ><span>' . $i . '</span></div>

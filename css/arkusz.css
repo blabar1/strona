@@ -85,9 +85,6 @@ ul {
     height:auto;
     background-color: white;
 }
-input{
-    font-family: 'Lato';
-}
 @keyframes jump {
     from, 20%, 53%, 80%, to {
     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
