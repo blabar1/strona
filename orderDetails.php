@@ -142,7 +142,7 @@ include_once "header.php"; ?>
                                         <h2>Do zapłaty:</h2>
                                     </div>
                                     <div class="c-orderDetails-payment-basket-value__value-last">
-                                        <h2 id="wszystko"><?php echo $_POST['total']; ?></h2>
+                                        <h2 id="wszystko"><?php echo $_POST['total']; ?> zł</h2>
                                     </div>
                                 </div>
                             </div>

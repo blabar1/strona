@@ -78,7 +78,7 @@ display: -webkit-box;
     -webkit-box-orient: vertical;
     visibility: visible;
     text-overflow: ellipsis;
-    width: 300px;
+    width: 100%;
 }
 .c-categoryProducts-list__price{
     white-space: nowrap;

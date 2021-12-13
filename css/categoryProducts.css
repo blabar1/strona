@@ -87,7 +87,7 @@ button:disabled {
 .c-categoryProducts-changer-per-page__select{
     border-radius:12px;
     border-color: var(--primary-color);
-    min-width:70px;
+    min-width:120px;
     text-align: left;
 }
 .c-categoryProducts-changer-per-page__select-filters{
