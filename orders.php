@@ -26,7 +26,7 @@ include_once "templates/menu.php"; ?>
                         get_element("elements/element-orders-date.php", array(
                             'date' => $row['data_zlozenia'] . " - " . $row['status']
                         ));
-                        $query2 = $conn->query("SELECT id_produkt, produkt.nazwa, produkt.cena, produkt.miniaturka, zamowienie_produkt.ilosc FROM produkt INNER JOIN zamowienie_produkt ON produkt.id_produkt = zamowienie_produkt.produkt WHERE id_produkt IN (SELECT produkt FROM zamowienie_produkt WHERE zamowienie = '" . $row['id_zamowienia'] . "')");
+                        $query2 = $conn->query("SELECT id_produkt, produkt.nazwa, produkt.cena, produkt.miniaturka, zamowienie_produkt.ilosc FROM produkt INNER JOIN zamowienie_produkt ON produkt.id_produkt = zamowienie_produkt.produkt WHERE zamowienie = '".$row['id_zamowienia']."'");
                         $result2 = $query2->fetchAll(PDO::FETCH_ASSOC);
                         foreach ($result2 as $row2) {
                             get_element("elements/element-orders-orderedItem.php", array(

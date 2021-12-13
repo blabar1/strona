@@ -3,3 +3,7 @@ $(document).ready(function () {
         $(table).DataTable();
     });
 });
+
+function addSpec(){
+    document.getElementById('allspec').innerHTML+= document.getElementById('spec').outerHTML;
+}

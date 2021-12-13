@@ -40,7 +40,7 @@ CREATE TABLE `produkt` (
   `ilosc` int NOT NULL,
   `opis` TEXT NOT NULL,
   `miniaturka` varchar(45) NOT NULL,
-  `kategoria` int NOT NULL
+  `kategoria` int 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `galeria_zdjec` (
@@ -98,13 +98,13 @@ CREATE TABLE `metoda_platnosci` (
 ALTER TABLE dane_konta ADD FOREIGN KEY (mail) REFERENCES dane_logowania(mail) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE dane_konta ADD FOREIGN KEY (konto_typ) REFERENCES typ_konta(id_typ);
 ALTER TABLE koszyk ADD FOREIGN KEY (konto) REFERENCES dane_konta(id_konta) ON DELETE CASCADE;
-ALTER TABLE koszyk ADD FOREIGN KEY (produkt) REFERENCES produkt(id_produkt);
-ALTER TABLE kategoria ADD FOREIGN KEY (nadkategoria) REFERENCES kategoria(id_kategoria);
-ALTER TABLE produkt ADD FOREIGN KEY (kategoria) REFERENCES kategoria(id_kategoria);
-ALTER TABLE galeria_zdjec ADD FOREIGN KEY (produkt) REFERENCES produkt(id_produkt);
-ALTER TABLE zamowienie_produkt ADD FOREIGN KEY (zamowienie) REFERENCES zamowienie(id_zamowienia);
-ALTER TABLE zamowienie_produkt ADD FOREIGN KEY (produkt) REFERENCES produkt(id_produkt);
-ALTER TABLE produkt_wlasciwosc ADD FOREIGN KEY (nazwa_wlasciwosc) REFERENCES wlasciwosc(id_wlasciwosc);
-ALTER TABLE produkt_wlasciwosc ADD FOREIGN KEY (produkt) REFERENCES produkt(id_produkt);
+ALTER TABLE koszyk ADD FOREIGN KEY (produkt) REFERENCES produkt(id_produkt) ON DELETE CASCADE;
+ALTER TABLE kategoria ADD FOREIGN KEY (nadkategoria) REFERENCES kategoria(id_kategoria) ON DELETE SET NULL;
+ALTER TABLE produkt ADD FOREIGN KEY (kategoria) REFERENCES kategoria(id_kategoria) ON DELETE SET NULL;
+ALTER TABLE galeria_zdjec ADD FOREIGN KEY (produkt) REFERENCES produkt(id_produkt) ON DELETE CASCADE;
+ALTER TABLE zamowienie_produkt ADD FOREIGN KEY (zamowienie) REFERENCES zamowienie(id_zamowienia) ON DELETE CASCADE;
+ALTER TABLE zamowienie_produkt ADD FOREIGN KEY (produkt) REFERENCES produkt(id_produkt) ON DELETE CASCADE;
+ALTER TABLE produkt_wlasciwosc ADD FOREIGN KEY (nazwa_wlasciwosc) REFERENCES wlasciwosc(id_wlasciwosc) ON DELETE CASCADE;
+ALTER TABLE produkt_wlasciwosc ADD FOREIGN KEY (produkt) REFERENCES produkt(id_produkt) ON DELETE CASCADE;
 ALTER TABLE zamowienie ADD FOREIGN KEY (dostawa) REFERENCES dostawa(id_dostawa);
 ALTER TABLE zamowienie ADD FOREIGN KEY (metoda) REFERENCES metoda_platnosci(id_metoda);

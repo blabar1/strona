@@ -7,6 +7,30 @@
 <!-- Maciek tam jest menu takie jakby z uzytkownikiem -->
 
 <body>
+  <?php
+    if(isset($_POST['DODAJ'])){
+      move_uploaded_file($_FILES['miniaturka']['tmp_name'], "../images/produkty/".$_FILES['miniaturka']['name']);
+      $conn->query("INSERT INTO `produkt`( `nazwa`, `cena`, `ilosc`, `opis`, `miniaturka`, `kategoria`) VALUES ('".$_POST['nazwa']."','".$_POST['cena']."','".$_POST['ilosc']."','".$_POST['opis']."','".$_FILES['miniaturka']['name']."','".$_POST['kategoria']."')");
+      $query = $conn->query("SELECT max(id_produkt) as id FROM produkt");
+      $result = $query->fetch(PDO::FETCH_ASSOC);
+      for($i=0;$i<sizeof($_POST['wlasnosc']);$i++){
+        $conn->query("INSERT INTO `produkt_wlasciwosc`(`produkt`, `nazwa_wlasciwosc`, `wartosc`) VALUES ('".$result['id']."','".$_POST['wlasnosc'][$i]."','".$_POST['wartosc'][$i]."')");
+      }
+      mkdir("../images/produkty/".$result['id']);
+      for($i=0;$i<sizeof($_FILES['galeria']['name']);$i++){
+        $conn->query("INSERT INTO `galeria_zdjec`(`plik`, `produkt`) VALUES ('".$_FILES['galeria']['name'][$i]."','".$result['id']."')");
+        move_uploaded_file($_FILES['galeria']['tmp_name'][$i], "../images/produkty/".$result['id']."/".$_FILES['galeria']['name'][$i]);
+      }
+    }
+    if(isset($_POST['USUN'])){
+      $query = $conn->query("SELECT miniaturka FROM produkt WHERE id_produkt = '".$_POST['id']."'");
+      $result = $query->fetch(PDO::FETCH_ASSOC);
+      unlink("../images/produkty/".$result['miniaturka']);
+      array_map('unlink', glob("../images/produkty/".$_POST['id']."/*.*"));
+      rmdir("../images/produkty/".$_POST['id']);
+      $conn->query("DELETE FROM produkt WHERE id_produkt = '".$_POST['id']."'");
+    }
+  ?>
 
   <!-- offcanvas -->
   <div class="offcanvas offcanvas-start sidebar-nav bg-dark" tabindex="-1" id="sidebar">
@@ -206,7 +230,7 @@
 
                       print("</td>");
                       print("</td><td>");
-                      echo "<div class='functional-buttons'><form method='post' action='edycja.php' class='temp''><button type='submit' name='idksiazki_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_produkt'] . "'>edytuj</button></form><form  method='post' action='index.php' ><button type='submit' onclick='return confirm(`Czy napewno chcesz usunac " . $rekord['nazwa'] . " ?`);'  class='submit  btn btn-primary edycja' value='" . $rekord['id_produkt'] . "'>usun</button></form></div>";
+                      echo "<div class='functional-buttons'><form method='post' action='edycja.php' class='temp''><button type='submit' name='idksiazki_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_produkt'] . "'>edytuj</button></form><form  method='post' action='index.php' ><input type='hidden' name='id' value='" . $rekord['id_produkt'] . "'><button type='submit' onclick='return confirm(`Czy napewno chcesz produkt " . $rekord['nazwa'] . " ?`);'  class='submit  btn btn-primary edycja' name='USUN' value='" . $rekord['id_produkt'] . "'>usun</button></form></div>";
                       print("</td>");
                     }
                     print("</tr>");
@@ -239,25 +263,25 @@
             <h5 class="modal-title" id="exampleModalLabel">Dodawanie Produktu</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="dod">
+          <form enctype = "multipart/form-data" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="dod">
             <div class="modal-body">
 
               <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">Nazwa produktu</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nazwa produktu" value="" required>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nazwa produktu" name="nazwa" value="" required>
               </div>
               <div class="mb-3">
                 <label for="formGroupExampleInput2" class="form-label">Cena</label>
-                <input type="number" class="form-control" id="formGroupExampleInput2" min="0" step="0.01" placeholder="Cena produktu" value="" required>
+                <input type="number" class="form-control" id="formGroupExampleInput2" min="0" step="0.01" name="cena" placeholder="Cena produktu" value="" required>
               </div>
               <div class="mb-3">
                 <label for="formGroupExampleInput2" class="form-label">Ilosc produktu</label>
-                <input type="number" class="form-control" id="formGroupExampleInput2" min="1" placeholder="Ilosc produktu" value="" required>
+                <input type="number" class="form-control" id="formGroupExampleInput2" min="1" name="ilosc" placeholder="Ilosc produktu" value="" required>
               </div>
               <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">Opis</label>
                 <label for="comment">Comment:</label>
-                <textarea class="form-control" rows="5" id="description-item" placeholder="Opis" required></textarea>
+                <textarea class="form-control" rows="5" id="description-item" name="opis" placeholder="Opis" required></textarea>
               </div>
               <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">Miniaturka</label>
@@ -269,12 +293,12 @@
                 <label for="formGroupExampleInput2" class="form-label">Galeria</label>
 
                 <div class="form-group">
-                  <div class="file-drop-area-gallery"> <span class="btn btn-primary ">Wybierz plik</span> <span class="file-message" id="divImageMediaPreview-gallery">albo upuść tutaj</span> <input type="file" class="file-input-gallery" name="galeria" accept=".jfif,.jpg,.jpeg,.png,.gif" required multiple /> </div>
+                  <div class="file-drop-area-gallery"> <span class="btn btn-primary ">Wybierz plik</span> <span class="file-message" id="divImageMediaPreview-gallery">albo upuść tutaj</span> <input type="file" class="file-input-gallery" name="galeria[]" accept=".jfif,.jpg,.jpeg,.png,.gif" required multiple /> </div>
                 </div>
               </div>
               <div class="mb-3">
                 <label for="formGroupExampleInput2" class="form-label">Wybierz kategorie</label>
-                <select class="form-control" id="formGroupExampleInput2" required>
+                <select class="form-control" id="formGroupExampleInput2" name="kategoria" required>
                   <option selected disabled hidden value="">Przykład</option>
                   <?php
                   $query = $conn->query('Select Distinct id_kategoria, nazwa from kategoria');
@@ -285,6 +309,26 @@
                   ?>
                 </select>
               </div>
+              <div id="allspec">
+              <label for="formGroupExampleInput2" class="form-label" >Specyfikacja</label>
+                <div id='spec' class="mb-3" >
+                  
+                  <div style="display: flex;">
+                  <select class="form-control" style="width: 48%; margin-right: 4%" name="wlasnosc[]" required>
+                    <option selected disabled hidden value="">Przykład</option>
+                    <?php
+                    $query = $conn->query('Select id_wlasciwosc, nazwa from wlasciwosc');
+                    $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+                    foreach ($result as $record) {
+                      print("<option value=" . $record['id_wlasciwosc'] . ">" . $record['nazwa'] . "</option>");
+                    }
+                    ?>
+                  </select>
+                  <input type = "text" class="form-control" name="wartosc[]" placeholder="wartosc" style="width: 48%" required>
+                  </div>
+                </div>
+              </div>
+              <button onclick="addSpec()" type="button" class="btn btn-secondary">Dodaj właściwość</button>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
