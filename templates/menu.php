@@ -177,7 +177,7 @@ if (!isset($_SESSION['user'])) {
         </div>
     </nav>
     <!-- menu hidding -->
-    <div id="c_menu_list_hidding">
+    <div id="c_menu_list_hidding" class="slide-bottom">
         <div class="o-wrapper__menu__hidding">
             <div class="c-menu__list ">
 

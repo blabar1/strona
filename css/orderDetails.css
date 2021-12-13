@@ -225,3 +225,15 @@ justify-content: center;
     top: 2px;
     position: relative;
   }
+
+@media only screen and (max-width: 500px) {
+    .form-control{
+max-width:300px;
+    }
+    .c-orderDetails-form-delivery-element{
+        max-width:300px;
+    }
+    .c-orderDetails-form-payment-element{
+        max-width:300px;
+    }
+}

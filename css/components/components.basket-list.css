@@ -9,6 +9,7 @@ html {
 }
 .c-basket-list{
     display: flex;
+    transition: all 200ms ease-in-out;
 }
 .c-basket-list:hover .c-product-title__button {
     opacity:1;

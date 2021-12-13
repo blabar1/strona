@@ -123,7 +123,7 @@ include_once "header.php"; ?>
 
 
 
-            <div class=" col-xs-12 col-sm-12 col-xl-9 col-lg-9 col-md-9">
+            <div class="col-xs-12 col-sm-12 col-xl-9 col-lg-9 col-md-9" style="float:right;">
                 <div class="c-category-pagination-container">
                     <nav aria-label="...">
                         <ul id="page-chooser" class="pagination pagination-sm">
