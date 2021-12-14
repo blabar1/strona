@@ -1,11 +1,9 @@
 <?php
-get_element("elements/element-orders-orderedItem.php", array(
-    'thumbnail' => "images/produkty/p1.jpg",
-    'name' => "nazwa LMAO",
-    'price' => "Ano niezła cena",
-    'quantity' => "4 szt",
-    'id' => "XDDDDDD"
-));
+include 'database.php';
+$query = $conn->query('SELECT nazwa FROM dostawa WHERE id_dostawa = "'.$deliveryMethod.'"');
+$result= $query->fetch(PDO::FETCH_ASSOC);
+$query2 = $conn->query('SELECT nazwa FROM metoda_platnosci WHERE id_metoda = "'.$paymentMethod.'"');
+$result2= $query2->fetch(PDO::FETCH_ASSOC);
 ?>
 <div class="row c-ordersPage-container-footer-desc">
     <div class="col-sm-4 col-md-4 col-lg-4 c-ordersPage-container-footer-desc-block">
@@ -17,7 +15,7 @@ get_element("elements/element-orders-orderedItem.php", array(
     <div class="col-sm-4 col-md-4 col-lg-4 c-ordersPage-container-footer-desc-block">
         <div class="c-ordersPage-container-footer-desc__title"> Metoda Dostawy</div>
         <div class="">
-            <?php echo $deliveryMethod; ?>
+            <?php echo $result['nazwa']; ?>
         </div>
     </div>
     <div class="col-sm-4 col-md-4 col-lg-4 c-ordersPage-container-footer-desc-block">
@@ -35,7 +33,7 @@ get_element("elements/element-orders-orderedItem.php", array(
     <div class="col-sm-4 col-md-4 col-lg-4 c-ordersPage-container-footer-desc-block">
         <div class="c-ordersPage-container-footer-desc__title"> Metoda Płatności</div>
         <div class="">
-            <?php echo $paymentMethod; ?>
+            <?php echo $result2['nazwa']; ?>
         </div>
     </div>
 

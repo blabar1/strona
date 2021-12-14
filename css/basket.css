@@ -25,6 +25,19 @@ width:100%;
     font-weight: normal;
     text-decoration: none;
 }
+
+.c-basket-empty-container__subtext1{
+    text-align: center;
+    margin: 8px auto 0px;
+    font-size: 17px;
+    line-height: 24px;
+}
+.c-basket-empty-container__subtext2{
+    text-align: center;
+    margin: 8px auto 0px;
+    font-size: 15px;
+    line-height: 24px;
+}
 .c-basket-empty-container__button{
     text-align: center;
     margin-top:24px;

@@ -33,7 +33,9 @@ if (isset($_SESSION['user'])) {
                     <div class="c-basket-empty">
                         <div class="c-basket-empty-container">
                             <div class="c-basket-empty-container__title">Twój zamówienie o numerze <?php echo $i ?> zostało przyjęte do realizacji</div>
-                            <div class="c-basket-empty-container__subtext">Dziękujemy za wybranie naszego sklepu</div>
+                            <div class="c-basket-empty-container__subtext">Dziękujemy za wybranie naszego sklepu</div><br><br><br>
+                            <div class="c-basket-empty-container__subtext1">Szczegóły twojego zmówienia:</div>
+                            <div class="c-basket-empty-container__subtext2"><a href ="<?php print ("placeholder.ct8.pl/strona/orderDetails-afterBuy.php?nr_zamowienie=".$i); ?>"><?php print ("placeholder.ct8.pl/strona/orderDetails-afterBuy.php?nr_zamowienie=".$i); ?></a></div>
                             <div class="c-basket-empty-container__button"><a href="index.php"><button class="c-basket-empty-container__button-element">Przejdź do strony głównej </button></a></div>
                         </div>
 
