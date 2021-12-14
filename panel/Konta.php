@@ -5,6 +5,27 @@
 <?php include("header.php"); ?>
 <?php include("topBar.php"); ?>
 <!-- Maciek tam jest menu takie jakby z uzytkownikiem -->
+<?php
+if (isset($_POST['DODAJ'])) {
+    try {
+        $hash = password_hash($_POST['haslo'], PASSWORD_BCRYPT);
+        $mail = $_POST['mail'];
+        $register = $conn->query("INSERT INTO dane_logowania (`mail`, `haslo`) VALUES ('" . $mail . "', '" . $hash . "')");
+        $conn->query("INSERT INTO `dane_konta`(`imie`, `nazwisko`, `adres`, `miasto`, `kod_pocztowy`, `konto_typ`, `mail`) VALUES ('" . $_POST['imie'] . "','" . $_POST['nazwisko'] . "','" . $_POST['adres'] . "','" . $_POST['miasto'] . "','" . $_POST['kod'] . "','" . $_POST['typ'] . "','" . $mail. "')");
+        print('<script>alert("Konto dodane pomyślnie."); window.location.href = "Konta.php";</script>');
+    } catch (PDOException $ex) {
+        if ($ex->errorInfo[1] == 1062) {
+            print('<script>alert("Konto z podanym e-mailem już istnieje."); window.location.href = "Konta.php";</script>');
+        } else {
+            print('<script>alert("Błąd przy dodawaniu użytkownika."); window.location.href = "Konta.php";</script>');
+        }
+    }
+}
+if (isset($_POST['USUN'])) {
+    $conn->query("DELETE FROM dane_logowania WHERE mail = '" . $_POST['id'] . "'");
+    print('<script>alert("Konto usunięte pomyślnie."); window.location.href = "Konta.php";</script>');
+}
+?>
 
 <body>
 
@@ -223,7 +244,7 @@
 
                                         print("</td>");
                                         print("</td><td>");
-                                        echo "<div class='functional-buttons'><form method='post' action='edycja.php' class='temp''><button type='submit' name='idkonta_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_konta'] . "'>edytuj</button></form><form  method='post' action='Konta.php' ><button type='submit' onclick='return confirm(`Czy napewno chcesz usunac konto uzytkownika " . $rekord['imie'] . " " . $rekord['nazwisko'] . " ?`);'  class='submit  btn btn-primary edycja' value='" . $rekord['id_konta'] . "'>usun</button></form></div>";
+                                        echo "<div class='functional-buttons'><form method='post' action='edycja.php' class='temp''><button type='submit' name='idkonta_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_konta'] . "'>edytuj</button></form><form  method='post' action='Konta.php' ><input type='hidden' name='id' value='" . $rekord['mail'] . "'><button type='submit' onclick='return confirm(`Czy napewno chcesz usunąć konto " . $rekord['mail'] . " ?`);'  class='submit  btn btn-primary edycja' name='USUN' value='" . $rekord['mail'] . "'>usun</button></form></div>";
                                         print("</td>");
                                     }
                                     print("</tr>");
@@ -263,52 +284,52 @@
 
                             <div class="mb-3">
                                 <label for="formGroupExampleInput" class="form-label">Imie</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Imie" value="" required>
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Imie" value="" name="imie" required>
                             </div>
                             <div class="mb-3">
                                 <label for="formGroupExampleInput" class="form-label">Nazwisko</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nazwisko" value="" required>
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nazwisko" value="" name="nazwisko" required>
                             </div>
                             <div class="mb-3">
                                 <label for="formGroupExampleInput" class="form-label">Adres</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="adres" value="" required>
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="adres" value="" name="adres" required>
                             </div>
                             <div class="mb-3">
                                 <label for="formGroupExampleInput" class="form-label">miasto</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="miasto" value="" required>
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="miasto" name="miasto" value="" required>
                             </div>
                             <div class="mb-3">
                                 <label for="kod-poczty">Kod pocztowy</label>
-                                <input type="text" value="" maxlength="6" class="form-control c-account-forms__form-input" pattern="^[0-9]{2}-[0-9]{3}$" name="kod" id="kod-poczty" placeholder="np. 00-000">
+                                <input type="text" value="" maxlength="6" class="form-control c-account-forms__form-input" pattern="^[0-9]{2}-[0-9]{3}$" name="kod" id="kod-poczty" placeholder="np. 00-000" required>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1">Adres email</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email">
+                                <input type="email" class="form-control" id="exampleInputEmail1" name="mail" aria-describedby="emailHelp" placeholder="email">
                             </div>
                             <label for="formGroupExampleInput" class="form-label">Hasło</label>
                             <div class="mb-3 eye-toggle">
 
-                                <input type="password" class="form-control" id="add_user" placeholder="hasło" value="" required /><i class="bi bi-eye-slash" id="add_user_toggle"></i>
+                                <input type="password" class="form-control" id="add_user" placeholder="hasło" name="haslo" value="" required /><i class="bi bi-eye-slash" id="add_user_toggle"></i>
                             </div>
                             <div class="mb-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Administrator" checked>
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        Administrator
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="Pracownik">
-                                    <label class="form-check-label" for="exampleRadios2">
-                                        Pracownik
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="Klient">
+                                    <input class="form-check-input" type="radio" name="typ" id="exampleRadios3" value="1" checked>
                                     <label class="form-check-label" for="exampleRadios3">
                                         Klient
                                     </label>
                                 </div>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="typ" id="exampleRadios2" value="2">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Pracownik
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="typ" id="exampleRadios1" value="3">
+                                <label class="form-check-label" for="exampleRadios1">
+                                    Administrator
+                                </label>
                             </div>
                         </div>
                         <div class="modal-footer">

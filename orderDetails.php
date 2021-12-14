@@ -97,7 +97,7 @@ include_once "header.php"; ?>
                             <input type="text" value="' . $result['miasto'] . '" class="form-control c-orderDetails-form__form-input" name="inputcity" placeholder="Miejscowość" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" value="' . $result['kod_pocztowy'] . '" class="form-control c-orderDetails-form__form-input" name="inputpostalcode" placeholder="Kod pocztowy" required>
+                            <input type="text" value="' . $result['kod_pocztowy'] . '" pattern="^[0-9]{2}-[0-9]{3}$" class="form-control c-orderDetails-form__form-input" name="inputpostalcode" placeholder="Kod pocztowy" required>
                         </div>
                         <div class="form-group">
                             <input type="email" value="' . $result['mail'] . '" class="form-control c-orderDetails-form__form-input" name="inputemail" placeholder="Email" required disabled>
@@ -116,7 +116,7 @@ include_once "header.php"; ?>
                             <input type="text" class="form-control c-orderDetails-form__form-input" name="inputcity" placeholder="Miejscowość" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control c-orderDetails-form__form-input" name="inputpostalcode" placeholder="Kod pocztowy" required>
+                            <input type="text" class="form-control c-orderDetails-form__form-input" name="inputpostalcode" pattern="^[0-9]{2}-[0-9]{3}$" placeholder="Kod pocztowy" required>
                         </div>
                         <div class="form-group">
                             <input type="email" class="form-control c-orderDetails-form__form-input" name="inputemail" placeholder="Email" required>

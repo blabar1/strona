@@ -13,7 +13,7 @@
             <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
         </button>
         <a class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold" href="index.php">Panel sterowania</a>
-        <h5 style="color:red">Sadly still work in progress but Kategoria table add and delete works :)</h5>
+        <h5 style="color:red"><marquee>Sadly still work in progress but Kategoria table add and delete works :)</marquee></h5>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavBar" aria-controls="topNavBar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

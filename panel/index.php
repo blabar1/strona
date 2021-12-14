@@ -8,28 +8,30 @@
 
 <body>
   <?php
-    if(isset($_POST['DODAJ'])){
-      move_uploaded_file($_FILES['miniaturka']['tmp_name'], "../images/produkty/".$_FILES['miniaturka']['name']);
-      $conn->query("INSERT INTO `produkt`( `nazwa`, `cena`, `ilosc`, `opis`, `miniaturka`, `kategoria`) VALUES ('".$_POST['nazwa']."','".$_POST['cena']."','".$_POST['ilosc']."','".$_POST['opis']."','".$_FILES['miniaturka']['name']."','".$_POST['kategoria']."')");
-      $query = $conn->query("SELECT max(id_produkt) as id FROM produkt");
-      $result = $query->fetch(PDO::FETCH_ASSOC);
-      for($i=0;$i<sizeof($_POST['wlasnosc']);$i++){
-        $conn->query("INSERT INTO `produkt_wlasciwosc`(`produkt`, `nazwa_wlasciwosc`, `wartosc`) VALUES ('".$result['id']."','".$_POST['wlasnosc'][$i]."','".$_POST['wartosc'][$i]."')");
-      }
-      mkdir("../images/produkty/".$result['id']);
-      for($i=0;$i<sizeof($_FILES['galeria']['name']);$i++){
-        $conn->query("INSERT INTO `galeria_zdjec`(`plik`, `produkt`) VALUES ('".$_FILES['galeria']['name'][$i]."','".$result['id']."')");
-        move_uploaded_file($_FILES['galeria']['tmp_name'][$i], "../images/produkty/".$result['id']."/".$_FILES['galeria']['name'][$i]);
-      }
+  if (isset($_POST['DODAJ'])) {
+    move_uploaded_file($_FILES['miniaturka']['tmp_name'], "../images/produkty/" . $_FILES['miniaturka']['name']);
+    $conn->query("INSERT INTO `produkt`( `nazwa`, `cena`, `ilosc`, `opis`, `miniaturka`, `kategoria`) VALUES ('" . $_POST['nazwa'] . "','" . $_POST['cena'] . "','" . $_POST['ilosc'] . "','" . $_POST['opis'] . "','" . $_FILES['miniaturka']['name'] . "','" . $_POST['kategoria'] . "')");
+    $query = $conn->query("SELECT max(id_produkt) as id FROM produkt");
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    for ($i = 0; $i < sizeof($_POST['wlasnosc']); $i++) {
+      $conn->query("INSERT INTO `produkt_wlasciwosc`(`produkt`, `nazwa_wlasciwosc`, `wartosc`) VALUES ('" . $result['id'] . "','" . $_POST['wlasnosc'][$i] . "','" . $_POST['wartosc'][$i] . "')");
     }
-    if(isset($_POST['USUN'])){
-      $query = $conn->query("SELECT miniaturka FROM produkt WHERE id_produkt = '".$_POST['id']."'");
-      $result = $query->fetch(PDO::FETCH_ASSOC);
-      unlink("../images/produkty/".$result['miniaturka']);
-      array_map('unlink', glob("../images/produkty/".$_POST['id']."/*.*"));
-      rmdir("../images/produkty/".$_POST['id']);
-      $conn->query("DELETE FROM produkt WHERE id_produkt = '".$_POST['id']."'");
+    mkdir("../images/produkty/" . $result['id']);
+    for ($i = 0; $i < sizeof($_FILES['galeria']['name']); $i++) {
+      $conn->query("INSERT INTO `galeria_zdjec`(`plik`, `produkt`) VALUES ('" . $_FILES['galeria']['name'][$i] . "','" . $result['id'] . "')");
+      move_uploaded_file($_FILES['galeria']['tmp_name'][$i], "../images/produkty/" . $result['id'] . "/" . $_FILES['galeria']['name'][$i]);
     }
+    print('<script>alert("Produkt dodany pomyślnie."); window.location.href = "index.php";</script>');
+  }
+  if (isset($_POST['USUN'])) {
+    $query = $conn->query("SELECT miniaturka FROM produkt WHERE id_produkt = '" . $_POST['id'] . "'");
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    unlink("../images/produkty/" . $result['miniaturka']);
+    array_map('unlink', glob("../images/produkty/" . $_POST['id'] . "/*.*"));
+    rmdir("../images/produkty/" . $_POST['id']);
+    $conn->query("DELETE FROM produkt WHERE id_produkt = '" . $_POST['id'] . "'");
+    print('<script>alert("Produkt usunięty pomyślnie."); window.location.href = "index.php";</script>');
+  }
   ?>
 
   <!-- offcanvas -->
@@ -263,7 +265,7 @@
             <h5 class="modal-title" id="exampleModalLabel">Dodawanie Produktu</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <form enctype = "multipart/form-data" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="dod">
+          <form enctype="multipart/form-data" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="dod">
             <div class="modal-body">
 
               <div class="mb-3">
@@ -310,21 +312,21 @@
                 </select>
               </div>
               <div id="allspec">
-              <label for="formGroupExampleInput2" class="form-label" >Specyfikacja</label>
-                <div id='spec' class="mb-3" >
-                  
+                <label for="formGroupExampleInput2" class="form-label">Specyfikacja</label>
+                <div id='spec' class="mb-3">
+
                   <div style="display: flex;">
-                  <select class="form-control" style="width: 48%; margin-right: 4%" name="wlasnosc[]" required>
-                    <option selected disabled hidden value="">Przykład</option>
-                    <?php
-                    $query = $conn->query('Select id_wlasciwosc, nazwa from wlasciwosc');
-                    $result = $query->fetchAll(\PDO::FETCH_ASSOC);
-                    foreach ($result as $record) {
-                      print("<option value=" . $record['id_wlasciwosc'] . ">" . $record['nazwa'] . "</option>");
-                    }
-                    ?>
-                  </select>
-                  <input type = "text" class="form-control" name="wartosc[]" placeholder="wartosc" style="width: 48%" required>
+                    <select class="form-control" style="width: 48%; margin-right: 4%" name="wlasnosc[]" required>
+                      <option selected disabled hidden value="">Przykład</option>
+                      <?php
+                      $query = $conn->query('Select id_wlasciwosc, nazwa from wlasciwosc');
+                      $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+                      foreach ($result as $record) {
+                        print("<option value=" . $record['id_wlasciwosc'] . ">" . $record['nazwa'] . "</option>");
+                      }
+                      ?>
+                    </select>
+                    <input type="text" class="form-control" name="wartosc[]" placeholder="wartosc" style="width: 48%" required>
                   </div>
                 </div>
               </div>
