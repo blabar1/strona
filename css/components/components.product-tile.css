@@ -37,14 +37,24 @@ html {
 .c-product-tile__category {
     font-size: 14px;
     font-weight: bold;
-    padding-bottom: 8px;
+    padding: 8px;
 }
 
 
 
 .c-product-tile__name {
-    padding:8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-right: 8px;
     font-size: 14px;
+    max-height:43px;
+    min-height:43px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom:10px;
+    
 }
 
 .c-product-tile__price {

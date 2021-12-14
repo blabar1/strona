@@ -166,6 +166,7 @@
                                         <th>kod_pocztowy</th>
                                         <th>mail</th>
                                         <th>dostawa</th>
+                                        <th>metoda</th>
                                         <th>data_zlozenia</th>
                                         <th>data_wyslania</th>
                                         <th>koszt</th>
@@ -202,6 +203,9 @@
                                         echo $rekord["dostawa"];
                                         print("</td>");
                                         print("</td><td>");
+                                        echo $rekord["metoda"];
+                                        print("</td>");
+                                        print("</td><td>");
                                         echo $rekord["data_zlozenia"];
                                         print("</td>");
                                         print("</td><td>");
@@ -234,13 +238,22 @@
                                                     $query = $conn->query("SELECT id_produkt, produkt.nazwa, produkt.cena, produkt.miniaturka, zamowienie_produkt.ilosc FROM produkt INNER JOIN zamowienie_produkt ON produkt.id_produkt = zamowienie_produkt.produkt WHERE zamowienie = '" . $rekord['id_zamowienia'] . "'");
                                                     $result = $query->fetchAll(\PDO::FETCH_ASSOC);
                                                     foreach ($result as $rekord) {
+                                                        get_element("elements/element-orders-orderedItem.php", array(
+                                                            'thumbnail' => "images/produkty/" . $rekord['miniaturka'],
+                                                            'name' => $rekord['nazwa'],
+                                                            'price' => $rekord['cena'],
+                                                            'quantity' => $rekord['ilosc'],
+                                                            'id' => $rekord['id_produkt']
+                                                        ));
                 
-                                                        print('<div class="row" style="margin:0!important;"><div class="modal-order__title  col-12">Thumbnail produktu:</div><div class="row"><img class="col-xl-6 col-lg-6 col-md-12 col-sm-12" src="../images/produkty/' . $rekord['miniaturka'] . '"><div class="col-xl-6 col-lg-6 col-md-12 col-sm-12"> Nazwa produktu: ' . $rekord['nazwa'] . ' <br>Ilosc zamówionych sztuk: ' . $rekord['ilosc'] . '</div></div></div>');
+                                                       
                                                     }
-                
-                
+                                                    $query = $conn->query("Select koszt from zamowienie WHERE id_zamowienia ='".$rekord["id_zamowienie"]."'");
+                                                    $result = $query->fetch(\PDO::FETCH_ASSOC);
                                                     print('</div>
                                                                     <div class="modal-footer">
+                                                                    
+                                                                    <div class="modal-order__price">'. $result['koszt'].'</div>
                                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
                                                                     </div>
                                                             </div>
@@ -264,6 +277,7 @@
                                         <th>kod_pocztowy</th>
                                         <th>mail</th>
                                         <th>dostawa</th>
+                                        <th>metoda</th>
                                         <th>data_zlozenia</th>
                                         <th>data_wyslania</th>
                                         <th>koszt</th>

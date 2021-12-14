@@ -39,7 +39,7 @@ include_once "templates/menu.php"; ?>
                         }
                         print('<div class="c-ordersPage-container-footer">
                         <h6>Koszt zamówienia: ' . $row['koszt'] . ' zł</h6>
-                    </div>');
+                    </div></div>');
                     }
                 }
             } else {
@@ -50,6 +50,7 @@ include_once "templates/menu.php"; ?>
         </div>
     </div>
 </div>
+        
 </div>
 
 

@@ -4,6 +4,7 @@
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="../css/arkusz.css" />
+    <link rel="stylesheet" href="css/component.orderedItem-list.css" />
     <title>Panel admina</title>
 </head> <!-- top navigation bar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -20,4 +21,5 @@
         <button type="button" class="btn c-modal-button" style="background-color:var(--orange); color:white;"><a class="o-href" href="../index.php">Powrót do strony sklepu</a></button>
     </div>
 </nav>
+<?php include("functions.php");?>
 <!-- top navigation bar -->
