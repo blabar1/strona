@@ -217,9 +217,10 @@
                                         print("</td><td>");
                                         echo "<div class='functional-buttons'><button data-bs-toggle='modal' data-bs-target='#exampleModal" . $rekord['id_zamowienia'] . "' name='zamowienie-szczegoly' class='submit  btn btn-primary edycja' value='" . $rekord['id_zamowienia'] . "'>szczegóły</button><form  method='post' action='Konta.php' ><button type='submit' onclick='return confirm(`Czy napewno chcesz usunac konto uzytkownika " . $rekord['id_zamowienia'] . " " . $rekord['id_zamowienia'] . " ?`);'  class='submit  btn btn-primary edycja' value='" . $rekord['id_zamowienia'] . "'>usun</button></form></div>";
                                         print("</td>");
+                                       
                                     }
                                     print("</tr>");
-
+                                    foreach ($result as $rekord) {
                                     print('
                                     <div class="modal fade" id="exampleModal' . $rekord["id_zamowienia"] . '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
@@ -230,22 +231,26 @@
                                                 </div>
                                                 
                                                     <div class="modal-body modal-order__desc">');
-
-                                    $query = $conn->query("SELECT id_produkt, produkt.nazwa, produkt.cena, produkt.miniaturka, zamowienie_produkt.ilosc FROM produkt INNER JOIN zamowienie_produkt ON produkt.id_produkt = zamowienie_produkt.produkt WHERE zamowienie = '" . $rekord['id_zamowienia'] . "'");
-                                    $result = $query->fetchAll(\PDO::FETCH_ASSOC);
-                                    foreach ($result as $rekord) {
-
-                                        print('<div class="modal-order__element"><div class="modal-order__title">Thumbnail produktu:</div><img style="width:400px; height:100%;" src="../images/produkty/' . $rekord['miniaturka'] . '"><div class=""> Nazwa produktu: ' . $rekord['nazwa'] . ' Ilosc zamówionych sztuk: ' . $rekord['ilosc'] . '</div></div>');
+                                                    $query = $conn->query("SELECT id_produkt, produkt.nazwa, produkt.cena, produkt.miniaturka, zamowienie_produkt.ilosc FROM produkt INNER JOIN zamowienie_produkt ON produkt.id_produkt = zamowienie_produkt.produkt WHERE zamowienie = '" . $rekord['id_zamowienia'] . "'");
+                                                    $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+                                                    foreach ($result as $rekord) {
+                
+                                                        print('<div class="row" style="margin:0!important;"><div class="modal-order__title  col-12">Thumbnail produktu:</div><div class="row"><img class="col-xl-6 col-lg-6 col-md-12 col-sm-12" src="../images/produkty/' . $rekord['miniaturka'] . '"><div class="col-xl-6 col-lg-6 col-md-12 col-sm-12"> Nazwa produktu: ' . $rekord['nazwa'] . ' <br>Ilosc zamówionych sztuk: ' . $rekord['ilosc'] . '</div></div></div>');
+                                                    }
+                
+                
+                                                    print('</div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>');
                                     }
 
+                                   
 
-                                    print('</div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>');
+                              
                                     ?>
 
                                 </tbody>

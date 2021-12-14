@@ -25,6 +25,7 @@ border-bottom-right-radius: 24px;
 
 .input-group-container__category{
 border-color: white;
+-moz-background-color: white!important;
 width: auto;
 max-width: 170px;
 text-align: left;

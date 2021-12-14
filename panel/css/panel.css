@@ -173,3 +173,7 @@ font-family: "Lato", sans-serif;
 .modal-order__title{
  width:auto;
 }
+
+.modal-order__element{
+    display:flex;
+}
