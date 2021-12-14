@@ -46,7 +46,7 @@ if (isset($_POST['USUN'])) {
                         </a>
                     </li>
                     <li>
-                        <a href="Konta.php" class="nav-link px-3 active ">
+                        <a href="Konta.php" class="nav-link px-3 active">
                             <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Konta</span>
                         </a>
@@ -64,9 +64,11 @@ if (isset($_POST['USUN'])) {
                         </a>
                     </li>
                     <li>
-                        <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
-                            Tabele
-                        </div>
+                    <li>
+                        <a href="Właściwości.php" class="nav-link px-3">
+                            <span class="me-2"><i class="bi bi-table"></i></span>
+                            <span>Właściwości</span>
+                        </a>
                     </li>
 
                     <li>
@@ -136,7 +138,7 @@ if (isset($_POST['USUN'])) {
             <div class="col-md-12 mb-3">
                 <div class="card">
                     <div class="card-header">
-                        <span><i class="bi bi-table me-2"></i></span> Data Table
+                        <span><i class="bi bi-table me-2"></i></span> Konta
                         <div class="float-right">
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">

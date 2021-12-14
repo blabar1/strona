@@ -34,12 +34,27 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
                          }
                         
                         get_element("elements/element-order-afterBuy.php", array(
+<<<<<<< HEAD
                             'ordererName' => $result['imie'],
                             'deliveryMethod' => $result['dostawa'],
                             'adress' => $result['adres'].", ".$result['miasto']." ".$result['kod_pocztowy'],
                             'ordererSurname' => $result['nazwisko'],
                             'paymentMethod' => $result['metoda'],
                             'wholeCost' => $result['koszt']
+=======
+                            'thumbnail' => "images/produkty/p1.jpg",
+                            'name' => "nazwa LMAO",
+                            'price' => "Ano niezła cena",
+                            'quantity' => "4 szt",
+                            'id' => "XDDDDDD",
+                            'ordererName' => "Błażej ogółem",
+                            'deliveryMethod' => 'no nie przelew bo karty nie mam :(',
+                            'adress' => 'Kotun Boży',
+                            'city'  => 'Radom',
+                            'ordererSurname' => "Breja",
+                            'paymentMethod' => 'żywa gotówa',
+                            'wholeCost' => 'za dużo laptopy kosztuja'
+>>>>>>> d90eab88fcda219e0df6a78861d70becbd650ebc
                         ));
                         ?>
 

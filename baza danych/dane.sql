@@ -157,7 +157,7 @@ INSERT INTO `produkt_wlasciwosc`(`produkt`, `nazwa_wlasciwosc`, `wartosc`) VALUE
 (1,2,"16 Gb"),
 (1,5,"512 Gb"),
 (1,4,"Intel i5"),
-(5,6,"PlayStation 5"),
+(5,6,"PlayStation 4"),
 (13,6,"PlayStation 4"),
 (15,6,"PC"),
 (11,6,"PC"),
