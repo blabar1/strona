@@ -7,14 +7,14 @@
     if (isset($_POST['DODAJ'])) {
         $conn->query("INSERT INTO `kategoria`(`nazwa`, `miniaturka`, `nadkategoria`) VALUES ('" . $_POST['kat'] . "','" . $_FILES['plik']['name'] . "','" . $_POST['nadkat'] . "')");
         move_uploaded_file($_FILES['plik']['tmp_name'], "../images/kategorie/" . $_FILES['plik']['name']);
-        print('<script>alert("Kategoria dodana pomyślnie."); window.location.href = "index.php";</script>');
+        print('<script>alert("Kategoria dodana pomyślnie."); window.location.href = "Kategorie.php";</script>');
     }
     if (isset($_POST['USUN'])) {
         $query = $conn->query("SELECT miniaturka FROM kategoria WHERE id_kategoria = '" . $_POST['id'] . "'");
         $result = $query->fetch(PDO::FETCH_ASSOC);
         unlink("../images/kategorie/" . $result['miniaturka']);
         $conn->query("DELETE FROM kategoria WHERE id_kategoria = '" . $_POST['id'] . "'");
-        print('<script>alert("Kategoria usunięta pomyślnie."); window.location.href = "index.php";</script>');
+        print('<script>alert("Kategoria usunięta pomyślnie."); window.location.href = "Kategorie.php";</script>');
     }
     ?>
     <!-- offcanvas -->

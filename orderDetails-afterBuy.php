@@ -27,6 +27,7 @@ include_once "templates/menu.php"; ?>
                             'ordererName' => "Błażej ogółem",
                             'deliveryMethod' => 'no nie przelew bo karty nie mam :(',
                             'adress' => 'Kotun Boży',
+                            'city'  => 'Radom',
                             'ordererSurname' => "Breja",
                             'paymentMethod' => 'żywa gotówa',
                             'wholeCost' => 'za dużo laptopy kosztuja'
