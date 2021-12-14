@@ -4,6 +4,7 @@
 @import "arkusz.css";
 @import "menu.css";
 @import "orderDetails.css";
+@import "orderDetails-afterBuy.css";
 @import "components/components.product-tile.css";
 @import "components/components.category-tile.css";
 @import "components/components.strength-meter.css";

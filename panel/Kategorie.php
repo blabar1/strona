@@ -3,20 +3,20 @@
 
 <body onload="formreset()">
     <?php include_once "topBar.php"; ?>
-<?php
-    if(isset($_POST['DODAJ'])){
-        $conn->query("INSERT INTO `kategoria`(`nazwa`, `miniaturka`, `nadkategoria`) VALUES ('".$_POST['kat']."','".$_FILES['plik']['name']."','".$_POST['nadkat']."')");
-        move_uploaded_file($_FILES['plik']['tmp_name'], "../images/kategorie/".$_FILES['plik']['name']);
+    <?php
+    if (isset($_POST['DODAJ'])) {
+        $conn->query("INSERT INTO `kategoria`(`nazwa`, `miniaturka`, `nadkategoria`) VALUES ('" . $_POST['kat'] . "','" . $_FILES['plik']['name'] . "','" . $_POST['nadkat'] . "')");
+        move_uploaded_file($_FILES['plik']['tmp_name'], "../images/kategorie/" . $_FILES['plik']['name']);
         print('<script>alert("Kategoria dodana pomyślnie."); window.location.href = "index.php";</script>');
     }
-    if(isset($_POST['USUN'])){
-        $query = $conn->query("SELECT miniaturka FROM kategoria WHERE id_kategoria = '".$_POST['id']."'");
+    if (isset($_POST['USUN'])) {
+        $query = $conn->query("SELECT miniaturka FROM kategoria WHERE id_kategoria = '" . $_POST['id'] . "'");
         $result = $query->fetch(PDO::FETCH_ASSOC);
-        unlink("../images/kategorie/".$result['miniaturka']);
-        $conn->query("DELETE FROM kategoria WHERE id_kategoria = '".$_POST['id']."'");
+        unlink("../images/kategorie/" . $result['miniaturka']);
+        $conn->query("DELETE FROM kategoria WHERE id_kategoria = '" . $_POST['id'] . "'");
         print('<script>alert("Kategoria usunięta pomyślnie."); window.location.href = "index.php";</script>');
     }
-?>
+    ?>
     <!-- offcanvas -->
     <div class="offcanvas offcanvas-start sidebar-nav bg-dark" tabindex="-1" id="sidebar">
         <div class="offcanvas-body p-0">
@@ -28,13 +28,13 @@
                         </div>
                     </li>
                     <li>
-                        <a href="index.php" class="nav-link px-3">
+                        <a href="index.php" class="nav-link px-3 ">
                             <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Produkty</span>
                         </a>
                     </li>
                     <li>
-                        <a href="Konta.php" class="nav-link px-3">
+                        <a href="Konta.php" class="nav-link px-3  ">
                             <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Konta</span>
                         </a>
@@ -46,48 +46,11 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link px-3">
+                        <a href="Zamówienia-pracownik.php" class="nav-link px-3 ">
                             <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
+                            <span>Zamówienia</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
-                        </a>
-                    </li>
-
                     <li>
                         <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
                             Tabele
@@ -247,7 +210,7 @@
                         <h5 class="modal-title" id="exampleModalLabel">Dodawanie kategori</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form  enctype = "multipart/form-data" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="dod" >
+                    <form enctype="multipart/form-data" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="dod">
                         <div class="modal-body">
 
                             <div class="mb-3">
@@ -257,7 +220,7 @@
 
                             <div class="mb-3">
                                 <label for="formGroupExampleInput" class="form-label">Miniaturka</label>
-                                <div class="file-drop-area-category" > <span class="btn btn-primary " >Wybierz plik</span> <span class="file-message" id="divImageMediaPreview3">albo upuść tutaj</span> <input name="plik" type="file" class="file-input-category" accept=".jfif,.jpg,.jpeg,.png,.gif" required /> </div>
+                                <div class="file-drop-area-category"> <span class="btn btn-primary ">Wybierz plik</span> <span class="file-message" id="divImageMediaPreview3">albo upuść tutaj</span> <input name="plik" type="file" class="file-input-category" accept=".jfif,.jpg,.jpeg,.png,.gif" required /> </div>
                                 <div id=> </div>
                             </div>
                             <div class="mb-3">

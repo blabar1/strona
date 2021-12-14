@@ -1,0 +1,15 @@
+.c-ordersPage-container-footer-desc__title{
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 12px;
+    padding-bottom: 10px;
+  
+
+}
+.c-ordersPage-container-footer-desc-block{
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    margin-bottom:12px;
+
+}

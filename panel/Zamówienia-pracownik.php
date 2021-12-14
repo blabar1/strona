@@ -25,7 +25,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="Konta.php" class="nav-link px-3 active">
+                        <a href="Konta.php" class="nav-link px-3 ">
                             <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Konta</span>
                         </a>
@@ -37,45 +37,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link px-3">
+                        <a href="Zamówienia-pracownik.php" class="nav-link px-3 active">
                             <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
+                            <span>Zamówienia</span>
                         </a>
                     </li>
 
@@ -168,7 +132,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
+
                                     <?php
                                     $query = $conn->query("Select * from zamowienie");
                                     $result = $query->fetchAll(\PDO::FETCH_ASSOC);
@@ -190,20 +154,19 @@
                                         print("</td>");
                                         print("</td><td>");
                                         print("<select name=''>
-                                        <option selected value='".$rekord["status"]."'>".$rekord["status"]."</option>
+                                        <option selected value='" . $rekord["status"] . "'>" . $rekord["status"] . "</option>
                                         <option value=''></option>
                                         <option value=''></option>
                                         </select>");
                                         print("</td>");
 
                                         print("</td><td>");
-                                        echo "<div class='functional-buttons'><button data-bs-toggle='modal' data-bs-target='#exampleModal" . $rekord['id_zamowienia'] . "' name='zamowienie-szczegoly' class='submit  btn btn-primary edycja' value='" . $rekord['id_zamowienia'] . "'>szczegóły</button><form  method='post' action='Konta.php' ><button type='submit' onclick='return confirm(`Czy napewno chcesz usunac konto uzytkownika " . $rekord['id_zamowienia'] . " " . $rekord['id_zamowienia'] . " ?`);'  class='submit  btn btn-primary edycja' value='" . $rekord['id_zamowienia'] . "'>usun</button></form></div>";
+                                        echo "<div class='functional-buttons'><button data-bs-toggle='modal' data-bs-target='#exampleModal" . $rekord['id_zamowienia'] . "' name='zamowienie-szczegoly' class='submit  btn btn-primary edycja' value='" . $rekord['id_zamowienia'] . "'>szczegóły</button></div>";
                                         print("</td>");
-                                       
                                     }
                                     print("</tr>");
                                     foreach ($result as $rekord) {
-                                    print('
+                                        print('
                                     <div class="modal fade" id="exampleModal' . $rekord["id_zamowienia"] . '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
@@ -214,34 +177,32 @@
                                                 
                                                     <div class="modal-body" style="padding: 0;">
                                                     <div class="modal-order__desc row">
-                                                    <div class="modal-order__desc-element modal-order__desc-name col-4"><div class="modal-sub-title">Imie: </div>'. $rekord["imie"] .'</div>
-                                                    <div class="modal-order__desc-element modal-order__desc-delivery col-4"><div class="modal-sub-title">Metoda dostawy: </div>'. $rekord["dostawa"] .'</div>
-                                                    <div class="modal-order__desc-element modal-order__desc-address col-4"><div class="modal-sub-title">Adres: </div> '. $rekord["adres"] .', '. $rekord["miasto"] .' '. $rekord["kod_pocztowy"] .'</div>
-                                                    <div class="modal-order__desc-element modal-order__desc-surname col-4"><div class="modal-sub-title">Nazwisko: </div>'. $rekord["nazwisko"] .'</div>
+                                                    <div class="modal-order__desc-element modal-order__desc-name col-4"><div class="modal-sub-title">Imie: </div>' . $rekord["imie"] . '</div>
+                                                    <div class="modal-order__desc-element modal-order__desc-delivery col-4"><div class="modal-sub-title">Metoda dostawy: </div>' . $rekord["dostawa"] . '</div>
+                                                    <div class="modal-order__desc-element modal-order__desc-address col-4"><div class="modal-sub-title">Adres: </div> ' . $rekord["adres"] . ', ' . $rekord["miasto"] . ' ' . $rekord["kod_pocztowy"] . '</div>
+                                                    <div class="modal-order__desc-element modal-order__desc-surname col-4"><div class="modal-sub-title">Nazwisko: </div>' . $rekord["nazwisko"] . '</div>
                                                 
-                                                    <div class="modal-order__desc-element modal-order__desc-method col-4"><div class="modal-sub-title">Metoda płatności: </div>'. $rekord["metoda"] .'</div>
+                                                    <div class="modal-order__desc-element modal-order__desc-method col-4"><div class="modal-sub-title">Metoda płatności: </div>' . $rekord["metoda"] . '</div>
                                                     </div>');
-                                                    
 
 
-                                                    $query = $conn->query("SELECT zamowienie, id_produkt, produkt.nazwa, produkt.cena, produkt.miniaturka, zamowienie_produkt.ilosc FROM produkt INNER JOIN zamowienie_produkt ON produkt.id_produkt = zamowienie_produkt.produkt WHERE zamowienie = '" . $rekord['id_zamowienia'] . "'");
-                                                    $result = $query->fetchAll(\PDO::FETCH_ASSOC);
-                                                    foreach ($result as $rekord) {
-                                                        $id = $rekord["zamowienie"];
-                                                        get_element("elements/element-orders-orderedItem.php", array(
-                                                            'thumbnail' => "images/produkty/" . $rekord['miniaturka'],
-                                                            'name' => $rekord['nazwa'],
-                                                            'price' => $rekord['cena'],
-                                                            'quantity' => $rekord['ilosc'],
-                                                            'id' => $rekord['id_produkt']
-                                                        ));
-                
-                                                       
-                                                    }
-                                                    $query = $conn->query("Select koszt from zamowienie WHERE id_zamowienia ='".$id."'");
-                                                    $result = $query->fetch(\PDO::FETCH_ASSOC);
-                                                    
-                                                    print(' <div class="modal-order__price">Łączna cena zamówienia wraz z dostawą:  '. $result['koszt'].' zl</div></div>
+
+                                        $query = $conn->query("SELECT zamowienie, id_produkt, produkt.nazwa, produkt.cena, produkt.miniaturka, zamowienie_produkt.ilosc FROM produkt INNER JOIN zamowienie_produkt ON produkt.id_produkt = zamowienie_produkt.produkt WHERE zamowienie = '" . $rekord['id_zamowienia'] . "'");
+                                        $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+                                        foreach ($result as $rekord) {
+                                            $id = $rekord["zamowienie"];
+                                            get_element("elements/element-orders-orderedItem.php", array(
+                                                'thumbnail' => "images/produkty/" . $rekord['miniaturka'],
+                                                'name' => $rekord['nazwa'],
+                                                'price' => $rekord['cena'],
+                                                'quantity' => $rekord['ilosc'],
+                                                'id' => $rekord['id_produkt']
+                                            ));
+                                        }
+                                        $query = $conn->query("Select koszt from zamowienie WHERE id_zamowienia ='" . $id . "'");
+                                        $result = $query->fetch(\PDO::FETCH_ASSOC);
+
+                                        print(' <div class="modal-order__price">Łączna cena zamówienia wraz z dostawą:  ' . $result['koszt'] . ' zl</div></div>
                                                                     <div class="modal-footer">
                                                                     
                                                                    
@@ -253,15 +214,15 @@
                                                         </div>');
                                     }
 
-                                   
 
-                              
+
+
                                     ?>
 
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                    <th>id_zamowienia</th>
+                                        <th>id_zamowienia</th>
                                         <th>mail</th>
                                         <th>data_zlozenia</th>
                                         <th>data_wyslania</th>

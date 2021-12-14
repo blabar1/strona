@@ -11,7 +11,7 @@ if (isset($_POST['DODAJ'])) {
         $hash = password_hash($_POST['haslo'], PASSWORD_BCRYPT);
         $mail = $_POST['mail'];
         $register = $conn->query("INSERT INTO dane_logowania (`mail`, `haslo`) VALUES ('" . $mail . "', '" . $hash . "')");
-        $conn->query("INSERT INTO `dane_konta`(`imie`, `nazwisko`, `adres`, `miasto`, `kod_pocztowy`, `konto_typ`, `mail`) VALUES ('" . $_POST['imie'] . "','" . $_POST['nazwisko'] . "','" . $_POST['adres'] . "','" . $_POST['miasto'] . "','" . $_POST['kod'] . "','" . $_POST['typ'] . "','" . $mail. "')");
+        $conn->query("INSERT INTO `dane_konta`(`imie`, `nazwisko`, `adres`, `miasto`, `kod_pocztowy`, `konto_typ`, `mail`) VALUES ('" . $_POST['imie'] . "','" . $_POST['nazwisko'] . "','" . $_POST['adres'] . "','" . $_POST['miasto'] . "','" . $_POST['kod'] . "','" . $_POST['typ'] . "','" . $mail . "')");
         print('<script>alert("Konto dodane pomyślnie."); window.location.href = "Konta.php";</script>');
     } catch (PDOException $ex) {
         if ($ex->errorInfo[1] == 1062) {
@@ -46,7 +46,7 @@ if (isset($_POST['USUN'])) {
                         </a>
                     </li>
                     <li>
-                        <a href="Konta.php" class="nav-link px-3 active">
+                        <a href="Konta.php" class="nav-link px-3 active ">
                             <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Konta</span>
                         </a>
@@ -58,53 +58,17 @@ if (isset($_POST['USUN'])) {
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link px-3">
+                        <a href="Zamówienia-pracownik.php" class="nav-link px-3 ">
                             <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
+                            <span>Zamówienia</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
-                        </a>
-                    </li>
-
                     <li>
                         <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
                             Tabele
                         </div>
                     </li>
+
                     <li>
                         <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#layouts">
                             <span class="me-2"><i class="bi bi-layout-split"></i></span>

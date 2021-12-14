@@ -46,65 +46,28 @@
           </li>
           <li>
             <a href="index.php" class="nav-link px-3 active">
-              <span class="me-2"><i class="bi bi-table"></i></span>
+              <span class="me-2"><i class="bi bi-table "></i></span>
               <span>Produkty</span>
             </a>
           </li>
           <li>
-            <a href="Konta.php" class="nav-link px-3">
+            <a href="Konta.php" class="nav-link px-3 ">
               <span class="me-2"><i class="bi bi-table"></i></span>
               <span>Konta</span>
             </a>
           </li>
           <li>
-            <a href="Kategorie.php" class="nav-link px-3">
+            <a href="Kategorie.php" class="nav-link px-3 ">
               <span class="me-2"><i class="bi bi-table"></i></span>
               <span>Kategorie</span>
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link px-3">
+            <a href="Zamówienia-pracownik.php" class="nav-link px-3 ">
               <span class="me-2"><i class="bi bi-table"></i></span>
-              <span>Produkty</span>
+              <span>Zamówienia</span>
             </a>
           </li>
-          <li>
-            <a href="#" class="nav-link px-3">
-              <span class="me-2"><i class="bi bi-table"></i></span>
-              <span>Produkty</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link px-3">
-              <span class="me-2"><i class="bi bi-table"></i></span>
-              <span>Produkty</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link px-3">
-              <span class="me-2"><i class="bi bi-table"></i></span>
-              <span>Produkty</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link px-3">
-              <span class="me-2"><i class="bi bi-table"></i></span>
-              <span>Produkty</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link px-3">
-              <span class="me-2"><i class="bi bi-table"></i></span>
-              <span>Produkty</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link px-3">
-              <span class="me-2"><i class="bi bi-table"></i></span>
-              <span>Produkty</span>
-            </a>
-          </li>
-
           <li>
             <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
               Tabele
