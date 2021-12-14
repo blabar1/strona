@@ -165,16 +165,3 @@ font-family: "Lato", sans-serif;
     justify-content: center;
 }
 
-.modal-order__desc{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-.modal-order__title{
- width:auto;
-}
-
-.modal-order__element{
-    display:flex;
-}
-

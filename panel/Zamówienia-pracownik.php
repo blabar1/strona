@@ -159,14 +159,7 @@
                                 <thead>
                                     <tr>
                                         <th>id_zamowienia</th>
-                                        <th>imie</th>
-                                        <th>nazwiksko</th>
-                                        <th>adres</th>
-                                        <th>miasto</th>
-                                        <th>kod_pocztowy</th>
                                         <th>mail</th>
-                                        <th>dostawa</th>
-                                        <th>metoda</th>
                                         <th>data_zlozenia</th>
                                         <th>data_wyslania</th>
                                         <th>koszt</th>
@@ -175,37 +168,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    
                                     <?php
                                     $query = $conn->query("Select * from zamowienie");
                                     $result = $query->fetchAll(\PDO::FETCH_ASSOC);
                                     foreach ($result as $rekord) {
                                         print("<tr><td>");
                                         echo $rekord["id_zamowienia"];
-                                        print("</td><td>");
-                                        echo $rekord["imie"];
-                                        print("</td>");
-                                        print("</td><td>");
-                                        echo $rekord["nazwisko"];
-                                        print("</td>");
-                                        print("</td><td>");
-                                        echo $rekord["adres"];
-                                        print("</td>");
-                                        print("</td><td>");
-                                        echo $rekord["miasto"];
-                                        print("</td>");
-                                        print("</td><td>");
-                                        echo $rekord["kod_pocztowy"];
                                         print("</td>");
                                         print("</td><td>");
                                         echo $rekord["mail"];
                                         print("</td>");
-                                        print("</td><td>");
-                                        echo $rekord["dostawa"];
-                                        print("</td>");
-                                        print("</td><td>");
-                                        echo $rekord["metoda"];
-                                        print("</td>");
-                                        print("</td><td>");
+                                        print("<td>");
                                         echo $rekord["data_zlozenia"];
                                         print("</td>");
                                         print("</td><td>");
@@ -215,7 +189,11 @@
                                         echo $rekord["koszt"];
                                         print("</td>");
                                         print("</td><td>");
-                                        echo $rekord["status"];
+                                        print("<select name=''>
+                                        <option selected value='".$rekord["status"]."'>".$rekord["status"]."</option>
+                                        <option value=''></option>
+                                        <option value=''></option>
+                                        </select>");
                                         print("</td>");
 
                                         print("</td><td>");
@@ -234,10 +212,22 @@
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 
-                                                    <div class="modal-body modal-order__desc">');
-                                                    $query = $conn->query("SELECT id_produkt, produkt.nazwa, produkt.cena, produkt.miniaturka, zamowienie_produkt.ilosc FROM produkt INNER JOIN zamowienie_produkt ON produkt.id_produkt = zamowienie_produkt.produkt WHERE zamowienie = '" . $rekord['id_zamowienia'] . "'");
+                                                    <div class="modal-body" style="padding: 0;">
+                                                    <div class="modal-order__desc row">
+                                                    <div class="modal-order__desc-element modal-order__desc-name col-4"><div class="modal-sub-title">Imie: </div>'. $rekord["imie"] .'</div>
+                                                    <div class="modal-order__desc-element modal-order__desc-delivery col-4"><div class="modal-sub-title">Metoda dostawy: </div>'. $rekord["dostawa"] .'</div>
+                                                    <div class="modal-order__desc-element modal-order__desc-address col-4"><div class="modal-sub-title">Adres: </div> '. $rekord["adres"] .', '. $rekord["miasto"] .' '. $rekord["kod_pocztowy"] .'</div>
+                                                    <div class="modal-order__desc-element modal-order__desc-surname col-4"><div class="modal-sub-title">Nazwisko: </div>'. $rekord["nazwisko"] .'</div>
+                                                
+                                                    <div class="modal-order__desc-element modal-order__desc-method col-4"><div class="modal-sub-title">Metoda płatności: </div>'. $rekord["metoda"] .'</div>
+                                                    </div>');
+                                                    
+
+
+                                                    $query = $conn->query("SELECT zamowienie, id_produkt, produkt.nazwa, produkt.cena, produkt.miniaturka, zamowienie_produkt.ilosc FROM produkt INNER JOIN zamowienie_produkt ON produkt.id_produkt = zamowienie_produkt.produkt WHERE zamowienie = '" . $rekord['id_zamowienia'] . "'");
                                                     $result = $query->fetchAll(\PDO::FETCH_ASSOC);
                                                     foreach ($result as $rekord) {
+                                                        $id = $rekord["zamowienie"];
                                                         get_element("elements/element-orders-orderedItem.php", array(
                                                             'thumbnail' => "images/produkty/" . $rekord['miniaturka'],
                                                             'name' => $rekord['nazwa'],
@@ -248,17 +238,19 @@
                 
                                                        
                                                     }
-                                                    $query = $conn->query("Select koszt from zamowienie WHERE id_zamowienia ='".$rekord["id_zamowienie"]."'");
+                                                    $query = $conn->query("Select koszt from zamowienie WHERE id_zamowienia ='".$id."'");
                                                     $result = $query->fetch(\PDO::FETCH_ASSOC);
-                                                    print('</div>
+                                                    
+                                                    print(' <div class="modal-order__price">Łączna cena zamówienia wraz z dostawą:  '. $result['koszt'].' zl</div></div>
                                                                     <div class="modal-footer">
                                                                     
-                                                                    <div class="modal-order__price">'. $result['koszt'].'</div>
-                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                                                                   
+                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
                                                                     </div>
                                                             </div>
                                                         </div>
-                                                    </div>');
+                                                   </div>
+                                                        </div>');
                                     }
 
                                    
@@ -269,15 +261,8 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>id_zamowienia</th>
-                                        <th>imie</th>
-                                        <th>nazwiksko</th>
-                                        <th>adres</th>
-                                        <th>miasto</th>
-                                        <th>kod_pocztowy</th>
+                                    <th>id_zamowienia</th>
                                         <th>mail</th>
-                                        <th>dostawa</th>
-                                        <th>metoda</th>
                                         <th>data_zlozenia</th>
                                         <th>data_wyslania</th>
                                         <th>koszt</th>

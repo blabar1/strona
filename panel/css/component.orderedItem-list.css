@@ -96,3 +96,28 @@ white-space: nowrap;
 font-weight: normal;
 text-decoration: none;
 }
+.modal-order__price{
+    display: flex;
+    justify-content: end;
+    padding: 24px 16px;
+
+}
+.modal-order__desc-element{
+    margin-bottom:24px;
+}
+
+.modal-order__desc{
+    margin:1rem;
+    border-bottom:1px solid #dee2e6;
+}
+
+.modal-order__title{
+    width:auto;
+   }
+   
+   .modal-order__element{
+       display:flex;
+   }
+.modal-sub-title{
+    font-weight: bold;
+}   

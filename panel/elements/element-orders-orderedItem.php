@@ -25,9 +25,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="c-ordersItem-list__price-container">
-                        <div class="c-ordersItem-list__price"><?php echo ($price . " zł"); ?></div>
-                    </div>
 
                 </div>
             </div>
