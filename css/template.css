@@ -46,3 +46,8 @@ padding-left:18px;
 .active{
     color:black;
 }
+@media only screen and (max-width: 991px) {
+    .c-template-container-nav{
+        display: none;
+    }
+}

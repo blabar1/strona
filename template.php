@@ -1,3 +1,21 @@
+<!-- Maciek to jest 1 elelment tak jakbydo krecenia na stronie ten co jest po lewej stronie 
+
+<div id="1-t">
+                        <div class="o-title">Tutaj dajemy tytuł 1</div>
+
+                        <div class="c-template-container-text">
+                            a tutaj tekst jest ogółem backend person
+
+
+                        </div>
+                        <div class="c-template-container-image">
+                            <img class="c-template-container-image-element" src="images/test.jpg">
+
+
+                        </div>
+                    </div>-->
+
+
 <?php
 
 use function PHPSTORM_META\map;
@@ -20,7 +38,7 @@ include_once "header.php"; ?>
 
                         </div>
                         <div class="c-template-container-image">
-                            <img class="c-template-container-image-element" src="images/test.jpg">
+                            <img class="c-template-container-image-element" src="images/komputerek.jpg">
 
 
                         </div>
@@ -42,6 +60,7 @@ include_once "header.php"; ?>
                     <div class="c-template-container-nav-title o-title">Spis treści</div>
                     <div class="c-template-container-nav-list">
                         <ol style="list-style:decimal;">
+                            <!-- Maciek tutaj petla na ilosc tytulow  -->
                             <li class="c-template-container-nav-list__element" id="1-s">tytul</li>
                             <li class="c-template-container-nav-list__element" id="2-s">tytul</li>
                         </ol>
@@ -54,11 +73,8 @@ include_once "header.php"; ?>
         </div>
     </div>
 </div>
-
-
-
-
 <script>
+    // Maciek tutaj trzeba petelke zrobic ale nie na szyje tylko zeby sie skrolowalo ladnie jak nacisnie
     $(document).ready(function() {
         $("#1-s").click(function() {
             $('html, body').animate({
