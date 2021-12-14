@@ -50,10 +50,7 @@
                             <span>Właściwości</span>
                         </a>
                     </li>
-                    <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
-                        Tabele
-                    </div>
-                    </li>
+
 
                     <li>
                         <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#layouts">

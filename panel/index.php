@@ -46,12 +46,12 @@
           </li>
           <li>
             <a href="index.php" class="nav-link px-3 active">
-              <span class="me-2"><i class="bi bi-table "></i></span>
+              <span class="me-2"><i class="bi bi-table"></i></span>
               <span>Produkty</span>
             </a>
           </li>
           <li>
-            <a href="Konta.php" class="nav-link px-3 ">
+            <a href="Konta.php" class="nav-link px-3  ">
               <span class="me-2"><i class="bi bi-table"></i></span>
               <span>Konta</span>
             </a>
@@ -69,10 +69,11 @@
             </a>
           </li>
           <li>
-            <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
-              Tabele
-            </div>
-          </li>
+          <li>
+            <a href="Właściwości.php" class="nav-link px-3 ">
+              <span class="me-2"><i class="bi bi-table"></i></span>
+              <span>Właściwości</span>
+            </a>
           <li>
             <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#layouts">
               <span class="me-2"><i class="bi bi-layout-split"></i></span>
