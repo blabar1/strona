@@ -120,7 +120,7 @@
 
                       print("</td>");
                       print("</td><td>");
-                      echo "<div class='functional-buttons'><form method='post' action='edycja.php' class='temp''><button type='submit' name='idksiazki_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_produkt'] . "'>edytuj</button></form><form  method='post' action='Produkty.php' ><input type='hidden' name='id' value='" . $rekord['id_produkt'] . "'><button type='submit' onclick='return confirm(`Czy napewno chcesz produkt " . $rekord['nazwa'] . " ?`);'  class='submit  btn btn-primary edycja' name='USUN' value='" . $rekord['id_produkt'] . "'>usun</button></form></div>";
+                      echo "<div class='functional-buttons'><form method='post' action='edycja-produktu.php' class='temp''><input type='hidden' name='id' value='" . $rekord['id_produkt'] . "'><button type='submit' name='idkategorii_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_produkt'] . "'>edytuj</button></form><form  method='post' action='Produkt.php' ><input type='hidden' name='id' value='" . $rekord['id_produkt'] . "'><button type='submit' onclick='return confirm(`Czy napewno chcesz usunąć produkt " . $rekord['nazwa'] . " ?`);'  class='submit  btn btn-primary edycja' name='USUN' value='" . $rekord['id_produkt'] . "'>usun</button></form></div>";
                       print("</td>");
                     }
                     print("</tr>");
