@@ -1,4 +1,8 @@
-<?php session_start() ?>
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+} ?>
+
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" />
 
