@@ -100,6 +100,13 @@ CREATE TABLE `zamowienie_status` (
   `nazwa` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `podstrona` (
+  `id_podstrona` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `tytul` varchar(64) NOT NULL,
+  `zdjecie` varchar(45) NOT NULL,
+  `tresc` TEXT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 ALTER TABLE dane_konta ADD FOREIGN KEY (mail) REFERENCES dane_logowania(mail) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE dane_konta ADD FOREIGN KEY (konto_typ) REFERENCES typ_konta(id_typ);
 ALTER TABLE koszyk ADD FOREIGN KEY (konto) REFERENCES dane_konta(id_konta) ON DELETE CASCADE;

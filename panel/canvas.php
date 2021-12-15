@@ -61,12 +61,12 @@
               <span>Magazyn</span>
             </a>
           </li>
-          <!-- <li>
+          <li>
             <a href="" class="nav-link px-3 ">
               <span class="me-2"><i class="bi bi-table"></i></span>
               <span>Podstrony</span>
             </a>
-          </li> -->
+          </li>
         </ul>
       </nav>
     </div>
