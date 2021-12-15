@@ -19,7 +19,7 @@ if (!isset($_SESSION)) {
         </button>
         <a class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold" href="index.php">Panel sterowania</a>
         <h5 style="color:red; width:auto;">
-            <marquee>Sadly still work in progress but Kategoria table add and delete works :)</marquee>
+            <marquee>Admin panel - wszystko działa dobrze :)</marquee>
         </h5>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavBar" aria-controls="topNavBar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

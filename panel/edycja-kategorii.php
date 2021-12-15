@@ -32,7 +32,7 @@
     <div>
         <<main class="mt-5 pt-3">
             <div class="o-title panel-title">
-                <h3>Edycja właściwości</h3>
+                <h3>Edycja kategori</h3>
             </div>
             <div class="container-fluid">
 

@@ -129,7 +129,7 @@ if (!isset($_SESSION['user'])) {
                             }
                         }
                         ?>
-                        <li class=""><a href="#">Podstrony</a></li>
+                        <li class=""><a href="subpages.php">Podstrony</a></li>
                         <li class="nav-item">
 
                             <a class="nav-link" href="basket.php">

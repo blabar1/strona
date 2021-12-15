@@ -122,7 +122,7 @@ if (isset($_POST['USUN'])) {
 
                                         print("</td>");
                                         print("</td><td>");
-                                        echo "<div class='functional-buttons'><form method='post' action='edycja.php' class='temp''><button type='submit' name='idkonta_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_konta'] . "'>edytuj</button></form><form  method='post' action='Konta.php' ><input type='hidden' name='id' value='" . $rekord['mail'] . "'><button type='submit' onclick='return confirm(`Czy napewno chcesz usunąć konto " . $rekord['mail'] . " ?`);'  class='submit  btn btn-primary edycja' name='USUN' value='" . $rekord['mail'] . "'>usun</button></form></div>";
+                                        echo "<div class='functional-buttons'><form method='post' action='edycja-konta.php' class='temp''><input type='hidden' name='id' value='" . $rekord['id_konta'] . "'><button type='submit' name='idkonta_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_konta'] . "'>edytuj</button></form><form  method='post' action='Konta.php' ><input type='hidden' name='id' value='" . $rekord['mail'] . "'><button type='submit' onclick='return confirm(`Czy napewno chcesz usunąć konto " . $rekord['mail'] . " ?`);'  class='submit  btn btn-primary edycja' name='USUN' value='" . $rekord['mail'] . "'>usun</button></form></div>";
                                         print("</td>");
                                     }
                                     print("</tr>");

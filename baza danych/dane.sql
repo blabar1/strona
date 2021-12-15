@@ -198,3 +198,8 @@ INSERT INTO `produkt_wlasciwosc`(`produkt`, `nazwa_wlasciwosc`, `wartosc`) VALUE
 (45,1,"Unitek");
 
 INSERT INTO `zamowienie_status`(`nazwa`) VALUES ('Oczekiwanie na weryfikację'), ('W trakcie realizacji'), ('Oczekiwanie na wysyłkę'), ('Wysłane'), ('Dostarczone');
+
+INSERT INTO `podstrona` (`id_podstrona`, `tytul`, `zdjecie`, `tresc`) VALUES
+(1, 'TEST', 'indeks.png', ' Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum'),
+(2, 'TEST', 'indeks.png', ' Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum'),
+(4, 'TEST12', 'dsusdjksj.jpg', 'weybgugyhdjbdjbdsjbjsdbjsbjbdsjbsdbsjdbjdsbjsdbjsbdjsdjbdsjbajbiaunilanu ');

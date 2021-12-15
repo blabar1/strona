@@ -9,46 +9,23 @@ include_once "header.php"; ?>
         <div class="o-title">Podstrony</div>
         <span class="o-separator"></span>
     </div>
+    <?php
+    $query = $conn->query("SELECT * FROM podstrona");
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    ?>
     <div class="">
         <div class="row">
             <div class="c-subPage-container">
-
-                <?php get_element("elements/element-subpage-tile.php", array(
-                    'thumbnail' => './images/produkty/p1.jpg',
-                    'title' => 'tytul',
-                    'description' => 'tresc strony tutaj to wiesz bedzie taki preview'
-                )); ?>
-                <?php get_element("elements/element-subpage-tile.php", array(
-                    'thumbnail' => './images/produkty/p1.jpg',
-                    'title' => 'tytul',
-                    'description' => 'tresc strony tutaj to wiesz bedzie taki preview'
-                )); ?>
-                <?php get_element("elements/element-subpage-tile.php", array(
-                    'thumbnail' => './images/produkty/p1.jpg',
-                    'title' => 'tytul',
-                    'description' => 'tresc strony tutaj to wiesz bedzie taki preview'
-                )); ?>
-                <?php get_element("elements/element-subpage-tile.php", array(
-                    'thumbnail' => './images/produkty/p1.jpg',
-                    'title' => 'tytul',
-                    'description' => 'tresc strony tutaj to wiesz bedzie taki preview'
-                )); ?>
-                <?php get_element("elements/element-subpage-tile.php", array(
-                    'thumbnail' => './images/produkty/p1.jpg',
-                    'title' => 'tytul',
-                    'description' => 'tresc strony tutaj to wiesz bedzie taki preview'
-                )); ?>
-                <?php get_element("elements/element-subpage-tile.php", array(
-                    'thumbnail' => './images/produkty/p1.jpg',
-                    'title' => 'tytul',
-                    'description' => 'tresc strony tutaj to wiesz bedzie taki preview'
-                )); ?>
-                <?php get_element("elements/element-subpage-tile.php", array(
-                    'thumbnail' => './images/produkty/p1.jpg',
-                    'title' => 'tytul',
-                    'description' => 'tresc strony tutaj to wiesz bedzie taki preview'
-                )); ?>
-
+                <?php 
+                foreach($result as $row){
+                    get_element("elements/element-subpage-tile.php", array(
+                        'thumbnail' => './images/podstrony/'.$row['zdjecie'],
+                        'title' => $row['tytul'],
+                        'description' => $row['tresc'],
+                        'id' => $row['id_podstrona']
+                    ));
+                }
+                 ?>
             </div>
         </div>
     </div>

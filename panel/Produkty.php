@@ -170,7 +170,7 @@
               </div>
               <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">Opis</label>
-                <label for="comment">Comment:</label>
+                <label for="comment"></label>
                 <textarea class="form-control" rows="5" id="description-item" name="opis" placeholder="Opis" required></textarea>
               </div>
               <div class="mb-3">

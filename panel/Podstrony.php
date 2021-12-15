@@ -5,16 +5,16 @@
     <?php include_once "topBar.php"; ?>
     <?php
     if (isset($_POST['DODAJ'])) {
-        $conn->query("INSERT INTO `kategoria`(`nazwa`, `miniaturka`, `nadkategoria`) VALUES ('" . $_POST['kat'] . "','" . $_FILES['plik']['name'] . "','" . $_POST['nadkat'] . "')");
-        move_uploaded_file($_FILES['plik']['tmp_name'], "../images/kategorie/" . $_FILES['plik']['name']);
-        print('<script>alert("Kategoria dodana pomyślnie."); window.location.href = "Kategorie.php";</script>');
+        $conn->query("INSERT INTO `podstrona`(`tytul`, `zdjecie`, `tresc`) VALUES ('" . $_POST['kat'] . "','" . $_FILES['plik']['name'] . "','" . $_POST['opis'] . "')");
+        move_uploaded_file($_FILES['plik']['tmp_name'], "../images/podstrony/" . $_FILES['plik']['name']);
+        print('<script>alert("Podstrona dodana pomyślnie."); window.location.href = "Podstrony.php";</script>');
     }
     if (isset($_POST['USUN'])) {
-        $query = $conn->query("SELECT miniaturka FROM kategoria WHERE id_kategoria = '" . $_POST['id'] . "'");
+        $query = $conn->query("SELECT zdjecie FROM podstrona WHERE id_podstrona = '" . $_POST['id'] . "'");
         $result = $query->fetch(PDO::FETCH_ASSOC);
-        unlink("../images/kategorie/" . $result['miniaturka']);
-        $conn->query("DELETE FROM kategoria WHERE id_kategoria = '" . $_POST['id'] . "'");
-        print('<script>alert("Kategoria usunięta pomyślnie."); window.location.href = "Kategorie.php";</script>');
+        unlink("../images/podstrony/" . $result['zdjecie']);
+        $conn->query("DELETE FROM podstrona WHERE id_podstrona = '" . $_POST['id'] . "'");
+        print('<script>alert("Podstrona usunięta pomyślnie."); window.location.href = "Podstrony.php";</script>');
     }
     ?>
     <?php include("canvas.php"); ?>
@@ -35,11 +35,11 @@
             <div class="col-md-12 mb-3">
                 <div class="card">
                     <div class="card-header">
-                        <span><i class="bi bi-table me-2"></i></span> Kategorie
+                        <span><i class="bi bi-table me-2"></i></span> Podstrony
                         <div class="float-right">
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Dodaj Kategorie
+                                Dodaj Podstrone
                             </button>
                         </div>
                     </div>
@@ -48,38 +48,29 @@
                             <table id="example" class="table table-striped data-table " style="width: 100%">
                                 <thead>
                                     <tr>
-                                        <th>id_kategoria</th>
-                                        <th>nazwa</th>
-                                        <th>miniaturka</th>
-                                        <th>nadkategoria</th>
-                                        <th> </th>
+                                        <th>id_podstrona</th>
+                                        <th>tytul</th>
+                                        <th>zdjecie</th>
+                                        <th>tresc</th>
+                                        <th></th>
                                         <th> </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $query = $conn->query("Select * from kategoria WHERE nadkategoria is not null");
+                                    $query = $conn->query("Select * from podstrona");
                                     $result = $query->fetchAll(\PDO::FETCH_ASSOC);
                                     foreach ($result as $rekord) {
                                         print("<tr><td>");
-                                        echo $rekord["id_kategoria"];
+                                        echo $rekord["id_podstrona"];
                                         print("</td><td>");
-                                        echo $rekord["nazwa"];
+                                        echo $rekord["tytul"];
                                         print("</td>");
                                         print("</td><td>");
-                                        print('<img class="table-thumbnail" src="../images/kategorie/' . $rekord["miniaturka"] . '"');
+                                        print('<img class="table-thumbnail" src="../images/podstrony/' . $rekord["zdjecie"] . '"');
                                         print("</td>");
-                                        print("</td><td>");
-                                        if ($rekord['nadkategoria'] == null) {
-                                            echo "Brak nadkategorii ¯\_(ツ)_/¯";
-                                        } else {
-                                            $query = $conn->query('Select nazwa from kategoria where id_kategoria like ' . $rekord['nadkategoria']);
-                                            $result = $query->fetchAll(\PDO::FETCH_ASSOC);
-                                            foreach ($result as $record) {
-
-                                                echo $record['nazwa'];
-                                            }
-                                        }
+                                        print("</td><td>".$rekord["tresc"]);
+                                        
 
                                         print("</td>");
                                         print("</td><td>");
@@ -89,7 +80,7 @@
 
                                         print("</td>");
                                         print("</td><td>");
-                                        echo "<div class='functional-buttons'><form method='post' action='edycja-kategorii.php' class='temp''><input type='hidden' name='id' value='" . $rekord['id_kategoria'] . "'><button type='submit' name='idkategorii_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_kategoria'] . "'>edytuj</button></form><form  method='post' action='Kategorie.php' ><input type='hidden' name='id' value='" . $rekord['id_kategoria'] . "'><button type='submit' onclick='return confirm(`Czy napewno chcesz usunąć kategorie " . $rekord['nazwa'] . " ?`);'  class='submit  btn btn-primary edycja' name='USUN' value='" . $rekord['id_kategoria'] . "'>usun</button></form></div>";
+                                        echo "<div class='functional-buttons'><form method='post' action='edycja-podstrony.php' class='temp''><input type='hidden' name='id' value='" . $rekord['id_podstrona'] . "'><button type='submit' name='idkategorii_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_podstrona'] . "'>edytuj</button></form><form  method='post' action='Podstrony.php' ><input type='hidden' name='id' value='" . $rekord['id_podstrona'] . "'><button type='submit' onclick='return confirm(`Czy napewno chcesz usunąć podstrone " . $rekord['tytul'] . " ?`);'  class='submit  btn btn-primary edycja' name='USUN' value='" . $rekord['id_podstrona'] . "'>usun</button></form></div>";
                                         print("</td>");
                                     }
                                     print("</tr>");
@@ -98,10 +89,10 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>id_kategoria</th>
-                                        <th>nazwa</th>
-                                        <th>miniaturka</th>
-                                        <th>nadkategoria</th>
+                                        <th>id_podstrona</th>
+                                        <th>tytul</th>
+                                        <th>zdjecie</th>
+                                        <th>tresc</th>
                                         <th> </th>
                                     </tr>
                                 </tfoot>
@@ -119,34 +110,26 @@
             <div class="modal-dialog modal-lg modal-dialog-scrollable">
                 <div class="modal-content" style="overflow-y:scroll;">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Dodawanie kategori</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Dodawanie podstrony</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <form enctype="multipart/form-data" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="dod">
                         <div class="modal-body">
 
                             <div class="mb-3">
-                                <label for="formGroupExampleInput" class="form-label">Nazwa Kategorii</label>
+                                <label for="formGroupExampleInput" class="form-label">Tytuł podstrony</label>
                                 <input name="kat" type="text" class="form-control" id="formGroupExampleInput" placeholder="Nazwa kategorii" value="" required>
                             </div>
 
                             <div class="mb-3">
-                                <label for="formGroupExampleInput" class="form-label">Miniaturka</label>
+                                <label for="formGroupExampleInput" class="form-label">Zdjęcie</label>
                                 <div class="file-drop-area-category"> <span class="btn btn-primary ">Wybierz plik</span> <span class="file-message" id="divImageMediaPreview3">albo upuść tutaj</span> <input name="plik" type="file" class="file-input-category" accept=".jfif,.jpg,.jpeg,.png,.gif" required /> </div>
                                 <div id=> </div>
                             </div>
                             <div class="mb-3">
-                                <label for="formGroupExampleInput2" class="form-label">Wybierz nadkategorie</label>
-                                <select name="nadkat" class="form-control" id="formGroupExampleInput2" required>
-                                    <option selected disabled hidden value="">Przykład</option>
-                                    <?php
-                                    $query = $conn->query('Select Distinct id_kategoria, nazwa from kategoria');
-                                    $result = $query->fetchAll(\PDO::FETCH_ASSOC);
-                                    foreach ($result as $record) {
-                                        print("<option value=" . $record['id_kategoria'] . ">" . $record['nazwa'] . "</option>");
-                                    }
-                                    ?>
-                                </select>
+                            <label for="formGroupExampleInput" class="form-label">Tresc</label>
+                <label for="comment"></label>
+                <textarea class="form-control" rows="5" id="description-item" name="opis" placeholder="Opis" required></textarea>
                             </div>
                         </div>
 

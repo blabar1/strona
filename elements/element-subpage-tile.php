@@ -1,6 +1,6 @@
 <div class=" col-xs-12 col-sm-6 col-xl-4 col-lg-4 col-md-4">
     <div class="c-subPage-tile fade-in">
-        <a href="">
+        <a href="template.php?id_podstrona=<?php echo $id; ?>">
             <div class="c-subPage-tile__banner">
                 <h3 title=""><span class="c-subPage-tile__banner__name-span"> Podstrona </span></h3>
             </div>
