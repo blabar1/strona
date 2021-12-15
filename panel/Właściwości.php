@@ -66,7 +66,7 @@
                                         print("</td>");
 
                                         print("</td><td>");
-                                        echo "<div class='functional-buttons'><form method='post' action='edycja-wlasciwosci.php' class='temp''><button type='submit' name='idwlasciwosci_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_wlasciwosc'] . "'>edytuj</button></form><form  method='post' action='Właściwości.php' ><input type='hidden' name='id' value='" . $rekord['id_wlasciwosc'] . "'><button type='submit' onclick='return confirm(`Czy napewno chcesz usunąć właściwość " . $rekord['nazwa'] . " ?`);'  class='submit  btn btn-primary edycja' name='USUN' value='" . $rekord['id_wlasciwosc'] . "'>usun</button></form></div>";
+                                        echo "<div class='functional-buttons'><form method='post' action='edycja-wlasciwosci.php' class='temp''><input type='hidden' name='id' value='" . $rekord['id_wlasciwosc']."'><button type='submit' name='idwlasciwosci_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_wlasciwosc'] . "'>edytuj</button></form><form  method='post' action='Właściwości.php' ><input type='hidden' name='id' value='" . $rekord['id_wlasciwosc'] . "'><button type='submit' onclick='return confirm(`Czy napewno chcesz usunąć właściwość " . $rekord['nazwa'] . " ?`);'  class='submit  btn btn-primary edycja' name='USUN' value='" . $rekord['id_wlasciwosc'] . "'>usun</button></form></div>";
                                         print("</td>");
                                     }
                                     print("</tr>");
