@@ -18,4 +18,6 @@
     <script src="scripts/categoryFilters.js"></script>
     <script src="scripts/passwords.js"></script>
     <script src="scripts/basket.js"></script>
+    <script src="scripts/subPage.js"></script>
+
     </html>

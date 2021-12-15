@@ -18,6 +18,7 @@
 @import "components/components.basket-button.css";
 @import "components/components.basket-list.css";
 @import "components/components.basket-title-button.css";
+@import "components/components.subpage-tile.css";
 @import "components/components.basket-payment.css";
 @import "components/comoponets.basket-button-delete.css";
 @import "components/components.categoryProduct-pagination.css";
@@ -30,6 +31,7 @@
 @import "components/components.radio.css";
 @import "components/loading.css";
 @import "footer.css";
+@import "subPage.css";
 @import "regulamin.css";
 @import "orders.css";
 @import "arkusz_mal.css";

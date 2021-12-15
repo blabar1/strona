@@ -56,9 +56,10 @@ if (!isset($_SESSION['user'])) {
                     </div>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav fix">
+                    <ul class="nav navbar-nav ">
+
                         <li>
-                            <div class="input-group">
+                            <div class="input-group fix">
                                 <form action="categoryProducts.php" method="GET">
                                     <div class="input-group-container ">
                                         <div class="input-search">
@@ -89,9 +90,8 @@ if (!isset($_SESSION['user'])) {
                         </li>
 
                     </ul>
-                    <ul class="nav navbar-nav navbar-right" style="display: flex!important;
-    align-content: center!important;
-    align-items: center!important;">
+                    <ul class="nav navbar-nav navbar-right navbar-collapsed-view">
+
                         <?php
                         if (empty($_SESSION['user'])) {
                             print("<li><a href='login.php'><span class='glyphicon glyphicon-user'></span> Zaloguj się</a></li>");
@@ -129,7 +129,9 @@ if (!isset($_SESSION['user'])) {
                             }
                         }
                         ?>
+                        <li class=""><a href="#">Podstrony</a></li>
                         <li class="nav-item">
+
                             <a class="nav-link" href="basket.php">
                                 <div id="basket" class="c-menu-element-basket">
                                     <div class="svg-photo-basket">

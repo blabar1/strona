@@ -1,0 +1,101 @@
+html {
+    font-family: "Lato", sans-serif;
+    --primary-color: #222;
+    --orange: #EB5E28;
+    --grey:#403D39;
+    --white:#FFFCF2;
+    --brudas:#CCC5B9;
+    word-wrap: break-word;
+}
+.o-title-sub{
+    font-size:20px;
+    font-weight: bold;
+}
+.c-subPage-tile__thumbnail{
+    margin-top:18px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 8px;
+    width: 100%;
+    height: 100%;
+    max-width: 240px;
+    max-height: 200px;
+    transform: translate(0%, 0%);
+    top: 50%;
+    left: 50%;
+    margin: auto;
+}
+.c-subPage-tile:hover{
+    box-shadow: rgb(0 0 0 / 20%) 0px 4px 8px 0px, rgb(0 0 0 / 8%) 0px 0px 2px 1px;
+}
+.c-subPage-tile__name{
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: normal;
+    text-decoration: none;
+    white-space: normal;
+    margin-top: 8px;
+    max-height:40px;
+}
+.c-subPage-tile{
+    margin-top:24px;
+}
+@media (max-width: 1200px){
+    .c-subPage-tile{
+        height:400px;
+    }
+}
+@media (max-width:768px){
+    .c-subPage-tile{
+        height:500px;
+    }
+}
+.c-subPage-tile__name-span{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    visibility: visible;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+.c-subPage-tile__inside{
+    height:100%;
+    padding: 16px 0px 0px;
+    height:442px;
+    margin:0;
+    padding: 0;
+    position: relative;
+    padding-left:16px;
+    padding-top:40px;
+    padding-right:16px;
+    margin-top: 24px;
+
+}
+@media (min-width: 992px){
+.c-subPage-tile__inside{
+    padding: 36px 0px 0px;
+}
+
+}
+.c-subPage-tile__description{
+    margin-top:12px;
+   
+}
+
+.c-subPage-tile__banner__name-span{
+    background-color: var(--primary-color);
+    padding:8px;
+    color:white;
+    position: absolute;
+}
+.c-subPage-tile__description {
+display: -webkit-box;
+-webkit-line-clamp: 5;
+-webkit-box-orient: vertical;
+visibility: visible;
+overflow: hidden;
+text-overflow: ellipsis;
+}

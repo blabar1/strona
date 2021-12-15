@@ -1064,8 +1064,16 @@ ul .links-list-subcategory{
 .fix{
     margin-left: 50px;
 }
+.navbar-collapsed-view{
+display: flex!important;
+    align-content: center!important;
+    align-items: center!important;
+}
 @media(max-width: 900px) {
     .fix{
         margin-left:0px;
     }
+    .navbar-collapsed-view{
+        display: block!important;
+        }
 }

@@ -34,8 +34,6 @@ include_once "header.php"; ?>
 
                         <div class="c-template-container-text">
                             a tutaj tekst jest ogółem backend person
-
-
                         </div>
                         <div class="c-template-container-image">
                             <img class="c-template-container-image-element" src="images/komputerek.jpg">
