@@ -1,4 +1,3 @@
- 
  <div class="row">
      <div class="c-promotion ">
          <div clas="o-wrapper">

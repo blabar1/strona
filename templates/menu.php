@@ -56,7 +56,7 @@ if (!isset($_SESSION['user'])) {
                     </div>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav fix">
                         <li>
                             <div class="input-group">
                                 <form action="categoryProducts.php" method="GET">
