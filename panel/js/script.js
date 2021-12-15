@@ -1,3 +1,13 @@
+function  stateChagne(id){
+  $.ajax({
+    url: 'Zamówienia-pracownik.php',
+    type: 'POST',
+    data: {
+        'order': id,
+        'status': document.getElementById('jd'+id).value
+    },            
+});
+}
 
 
 $(document).ready(function () {

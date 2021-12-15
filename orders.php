@@ -21,10 +21,12 @@ include_once "templates/menu.php"; ?>
                     </div>');
                 } else {
                     foreach ($result as $row) {
+                        $query3 = $conn->query("SELECT nazwa FROM zamowienie_status WHERE id_status = '".$row['status']."'");
+                        $result3 = $query3->fetch(PDO::FETCH_ASSOC);
                         print('<span class="linia">
                             <div class="c-ordersPage-body"><a href="orderDetails-afterBuy.php?nr_zamowienie='.$row['id_zamowienia'].'">');
                         get_element("elements/element-orders-date.php", array(
-                            'date' => "Zamówienie nr ".$row['id_zamowienia']." - ".$row['data_zlozenia'] . " - " . $row['status']
+                            'date' => "Zamówienie nr ".$row['id_zamowienia']." - ".$row['data_zlozenia'] . " - " . $result3['nazwa']
                         ));
                         print('</a>');
                         $query2 = $conn->query("SELECT id_produkt, produkt.nazwa, produkt.cena, produkt.miniaturka, zamowienie_produkt.ilosc FROM produkt INNER JOIN zamowienie_produkt ON produkt.id_produkt = zamowienie_produkt.produkt WHERE zamowienie = '".$row['id_zamowienia']."'");

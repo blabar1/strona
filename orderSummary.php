@@ -9,20 +9,33 @@ if (!empty($result))
 else
     $i = 1;
 if (isset($_SESSION['user'])) {
-    $conn->query("INSERT INTO `zamowienie`(`id_zamowienia`, `imie`, `nazwisko`, `adres`, `miasto`, `kod_pocztowy`, `mail`, `dostawa`, `metoda`, `data_zlozenia`, `data_wyslania`, `koszt`, `status`) VALUES ($i, '" . $_POST['inputfname'] . "','" . $_POST['inputlname'] . "','" . $_POST['inputadress'] . "','" . $_POST['inputcity'] . "','" . $_POST['inputpostalcode'] . "','" . $_SESSION['user'] . "','" . $_POST['delivery'] . "','" . $_POST['payment'] . "', CAST('$data' AS DATE) , NULL ,'" . $_POST['total'] . "','W trakcie realizacji')");
-    $query = $conn->query("SELECT produkt, ilosc FROM koszyk WHERE konto = (SELECT id_konta FROM dane_konta WHERE mail = '" . $_SESSION['user'] . "')");
-    $result = $query->fetchAll(PDO::FETCH_ASSOC);
-    foreach ($result as $row)
-        $conn->query("INSERT INTO `zamowienie_produkt`(`zamowienie`, `produkt`, `ilosc`) VALUES ($i,'" . $row['produkt'] . "','" . $row['ilosc'] . "')");
-    $conn->query("DELETE FROM koszyk WHERE konto = (SELECT id_konta FROM dane_konta WHERE mail = '".$_SESSION['user']."')");
-    } else {
-    $conn->query("INSERT INTO `zamowienie`(`id_zamowienia`, `imie`, `nazwisko`, `adres`, `miasto`, `kod_pocztowy`, `mail`, `dostawa`, `metoda`, `data_zlozenia`, `data_wyslania`, `koszt`, `status`) VALUES ($i, '" . $_POST['inputfname'] . "','" . $_POST['inputlname'] . "','" . $_POST['inputadress'] . "','" . $_POST['inputcity'] . "','" . $_POST['inputpostalcode'] . "','" . $_POST['inputemail'] . "','" . $_POST['delivery'] . "','" . $_POST['payment'] . "', CAST('$data' AS DATE) , NULL ,'" . $_POST['total'] . "','W trakcie realizacji')");
-    $a = array_keys($_SESSION['koszyk']);
-    for ($j = 0; $j < sizeof($a); $j++) {
-        $conn->query("INSERT INTO `zamowienie_produkt`(`zamowienie`, `produkt`, `ilosc`) VALUES ($i,'" . $a[$j] . "','" . $_SESSION['koszyk'][$a[$j]] . "')");
+    $conn->beginTransaction();
+    try {
+        $conn->query("INSERT INTO `zamowienie`(`id_zamowienia`, `imie`, `nazwisko`, `adres`, `miasto`, `kod_pocztowy`, `mail`, `dostawa`, `metoda`, `data_zlozenia`, `data_wyslania`, `koszt`, `status`) VALUES ($i, '" . $_POST['inputfname'] . "','" . $_POST['inputlname'] . "','" . $_POST['inputadress'] . "','" . $_POST['inputcity'] . "','" . $_POST['inputpostalcode'] . "','" . $_SESSION['user'] . "','" . $_POST['delivery'] . "','" . $_POST['payment'] . "', CAST('$data' AS DATE) , NULL ,'" . $_POST['total'] . "','1')");
+        $query = $conn->query("SELECT produkt, ilosc FROM koszyk WHERE konto = (SELECT id_konta FROM dane_konta WHERE mail = '" . $_SESSION['user'] . "')");
+        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($result as $row)
+            $conn->query("INSERT INTO `zamowienie_produkt`(`zamowienie`, `produkt`, `ilosc`) VALUES ($i,'" . $row['produkt'] . "','" . $row['ilosc'] . "')");
+        $conn->query("DELETE FROM koszyk WHERE konto = (SELECT id_konta FROM dane_konta WHERE mail = '" . $_SESSION['user'] . "')");
+        $conn->commit();
+    } catch (PDOException) {
+        $conn->rollBack();
+        print('<script>alert("Wystąpił nieoczekiwany błąd."); window.location.href = "index.php";</script>');
     }
-    unset($_SESSION['koszyk']);
-    $_SESSION['koszyk'] = array();
+} else {
+    $conn->beginTransaction();
+    try {
+        $conn->query("INSERT INTO `zamowienie`(`id_zamowienia`, `imie`, `nazwisko`, `adres`, `miasto`, `kod_pocztowy`, `mail`, `dostawa`, `metoda`, `data_zlozenia`, `data_wyslania`, `koszt`, `status`) VALUES ($i, '" . $_POST['inputfname'] . "','" . $_POST['inputlname'] . "','" . $_POST['inputadress'] . "','" . $_POST['inputcity'] . "','" . $_POST['inputpostalcode'] . "','" . $_POST['inputemail'] . "','" . $_POST['delivery'] . "','" . $_POST['payment'] . "', CAST('$data' AS DATE) , NULL ,'" . $_POST['total'] . "','1')");
+        $a = array_keys($_SESSION['koszyk']);
+        for ($j = 0; $j < sizeof($a); $j++) {
+            $conn->query("INSERT INTO `zamowienie_produkt`(`zamowienie`, `produkt`, `ilosc`) VALUES ($i,'" . $a[$j] . "','" . $_SESSION['koszyk'][$a[$j]] . "')");
+        }
+        unset($_SESSION['koszyk']);
+        $_SESSION['koszyk'] = array();
+    } catch (PDOException) {
+        $conn->rollBack();
+        print('<script>alert("Wystąpił nieoczekiwany błąd."); window.location.href = "index.php";</script>');
+    }
 }
 ?>
 <div class="o-wrapper">
@@ -35,7 +48,7 @@ if (isset($_SESSION['user'])) {
                             <div class="c-basket-empty-container__title">Twój zamówienie o numerze <?php echo $i ?> zostało przyjęte do realizacji</div>
                             <div class="c-basket-empty-container__subtext">Dziękujemy za wybranie naszego sklepu</div><br><br><br>
                             <div class="c-basket-empty-container__subtext1">Szczegóły twojego zmówienia:</div>
-                            <div class="c-basket-empty-container__subtext2"><a href ="<?php print ("placeholder.ct8.pl/strona/orderDetails-afterBuy.php?nr_zamowienie=".$i); ?>"><?php print ("placeholder.ct8.pl/strona/orderDetails-afterBuy.php?nr_zamowienie=".$i); ?></a></div>
+                            <div class="c-basket-empty-container__subtext2"><a href="<?php print("http://www.placeholder.ct8.pl/strona/orderDetails-afterBuy.php?nr_zamowienie=" . $i); ?>"><?php print("http://www.placeholder.ct8.pl/strona/orderDetails-afterBuy.php?nr_zamowienie=" . $i); ?></a></div>
                             <div class="c-basket-empty-container__button"><a href="index.php"><button class="c-basket-empty-container__button-element">Przejdź do strony głównej </button></a></div>
                         </div>
 

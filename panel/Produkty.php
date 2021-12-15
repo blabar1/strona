@@ -9,6 +9,8 @@
 <body>
   <?php
   if (isset($_POST['DODAJ'])) {
+    $conn->beginTransaction();
+    try {
     move_uploaded_file($_FILES['miniaturka']['tmp_name'], "../images/produkty/" . $_FILES['miniaturka']['name']);
     $conn->query("INSERT INTO `produkt`( `nazwa`, `cena`, `ilosc`, `opis`, `miniaturka`, `kategoria`) VALUES ('" . $_POST['nazwa'] . "','" . $_POST['cena'] . "','" . $_POST['ilosc'] . "','" . $_POST['opis'] . "','" . $_FILES['miniaturka']['name'] . "','" . $_POST['kategoria'] . "')");
     $query = $conn->query("SELECT max(id_produkt) as id FROM produkt");
@@ -22,8 +24,15 @@
       move_uploaded_file($_FILES['galeria']['tmp_name'][$i], "../images/produkty/" . $result['id'] . "/" . $_FILES['galeria']['name'][$i]);
     }
     print('<script>alert("Produkt dodany pomyślnie."); window.location.href = "Produkty.php";</script>');
+    $conn->commit();
+  } catch (PDOException) {
+    $conn->rollBack();
+    print('<script>alert("Wystąpił nieoczekiwany błąd."); window.location.href = "index.php";</script>');
+}
   }
   if (isset($_POST['USUN'])) {
+    $conn->beginTransaction();
+    try {
     $query = $conn->query("SELECT miniaturka FROM produkt WHERE id_produkt = '" . $_POST['id'] . "'");
     $result = $query->fetch(PDO::FETCH_ASSOC);
     unlink("../images/produkty/" . $result['miniaturka']);
@@ -31,100 +40,15 @@
     rmdir("../images/produkty/" . $_POST['id']);
     $conn->query("DELETE FROM produkt WHERE id_produkt = '" . $_POST['id'] . "'");
     print('<script>alert("Produkt usunięty pomyślnie."); window.location.href = "Produkty.php";</script>');
+  }catch (PDOException) {
+      $conn->rollBack();
+      print('<script>alert("Wystąpił nieoczekiwany błąd."); window.location.href = "Produkty.php";</script>');
+  }
   }
   ?>
 
   <!-- offcanvas -->
-  <div class="offcanvas offcanvas-start sidebar-nav bg-dark" tabindex="-1" id="sidebar">
-    <div class="offcanvas-body p-0">
-      <nav class="navbar-dark">
-        <ul class="navbar-nav">
-          <li>
-            <div class="text-muted small fw-bold text-uppercase px-3">
-              Tabele
-            </div>
-          </li>
-          <li>
-            <a href="Produkty.php" class="nav-link px-3 active">
-              <span class="me-2"><i class="bi bi-table"></i></span>
-              <span>Produkty</span>
-            </a>
-          </li>
-          <li>
-            <a href="Konta.php" class="nav-link px-3  ">
-              <span class="me-2"><i class="bi bi-table"></i></span>
-              <span>Konta</span>
-            </a>
-          </li>
-          <li>
-            <a href="Kategorie.php" class="nav-link px-3 ">
-              <span class="me-2"><i class="bi bi-table"></i></span>
-              <span>Kategorie</span>
-            </a>
-          </li>
-          <li>
-            <a href="Zamówienia-pracownik.php" class="nav-link px-3 ">
-              <span class="me-2"><i class="bi bi-table"></i></span>
-              <span>Zamówienia</span>
-            </a>
-          </li>
-          <li>
-          <li>
-            <a href="Właściwości.php" class="nav-link px-3 ">
-              <span class="me-2"><i class="bi bi-table"></i></span>
-              <span>Właściwości</span>
-            </a>
-          <li>
-            <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#layouts">
-              <span class="me-2"><i class="bi bi-layout-split"></i></span>
-              <span>Layouts</span>
-              <span class="ms-auto">
-                <span class="right-icon">
-                  <i class="bi bi-chevron-down"></i>
-                </span>
-              </span>
-            </a>
-            <div class="collapse" id="layouts">
-              <ul class="navbar-nav ps-3">
-                <li>
-                  <a href="#" class="nav-link px-3">
-                    <span class="me-2"><i class="bi bi-speedometer2"></i></span>
-                    <span>Dashboard</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a href="#" class="nav-link px-3">
-              <span class="me-2"><i class="bi bi-book-fill"></i></span>
-              <span>Pages</span>
-            </a>
-          </li>
-          <li class="my-4">
-            <hr class="dropdown-divider bg-light" />
-          </li>
-          <li>
-            <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
-              Addons
-            </div>
-          </li>
-          <li>
-            <a href="#" class="nav-link px-3">
-              <span class="me-2"><i class="bi bi-graph-up"></i></span>
-              <span>Charts</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link px-3">
-              <span class="me-2"><i class="bi bi-table"></i></span>
-              <span>Tables</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
+  <?php include("canvas.php"); ?>
   <!-- offcanvas -->
   <main class="mt-5 pt-3">
     <div class="container-fluid">

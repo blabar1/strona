@@ -8,101 +8,18 @@
 
 
 <body>
-
+<?php
+    if (isset($_POST['DODAJ'])) {
+        $conn->query("INSERT INTO `wlasciwosc`(`nazwa`) VALUES ('" . $_POST['imie'] ."')");
+        print('<script>alert("Właściwość dodana pomyślnie."); window.location.href = "Właściwości.php";</script>');
+    }
+    if (isset($_POST['USUN'])){
+        $conn->query("DELETE FROM wlasciwosc WHERE  id_wlasciwosc = '" . $_POST['id'] . "'");
+        print('<script>alert("Właściwość usunięta pomyślnie."); window.location.href = "Właściwości.php";</script>');
+    }
+    ?>
     <!-- offcanvas -->
-    <div class="offcanvas offcanvas-start sidebar-nav bg-dark" tabindex="-1" id="sidebar">
-        <div class="offcanvas-body p-0">
-            <nav class="navbar-dark">
-                <ul class="navbar-nav">
-                    <li>
-                        <div class="text-muted small fw-bold text-uppercase px-3">
-                            Tabele
-                        </div>
-                    </li>
-                    <li>
-                        <a href="index.php" class="nav-link px-3 ">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Konta.php" class="nav-link px-3  ">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Konta</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Kategorie.php" class="nav-link px-3 ">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Kategorie</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Zamówienia-pracownik.php" class="nav-link px-3 ">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Zamówienia</span>
-                        </a>
-                    </li>
-                    <li>
-                    <li>
-                        <a href="Właściwości.php" class="nav-link px-3 active">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Właściwości</span>
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#layouts">
-                            <span class="me-2"><i class="bi bi-layout-split"></i></span>
-                            <span>Layouts</span>
-                            <span class="ms-auto">
-                                <span class="right-icon">
-                                    <i class="bi bi-chevron-down"></i>
-                                </span>
-                            </span>
-                        </a>
-                        <div class="collapse" id="layouts">
-                            <ul class="navbar-nav ps-3">
-                                <li>
-                                    <a href="#" class="nav-link px-3">
-                                        <span class="me-2"><i class="bi bi-speedometer2"></i></span>
-                                        <span>Dashboard</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-book-fill"></i></span>
-                            <span>Pages</span>
-                        </a>
-                    </li>
-                    <li class="my-4">
-                        <hr class="dropdown-divider bg-light" />
-                    </li>
-                    <li>
-                        <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
-                            Addons
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-graph-up"></i></span>
-                            <span>Charts</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Tables</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
+    <?php include("canvas.php"); ?>
     <!-- offcanvas -->
     <main class="mt-5 pt-3">
         <div class="container-fluid">
@@ -149,7 +66,7 @@
                                         print("</td>");
 
                                         print("</td><td>");
-                                        echo "<div class='functional-buttons'><form method='post' action='edycja.php' class='temp''><button type='submit' name='idkonta_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_wlasciwosc'] . "'>edytuj</button></form><form  method='post' action='Właściowść.php' ><input type='hidden' name='id' value='" . $rekord['id_wlasciwosc'] . "'><button type='submit' onclick='return confirm(`Czy napewno chcesz usunąć włąściwość " . $rekord['nazwa'] . " ?`);'  class='submit  btn btn-primary edycja' name='USUN' value='" . $rekord['id_wlasciwosc'] . "'>usun</button></form></div>";
+                                        echo "<div class='functional-buttons'><form method='post' action='edycja.php' class='temp''><button type='submit' name='idkonta_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_wlasciwosc'] . "'>edytuj</button></form><form  method='post' action='Właściwości.php' ><input type='hidden' name='id' value='" . $rekord['id_wlasciwosc'] . "'><button type='submit' onclick='return confirm(`Czy napewno chcesz usunąć włąściwość " . $rekord['nazwa'] . " ?`);'  class='submit  btn btn-primary edycja' name='USUN' value='" . $rekord['id_wlasciwosc'] . "'>usun</button></form></div>";
                                         print("</td>");
                                     }
                                     print("</tr>");

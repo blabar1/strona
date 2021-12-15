@@ -197,3 +197,4 @@ INSERT INTO `produkt_wlasciwosc`(`produkt`, `nazwa_wlasciwosc`, `wartosc`) VALUE
 (44,1,"Silver Monkey"),
 (45,1,"Unitek");
 
+INSERT INTO `zamowienie_status`(`nazwa`) VALUES ('Oczekiwanie na weryfikację'), ('W trakcie realizacji'), ('Oczekiwanie na wysyłkę'), ('Wysłane'), ('Dostarczone');

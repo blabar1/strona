@@ -3,12 +3,14 @@
 include_once "templates/menu.php"; 
 $query = $conn->query('SELECT * FROM zamowienie WHERE id_zamowienia = "'.$_GET['nr_zamowienie'].'"');
 $result = $query->fetch(PDO::FETCH_ASSOC);
+$query3 = $conn->query("SELECT nazwa FROM zamowienie_status WHERE id_status = '".$result['status']."'");
+$result3 = $query3->fetch(PDO::FETCH_ASSOC);
 ?>
 <div class="o-wrapper">
     <div class="c-ordersPage-wrapper">
         <div class="c-ordersPage-container">
             <div class="c-ordersPage-title">
-                <div class="c-ordersPage-title o-title"> <?php echo "Zamówienie nr ".$result['id_zamowienia']." - ".$result['data_zlozenia'] . " - " . $result['status']?></div>
+                <div class="c-ordersPage-title o-title"> <?php echo "Zamówienie nr ".$result['id_zamowienia']." - ".$result['data_zlozenia'] . " - " . $result3['nazwa']?></div>
                 <span class="o-separator"></span>
             </div>
 

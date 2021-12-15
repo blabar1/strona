@@ -7,99 +7,34 @@
 <!-- Maciek tam jest menu takie jakby z uzytkownikiem -->
 
 <body>
+<?php
+$conn->beginTransaction();
+try {
+    if(isset($_POST['status'])){
+        $conn->query("UPDATE zamowienie SET status = '".$_POST['status']."' WHERE id_zamowienia =  '".$_POST['order']."'");
+        if($_POST['status']==2){
+            $query = $conn->query("SELECT id_produkt, produkt.ilosc, zamowienie_produkt.ilosc as odjac FROM produkt inner join zamowienie_produkt ON produkt.id_produkt = zamowienie_produkt.produkt WHERE id_produkt IN (SELECT produkt FROM zamowienie_produkt WHERE zamowienie =  '".$_POST['order']."')");
+            $result =$query->fetchAll(PDO::FETCH_ASSOC);
+            foreach($result as $row){
+                $i = $row['ilosc']-$row['odjac'];
+                $conn->query("UPDATE produkt SET ilosc = '".$i."' WHERE id_produkt =  '".$row['id_produkt']."'");
+            }
+            $query = $conn->query("SELECT * FROM zamowienie WHERE id_zamowienia =  '".$_POST['order']."'");
+            $result= $query->fetch(PDO::FETCH_ASSOC);
+            $info = "Dziękujemy za skorzystanie z naszych usług.\r\n Twoje zamówienie o numerze '".$_POST['order']."' zostało przyjęte do realizacji. \r\n
+            Więcej informacji o zamówieniu znajdziesz na: http://www.placeholder.ct8.pl/strona/orderDetails-afterBuy.php?nr_zamowienie=".$_POST['order'];
+            mail($result['mail'],"Zamówienie",$info);
+        }
+    }
+    $conn->commit();
+    } catch (PDOException) {
+        $conn->rollBack();
+        print('<script>alert("Wystąpił nieoczekiwany błąd."); window.location.href = Zamówienia-pracownik.php";</script>');
+    }
+?>
 
     <!-- offcanvas -->
-    <div class="offcanvas offcanvas-start sidebar-nav bg-dark" tabindex="-1" id="sidebar">
-        <div class="offcanvas-body p-0">
-            <nav class="navbar-dark">
-                <ul class="navbar-nav">
-                    <li>
-                        <div class="text-muted small fw-bold text-uppercase px-3">
-                            Tabele
-                        </div>
-                    </li>
-                    <li>
-                        <a href="index.php" class="nav-link px-3 ">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Produkty</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Konta.php" class="nav-link px-3 ">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Konta</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Kategorie.php" class="nav-link px-3 ">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Kategorie</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Zamówienia-pracownik.php" class="nav-link px-3 active">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Zamówienia</span>
-                        </a>
-                    </li>
-                    <li>
-                    <li>
-                        <a href="Właściwości.php" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Właściwości</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#layouts">
-                            <span class="me-2"><i class="bi bi-layout-split"></i></span>
-                            <span>Layouts</span>
-                            <span class="ms-auto">
-                                <span class="right-icon">
-                                    <i class="bi bi-chevron-down"></i>
-                                </span>
-                            </span>
-                        </a>
-                        <div class="collapse" id="layouts">
-                            <ul class="navbar-nav ps-3">
-                                <li>
-                                    <a href="#" class="nav-link px-3">
-                                        <span class="me-2"><i class="bi bi-speedometer2"></i></span>
-                                        <span>Dashboard</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-book-fill"></i></span>
-                            <span>Pages</span>
-                        </a>
-                    </li>
-                    <li class="my-4">
-                        <hr class="dropdown-divider bg-light" />
-                    </li>
-                    <li>
-                        <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
-                            Addons
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-graph-up"></i></span>
-                            <span>Charts</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-3">
-                            <span class="me-2"><i class="bi bi-table"></i></span>
-                            <span>Tables</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
+    <?php include("canvas.php"); ?>
     <!-- offcanvas -->
     <main class="mt-5 pt-3">
         <div class="container-fluid">
@@ -154,12 +89,21 @@
                                         echo $rekord["koszt"];
                                         print("</td>");
                                         print("</td><td>");
-                                        print("<select name=''>
-                                        <option selected value='" . $rekord["status"] . "'>" . $rekord["status"] . "</option>
-                                        <option value=''></option>
-                                        <option value=''></option>
-                                        </select>");
-                                        print("</td>");
+                                        print("<select id ='jd".$rekord["id_zamowienia"]."' name='status' onchange='stateChagne(".$rekord["id_zamowienia"].")'>");
+                                        $query1 = $conn->query("SELECT * FROM zamowienie_status");
+                                        $result1 = $query1->fetchAll(PDO::FETCH_ASSOC);
+                                        foreach($result1 as $row){
+                                            if($row['id_status']==$rekord['status']){
+                                                print(" <option selected disabled value='" . $row["id_status"] . "'>" . $row["nazwa"] . "</option>");
+                                            }else{
+                                                if($rekord['status']>$row['id_status'] || $row['id_status']-$rekord['status']!=1)
+                                                print(" <option  disabled value='" .  $row["id_status"] . "'>" . $row["nazwa"] . "</option>");
+                                                else
+                                                print(" <option  value='" . $row["id_status"] . "'>" . $row["nazwa"] . "</option>");
+                                            }
+                                        }
+
+                                        print("</select></td>");
 
                                         print("</td><td>");
                                         echo "<div class='functional-buttons'><button data-bs-toggle='modal' data-bs-target='#exampleModal" . $rekord['id_zamowienia'] . "' name='zamowienie-szczegoly' class='submit  btn btn-primary edycja' value='" . $rekord['id_zamowienia'] . "'>szczegóły</button></div>";
@@ -167,6 +111,10 @@
                                     }
                                     print("</tr>");
                                     foreach ($result as $rekord) {
+                                        $query=$conn->query("SELECT nazwa FROM metoda_platnosci WHERE id_metoda = '".$rekord["metoda"]."'");
+                                        $result = $query->fetch(PDO::FETCH_ASSOC);
+                                        $query1=$conn->query("SELECT nazwa FROM dostawa WHERE id_dostawa = '".$rekord["dostawa"]."'");
+                                        $result1 = $query1->fetch(PDO::FETCH_ASSOC);
                                         print('
                                     <div class="modal fade" id="exampleModal' . $rekord["id_zamowienia"] . '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
@@ -175,15 +123,14 @@
                                                     <h5 class="modal-title" id="exampleModalLabel">Szczegóły zamówienia o id ' . $rekord["id_zamowienia"] . '</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
-                                                
-                                                    <div class="modal-body" style="padding: 0;">
+                                                <div class="modal-body" style="padding: 0;">
                                                     <div class="modal-order__desc row">
                                                     <div class="modal-order__desc-element modal-order__desc-name col-4"><div class="modal-sub-title">Imie: </div>' . $rekord["imie"] . '</div>
-                                                    <div class="modal-order__desc-element modal-order__desc-delivery col-4"><div class="modal-sub-title">Metoda dostawy: </div>' . $rekord["dostawa"] . '</div>
+                                                    <div class="modal-order__desc-element modal-order__desc-delivery col-4"><div class="modal-sub-title">Metoda dostawy: </div>' . $result1["nazwa"] . '</div>
                                                     <div class="modal-order__desc-element modal-order__desc-address col-4"><div class="modal-sub-title">Adres: </div> ' . $rekord["adres"] . ', ' . $rekord["miasto"] . ' ' . $rekord["kod_pocztowy"] . '</div>
                                                     <div class="modal-order__desc-element modal-order__desc-surname col-4"><div class="modal-sub-title">Nazwisko: </div>' . $rekord["nazwisko"] . '</div>
                                                 
-                                                    <div class="modal-order__desc-element modal-order__desc-method col-4"><div class="modal-sub-title">Metoda płatności: </div>' . $rekord["metoda"] . '</div>
+                                                    <div class="modal-order__desc-element modal-order__desc-method col-4"><div class="modal-sub-title">Metoda płatności: </div>' . $result["nazwa"] . '</div>
                                                     </div>');
 
 

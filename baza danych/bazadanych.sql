@@ -23,7 +23,7 @@ CREATE TABLE `koszyk` (
   `id_koszyk` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `konto` int NOT NULL,
   `produkt` int NOT NULL,
-  `ilosc` int NOT NULL
+  `ilosc` int unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `kategoria` (
@@ -36,8 +36,8 @@ CREATE TABLE `kategoria` (
 CREATE TABLE `produkt` (
   `id_produkt` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nazwa` varchar(255) NOT NULL,
-  `cena` decimal(10,2) NOT NULL,
-  `ilosc` int NOT NULL,
+  `cena` decimal(10,2) unsigned NOT NULL,
+  `ilosc` int unsigned NOT NULL,
   `opis` TEXT NOT NULL,
   `miniaturka` varchar(45) NOT NULL,
   `kategoria` int 
@@ -73,25 +73,30 @@ CREATE TABLE `zamowienie` (
   `metoda` int NOT NULL,
   `data_zlozenia` date NOT NULL,
   `data_wyslania` date DEFAULT NULL,
-  `koszt` decimal(10,2) NOT NULL,
-  `status` varchar(32) NOT NULL
+  `koszt` decimal(10,2) unsigned NOT NULL,
+  `status` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `zamowienie_produkt` (
   `id_zamowione_produkty` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `zamowienie` int NOT NULL,
   `produkt` int NOT NULL,
-  `ilosc` int NOT NULL
+  `ilosc` int unsigned NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `dostawa` (
   `id_dostawa` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nazwa` varchar(64) NOT NULL,
-  `cena` decimal(10,2) NOT NULL
+  `cena` decimal(10,2) unsigned NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `metoda_platnosci` (
   `id_metoda` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `nazwa` varchar(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `zamowienie_status` (
+  `id_status` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nazwa` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -108,3 +113,4 @@ ALTER TABLE produkt_wlasciwosc ADD FOREIGN KEY (nazwa_wlasciwosc) REFERENCES wla
 ALTER TABLE produkt_wlasciwosc ADD FOREIGN KEY (produkt) REFERENCES produkt(id_produkt) ON DELETE CASCADE;
 ALTER TABLE zamowienie ADD FOREIGN KEY (dostawa) REFERENCES dostawa(id_dostawa);
 ALTER TABLE zamowienie ADD FOREIGN KEY (metoda) REFERENCES metoda_platnosci(id_metoda);
+ALTER TABLE zamowienie ADD FOREIGN KEY (status) REFERENCES zamowienie_status(id_status);
