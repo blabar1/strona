@@ -23,31 +23,31 @@
             <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">Nazwa</label>
                 <?php
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                if (isset($_POST['nazwa'])) {
                     $name = $_POST['nazwa'] ?? null;
                     if ($name !== null) {
-                        $kwerenda_dod = $conn->query("UPDATE wlasciowsc set nazwa =" . $nazwa . "where id_wlasciwosc =" . $id);
-                        echo "<script> window.open('Właściwości.php','_self');</script>";
+                        $kwerenda_dod = $conn->query("UPDATE wlasciwosc set nazwa ='" . $_POST['nazwa'] . "' where id_wlasciwosc ='" . $_POST['id'] ."'");
+                        echo "<script>alert('Właściwość zaktualizowana pomyślnie.'); window.open('Właściwości.php','_self');</script>";
                     }
                 }
 
 
                 ?>
+                <form method="post" id="dod" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                 <?php
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $id = $_POST['idwlasciwosci_edycja'];
+                if (isset($_POST['id'])) {
+                    $id = $_POST['id'];
                     $query = $conn->query('Select DISTINCT * from wlasciwosc where id_wlasciwosc =' . $id);
-                    $record = $query->fetchAll(\PDO::FETCH_ASSOC);
-                    foreach ($record as $result) {
-                        print('<input type="text" class="nazwa form-control" id="formGroupExampleInput" placeholder="Nazwa" value="' . $result["nazwa"] . '" name="nazwa" required>');
-                    }
+                    $record = $query->fetch(\PDO::FETCH_ASSOC);
+                        print('<input type="text" class="nazwa form-control" id="formGroupExampleInput" placeholder="Nazwa" value="' . $record["nazwa"] . '" name="nazwa" required><input type="hidden" name="id" value="' . $record["id_wlasciwosc"] . '">');
+
                 }
                 ?>
 
             </div>
             <div class="o-sideBySide">
                 <div class="o-padding">
-                    <form method="post" id="dod" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                    
 
                         <button class="btn btn-primary" type="submit">Zapisz</buttom>
                 </div>
