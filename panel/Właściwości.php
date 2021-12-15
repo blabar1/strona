@@ -8,12 +8,12 @@
 
 
 <body>
-<?php
+    <?php
     if (isset($_POST['DODAJ'])) {
-        $conn->query("INSERT INTO `wlasciwosc`(`nazwa`) VALUES ('" . $_POST['imie'] ."')");
+        $conn->query("INSERT INTO `wlasciwosc`(`nazwa`) VALUES ('" . $_POST['imie'] . "')");
         print('<script>alert("Właściwość dodana pomyślnie."); window.location.href = "Właściwości.php";</script>');
     }
-    if (isset($_POST['USUN'])){
+    if (isset($_POST['USUN'])) {
         $conn->query("DELETE FROM wlasciwosc WHERE  id_wlasciwosc = '" . $_POST['id'] . "'");
         print('<script>alert("Właściwość usunięta pomyślnie."); window.location.href = "Właściwości.php";</script>');
     }
@@ -66,7 +66,7 @@
                                         print("</td>");
 
                                         print("</td><td>");
-                                        echo "<div class='functional-buttons'><form method='post' action='edycja.php' class='temp''><button type='submit' name='idkonta_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_wlasciwosc'] . "'>edytuj</button></form><form  method='post' action='Właściwości.php' ><input type='hidden' name='id' value='" . $rekord['id_wlasciwosc'] . "'><button type='submit' onclick='return confirm(`Czy napewno chcesz usunąć włąściwość " . $rekord['nazwa'] . " ?`);'  class='submit  btn btn-primary edycja' name='USUN' value='" . $rekord['id_wlasciwosc'] . "'>usun</button></form></div>";
+                                        echo "<div class='functional-buttons'><form method='post' action='edycja-wlasciwosci.php' class='temp''><button type='submit' name='idwlasciwosci_edycja' class='submit  btn btn-primary edycja' value='" . $rekord['id_wlasciwosc'] . "'>edytuj</button></form><form  method='post' action='Właściwości.php' ><input type='hidden' name='id' value='" . $rekord['id_wlasciwosc'] . "'><button type='submit' onclick='return confirm(`Czy napewno chcesz usunąć właściwość " . $rekord['nazwa'] . " ?`);'  class='submit  btn btn-primary edycja' name='USUN' value='" . $rekord['id_wlasciwosc'] . "'>usun</button></form></div>";
                                         print("</td>");
                                     }
                                     print("</tr>");

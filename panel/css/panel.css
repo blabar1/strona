@@ -1,9 +1,15 @@
 body{
     padding: 0px!important;
 }
+.o-link{
+    color: white!important;;
+}
 .table-thumbnail{
     height:100%;
     width:60px;
+}
+.o-padding{
+    padding:8px;
 }
 .table-description{
     display: -webkit-box;
@@ -164,4 +170,6 @@ font-family: "Lato", sans-serif;
     align-items: flex-end;
     justify-content: center;
 }
-
+.panel-title{
+    padding:15px;
+}
