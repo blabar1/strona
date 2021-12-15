@@ -23,9 +23,15 @@ top:150px;
 .c-template-container-image-element{
     margin-top:24px;
     margin-bottom:24px;
-    width:100%;
     border-radius: 24px;
+    
+    width:100%;
+    max-width: 500px;
    
+}
+.c-template-container-image{
+    display: flex;
+    justify-content: center;
 }
 .c-template-container-nav-list{
 padding-left:18px;
